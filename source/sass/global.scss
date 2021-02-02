@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Arial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: $color-font-primary;
+  background-color: $color-bg-primary;
+  text-align: center;
+}
+
+/*.scroll-disabled {
+  overflow: hidden;
+  margin-right: 18px;
+}*/
+
+main {
+  display: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sr-only {
+  display: none;
+}
+
+.container {
+  max-width: $container-max-width;
+  padding: 0;
+  margin: 0 auto;
+}
+
+@media (max-width: $tablet-only-width) {
+  .container {
+    width: $tablet-width;
+  }
+}
+
+@media (max-width: $mobile-only-width) {
+  .container {
+    width: $mobile-width;
+  }
+}

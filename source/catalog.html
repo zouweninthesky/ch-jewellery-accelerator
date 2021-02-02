@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="Description" content="CHJewellery - your go-to website for chokers, necklaces, rings and earrings">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHJewellery</title>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-Bold.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-Bold.woff" type="font/woff" crossorigin>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-MediumItalic.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-MediumItalic.woff" type="font/woff" crossorigin>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-SemiBold.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-SemiBold.woff" type="font/woff" crossorigin>
+    <link rel="preload" as="font" href="fonts/Poppins-Bold.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/Poppins-Bold.woff" type="font/woff" crossorigin>
+    <link rel="preload" as="font" href="fonts/Poppins-Medium.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/Poppins-Medium.woff" type="font/woff" crossorigin>
+    <link rel="preload" as="font" href="fonts/Poppins-Regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/Poppins-Regular.woff" type="font/woff" crossorigin>
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="sr-only">
+    <!-- inject:svg --><!-- endinject -->
+    </div>
+    <header class="main-header">
+      <button type="button" id="toggle-button"><span class="visually-hidden">Toggle menu</span></button>
+      <div class="main-header__container">
+        <div class="main-header__search">
+          <form action="">
+            <svg width="14" height="14">
+              <use xlink:href="#icon-search"></use>
+            </svg>
+            <svg width="16" height="16">
+              <use xlink:href="#icon-search"></use>
+            </svg>
+            <input type="text" placeholder="Type here to search" id="search" name="search">
+            <label for="search" class="visually-hidden">Search the website</label>
+          </form>
+        </div>
+        <div class="main-header__logo">
+          <a>
+            <svg width="66" height="66">
+              <use xlink:href="#icon-main-logo"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="main-header__login">
+          <button type="button" class="">Login</button>
+        </div>
+        <div class="main-header__cart">
+          <a href="#">
+            <svg width="20" height="18">
+              <use xlink:href="#icon-cart"></use>
+            </svg>
+            <span>Cart</span>
+          </a>
+          <span>0</span>
+        </div>
+        <nav class="main-header__nav main-nav">
+          <ul class="">
+            <li class="">
+              <a href="#">What’s new</a>
+            </li>
+            <li class="">
+              <a href="#">Chokers</a>
+            </li>
+            <li class="">
+              <a href="#">Necklaces</a>
+            </li>
+            <li class="">
+              <a href="#">Rings</a>
+            </li>
+            <li class="">
+              <a href="#">Earrings</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="main-header__nav main-header__nav--secondary secondary-nav">
+          <ul class="">
+            <li class="">
+              <a href="#">About CH</a>
+            </li>
+            <li class="">
+              <a href="#">Stores & Hours</a>
+            </li>
+            <li class="">
+              <a href="#">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="intro intro--catalog">
+        <h1 class="visually-hidden">CHJewellery</h1>
+        <img src="img/catalog-intro@1x.jpg" alt="">
+        <h2>All Jewellery</h2>
+        <p>Discover picks of fashion's finest trends in our jewellery catalog</p>
+      </section>
+      <section class="catalog">
+        <h2 class="visually-hidden">Catalog</h2>
+        <section class="catalog__menu">
+          <form action="">
+            <ul class="">
+              <li class="">
+                <h3>
+                  <button>Product</button>
+                </h3>
+                <ul>
+                  <li>
+                    <input type="checkbox" name="product-necklaces" id="product-necklaces">
+                    <label for="product-necklaces">Necklaces</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="product-chokers" id="product-chokers">
+                    <label for="product-chokers">Chokers</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="product-rings" id="product-rings">
+                    <label for="product-rings">Rings</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="product-earrings" id="product-earrings">
+                    <label for="product-earrings">Earrings</label>
+                  </li>
+                </ul>
+              </li>
+              <li class="">
+                <h3>
+                  <button>Material</button>
+                </h3>
+                <ul>
+                  <li>
+                    <input type="checkbox" name="material-gold" id="material-gold">
+                    <label for="material-gold">Gold</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="material-" id="material-">
+                    <label for="material-silver">Silver</label>
+                  </li>
+                </ul>
+              </li>
+              <li class="">
+                <h3>
+                  <button>Collection</button>
+                </h3>
+                <ul>
+                  <li>
+                    <input type="checkbox" name="collection-pink-flamingo" id="collection-pink-flamingo">
+                    <label for="collection-pink-flamingo">Pink flamingo</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="collection-d reams" id="collection-d reams">
+                    <label for="collection-d reams">Dreams</label>
+                  </li>
+                </ul>
+              </li>
+              <li class="">
+                <h3>
+                  <button>Price</button>
+                </h3>
+                <!-- slider -->
+              </li>
+            </ul>
+            <button type="submit" class="">Apply</button>
+            <button type="reset" class="">Clear All</button>
+          </form>
+        </section>
+        <section class="catalog__list">
+          <ul class="">
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-1@1x.webp 1x, img/item-1@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-1@1x.jpg" srcset="img/item-1@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Double pearl earrings </h3>
+                    <p>$ 115</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-2@1x.webp 1x, img/item-2@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-2@1x.jpg" srcset="img/item-2@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Choker with gold bead</h3>
+                    <p>$ 55</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-3@1x.webp 1x, img/item-3@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-3@1x.jpg" srcset="img/item-3@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Gold layered necklace</h3>
+                    <p>$ 155</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-4@1x.webp 1x, img/item-4@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-4@1x.jpg" srcset="img/item-4@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Blue gemstone pendant</h3>
+                    <p>$ 105</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-5@1x.webp 1x, img/item-5@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-5@1x.jpg" srcset="img/item-5@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Boho earrings</h3>
+                    <p>$ 75</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-6@1x.webp 1x, img/item-6@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-6@1x.jpg" srcset="img/item-6@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Gold bird necklace</h3>
+                    <p>$ 135</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-7@1x.webp 1x, img/item-7@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-7@1x.jpg" srcset="img/item-7@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Black leather choker</h3>
+                    <p>$ 85</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Necklace with amethyst</h3>
+                    <p>$ 145</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-9@1x.webp 1x, img/item-9@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-9@1x.jpg" srcset="img/item-9@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Elephant earrings</h3>
+                    <p>$ 95</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-10@1x.webp 1x, img/item-10@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-10@1x.jpg" srcset="img/item-10@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Threader necklace</h3>
+                    <p>$ 115</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-11@1x.webp 1x, img/item-11@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-11@1x.jpg" srcset="img/item-11@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Origami crane necklace</h3>
+                    <p>$ 105</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="">
+              <a href="product-card.html">
+                <figure>
+                  <picture>
+                    <source type="image/webp" srcset="img/item-12@1x.webp 1x, img/item-12@2x.webp 2x">
+
+                    <!-- 1x: 270px, 2x: 540px -->
+                    <img src="img/item-12@1x.jpg" srcset="img/item-12@2x.jpg 2x" width="270" height="272" alt="">
+                  </picture>
+                  <figcaption>
+                    <h3>Marble earrings</h3>
+                    <p>$ 95</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+          </ul>
+          <footer>
+            <button>Previous</button>
+            <ul>
+              <li>
+                <a href="">1</a>
+              </li>
+              <li>
+                <a href="">2</a>
+              </li>
+              <li>
+                <a href="">3</a>
+              </li>
+              <li>
+                <a href="">4</a>
+              </li>
+              <li>
+                <a href="">5</a>
+              </li>
+            </ul>
+            <button>Next</button>
+          </footer>
+        </section>
+      </section>
+    </main>
+    <footer class="">
+      <section class="">
+        <h2>The good stuff in your inbox </h2>
+        <p>News and updates from CH. No spam, we promise.</p>
+        <div class="">
+          <input type="text" placeholder="Your E-mail">
+          <label for=""></label>
+          <button>Sign Up</button>
+          <!-- <use></use> -->
+        </div>
+      </section>
+      <section class="">
+        <nav class="">
+          <ul class="">
+            <li class="">
+              <a href="">Ordering & Payment</a>
+            </li>
+            <li class="">
+              <a href="">Terms & Conditions</a>
+            </li>
+            <li class="">
+              <a href="">Returns & Exchanges</a>
+            </li>
+            <li class="">
+              <a href="">Delivery</a>
+            </li>
+          </ul>
+          <ul class="">
+            <li class="">
+              <a href="">About CH</a>
+            </li>
+            <li class="">
+              <a href="">Stores & Hours</a>
+            </li>
+            <li class="">
+              <a href="">Jobs</a>
+            </li>
+            <li class="">
+              <a href="">Contact Us</a>
+            </li>
+          </ul>
+          <ul class="">
+            <li class="">
+              <!-- use -->
+              <a href="">Facebook</a>
+            </li>
+            <li class="">
+              <!-- use -->
+              <a href="">Instagram</a>
+            </li>
+            <li class="">
+              <!-- use -->
+              <a href="">Pinterest</a>
+            </li>
+            <li class="">
+              <!-- use -->
+              <a href="">Twitter</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </footer>
+    <div class="popup">
+    </div>
+    <script src="js/.js"></script>
+  </body>
+</html>

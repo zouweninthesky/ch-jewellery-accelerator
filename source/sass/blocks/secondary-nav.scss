@@ -1,0 +1,36 @@
+.secondary-nav {
+  display: none;
+}
+
+@media (max-width: $tablet-only-width) {
+  .secondary-nav {
+    display: block;
+  }
+
+  .secondary-nav ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding-top: 24px;
+    padding-left: 0;
+  }
+
+  .secondary-nav li {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: fade-out($color-bg-primary, 0.25);
+
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: $mobile-only-width) {
+  .secondary-nav ul {
+    padding-top: 4px;
+  }
+}
