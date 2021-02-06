@@ -16,10 +16,6 @@ body {
   margin-right: 18px;
 }*/
 
-main {
-  display: none;
-}
-
 *,
 *::before,
 *::after {
@@ -68,11 +64,13 @@ a {
 @media (max-width: $tablet-only-width) {
   .container {
     width: $tablet-width;
+    padding: 0 45px;
   }
 }
 
 @media (max-width: $mobile-only-width) {
   .container {
     width: $mobile-width;
+    padding: 0 15px;
   }
 }

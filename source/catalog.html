@@ -8,8 +8,8 @@
     <title>CHJewellery</title>
     <link rel="preload" as="font" href="fonts/CormorantGaramond-Bold.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="fonts/CormorantGaramond-Bold.woff" type="font/woff" crossorigin>
-    <link rel="preload" as="font" href="fonts/CormorantGaramond-MediumItalic.woff2" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="fonts/CormorantGaramond-MediumItalic.woff" type="font/woff" crossorigin>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-Italic.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-Italic.woff" type="font/woff" crossorigin>
     <link rel="preload" as="font" href="fonts/CormorantGaramond-SemiBold.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="fonts/CormorantGaramond-SemiBold.woff" type="font/woff" crossorigin>
     <link rel="preload" as="font" href="fonts/Poppins-Bold.woff2" type="font/woff2" crossorigin>
@@ -95,82 +95,94 @@
     <main>
       <section class="intro intro--catalog">
         <h1 class="visually-hidden">CHJewellery</h1>
-        <img src="img/catalog-intro@1x.jpg" alt="">
+        <picture>
+          <source type="image/webp" srcset="img/catalog-intro@1x.webp 1x, img/catalog-intro@2x.webp 2x">
+
+          <!-- 1x: 1366px, 2x: 2732px -->
+          <img src="img/catalog-intro@1x.jpg" srcset="img/catalog-intro@2x.jpg 2x" width="1366" height="261" alt="">
+        </picture>
         <h2>All Jewellery</h2>
         <p>Discover picks of fashion's finest trends in our jewellery catalog</p>
       </section>
-      <section class="catalog">
+      <section class="catalog container">
+        <section class="catalog__main">
         <h2 class="visually-hidden">Catalog</h2>
-        <section class="catalog__menu">
-          <form action="">
-            <ul class="">
-              <li class="">
-                <h3>
-                  <button>Product</button>
-                </h3>
-                <ul>
-                  <li>
-                    <input type="checkbox" name="product-necklaces" id="product-necklaces">
-                    <label for="product-necklaces">Necklaces</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" name="product-chokers" id="product-chokers">
-                    <label for="product-chokers">Chokers</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" name="product-rings" id="product-rings">
-                    <label for="product-rings">Rings</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" name="product-earrings" id="product-earrings">
-                    <label for="product-earrings">Earrings</label>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <h3>
-                  <button>Material</button>
-                </h3>
-                <ul>
-                  <li>
-                    <input type="checkbox" name="material-gold" id="material-gold">
-                    <label for="material-gold">Gold</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" name="material-" id="material-">
-                    <label for="material-silver">Silver</label>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <h3>
-                  <button>Collection</button>
-                </h3>
-                <ul>
-                  <li>
-                    <input type="checkbox" name="collection-pink-flamingo" id="collection-pink-flamingo">
-                    <label for="collection-pink-flamingo">Pink flamingo</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" name="collection-d reams" id="collection-d reams">
-                    <label for="collection-d reams">Dreams</label>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <h3>
-                  <button>Price</button>
-                </h3>
-                <!-- slider -->
-              </li>
-            </ul>
-            <button type="submit" class="">Apply</button>
-            <button type="reset" class="">Clear All</button>
-          </form>
+        <section class="catalog__menu catalog__menu--closed" id="catalog-menu">
+          <button class="button">Filter</button>
+          <div class="catalog__wrapper">
+            <button type="button" class="close-button" id="close"></button>
+            <form action="">
+              <ul class="" id="catalog-accordeon">
+                <li class="catalog__sub-menu">
+                  <h3>
+                    <button type="button">Product</button>
+                  </h3>
+                  <ul>
+                    <li>
+                      <input type="checkbox" name="product-necklaces" id="product-necklaces">
+                      <label for="product-necklaces">Necklaces</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="product-chokers" id="product-chokers">
+                      <label for="product-chokers">Chokers</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="product-rings" id="product-rings">
+                      <label for="product-rings">Rings</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="product-earrings" id="product-earrings">
+                      <label for="product-earrings">Earrings</label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="catalog__sub-menu catalog__sub-menu--closed">
+                  <h3>
+                    <button type="button">Material</button>
+                  </h3>
+                  <ul>
+                    <li>
+                      <input type="checkbox" name="material-gold" id="material-gold">
+                      <label for="material-gold">Gold</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="material-silver" id="material-silver">
+                      <label for="material-silver">Silver</label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="catalog__sub-menu catalog__sub-menu--closed">
+                  <h3>
+                    <button type="button">Collection</button>
+                  </h3>
+                  <ul>
+                    <li>
+                      <input type="checkbox" name="collection-pink-flamingo" id="collection-pink-flamingo">
+                      <label for="collection-pink-flamingo">Pink flamingo</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="collection-dreams" id="collection-dreams">
+                      <label for="collection-dreams">Dreams</label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="catalog__sub-menu">
+                  <h3>
+                    <button type="button">Price</button>
+                  </h3>
+                  <div class="" id="range"></div>
+                </li>
+              </ul>
+              <footer class="catalog__menu-footer">
+                <button type="submit" class="button">Apply</button>
+                <button type="reset" class="button">Clear All</button>
+              </footer>
+            </form>
+          </div>
         </section>
         <section class="catalog__list">
           <ul class="">
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -186,7 +198,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -202,7 +214,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -218,7 +230,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -234,7 +246,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -250,7 +262,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -266,7 +278,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -282,7 +294,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -298,7 +310,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -314,7 +326,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -330,7 +342,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -346,7 +358,7 @@
                 </figure>
               </a>
             </li>
-            <li class="">
+            <li class="tile">
               <a href="product-card.html">
                 <figure>
                   <picture>
@@ -363,94 +375,129 @@
               </a>
             </li>
           </ul>
-          <footer>
+          </section>
+        </section>
+        <footer class="catalog__footer">
             <button>Previous</button>
             <ul>
-              <li>
+              <li class="catalog__footer-item catalog__footer-item--active">
                 <a href="">1</a>
               </li>
-              <li>
+              <li class="catalog__footer-item">
                 <a href="">2</a>
               </li>
-              <li>
+              <li class="catalog__footer-item">
                 <a href="">3</a>
               </li>
-              <li>
+              <li class="catalog__footer-item">
                 <a href="">4</a>
               </li>
-              <li>
+              <li class="catalog__footer-item">
                 <a href="">5</a>
               </li>
             </ul>
             <button>Next</button>
           </footer>
-        </section>
       </section>
     </main>
-    <footer class="">
-      <section class="">
-        <h2>The good stuff in your inbox </h2>
-        <p>News and updates from CH. No spam, we promise.</p>
-        <div class="">
-          <input type="text" placeholder="Your E-mail">
-          <label for=""></label>
-          <button>Sign Up</button>
-          <!-- <use></use> -->
-        </div>
-      </section>
-      <section class="">
-        <nav class="">
-          <ul class="">
-            <li class="">
-              <a href="">Ordering & Payment</a>
+    <footer class="main-footer">
+      <div class="main-footer__container">
+        <section class="main-footer__news">
+          <h2>The good stuff in your inbox</h2>
+          <p>News and updates from CH. No spam, we promise.</p>
+          <div class="main-footer__input">
+            <input type="text" placeholder="Your E-mail">
+            <label for=""></label>
+            <button>Sign Up
+              <svg width="30" height="11">
+                <use xlink:href="#icon-arrow-right">
+              </svg>
+            </button>
+          </div>
+        </section>
+        <section class="main-footer__nav main-footer__nav--help">
+          <ul>
+            <li>
+              <a href="#">Ordering & Payment</a>
             </li>
-            <li class="">
-              <a href="">Terms & Conditions</a>
+            <li>
+              <a href="#">Terms & Conditions</a>
             </li>
-            <li class="">
-              <a href="">Returns & Exchanges</a>
+            <li>
+              <a href="#">Returns & Exchanges</a>
             </li>
-            <li class="">
-              <a href="">Delivery</a>
-            </li>
-          </ul>
-          <ul class="">
-            <li class="">
-              <a href="">About CH</a>
-            </li>
-            <li class="">
-              <a href="">Stores & Hours</a>
-            </li>
-            <li class="">
-              <a href="">Jobs</a>
-            </li>
-            <li class="">
-              <a href="">Contact Us</a>
+            <li>
+              <a href="#">Delivery</a>
             </li>
           </ul>
-          <ul class="">
-            <li class="">
-              <!-- use -->
-              <a href="">Facebook</a>
+          <ul>
+            <li>
+              <a href="#">About CH</a>
             </li>
-            <li class="">
-              <!-- use -->
-              <a href="">Instagram</a>
+              <li>
+              <a href="#">Stores & Hours</a>
             </li>
-            <li class="">
-              <!-- use -->
-              <a href="">Pinterest</a>
+            <li>
+              <a href="#">Jobs</a>
             </li>
-            <li class="">
-              <!-- use -->
-              <a href="">Twitter</a>
+            <li>
+              <a href="#">Contact Us</a>
             </li>
           </ul>
-        </nav>
-      </section>
+        </section>
+        <section class="main-footer__nav main-footer__nav--socials">
+          <ul>
+            <li>
+              <a href="#">
+                <span>Facebook</span>
+                <svg width="12" height="15">
+                  <use xlink:href="#icon-facebook">
+                </svg>
+                <svg width="16" height="21">
+                  <use xlink:href="#icon-facebook">
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>Instagram</span>
+                <svg width="15" height="15">
+                  <use xlink:href="#icon-instagram">
+                </svg>
+                <svg width="20" height="21">
+                  <use xlink:href="#icon-instagram">
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>Pinterest</span>
+                <svg width="15" height="15">
+                  <use xlink:href="#icon-pinterest">
+                </svg>
+                <svg width="20" height="21">
+                  <use xlink:href="#icon-pinterest">
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>Twitter</span>
+                <svg width="15" height="13">
+                  <use xlink:href="#icon-twitter">
+                </svg>
+                <svg width="20" height="20">
+                  <use xlink:href="#icon-twitter">
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
     </footer>
     <div class="popup">
     </div>
-    <script src="js/.js"></script>
+    <script src="js/nouislider.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

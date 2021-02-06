@@ -1,13 +1,15 @@
 .main-header {
   position: relative;
 
-  min-height: 176px;
+  /*min-height: 176px;*/
+  min-height: 187px;
 
   &::after {
     content: "";
 
     position: absolute;
-    top: 114px;
+    /*top: 114px;*/
+    top: 125px;
     left: 0;
 
     width: 100%;
@@ -24,11 +26,13 @@
 .main-header__container {
   display: grid;
   grid-template-columns: 210px 1fr 70px 70px;
-  grid-template-rows: 85px 61px;
+  /*grid-template-rows: 85px 61px;*/
+  grid-template-rows: 96px 61px;
 
   max-width: 1230px;
 
   margin: 0 auto;
+  /*padding: 30px 28px 0;*/
   padding: 30px 28px 0;
 }
 
@@ -36,7 +40,8 @@
   grid-column: 1;
   grid-row: 1;
 
-  margin-top: 11px;
+  /*margin-top: 11px;*/
+  margin-top: 22px;
 }
 
 .main-header__search svg {
@@ -73,9 +78,15 @@
   padding-right: 70px;
 }
 
+.main-header__logo svg {
+  fill: $color-accent;
+}
+
 .main-header__login {
   grid-column: 3;
   grid-row: 1;
+
+  margin-top: 11px;
 }
 
 .main-header__login button {
@@ -97,6 +108,7 @@
   display: flex;
   flex-direction: row;
 
+  margin-top: 11px;
   padding-top: 12px;
 
   height: 20px;
@@ -196,6 +208,8 @@
 
   .main-header--closed .main-header__container {
     display: block;
+
+    padding-bottom: 60px;
   }
 
   .main-header__search {
@@ -334,6 +348,10 @@
     grid-template-rows: 89px 40px 310px 160px 30px;
 
     padding: 13px 15px 40px;
+  }
+
+  .main-header--closed .main-header__container {
+    padding-bottom: 40px;
   }
 
   .main-header__logo svg {

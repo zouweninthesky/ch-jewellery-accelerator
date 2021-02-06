@@ -61,7 +61,7 @@ gulp.task("images", function() {
 });
 
 gulp.task("webp", function () {
-  return gulp.src("build/img/**/img-*.{png,jpg}")
+  return gulp.src("build/img/**/*.{png,jpg}")
     .pipe(webp({quality: 80}))
     .pipe(gulp.dest("build/img"));
 });
@@ -83,7 +83,7 @@ gulp.task('html', function () {
         return file.contents.toString();
     }
 
-    return gulp.src('source/index.html')
+    return gulp.src('source/*.html')
         .pipe(inject(svgs, { transform: fileContents }))
         .pipe(gulp.dest('build'));
 });

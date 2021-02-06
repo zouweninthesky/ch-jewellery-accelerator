@@ -8,8 +8,8 @@
     <title>CHJewellery</title>
     <link rel="preload" as="font" href="fonts/CormorantGaramond-Bold.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="fonts/CormorantGaramond-Bold.woff" type="font/woff" crossorigin>
-    <link rel="preload" as="font" href="fonts/CormorantGaramond-MediumItalic.woff2" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="fonts/CormorantGaramond-MediumItalic.woff" type="font/woff" crossorigin>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-Italic.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/CormorantGaramond-Italic.woff" type="font/woff" crossorigin>
     <link rel="preload" as="font" href="fonts/CormorantGaramond-SemiBold.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="fonts/CormorantGaramond-SemiBold.woff" type="font/woff" crossorigin>
     <link rel="preload" as="font" href="fonts/Poppins-Bold.woff2" type="font/woff2" crossorigin>
@@ -95,71 +95,260 @@
     <main>
       <section class="intro">
         <h1 class="visually-hidden">CHJewellery</h1>
-        <img src="img/index-intro@1x.jpg" alt="">
+        <picture>
+          <source type="image/webp" srcset="img/index-intro@1x.webp 1x, img/index-intro@2x.webp 2x">
+
+          <!-- 1x: 1366px, 2x: 2732px -->
+          <img src="img/index-intro@1x.jpg" srcset="img/index-intro@2x.jpg 2x" width="1366" height="463" alt="">
+        </picture>
         <h2>Perfection</h2>
         <p>made to be yours</p>
       </section>
-      <section class="item-slider">
-        <h3>New In</h3>
-        <a href="">Shop Now</a>
-        <!-- slider -->
+      <section class="item-slider container">
+        <header class="item-slider__header">
+          <h2>New In</h2>
+          <a href="#">Shop Now</a>
+        </header>
+        <div class="item-slider__slider">
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Necklace with amethyst</h3>
+              <p>$ 145</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-13@1x.webp 1x, img/item-13@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-13@1x.jpg" srcset="img/item-13@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Layered сhoker</h3>
+              <p>$ 115</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-14@1x.webp 1x, img/item-14@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-14@1x.jpg" srcset="img/item-14@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Gold chain</h3>
+              <p>$ 215</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-15@1x.webp 1x, img/item-15@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-15@1x.jpg" srcset="img/item-15@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Galaxy earrings</h3>
+              <p>$ 95</p>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Necklace with amethyst</h3>
+              <p>$ 145</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-13@1x.webp 1x, img/item-13@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-13@1x.jpg" srcset="img/item-13@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Layered сhoker</h3>
+              <p>$ 115</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-14@1x.webp 1x, img/item-14@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-14@1x.jpg" srcset="img/item-14@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Gold chain</h3>
+              <p>$ 215</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-15@1x.webp 1x, img/item-15@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-15@1x.jpg" srcset="img/item-15@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Galaxy earrings</h3>
+              <p>$ 95</p>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-13@1x.webp 1x, img/item-13@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-13@1x.jpg" srcset="img/item-13@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Layered сhoker</h3>
+              <p>$ 115</p>
+            </figcaption>
+          </figure>
+          <figure>
+
+            <picture>
+              <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Necklace with amethyst</h3>
+              <p>$ 145</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-15@1x.webp 1x, img/item-15@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-15@1x.jpg" srcset="img/item-15@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Galaxy earrings</h3>
+              <p>$ 95</p>
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/item-14@1x.webp 1x, img/item-14@2x.webp 2x">
+
+              <!-- 1x: 270px, 2x: 540px -->
+              <img src="img/item-14@1x.jpg" srcset="img/item-14@2x.jpg 2x" width="270" height="284" alt="">
+            </picture>
+            <figcaption>
+              <h3>Gold chain</h3>
+              <p>$ 215</p>
+            </figcaption>
+          </figure>
+        </div>
+        <footer class="item-slider__footer"></footer>
       </section>
-      <section class="blog">
+      <section class="blog container">
         <h2>Blog</h2>
         <a href="">Read All</a>
-        <ul class="">
-          <li class="">
-            <img src="" alt="">
-            <div class="">
-              <p>September 30, 2019</p>
-              <h3>How to care for your jewellery</h3>
-              <a href="">Read Article</a>
+        <div class="blog__wrapper">
+          <ul class="">
+            <li >
+              <div class="blog__item">
+              <picture>
+                <source type="image/webp" srcset="img/blog-care@1x.webp 1x, img/blog-care@2x.webp 2x">
+
+                <!-- 1x: 285px, 2x: 570px -->
+                <img src="img/blog-care@1x.jpg" srcset="img/blog-care@2x.jpg 2x" width="285" height="300" alt="">
+              </picture>
+              <div class="">
+                <p>September 30, 2019</p>
+                <h3>How to care for your jewellery</h3>
+                <a href="">Read Article</a>
+              </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog__item">
+              <div class="">
+                <p>September 23, 2019</p>
+                <h3>Power of crystals</h3>
+                <a href="">Read Article</a>
+              </div>
+              <picture>
+                <source type="image/webp" srcset="img/blog-power@1x.webp 1x, img/blog-power@2x.webp 2x">
+
+                <!-- 1x: 285px, 2x: 570px -->
+                <img src="img/blog-power@1x.jpg" srcset="img/blog-power@2x.jpg 2x" width="285" height="300" alt="">
+              </picture>
             </div>
-          </li>
-          <li class="">
-            <img src="" alt="">
-            <div class="">
-              <p>September 23, 2019</p>
-              <h3>Power of crystals</h3>
-              <a href="">Read Article</a>
+            </li>
+            <li>
+              <div class="blog__item blog__item--big">
+              <picture>
+                <source type="image/webp" srcset="img/blog-trends@1x.webp 1x, img/blog-trends@2x.webp 2x">
+
+                  <!-- 1x: 570px, 2x: 1140px -->
+                <img src="img/blog-trends@1x.jpg" srcset="img/blog-trends@2x.jpg 2x" width="570" height="630" alt="">
+              </picture>
+              <div class="">
+                <p>September 16, 2019</p>
+                <h3>AW 19 trends</h3>
+                <a href="">Read Article</a>
+              </div>
             </div>
-          </li>
-          <li class="">
-            <img src="" alt="">
-            <div class="">
-              <p>September 16, 2019</p>
-              <h3>AW 19 trends</h3>
-              <a href="">Read Article</a>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </section>
-      <section class="faq">
+      <section class="faq container">
         <h2>Frequently asked questions</h2>
-        <ul class="">
-          <li class="">
-            <button>What materials are the jewellery made of?</button>
+        <ul id="faq-accordeon">
+          <li class="faq__item faq__item--hidden">
+            <h3>
+              <button type="button">What materials are the jewellery made of?</button>
+            </h3>
             <p>Our jewellerry is made of solid gold, silver or leather.  Also, some jewellery contains precious and semiprecious stones and crystals.</p>
           </li>
-          <li class="">
-            <button>Which countries do you deliver to?</button>
+          <li class="faq__item faq__item--hidden">
+            <h3>
+              <button type="button">Which countries do you deliver to?</button>
+            </h3>
+            <p>Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
+          </li>
+          <li class="faq__item faq__item--hidden">
+            <h3>
+              <button type="button">What are the payment methods?</button>
+            </h3>
             <p>Our jewellerry is made of solid gold, silver or leather.  Also, some jewellery contains precious and semiprecious stones and crystals.</p>
           </li>
-          <li class="">
-            <button>What are the payment methods?</button>
-            <p>Our jewellerry is made of solid gold, silver or leather.  Also, some jewellery contains precious and semiprecious stones and crystals.</p>
-          </li>
-          <li class="">
-            <button>Can I return the jewellery if it didn’t fit me?</button>
-            <p>Our jewellerry is made of solid gold, silver or leather.  Also, some jewellery contains precious and semiprecious stones and crystals.</p>
+          <li class="faq__item faq__item--hidden">
+            <h3>
+              <button type="button">Can I return the jewellery if it didn’t fit me?</button>
+            </h3>
+            <p>No, you can't.</p>
           </li>
         </ul>
       </section>
-      <section class="our-instagram ">
-        <h2>Chjewellery</h2>
+      <section class="our-instagram container">
+        <h2><span>@</span>Chjewellery</h2>
         <a href="">Follow Us</a>
-        <ul class="">
-          <li class="">
+
+        <div class="our-instagram__wrapper">
+          <ul class="one">
+            <li>
             <a href="">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview1@1x.webp 1x, img/inst-preview1@2x.webp 2x">
@@ -168,68 +357,74 @@
                 <img src="img/inst-preview1@1x.jpg" srcset="img/inst-preview1@2x.jpg 2x" width="230" height="230" alt="">
               </picture>
             </a>
-          </li>
-          <li class="">
+            </li>
+            <li>
             <a href="">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview2@1x.webp 1x, img/inst-preview2@2x.webp 2x">
 
                 <!-- 1x: 400px, 2x: 800px -->
-                <img src="img/inst-preview2@1x.jpg" srcset="img/inst-preview2@2x.jpg 2x" width="400" height="400" alt="">
+                <img src="img/inst-preview2@1x.jpg" srcset="img/inst-preview2@2x.jpg 2x" width="230" height="154" alt="">
               </picture>
             </a>
-          </li>
-          <li class="">
+            </li>
+          </ul>
+
+          <div class="two">
             <a href="">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview3@1x.webp 1x, img/inst-preview3@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview3@1x.jpg" srcset="img/inst-preview3@2x.jpg 2x" width="230" height="230" alt="">
+                <img src="img/inst-preview3@1x.jpg" srcset="img/inst-preview3@2x.jpg 2x" width="400" height="400" alt="">
               </picture>
             </a>
-          </li>
-          <li class="">
+          </div>
+
+          <ul class="three">
+            <li>
             <a href="">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview4@1x.webp 1x, img/inst-preview4@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview4@1x.jpg" srcset="img/inst-preview4@2x.jpg 2x" width="230" height="230" alt="">
+                <img src="img/inst-preview4@1x.jpg" srcset="img/inst-preview4@2x.jpg 2x" width="232" height="193" alt="">
               </picture>
             </a>
-          </li>
-          <li class="">
+            </li>
+            <li>
             <a href="">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview5@1x.webp 1x, img/inst-preview5@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview5@1x.jpg" srcset="img/inst-preview5@2x.jpg 2x" width="230" height="230" alt="">
+                <img src="img/inst-preview5@1x.jpg" srcset="img/inst-preview5@2x.jpg 2x" width="218" height="191" alt="">
               </picture>
             </a>
-          </li>
-          <li class="">
+            </li>
+            <li>
             <a href="">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview6@1x.webp 1x, img/inst-preview6@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview6@1x.jpg" srcset="img/inst-preview6@2x.jpg 2x" width="230" height="230" alt="">
+                <img src="img/inst-preview6@1x.jpg" srcset="img/inst-preview6@2x.jpg 2x" width="218" height="218" alt="">
               </picture>
             </a>
-          </li>
-          <li class="">
+            </li>
+            <li>
             <a href="">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview7@1x.webp 1x, img/inst-preview7@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview7@1x.jpg" srcset="img/inst-preview7@2x.jpg 2x" width="230" height="230" alt="">
+                <img src="img/inst-preview7@1x.jpg" srcset="img/inst-preview7@2x.jpg 2x" width="232" height="166" alt="">
               </picture>
             </a>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
+
       </section>
     </main>
     <footer class="main-footer">
@@ -266,7 +461,7 @@
             <li>
               <a href="#">About CH</a>
             </li>
-             <li>
+              <li>
               <a href="#">Stores & Hours</a>
             </li>
             <li>
@@ -329,6 +524,126 @@
     </footer>
     <div class="popup">
     </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/nouislider.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
+<!-- <ul class="">
+          <li class="">
+            <a href="">
+              <picture>
+                <source type="image/webp" srcset="img/inst-preview1@1x.webp 1x, img/inst-preview1@2x.webp 2x"> -->
+
+              <!--1x: 230px, 2x: 460px -->
+                <!-- <img src="img/inst-preview1@1x.jpg" srcset="img/inst-preview1@2x.jpg 2x" width="230" height="230" alt="">
+              </picture>
+            </a>
+          </li>
+          <li class="">
+            <a href="">
+              <picture>
+                <source type="image/webp" srcset="img/inst-preview2@1x.webp 1x, img/inst-preview2@2x.webp 2x"> -->
+
+                <!-- 1x: 400px, 2x: 800px -->
+                <!-- <img src="img/inst-preview2@1x.jpg" srcset="img/inst-preview2@2x.jpg 2x" width="230" height="154" alt="">
+              </picture>
+            </a>
+          </li>
+          <li class="">
+            <a href="">
+              <picture>
+                <source type="image/webp" srcset="img/inst-preview3@1x.webp 1x, img/inst-preview3@2x.webp 2x"> -->
+
+                <!-- 1x: 230px, 2x: 460px -->
+                <!-- <img src="img/inst-preview3@1x.jpg" srcset="img/inst-preview3@2x.jpg 2x" width="400" height="400" alt="">
+              </picture>
+            </a>
+          </li>
+          <li class="">
+            <a href="">
+              <picture>
+                <source type="image/webp" srcset="img/inst-preview4@1x.webp 1x, img/inst-preview4@2x.webp 2x"> -->
+
+                <!-- 1x: 230px, 2x: 460px
+                <img src="img/inst-preview4@1x.jpg" srcset="img/inst-preview4@2x.jpg 2x" width="232" height="193" alt="">
+              </picture>
+            </a>
+          </li>
+          <li class="">
+            <a href="">
+              <picture>
+                <source type="image/webp" srcset="img/inst-preview5@1x.webp 1x, img/inst-preview5@2x.webp 2x"> -->
+
+                <!-- 1x: 230px, 2x: 460px -->
+                <!-- <img src="img/inst-preview5@1x.jpg" srcset="img/inst-preview5@2x.jpg 2x" width="218" height="191" alt="">
+              </picture>
+            </a>
+          </li>
+          <li class="">
+            <a href="">
+              <picture>
+                <source type="image/webp" srcset="img/inst-preview6@1x.webp 1x, img/inst-preview6@2x.webp 2x"> -->
+
+                <!-- 1x: 230px, 2x: 460px -->
+                <!--  <img src="img/inst-preview6@1x.jpg" srcset="img/inst-preview6@2x.jpg 2x" width="218" height="218" alt="">
+              </picture>
+            </a>
+          </li>
+          <li class="">
+            <a href="">
+              <picture>
+                <source type="image/webp" srcset="img/inst-preview7@1x.webp 1x, img/inst-preview7@2x.webp 2x"> -->
+
+                <!-- 1x: 230px, 2x: 460px -->
+                <!-- <img src="img/inst-preview7@1x.jpg" srcset="img/inst-preview7@2x.jpg 2x" width="232" height="166" alt="">
+              </picture>
+            </a>
+          </li>
+        </ul> -->
+
+
+        <!-- <div class="blog__wrapper">
+          <ul class="">
+            <li class="blog__item">
+              <picture>
+                <source type="image/webp" srcset="img/blog-care@1x.webp 1x, img/blog-care@2x.webp 2x">-->
+
+                <!-- 1x: 285px, 2x: 570px -->
+                <!-- <img src="img/blog-care@1x.jpg" srcset="img/blog-care@2x.jpg 2x" width="285" height="300" alt="">
+              </picture>
+              <div class="">
+                <p>September 30, 2019</p>
+                <h3>How to care for your jewellery</h3>
+                <a href="">Read Article</a>
+              </div>
+            </li>
+            <li class="blog__item">
+              <div class="">
+                <p>September 23, 2019</p>
+                <h3>Power of crystals</h3>
+                <a href="">Read Article</a>
+              </div>
+              <picture>
+                <source type="image/webp" srcset="img/blog-power@1x.webp 1x, img/blog-power@2x.webp 2x">
+ -->
+                <!-- 1x: 285px, 2x: 570px -->
+                <!-- <img src="img/blog-power@1x.jpg" srcset="img/blog-power@2x.jpg 2x" width="285" height="300" alt="">
+              </picture>
+            </li>
+          </ul>
+          <div class="blog__item blog__item--big">
+            <picture>
+              <source type="image/webp" srcset="img/blog-trends@1x.webp 1x, img/blog-trends@2x.webp 2x">
+ -->
+                <!-- 1x: 570px, 2x: 1140px -->
+  <!--              <img src="img/blog-trends@1x.jpg" srcset="img/blog-trends@2x.jpg 2x" width="570" height="630" alt="">
+            </picture>
+            <div class="">
+              <p>September 16, 2019</p>
+              <h3>AW 19 trends</h3>
+              <a href="">Read Article</a>
+            </div>
+          </div>
+        </div> -->
