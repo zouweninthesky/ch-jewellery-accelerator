@@ -1,477 +1,8566 @@
-/*! jQuery v3.5.1 -ajax,-ajax/jsonp,-ajax/load,-ajax/script,-ajax/var/location,-ajax/var/nonce,-ajax/var/rquery,-ajax/xhr,-manipulation/_evalUrl,-deprecated/ajax-event-alias,-effects,-effects/Tween,-effects/animatedSelector | (c) JS Foundation and other contributors | jquery.org/license */
-!function(e,t){"use strict";"object"==typeof module&&"object"==typeof module.exports?module.exports=e.document?t(e,!0):function(e){if(!e.document)throw new Error("jQuery requires a window with a document");return t(e)}:t(e)}("undefined"!=typeof window?window:this,function(g,e){"use strict";var t=[],r=Object.getPrototypeOf,s=t.slice,v=t.flat?function(e){return t.flat.call(e)}:function(e){return t.concat.apply([],e)},u=t.push,i=t.indexOf,n={},o=n.toString,y=n.hasOwnProperty,a=y.toString,l=a.call(Object),m={},b=function(e){return"function"==typeof e&&"number"!=typeof e.nodeType},x=function(e){return null!=e&&e===e.window},w=g.document,c={type:!0,src:!0,nonce:!0,noModule:!0};function C(e,t,n){var r,i,o=(n=n||w).createElement("script");if(o.text=e,t)for(r in c)(i=t[r]||t.getAttribute&&t.getAttribute(r))&&o.setAttribute(r,i);n.head.appendChild(o).parentNode.removeChild(o)}function T(e){return null==e?e+"":"object"==typeof e||"function"==typeof e?n[o.call(e)]||"object":typeof e}var f="3.5.1 -ajax,-ajax/jsonp,-ajax/load,-ajax/script,-ajax/var/location,-ajax/var/nonce,-ajax/var/rquery,-ajax/xhr,-manipulation/_evalUrl,-deprecated/ajax-event-alias,-effects,-effects/Tween,-effects/animatedSelector",E=function(e,t){return new E.fn.init(e,t)};function d(e){var t=!!e&&"length"in e&&e.length,n=T(e);return!b(e)&&!x(e)&&("array"===n||0===t||"number"==typeof t&&0<t&&t-1 in e)}E.fn=E.prototype={jquery:f,constructor:E,length:0,toArray:function(){return s.call(this)},get:function(e){return null==e?s.call(this):e<0?this[e+this.length]:this[e]},pushStack:function(e){var t=E.merge(this.constructor(),e);return t.prevObject=this,t},each:function(e){return E.each(this,e)},map:function(n){return this.pushStack(E.map(this,function(e,t){return n.call(e,t,e)}))},slice:function(){return this.pushStack(s.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},even:function(){return this.pushStack(E.grep(this,function(e,t){return(t+1)%2}))},odd:function(){return this.pushStack(E.grep(this,function(e,t){return t%2}))},eq:function(e){var t=this.length,n=+e+(e<0?t:0);return this.pushStack(0<=n&&n<t?[this[n]]:[])},end:function(){return this.prevObject||this.constructor()},push:u,sort:t.sort,splice:t.splice},E.extend=E.fn.extend=function(){var e,t,n,r,i,o,a=arguments[0]||{},s=1,u=arguments.length,l=!1;for("boolean"==typeof a&&(l=a,a=arguments[s]||{},s++),"object"==typeof a||b(a)||(a={}),s===u&&(a=this,s--);s<u;s++)if(null!=(e=arguments[s]))for(t in e)r=e[t],"__proto__"!==t&&a!==r&&(l&&r&&(E.isPlainObject(r)||(i=Array.isArray(r)))?(n=a[t],o=i&&!Array.isArray(n)?[]:i||E.isPlainObject(n)?n:{},i=!1,a[t]=E.extend(l,o,r)):void 0!==r&&(a[t]=r));return a},E.extend({expando:"jQuery"+(f+Math.random()).replace(/\D/g,""),isReady:!0,error:function(e){throw new Error(e)},noop:function(){},isPlainObject:function(e){var t,n;return!(!e||"[object Object]"!==o.call(e))&&(!(t=r(e))||"function"==typeof(n=y.call(t,"constructor")&&t.constructor)&&a.call(n)===l)},isEmptyObject:function(e){var t;for(t in e)return!1;return!0},globalEval:function(e,t,n){C(e,{nonce:t&&t.nonce},n)},each:function(e,t){var n,r=0;if(d(e)){for(n=e.length;r<n;r++)if(!1===t.call(e[r],r,e[r]))break}else for(r in e)if(!1===t.call(e[r],r,e[r]))break;return e},makeArray:function(e,t){var n=t||[];return null!=e&&(d(Object(e))?E.merge(n,"string"==typeof e?[e]:e):u.call(n,e)),n},inArray:function(e,t,n){return null==t?-1:i.call(t,e,n)},merge:function(e,t){for(var n=+t.length,r=0,i=e.length;r<n;r++)e[i++]=t[r];return e.length=i,e},grep:function(e,t,n){for(var r=[],i=0,o=e.length,a=!n;i<o;i++)!t(e[i],i)!==a&&r.push(e[i]);return r},map:function(e,t,n){var r,i,o=0,a=[];if(d(e))for(r=e.length;o<r;o++)null!=(i=t(e[o],o,n))&&a.push(i);else for(o in e)null!=(i=t(e[o],o,n))&&a.push(i);return v(a)},guid:1,support:m}),"function"==typeof Symbol&&(E.fn[Symbol.iterator]=t[Symbol.iterator]),E.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),function(e,t){n["[object "+t+"]"]=t.toLowerCase()});var p=function(n){var e,p,x,o,i,h,f,g,w,u,l,C,T,a,E,v,s,c,y,A="sizzle"+1*new Date,d=n.document,N=0,r=0,m=ue(),b=ue(),S=ue(),k=ue(),D=function(e,t){return e===t&&(l=!0),0},L={}.hasOwnProperty,t=[],j=t.pop,q=t.push,O=t.push,P=t.slice,H=function(e,t){for(var n=0,r=e.length;n<r;n++)if(e[n]===t)return n;return-1},I="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",R="[\\x20\\t\\r\\n\\f]",B="(?:\\\\[\\da-fA-F]{1,6}"+R+"?|\\\\[^\\r\\n\\f]|[\\w-]|[^\0-\\x7f])+",M="\\["+R+"*("+B+")(?:"+R+"*([*^$|!~]?=)"+R+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+B+"))|)"+R+"*\\]",W=":("+B+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+M+")*)|.*)\\)|)",F=new RegExp(R+"+","g"),$=new RegExp("^"+R+"+|((?:^|[^\\\\])(?:\\\\.)*)"+R+"+$","g"),z=new RegExp("^"+R+"*,"+R+"*"),_=new RegExp("^"+R+"*([>+~]|"+R+")"+R+"*"),U=new RegExp(R+"|>"),V=new RegExp(W),X=new RegExp("^"+B+"$"),Q={ID:new RegExp("^#("+B+")"),CLASS:new RegExp("^\\.("+B+")"),TAG:new RegExp("^("+B+"|[*])"),ATTR:new RegExp("^"+M),PSEUDO:new RegExp("^"+W),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+R+"*(even|odd|(([+-]|)(\\d*)n|)"+R+"*(?:([+-]|)"+R+"*(\\d+)|))"+R+"*\\)|)","i"),bool:new RegExp("^(?:"+I+")$","i"),needsContext:new RegExp("^"+R+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+R+"*((?:-\\d)?\\d*)"+R+"*\\)|)(?=[^-]|$)","i")},Y=/HTML$/i,G=/^(?:input|select|textarea|button)$/i,K=/^h\d$/i,J=/^[^{]+\{\s*\[native \w/,Z=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,ee=/[+~]/,te=new RegExp("\\\\[\\da-fA-F]{1,6}"+R+"?|\\\\([^\\r\\n\\f])","g"),ne=function(e,t){var n="0x"+e.slice(1)-65536;return t||(n<0?String.fromCharCode(n+65536):String.fromCharCode(n>>10|55296,1023&n|56320))},re=/([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,ie=function(e,t){return t?"\0"===e?"\ufffd":e.slice(0,-1)+"\\"+e.charCodeAt(e.length-1).toString(16)+" ":"\\"+e},oe=function(){C()},ae=xe(function(e){return!0===e.disabled&&"fieldset"===e.nodeName.toLowerCase()},{dir:"parentNode",next:"legend"});try{O.apply(t=P.call(d.childNodes),d.childNodes),t[d.childNodes.length].nodeType}catch(e){O={apply:t.length?function(e,t){q.apply(e,P.call(t))}:function(e,t){var n=e.length,r=0;while(e[n++]=t[r++]);e.length=n-1}}}function se(t,e,n,r){var i,o,a,s,u,l,c,f=e&&e.ownerDocument,d=e?e.nodeType:9;if(n=n||[],"string"!=typeof t||!t||1!==d&&9!==d&&11!==d)return n;if(!r&&(C(e),e=e||T,E)){if(11!==d&&(u=Z.exec(t)))if(i=u[1]){if(9===d){if(!(a=e.getElementById(i)))return n;if(a.id===i)return n.push(a),n}else if(f&&(a=f.getElementById(i))&&y(e,a)&&a.id===i)return n.push(a),n}else{if(u[2])return O.apply(n,e.getElementsByTagName(t)),n;if((i=u[3])&&p.getElementsByClassName&&e.getElementsByClassName)return O.apply(n,e.getElementsByClassName(i)),n}if(p.qsa&&!k[t+" "]&&(!v||!v.test(t))&&(1!==d||"object"!==e.nodeName.toLowerCase())){if(c=t,f=e,1===d&&(U.test(t)||_.test(t))){(f=ee.test(t)&&ye(e.parentNode)||e)===e&&p.scope||((s=e.getAttribute("id"))?s=s.replace(re,ie):e.setAttribute("id",s=A)),o=(l=h(t)).length;while(o--)l[o]=(s?"#"+s:":scope")+" "+be(l[o]);c=l.join(",")}try{return O.apply(n,f.querySelectorAll(c)),n}catch(e){k(t,!0)}finally{s===A&&e.removeAttribute("id")}}}return g(t.replace($,"$1"),e,n,r)}function ue(){var r=[];return function e(t,n){return r.push(t+" ")>x.cacheLength&&delete e[r.shift()],e[t+" "]=n}}function le(e){return e[A]=!0,e}function ce(e){var t=T.createElement("fieldset");try{return!!e(t)}catch(e){return!1}finally{t.parentNode&&t.parentNode.removeChild(t),t=null}}function fe(e,t){var n=e.split("|"),r=n.length;while(r--)x.attrHandle[n[r]]=t}function de(e,t){var n=t&&e,r=n&&1===e.nodeType&&1===t.nodeType&&e.sourceIndex-t.sourceIndex;if(r)return r;if(n)while(n=n.nextSibling)if(n===t)return-1;return e?1:-1}function pe(t){return function(e){return"input"===e.nodeName.toLowerCase()&&e.type===t}}function he(n){return function(e){var t=e.nodeName.toLowerCase();return("input"===t||"button"===t)&&e.type===n}}function ge(t){return function(e){return"form"in e?e.parentNode&&!1===e.disabled?"label"in e?"label"in e.parentNode?e.parentNode.disabled===t:e.disabled===t:e.isDisabled===t||e.isDisabled!==!t&&ae(e)===t:e.disabled===t:"label"in e&&e.disabled===t}}function ve(a){return le(function(o){return o=+o,le(function(e,t){var n,r=a([],e.length,o),i=r.length;while(i--)e[n=r[i]]&&(e[n]=!(t[n]=e[n]))})})}function ye(e){return e&&"undefined"!=typeof e.getElementsByTagName&&e}for(e in p=se.support={},i=se.isXML=function(e){var t=e.namespaceURI,n=(e.ownerDocument||e).documentElement;return!Y.test(t||n&&n.nodeName||"HTML")},C=se.setDocument=function(e){var t,n,r=e?e.ownerDocument||e:d;return r!=T&&9===r.nodeType&&r.documentElement&&(a=(T=r).documentElement,E=!i(T),d!=T&&(n=T.defaultView)&&n.top!==n&&(n.addEventListener?n.addEventListener("unload",oe,!1):n.attachEvent&&n.attachEvent("onunload",oe)),p.scope=ce(function(e){return a.appendChild(e).appendChild(T.createElement("div")),"undefined"!=typeof e.querySelectorAll&&!e.querySelectorAll(":scope fieldset div").length}),p.attributes=ce(function(e){return e.className="i",!e.getAttribute("className")}),p.getElementsByTagName=ce(function(e){return e.appendChild(T.createComment("")),!e.getElementsByTagName("*").length}),p.getElementsByClassName=J.test(T.getElementsByClassName),p.getById=ce(function(e){return a.appendChild(e).id=A,!T.getElementsByName||!T.getElementsByName(A).length}),p.getById?(x.filter.ID=function(e){var t=e.replace(te,ne);return function(e){return e.getAttribute("id")===t}},x.find.ID=function(e,t){if("undefined"!=typeof t.getElementById&&E){var n=t.getElementById(e);return n?[n]:[]}}):(x.filter.ID=function(e){var n=e.replace(te,ne);return function(e){var t="undefined"!=typeof e.getAttributeNode&&e.getAttributeNode("id");return t&&t.value===n}},x.find.ID=function(e,t){if("undefined"!=typeof t.getElementById&&E){var n,r,i,o=t.getElementById(e);if(o){if((n=o.getAttributeNode("id"))&&n.value===e)return[o];i=t.getElementsByName(e),r=0;while(o=i[r++])if((n=o.getAttributeNode("id"))&&n.value===e)return[o]}return[]}}),x.find.TAG=p.getElementsByTagName?function(e,t){return"undefined"!=typeof t.getElementsByTagName?t.getElementsByTagName(e):p.qsa?t.querySelectorAll(e):void 0}:function(e,t){var n,r=[],i=0,o=t.getElementsByTagName(e);if("*"===e){while(n=o[i++])1===n.nodeType&&r.push(n);return r}return o},x.find.CLASS=p.getElementsByClassName&&function(e,t){if("undefined"!=typeof t.getElementsByClassName&&E)return t.getElementsByClassName(e)},s=[],v=[],(p.qsa=J.test(T.querySelectorAll))&&(ce(function(e){var t;a.appendChild(e).innerHTML="<a id='"+A+"'></a><select id='"+A+"-\r\\' msallowcapture=''><option selected=''></option></select>",e.querySelectorAll("[msallowcapture^='']").length&&v.push("[*^$]="+R+"*(?:''|\"\")"),e.querySelectorAll("[selected]").length||v.push("\\["+R+"*(?:value|"+I+")"),e.querySelectorAll("[id~="+A+"-]").length||v.push("~="),(t=T.createElement("input")).setAttribute("name",""),e.appendChild(t),e.querySelectorAll("[name='']").length||v.push("\\["+R+"*name"+R+"*="+R+"*(?:''|\"\")"),e.querySelectorAll(":checked").length||v.push(":checked"),e.querySelectorAll("a#"+A+"+*").length||v.push(".#.+[+~]"),e.querySelectorAll("\\\f"),v.push("[\\r\\n\\f]")}),ce(function(e){e.innerHTML="<a href='' disabled='disabled'></a><select disabled='disabled'><option/></select>";var t=T.createElement("input");t.setAttribute("type","hidden"),e.appendChild(t).setAttribute("name","D"),e.querySelectorAll("[name=d]").length&&v.push("name"+R+"*[*^$|!~]?="),2!==e.querySelectorAll(":enabled").length&&v.push(":enabled",":disabled"),a.appendChild(e).disabled=!0,2!==e.querySelectorAll(":disabled").length&&v.push(":enabled",":disabled"),e.querySelectorAll("*,:x"),v.push(",.*:")})),(p.matchesSelector=J.test(c=a.matches||a.webkitMatchesSelector||a.mozMatchesSelector||a.oMatchesSelector||a.msMatchesSelector))&&ce(function(e){p.disconnectedMatch=c.call(e,"*"),c.call(e,"[s!='']:x"),s.push("!=",W)}),v=v.length&&new RegExp(v.join("|")),s=s.length&&new RegExp(s.join("|")),t=J.test(a.compareDocumentPosition),y=t||J.test(a.contains)?function(e,t){var n=9===e.nodeType?e.documentElement:e,r=t&&t.parentNode;return e===r||!(!r||1!==r.nodeType||!(n.contains?n.contains(r):e.compareDocumentPosition&&16&e.compareDocumentPosition(r)))}:function(e,t){if(t)while(t=t.parentNode)if(t===e)return!0;return!1},D=t?function(e,t){if(e===t)return l=!0,0;var n=!e.compareDocumentPosition-!t.compareDocumentPosition;return n||(1&(n=(e.ownerDocument||e)==(t.ownerDocument||t)?e.compareDocumentPosition(t):1)||!p.sortDetached&&t.compareDocumentPosition(e)===n?e==T||e.ownerDocument==d&&y(d,e)?-1:t==T||t.ownerDocument==d&&y(d,t)?1:u?H(u,e)-H(u,t):0:4&n?-1:1)}:function(e,t){if(e===t)return l=!0,0;var n,r=0,i=e.parentNode,o=t.parentNode,a=[e],s=[t];if(!i||!o)return e==T?-1:t==T?1:i?-1:o?1:u?H(u,e)-H(u,t):0;if(i===o)return de(e,t);n=e;while(n=n.parentNode)a.unshift(n);n=t;while(n=n.parentNode)s.unshift(n);while(a[r]===s[r])r++;return r?de(a[r],s[r]):a[r]==d?-1:s[r]==d?1:0}),T},se.matches=function(e,t){return se(e,null,null,t)},se.matchesSelector=function(e,t){if(C(e),p.matchesSelector&&E&&!k[t+" "]&&(!s||!s.test(t))&&(!v||!v.test(t)))try{var n=c.call(e,t);if(n||p.disconnectedMatch||e.document&&11!==e.document.nodeType)return n}catch(e){k(t,!0)}return 0<se(t,T,null,[e]).length},se.contains=function(e,t){return(e.ownerDocument||e)!=T&&C(e),y(e,t)},se.attr=function(e,t){(e.ownerDocument||e)!=T&&C(e);var n=x.attrHandle[t.toLowerCase()],r=n&&L.call(x.attrHandle,t.toLowerCase())?n(e,t,!E):void 0;return void 0!==r?r:p.attributes||!E?e.getAttribute(t):(r=e.getAttributeNode(t))&&r.specified?r.value:null},se.escape=function(e){return(e+"").replace(re,ie)},se.error=function(e){throw new Error("Syntax error, unrecognized expression: "+e)},se.uniqueSort=function(e){var t,n=[],r=0,i=0;if(l=!p.detectDuplicates,u=!p.sortStable&&e.slice(0),e.sort(D),l){while(t=e[i++])t===e[i]&&(r=n.push(i));while(r--)e.splice(n[r],1)}return u=null,e},o=se.getText=function(e){var t,n="",r=0,i=e.nodeType;if(i){if(1===i||9===i||11===i){if("string"==typeof e.textContent)return e.textContent;for(e=e.firstChild;e;e=e.nextSibling)n+=o(e)}else if(3===i||4===i)return e.nodeValue}else while(t=e[r++])n+=o(t);return n},(x=se.selectors={cacheLength:50,createPseudo:le,match:Q,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(e){return e[1]=e[1].replace(te,ne),e[3]=(e[3]||e[4]||e[5]||"").replace(te,ne),"~="===e[2]&&(e[3]=" "+e[3]+" "),e.slice(0,4)},CHILD:function(e){return e[1]=e[1].toLowerCase(),"nth"===e[1].slice(0,3)?(e[3]||se.error(e[0]),e[4]=+(e[4]?e[5]+(e[6]||1):2*("even"===e[3]||"odd"===e[3])),e[5]=+(e[7]+e[8]||"odd"===e[3])):e[3]&&se.error(e[0]),e},PSEUDO:function(e){var t,n=!e[6]&&e[2];return Q.CHILD.test(e[0])?null:(e[3]?e[2]=e[4]||e[5]||"":n&&V.test(n)&&(t=h(n,!0))&&(t=n.indexOf(")",n.length-t)-n.length)&&(e[0]=e[0].slice(0,t),e[2]=n.slice(0,t)),e.slice(0,3))}},filter:{TAG:function(e){var t=e.replace(te,ne).toLowerCase();return"*"===e?function(){return!0}:function(e){return e.nodeName&&e.nodeName.toLowerCase()===t}},CLASS:function(e){var t=m[e+" "];return t||(t=new RegExp("(^|"+R+")"+e+"("+R+"|$)"))&&m(e,function(e){return t.test("string"==typeof e.className&&e.className||"undefined"!=typeof e.getAttribute&&e.getAttribute("class")||"")})},ATTR:function(n,r,i){return function(e){var t=se.attr(e,n);return null==t?"!="===r:!r||(t+="","="===r?t===i:"!="===r?t!==i:"^="===r?i&&0===t.indexOf(i):"*="===r?i&&-1<t.indexOf(i):"$="===r?i&&t.slice(-i.length)===i:"~="===r?-1<(" "+t.replace(F," ")+" ").indexOf(i):"|="===r&&(t===i||t.slice(0,i.length+1)===i+"-"))}},CHILD:function(h,e,t,g,v){var y="nth"!==h.slice(0,3),m="last"!==h.slice(-4),b="of-type"===e;return 1===g&&0===v?function(e){return!!e.parentNode}:function(e,t,n){var r,i,o,a,s,u,l=y!==m?"nextSibling":"previousSibling",c=e.parentNode,f=b&&e.nodeName.toLowerCase(),d=!n&&!b,p=!1;if(c){if(y){while(l){a=e;while(a=a[l])if(b?a.nodeName.toLowerCase()===f:1===a.nodeType)return!1;u=l="only"===h&&!u&&"nextSibling"}return!0}if(u=[m?c.firstChild:c.lastChild],m&&d){p=(s=(r=(i=(o=(a=c)[A]||(a[A]={}))[a.uniqueID]||(o[a.uniqueID]={}))[h]||[])[0]===N&&r[1])&&r[2],a=s&&c.childNodes[s];while(a=++s&&a&&a[l]||(p=s=0)||u.pop())if(1===a.nodeType&&++p&&a===e){i[h]=[N,s,p];break}}else if(d&&(p=s=(r=(i=(o=(a=e)[A]||(a[A]={}))[a.uniqueID]||(o[a.uniqueID]={}))[h]||[])[0]===N&&r[1]),!1===p)while(a=++s&&a&&a[l]||(p=s=0)||u.pop())if((b?a.nodeName.toLowerCase()===f:1===a.nodeType)&&++p&&(d&&((i=(o=a[A]||(a[A]={}))[a.uniqueID]||(o[a.uniqueID]={}))[h]=[N,p]),a===e))break;return(p-=v)===g||p%g==0&&0<=p/g}}},PSEUDO:function(e,o){var t,a=x.pseudos[e]||x.setFilters[e.toLowerCase()]||se.error("unsupported pseudo: "+e);return a[A]?a(o):1<a.length?(t=[e,e,"",o],x.setFilters.hasOwnProperty(e.toLowerCase())?le(function(e,t){var n,r=a(e,o),i=r.length;while(i--)e[n=H(e,r[i])]=!(t[n]=r[i])}):function(e){return a(e,0,t)}):a}},pseudos:{not:le(function(e){var r=[],i=[],s=f(e.replace($,"$1"));return s[A]?le(function(e,t,n,r){var i,o=s(e,null,r,[]),a=e.length;while(a--)(i=o[a])&&(e[a]=!(t[a]=i))}):function(e,t,n){return r[0]=e,s(r,null,n,i),r[0]=null,!i.pop()}}),has:le(function(t){return function(e){return 0<se(t,e).length}}),contains:le(function(t){return t=t.replace(te,ne),function(e){return-1<(e.textContent||o(e)).indexOf(t)}}),lang:le(function(n){return X.test(n||"")||se.error("unsupported lang: "+n),n=n.replace(te,ne).toLowerCase(),function(e){var t;do{if(t=E?e.lang:e.getAttribute("xml:lang")||e.getAttribute("lang"))return(t=t.toLowerCase())===n||0===t.indexOf(n+"-")}while((e=e.parentNode)&&1===e.nodeType);return!1}}),target:function(e){var t=n.location&&n.location.hash;return t&&t.slice(1)===e.id},root:function(e){return e===a},focus:function(e){return e===T.activeElement&&(!T.hasFocus||T.hasFocus())&&!!(e.type||e.href||~e.tabIndex)},enabled:ge(!1),disabled:ge(!0),checked:function(e){var t=e.nodeName.toLowerCase();return"input"===t&&!!e.checked||"option"===t&&!!e.selected},selected:function(e){return e.parentNode&&e.parentNode.selectedIndex,!0===e.selected},empty:function(e){for(e=e.firstChild;e;e=e.nextSibling)if(e.nodeType<6)return!1;return!0},parent:function(e){return!x.pseudos.empty(e)},header:function(e){return K.test(e.nodeName)},input:function(e){return G.test(e.nodeName)},button:function(e){var t=e.nodeName.toLowerCase();return"input"===t&&"button"===e.type||"button"===t},text:function(e){var t;return"input"===e.nodeName.toLowerCase()&&"text"===e.type&&(null==(t=e.getAttribute("type"))||"text"===t.toLowerCase())},first:ve(function(){return[0]}),last:ve(function(e,t){return[t-1]}),eq:ve(function(e,t,n){return[n<0?n+t:n]}),even:ve(function(e,t){for(var n=0;n<t;n+=2)e.push(n);return e}),odd:ve(function(e,t){for(var n=1;n<t;n+=2)e.push(n);return e}),lt:ve(function(e,t,n){for(var r=n<0?n+t:t<n?t:n;0<=--r;)e.push(r);return e}),gt:ve(function(e,t,n){for(var r=n<0?n+t:n;++r<t;)e.push(r);return e})}}).pseudos.nth=x.pseudos.eq,{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})x.pseudos[e]=pe(e);for(e in{submit:!0,reset:!0})x.pseudos[e]=he(e);function me(){}function be(e){for(var t=0,n=e.length,r="";t<n;t++)r+=e[t].value;return r}function xe(s,e,t){var u=e.dir,l=e.next,c=l||u,f=t&&"parentNode"===c,d=r++;return e.first?function(e,t,n){while(e=e[u])if(1===e.nodeType||f)return s(e,t,n);return!1}:function(e,t,n){var r,i,o,a=[N,d];if(n){while(e=e[u])if((1===e.nodeType||f)&&s(e,t,n))return!0}else while(e=e[u])if(1===e.nodeType||f)if(i=(o=e[A]||(e[A]={}))[e.uniqueID]||(o[e.uniqueID]={}),l&&l===e.nodeName.toLowerCase())e=e[u]||e;else{if((r=i[c])&&r[0]===N&&r[1]===d)return a[2]=r[2];if((i[c]=a)[2]=s(e,t,n))return!0}return!1}}function we(i){return 1<i.length?function(e,t,n){var r=i.length;while(r--)if(!i[r](e,t,n))return!1;return!0}:i[0]}function Ce(e,t,n,r,i){for(var o,a=[],s=0,u=e.length,l=null!=t;s<u;s++)(o=e[s])&&(n&&!n(o,r,i)||(a.push(o),l&&t.push(s)));return a}function Te(p,h,g,v,y,e){return v&&!v[A]&&(v=Te(v)),y&&!y[A]&&(y=Te(y,e)),le(function(e,t,n,r){var i,o,a,s=[],u=[],l=t.length,c=e||function(e,t,n){for(var r=0,i=t.length;r<i;r++)se(e,t[r],n);return n}(h||"*",n.nodeType?[n]:n,[]),f=!p||!e&&h?c:Ce(c,s,p,n,r),d=g?y||(e?p:l||v)?[]:t:f;if(g&&g(f,d,n,r),v){i=Ce(d,u),v(i,[],n,r),o=i.length;while(o--)(a=i[o])&&(d[u[o]]=!(f[u[o]]=a))}if(e){if(y||p){if(y){i=[],o=d.length;while(o--)(a=d[o])&&i.push(f[o]=a);y(null,d=[],i,r)}o=d.length;while(o--)(a=d[o])&&-1<(i=y?H(e,a):s[o])&&(e[i]=!(t[i]=a))}}else d=Ce(d===t?d.splice(l,d.length):d),y?y(null,t,d,r):O.apply(t,d)})}function Ee(e){for(var i,t,n,r=e.length,o=x.relative[e[0].type],a=o||x.relative[" "],s=o?1:0,u=xe(function(e){return e===i},a,!0),l=xe(function(e){return-1<H(i,e)},a,!0),c=[function(e,t,n){var r=!o&&(n||t!==w)||((i=t).nodeType?u(e,t,n):l(e,t,n));return i=null,r}];s<r;s++)if(t=x.relative[e[s].type])c=[xe(we(c),t)];else{if((t=x.filter[e[s].type].apply(null,e[s].matches))[A]){for(n=++s;n<r;n++)if(x.relative[e[n].type])break;return Te(1<s&&we(c),1<s&&be(e.slice(0,s-1).concat({value:" "===e[s-2].type?"*":""})).replace($,"$1"),t,s<n&&Ee(e.slice(s,n)),n<r&&Ee(e=e.slice(n)),n<r&&be(e))}c.push(t)}return we(c)}return me.prototype=x.filters=x.pseudos,x.setFilters=new me,h=se.tokenize=function(e,t){var n,r,i,o,a,s,u,l=b[e+" "];if(l)return t?0:l.slice(0);a=e,s=[],u=x.preFilter;while(a){for(o in n&&!(r=z.exec(a))||(r&&(a=a.slice(r[0].length)||a),s.push(i=[])),n=!1,(r=_.exec(a))&&(n=r.shift(),i.push({value:n,type:r[0].replace($," ")}),a=a.slice(n.length)),x.filter)!(r=Q[o].exec(a))||u[o]&&!(r=u[o](r))||(n=r.shift(),i.push({value:n,type:o,matches:r}),a=a.slice(n.length));if(!n)break}return t?a.length:a?se.error(e):b(e,s).slice(0)},f=se.compile=function(e,t){var n,v,y,m,b,r,i=[],o=[],a=S[e+" "];if(!a){t||(t=h(e)),n=t.length;while(n--)(a=Ee(t[n]))[A]?i.push(a):o.push(a);(a=S(e,(v=o,m=0<(y=i).length,b=0<v.length,r=function(e,t,n,r,i){var o,a,s,u=0,l="0",c=e&&[],f=[],d=w,p=e||b&&x.find.TAG("*",i),h=N+=null==d?1:Math.random()||.1,g=p.length;for(i&&(w=t==T||t||i);l!==g&&null!=(o=p[l]);l++){if(b&&o){a=0,t||o.ownerDocument==T||(C(o),n=!E);while(s=v[a++])if(s(o,t||T,n)){r.push(o);break}i&&(N=h)}m&&((o=!s&&o)&&u--,e&&c.push(o))}if(u+=l,m&&l!==u){a=0;while(s=y[a++])s(c,f,t,n);if(e){if(0<u)while(l--)c[l]||f[l]||(f[l]=j.call(r));f=Ce(f)}O.apply(r,f),i&&!e&&0<f.length&&1<u+y.length&&se.uniqueSort(r)}return i&&(N=h,w=d),c},m?le(r):r))).selector=e}return a},g=se.select=function(e,t,n,r){var i,o,a,s,u,l="function"==typeof e&&e,c=!r&&h(e=l.selector||e);if(n=n||[],1===c.length){if(2<(o=c[0]=c[0].slice(0)).length&&"ID"===(a=o[0]).type&&9===t.nodeType&&E&&x.relative[o[1].type]){if(!(t=(x.find.ID(a.matches[0].replace(te,ne),t)||[])[0]))return n;l&&(t=t.parentNode),e=e.slice(o.shift().value.length)}i=Q.needsContext.test(e)?0:o.length;while(i--){if(a=o[i],x.relative[s=a.type])break;if((u=x.find[s])&&(r=u(a.matches[0].replace(te,ne),ee.test(o[0].type)&&ye(t.parentNode)||t))){if(o.splice(i,1),!(e=r.length&&be(o)))return O.apply(n,r),n;break}}}return(l||f(e,c))(r,t,!E,n,!t||ee.test(e)&&ye(t.parentNode)||t),n},p.sortStable=A.split("").sort(D).join("")===A,p.detectDuplicates=!!l,C(),p.sortDetached=ce(function(e){return 1&e.compareDocumentPosition(T.createElement("fieldset"))}),ce(function(e){return e.innerHTML="<a href='#'></a>","#"===e.firstChild.getAttribute("href")})||fe("type|href|height|width",function(e,t,n){if(!n)return e.getAttribute(t,"type"===t.toLowerCase()?1:2)}),p.attributes&&ce(function(e){return e.innerHTML="<input/>",e.firstChild.setAttribute("value",""),""===e.firstChild.getAttribute("value")})||fe("value",function(e,t,n){if(!n&&"input"===e.nodeName.toLowerCase())return e.defaultValue}),ce(function(e){return null==e.getAttribute("disabled")})||fe(I,function(e,t,n){var r;if(!n)return!0===e[t]?t.toLowerCase():(r=e.getAttributeNode(t))&&r.specified?r.value:null}),se}(g);E.find=p,E.expr=p.selectors,E.expr[":"]=E.expr.pseudos,E.uniqueSort=E.unique=p.uniqueSort,E.text=p.getText,E.isXMLDoc=p.isXML,E.contains=p.contains,E.escapeSelector=p.escape;var h=function(e,t,n){var r=[],i=void 0!==n;while((e=e[t])&&9!==e.nodeType)if(1===e.nodeType){if(i&&E(e).is(n))break;r.push(e)}return r},A=function(e,t){for(var n=[];e;e=e.nextSibling)1===e.nodeType&&e!==t&&n.push(e);return n},N=E.expr.match.needsContext;function S(e,t){return e.nodeName&&e.nodeName.toLowerCase()===t.toLowerCase()}var k=/^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i;function D(e,n,r){return b(n)?E.grep(e,function(e,t){return!!n.call(e,t,e)!==r}):n.nodeType?E.grep(e,function(e){return e===n!==r}):"string"!=typeof n?E.grep(e,function(e){return-1<i.call(n,e)!==r}):E.filter(n,e,r)}E.filter=function(e,t,n){var r=t[0];return n&&(e=":not("+e+")"),1===t.length&&1===r.nodeType?E.find.matchesSelector(r,e)?[r]:[]:E.find.matches(e,E.grep(t,function(e){return 1===e.nodeType}))},E.fn.extend({find:function(e){var t,n,r=this.length,i=this;if("string"!=typeof e)return this.pushStack(E(e).filter(function(){for(t=0;t<r;t++)if(E.contains(i[t],this))return!0}));for(n=this.pushStack([]),t=0;t<r;t++)E.find(e,i[t],n);return 1<r?E.uniqueSort(n):n},filter:function(e){return this.pushStack(D(this,e||[],!1))},not:function(e){return this.pushStack(D(this,e||[],!0))},is:function(e){return!!D(this,"string"==typeof e&&N.test(e)?E(e):e||[],!1).length}});var L,j=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/;(E.fn.init=function(e,t,n){var r,i;if(!e)return this;if(n=n||L,"string"==typeof e){if(!(r="<"===e[0]&&">"===e[e.length-1]&&3<=e.length?[null,e,null]:j.exec(e))||!r[1]&&t)return!t||t.jquery?(t||n).find(e):this.constructor(t).find(e);if(r[1]){if(t=t instanceof E?t[0]:t,E.merge(this,E.parseHTML(r[1],t&&t.nodeType?t.ownerDocument||t:w,!0)),k.test(r[1])&&E.isPlainObject(t))for(r in t)b(this[r])?this[r](t[r]):this.attr(r,t[r]);return this}return(i=w.getElementById(r[2]))&&(this[0]=i,this.length=1),this}return e.nodeType?(this[0]=e,this.length=1,this):b(e)?void 0!==n.ready?n.ready(e):e(E):E.makeArray(e,this)}).prototype=E.fn,L=E(w);var q=/^(?:parents|prev(?:Until|All))/,O={children:!0,contents:!0,next:!0,prev:!0};function P(e,t){while((e=e[t])&&1!==e.nodeType);return e}E.fn.extend({has:function(e){var t=E(e,this),n=t.length;return this.filter(function(){for(var e=0;e<n;e++)if(E.contains(this,t[e]))return!0})},closest:function(e,t){var n,r=0,i=this.length,o=[],a="string"!=typeof e&&E(e);if(!N.test(e))for(;r<i;r++)for(n=this[r];n&&n!==t;n=n.parentNode)if(n.nodeType<11&&(a?-1<a.index(n):1===n.nodeType&&E.find.matchesSelector(n,e))){o.push(n);break}return this.pushStack(1<o.length?E.uniqueSort(o):o)},index:function(e){return e?"string"==typeof e?i.call(E(e),this[0]):i.call(this,e.jquery?e[0]:e):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(e,t){return this.pushStack(E.uniqueSort(E.merge(this.get(),E(e,t))))},addBack:function(e){return this.add(null==e?this.prevObject:this.prevObject.filter(e))}}),E.each({parent:function(e){var t=e.parentNode;return t&&11!==t.nodeType?t:null},parents:function(e){return h(e,"parentNode")},parentsUntil:function(e,t,n){return h(e,"parentNode",n)},next:function(e){return P(e,"nextSibling")},prev:function(e){return P(e,"previousSibling")},nextAll:function(e){return h(e,"nextSibling")},prevAll:function(e){return h(e,"previousSibling")},nextUntil:function(e,t,n){return h(e,"nextSibling",n)},prevUntil:function(e,t,n){return h(e,"previousSibling",n)},siblings:function(e){return A((e.parentNode||{}).firstChild,e)},children:function(e){return A(e.firstChild)},contents:function(e){return null!=e.contentDocument&&r(e.contentDocument)?e.contentDocument:(S(e,"template")&&(e=e.content||e),E.merge([],e.childNodes))}},function(r,i){E.fn[r]=function(e,t){var n=E.map(this,i,e);return"Until"!==r.slice(-5)&&(t=e),t&&"string"==typeof t&&(n=E.filter(t,n)),1<this.length&&(O[r]||E.uniqueSort(n),q.test(r)&&n.reverse()),this.pushStack(n)}});var H=/[^\x20\t\r\n\f]+/g;function I(e){return e}function R(e){throw e}function B(e,t,n,r){var i;try{e&&b(i=e.promise)?i.call(e).done(t).fail(n):e&&b(i=e.then)?i.call(e,t,n):t.apply(void 0,[e].slice(r))}catch(e){n.apply(void 0,[e])}}E.Callbacks=function(r){var e,n;r="string"==typeof r?(e=r,n={},E.each(e.match(H)||[],function(e,t){n[t]=!0}),n):E.extend({},r);var i,t,o,a,s=[],u=[],l=-1,c=function(){for(a=a||r.once,o=i=!0;u.length;l=-1){t=u.shift();while(++l<s.length)!1===s[l].apply(t[0],t[1])&&r.stopOnFalse&&(l=s.length,t=!1)}r.memory||(t=!1),i=!1,a&&(s=t?[]:"")},f={add:function(){return s&&(t&&!i&&(l=s.length-1,u.push(t)),function n(e){E.each(e,function(e,t){b(t)?r.unique&&f.has(t)||s.push(t):t&&t.length&&"string"!==T(t)&&n(t)})}(arguments),t&&!i&&c()),this},remove:function(){return E.each(arguments,function(e,t){var n;while(-1<(n=E.inArray(t,s,n)))s.splice(n,1),n<=l&&l--}),this},has:function(e){return e?-1<E.inArray(e,s):0<s.length},empty:function(){return s&&(s=[]),this},disable:function(){return a=u=[],s=t="",this},disabled:function(){return!s},lock:function(){return a=u=[],t||i||(s=t=""),this},locked:function(){return!!a},fireWith:function(e,t){return a||(t=[e,(t=t||[]).slice?t.slice():t],u.push(t),i||c()),this},fire:function(){return f.fireWith(this,arguments),this},fired:function(){return!!o}};return f},E.extend({Deferred:function(e){var o=[["notify","progress",E.Callbacks("memory"),E.Callbacks("memory"),2],["resolve","done",E.Callbacks("once memory"),E.Callbacks("once memory"),0,"resolved"],["reject","fail",E.Callbacks("once memory"),E.Callbacks("once memory"),1,"rejected"]],i="pending",a={state:function(){return i},always:function(){return s.done(arguments).fail(arguments),this},"catch":function(e){return a.then(null,e)},pipe:function(){var i=arguments;return E.Deferred(function(r){E.each(o,function(e,t){var n=b(i[t[4]])&&i[t[4]];s[t[1]](function(){var e=n&&n.apply(this,arguments);e&&b(e.promise)?e.promise().progress(r.notify).done(r.resolve).fail(r.reject):r[t[0]+"With"](this,n?[e]:arguments)})}),i=null}).promise()},then:function(t,n,r){var u=0;function l(i,o,a,s){return function(){var n=this,r=arguments,e=function(){var e,t;if(!(i<u)){if((e=a.apply(n,r))===o.promise())throw new TypeError("Thenable self-resolution");t=e&&("object"==typeof e||"function"==typeof e)&&e.then,b(t)?s?t.call(e,l(u,o,I,s),l(u,o,R,s)):(u++,t.call(e,l(u,o,I,s),l(u,o,R,s),l(u,o,I,o.notifyWith))):(a!==I&&(n=void 0,r=[e]),(s||o.resolveWith)(n,r))}},t=s?e:function(){try{e()}catch(e){E.Deferred.exceptionHook&&E.Deferred.exceptionHook(e,t.stackTrace),u<=i+1&&(a!==R&&(n=void 0,r=[e]),o.rejectWith(n,r))}};i?t():(E.Deferred.getStackHook&&(t.stackTrace=E.Deferred.getStackHook()),g.setTimeout(t))}}return E.Deferred(function(e){o[0][3].add(l(0,e,b(r)?r:I,e.notifyWith)),o[1][3].add(l(0,e,b(t)?t:I)),o[2][3].add(l(0,e,b(n)?n:R))}).promise()},promise:function(e){return null!=e?E.extend(e,a):a}},s={};return E.each(o,function(e,t){var n=t[2],r=t[5];a[t[1]]=n.add,r&&n.add(function(){i=r},o[3-e][2].disable,o[3-e][3].disable,o[0][2].lock,o[0][3].lock),n.add(t[3].fire),s[t[0]]=function(){return s[t[0]+"With"](this===s?void 0:this,arguments),this},s[t[0]+"With"]=n.fireWith}),a.promise(s),e&&e.call(s,s),s},when:function(e){var n=arguments.length,t=n,r=Array(t),i=s.call(arguments),o=E.Deferred(),a=function(t){return function(e){r[t]=this,i[t]=1<arguments.length?s.call(arguments):e,--n||o.resolveWith(r,i)}};if(n<=1&&(B(e,o.done(a(t)).resolve,o.reject,!n),"pending"===o.state()||b(i[t]&&i[t].then)))return o.then();while(t--)B(i[t],a(t),o.reject);return o.promise()}});var M=/^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;E.Deferred.exceptionHook=function(e,t){g.console&&g.console.warn&&e&&M.test(e.name)&&g.console.warn("jQuery.Deferred exception: "+e.message,e.stack,t)},E.readyException=function(e){g.setTimeout(function(){throw e})};var W=E.Deferred();function F(){w.removeEventListener("DOMContentLoaded",F),g.removeEventListener("load",F),E.ready()}E.fn.ready=function(e){return W.then(e)["catch"](function(e){E.readyException(e)}),this},E.extend({isReady:!1,readyWait:1,ready:function(e){(!0===e?--E.readyWait:E.isReady)||(E.isReady=!0)!==e&&0<--E.readyWait||W.resolveWith(w,[E])}}),E.ready.then=W.then,"complete"===w.readyState||"loading"!==w.readyState&&!w.documentElement.doScroll?g.setTimeout(E.ready):(w.addEventListener("DOMContentLoaded",F),g.addEventListener("load",F));var $=function(e,t,n,r,i,o,a){var s=0,u=e.length,l=null==n;if("object"===T(n))for(s in i=!0,n)$(e,t,s,n[s],!0,o,a);else if(void 0!==r&&(i=!0,b(r)||(a=!0),l&&(a?(t.call(e,r),t=null):(l=t,t=function(e,t,n){return l.call(E(e),n)})),t))for(;s<u;s++)t(e[s],n,a?r:r.call(e[s],s,t(e[s],n)));return i?e:l?t.call(e):u?t(e[0],n):o},z=/^-ms-/,_=/-([a-z])/g;function U(e,t){return t.toUpperCase()}function V(e){return e.replace(z,"ms-").replace(_,U)}var X=function(e){return 1===e.nodeType||9===e.nodeType||!+e.nodeType};function Q(){this.expando=E.expando+Q.uid++}Q.uid=1,Q.prototype={cache:function(e){var t=e[this.expando];return t||(t={},X(e)&&(e.nodeType?e[this.expando]=t:Object.defineProperty(e,this.expando,{value:t,configurable:!0}))),t},set:function(e,t,n){var r,i=this.cache(e);if("string"==typeof t)i[V(t)]=n;else for(r in t)i[V(r)]=t[r];return i},get:function(e,t){return void 0===t?this.cache(e):e[this.expando]&&e[this.expando][V(t)]},access:function(e,t,n){return void 0===t||t&&"string"==typeof t&&void 0===n?this.get(e,t):(this.set(e,t,n),void 0!==n?n:t)},remove:function(e,t){var n,r=e[this.expando];if(void 0!==r){if(void 0!==t){n=(t=Array.isArray(t)?t.map(V):(t=V(t))in r?[t]:t.match(H)||[]).length;while(n--)delete r[t[n]]}(void 0===t||E.isEmptyObject(r))&&(e.nodeType?e[this.expando]=void 0:delete e[this.expando])}},hasData:function(e){var t=e[this.expando];return void 0!==t&&!E.isEmptyObject(t)}};var Y=new Q,G=new Q,K=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,J=/[A-Z]/g;function Z(e,t,n){var r,i;if(void 0===n&&1===e.nodeType)if(r="data-"+t.replace(J,"-$&").toLowerCase(),"string"==typeof(n=e.getAttribute(r))){try{n="true"===(i=n)||"false"!==i&&("null"===i?null:i===+i+""?+i:K.test(i)?JSON.parse(i):i)}catch(e){}G.set(e,t,n)}else n=void 0;return n}E.extend({hasData:function(e){return G.hasData(e)||Y.hasData(e)},data:function(e,t,n){return G.access(e,t,n)},removeData:function(e,t){G.remove(e,t)},_data:function(e,t,n){return Y.access(e,t,n)},_removeData:function(e,t){Y.remove(e,t)}}),E.fn.extend({data:function(n,e){var t,r,i,o=this[0],a=o&&o.attributes;if(void 0===n){if(this.length&&(i=G.get(o),1===o.nodeType&&!Y.get(o,"hasDataAttrs"))){t=a.length;while(t--)a[t]&&0===(r=a[t].name).indexOf("data-")&&(r=V(r.slice(5)),Z(o,r,i[r]));Y.set(o,"hasDataAttrs",!0)}return i}return"object"==typeof n?this.each(function(){G.set(this,n)}):$(this,function(e){var t;if(o&&void 0===e)return void 0!==(t=G.get(o,n))?t:void 0!==(t=Z(o,n))?t:void 0;this.each(function(){G.set(this,n,e)})},null,e,1<arguments.length,null,!0)},removeData:function(e){return this.each(function(){G.remove(this,e)})}}),E.extend({queue:function(e,t,n){var r;if(e)return t=(t||"fx")+"queue",r=Y.get(e,t),n&&(!r||Array.isArray(n)?r=Y.access(e,t,E.makeArray(n)):r.push(n)),r||[]},dequeue:function(e,t){t=t||"fx";var n=E.queue(e,t),r=n.length,i=n.shift(),o=E._queueHooks(e,t);"inprogress"===i&&(i=n.shift(),r--),i&&("fx"===t&&n.unshift("inprogress"),delete o.stop,i.call(e,function(){E.dequeue(e,t)},o)),!r&&o&&o.empty.fire()},_queueHooks:function(e,t){var n=t+"queueHooks";return Y.get(e,n)||Y.access(e,n,{empty:E.Callbacks("once memory").add(function(){Y.remove(e,[t+"queue",n])})})}}),E.fn.extend({queue:function(t,n){var e=2;return"string"!=typeof t&&(n=t,t="fx",e--),arguments.length<e?E.queue(this[0],t):void 0===n?this:this.each(function(){var e=E.queue(this,t,n);E._queueHooks(this,t),"fx"===t&&"inprogress"!==e[0]&&E.dequeue(this,t)})},dequeue:function(e){return this.each(function(){E.dequeue(this,e)})},clearQueue:function(e){return this.queue(e||"fx",[])},promise:function(e,t){var n,r=1,i=E.Deferred(),o=this,a=this.length,s=function(){--r||i.resolveWith(o,[o])};"string"!=typeof e&&(t=e,e=void 0),e=e||"fx";while(a--)(n=Y.get(o[a],e+"queueHooks"))&&n.empty&&(r++,n.empty.add(s));return s(),i.promise(t)}});var ee=/[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,te=new RegExp("^(?:([+-])=|)("+ee+")([a-z%]*)$","i"),ne=["Top","Right","Bottom","Left"],re=w.documentElement,ie=function(e){return E.contains(e.ownerDocument,e)},oe={composed:!0};re.getRootNode&&(ie=function(e){return E.contains(e.ownerDocument,e)||e.getRootNode(oe)===e.ownerDocument});var ae=function(e,t){return"none"===(e=t||e).style.display||""===e.style.display&&ie(e)&&"none"===E.css(e,"display")};var se={};function ue(e,t){for(var n,r,i,o,a,s,u,l=[],c=0,f=e.length;c<f;c++)(r=e[c]).style&&(n=r.style.display,t?("none"===n&&(l[c]=Y.get(r,"display")||null,l[c]||(r.style.display="")),""===r.style.display&&ae(r)&&(l[c]=(u=a=o=void 0,a=(i=r).ownerDocument,s=i.nodeName,(u=se[s])||(o=a.body.appendChild(a.createElement(s)),u=E.css(o,"display"),o.parentNode.removeChild(o),"none"===u&&(u="block"),se[s]=u)))):"none"!==n&&(l[c]="none",Y.set(r,"display",n)));for(c=0;c<f;c++)null!=l[c]&&(e[c].style.display=l[c]);return e}E.fn.extend({show:function(){return ue(this,!0)},hide:function(){return ue(this)},toggle:function(e){return"boolean"==typeof e?e?this.show():this.hide():this.each(function(){ae(this)?E(this).show():E(this).hide()})}});var le,ce,fe=/^(?:checkbox|radio)$/i,de=/<([a-z][^\/\0>\x20\t\r\n\f]*)/i,pe=/^$|^module$|\/(?:java|ecma)script/i;le=w.createDocumentFragment().appendChild(w.createElement("div")),(ce=w.createElement("input")).setAttribute("type","radio"),ce.setAttribute("checked","checked"),ce.setAttribute("name","t"),le.appendChild(ce),m.checkClone=le.cloneNode(!0).cloneNode(!0).lastChild.checked,le.innerHTML="<textarea>x</textarea>",m.noCloneChecked=!!le.cloneNode(!0).lastChild.defaultValue,le.innerHTML="<option></option>",m.option=!!le.lastChild;var he={thead:[1,"<table>","</table>"],col:[2,"<table><colgroup>","</colgroup></table>"],tr:[2,"<table><tbody>","</tbody></table>"],td:[3,"<table><tbody><tr>","</tr></tbody></table>"],_default:[0,"",""]};function ge(e,t){var n;return n="undefined"!=typeof e.getElementsByTagName?e.getElementsByTagName(t||"*"):"undefined"!=typeof e.querySelectorAll?e.querySelectorAll(t||"*"):[],void 0===t||t&&S(e,t)?E.merge([e],n):n}function ve(e,t){for(var n=0,r=e.length;n<r;n++)Y.set(e[n],"globalEval",!t||Y.get(t[n],"globalEval"))}he.tbody=he.tfoot=he.colgroup=he.caption=he.thead,he.th=he.td,m.option||(he.optgroup=he.option=[1,"<select multiple='multiple'>","</select>"]);var ye=/<|&#?\w+;/;function me(e,t,n,r,i){for(var o,a,s,u,l,c,f=t.createDocumentFragment(),d=[],p=0,h=e.length;p<h;p++)if((o=e[p])||0===o)if("object"===T(o))E.merge(d,o.nodeType?[o]:o);else if(ye.test(o)){a=a||f.appendChild(t.createElement("div")),s=(de.exec(o)||["",""])[1].toLowerCase(),u=he[s]||he._default,a.innerHTML=u[1]+E.htmlPrefilter(o)+u[2],c=u[0];while(c--)a=a.lastChild;E.merge(d,a.childNodes),(a=f.firstChild).textContent=""}else d.push(t.createTextNode(o));f.textContent="",p=0;while(o=d[p++])if(r&&-1<E.inArray(o,r))i&&i.push(o);else if(l=ie(o),a=ge(f.appendChild(o),"script"),l&&ve(a),n){c=0;while(o=a[c++])pe.test(o.type||"")&&n.push(o)}return f}var be=/^key/,xe=/^(?:mouse|pointer|contextmenu|drag|drop)|click/,we=/^([^.]*)(?:\.(.+)|)/;function Ce(){return!0}function Te(){return!1}function Ee(e,t){return e===function(){try{return w.activeElement}catch(e){}}()==("focus"===t)}function Ae(e,t,n,r,i,o){var a,s;if("object"==typeof t){for(s in"string"!=typeof n&&(r=r||n,n=void 0),t)Ae(e,s,n,r,t[s],o);return e}if(null==r&&null==i?(i=n,r=n=void 0):null==i&&("string"==typeof n?(i=r,r=void 0):(i=r,r=n,n=void 0)),!1===i)i=Te;else if(!i)return e;return 1===o&&(a=i,(i=function(e){return E().off(e),a.apply(this,arguments)}).guid=a.guid||(a.guid=E.guid++)),e.each(function(){E.event.add(this,t,i,r,n)})}function Ne(e,i,o){o?(Y.set(e,i,!1),E.event.add(e,i,{namespace:!1,handler:function(e){var t,n,r=Y.get(this,i);if(1&e.isTrigger&&this[i]){if(r.length)(E.event.special[i]||{}).delegateType&&e.stopPropagation();else if(r=s.call(arguments),Y.set(this,i,r),t=o(this,i),this[i](),r!==(n=Y.get(this,i))||t?Y.set(this,i,!1):n={},r!==n)return e.stopImmediatePropagation(),e.preventDefault(),n.value}else r.length&&(Y.set(this,i,{value:E.event.trigger(E.extend(r[0],E.Event.prototype),r.slice(1),this)}),e.stopImmediatePropagation())}})):void 0===Y.get(e,i)&&E.event.add(e,i,Ce)}E.event={global:{},add:function(t,e,n,r,i){var o,a,s,u,l,c,f,d,p,h,g,v=Y.get(t);if(X(t)){n.handler&&(n=(o=n).handler,i=o.selector),i&&E.find.matchesSelector(re,i),n.guid||(n.guid=E.guid++),(u=v.events)||(u=v.events=Object.create(null)),(a=v.handle)||(a=v.handle=function(e){return"undefined"!=typeof E&&E.event.triggered!==e.type?E.event.dispatch.apply(t,arguments):void 0}),l=(e=(e||"").match(H)||[""]).length;while(l--)p=g=(s=we.exec(e[l])||[])[1],h=(s[2]||"").split(".").sort(),p&&(f=E.event.special[p]||{},p=(i?f.delegateType:f.bindType)||p,f=E.event.special[p]||{},c=E.extend({type:p,origType:g,data:r,handler:n,guid:n.guid,selector:i,needsContext:i&&E.expr.match.needsContext.test(i),namespace:h.join(".")},o),(d=u[p])||((d=u[p]=[]).delegateCount=0,f.setup&&!1!==f.setup.call(t,r,h,a)||t.addEventListener&&t.addEventListener(p,a)),f.add&&(f.add.call(t,c),c.handler.guid||(c.handler.guid=n.guid)),i?d.splice(d.delegateCount++,0,c):d.push(c),E.event.global[p]=!0)}},remove:function(e,t,n,r,i){var o,a,s,u,l,c,f,d,p,h,g,v=Y.hasData(e)&&Y.get(e);if(v&&(u=v.events)){l=(t=(t||"").match(H)||[""]).length;while(l--)if(p=g=(s=we.exec(t[l])||[])[1],h=(s[2]||"").split(".").sort(),p){f=E.event.special[p]||{},d=u[p=(r?f.delegateType:f.bindType)||p]||[],s=s[2]&&new RegExp("(^|\\.)"+h.join("\\.(?:.*\\.|)")+"(\\.|$)"),a=o=d.length;while(o--)c=d[o],!i&&g!==c.origType||n&&n.guid!==c.guid||s&&!s.test(c.namespace)||r&&r!==c.selector&&("**"!==r||!c.selector)||(d.splice(o,1),c.selector&&d.delegateCount--,f.remove&&f.remove.call(e,c));a&&!d.length&&(f.teardown&&!1!==f.teardown.call(e,h,v.handle)||E.removeEvent(e,p,v.handle),delete u[p])}else for(p in u)E.event.remove(e,p+t[l],n,r,!0);E.isEmptyObject(u)&&Y.remove(e,"handle events")}},dispatch:function(e){var t,n,r,i,o,a,s=new Array(arguments.length),u=E.event.fix(e),l=(Y.get(this,"events")||Object.create(null))[u.type]||[],c=E.event.special[u.type]||{};for(s[0]=u,t=1;t<arguments.length;t++)s[t]=arguments[t];if(u.delegateTarget=this,!c.preDispatch||!1!==c.preDispatch.call(this,u)){a=E.event.handlers.call(this,u,l),t=0;while((i=a[t++])&&!u.isPropagationStopped()){u.currentTarget=i.elem,n=0;while((o=i.handlers[n++])&&!u.isImmediatePropagationStopped())u.rnamespace&&!1!==o.namespace&&!u.rnamespace.test(o.namespace)||(u.handleObj=o,u.data=o.data,void 0!==(r=((E.event.special[o.origType]||{}).handle||o.handler).apply(i.elem,s))&&!1===(u.result=r)&&(u.preventDefault(),u.stopPropagation()))}return c.postDispatch&&c.postDispatch.call(this,u),u.result}},handlers:function(e,t){var n,r,i,o,a,s=[],u=t.delegateCount,l=e.target;if(u&&l.nodeType&&!("click"===e.type&&1<=e.button))for(;l!==this;l=l.parentNode||this)if(1===l.nodeType&&("click"!==e.type||!0!==l.disabled)){for(o=[],a={},n=0;n<u;n++)void 0===a[i=(r=t[n]).selector+" "]&&(a[i]=r.needsContext?-1<E(i,this).index(l):E.find(i,this,null,[l]).length),a[i]&&o.push(r);o.length&&s.push({elem:l,handlers:o})}return l=this,u<t.length&&s.push({elem:l,handlers:t.slice(u)}),s},addProp:function(t,e){Object.defineProperty(E.Event.prototype,t,{enumerable:!0,configurable:!0,get:b(e)?function(){if(this.originalEvent)return e(this.originalEvent)}:function(){if(this.originalEvent)return this.originalEvent[t]},set:function(e){Object.defineProperty(this,t,{enumerable:!0,configurable:!0,writable:!0,value:e})}})},fix:function(e){return e[E.expando]?e:new E.Event(e)},special:{load:{noBubble:!0},click:{setup:function(e){var t=this||e;return fe.test(t.type)&&t.click&&S(t,"input")&&Ne(t,"click",Ce),!1},trigger:function(e){var t=this||e;return fe.test(t.type)&&t.click&&S(t,"input")&&Ne(t,"click"),!0},_default:function(e){var t=e.target;return fe.test(t.type)&&t.click&&S(t,"input")&&Y.get(t,"click")||S(t,"a")}},beforeunload:{postDispatch:function(e){void 0!==e.result&&e.originalEvent&&(e.originalEvent.returnValue=e.result)}}}},E.removeEvent=function(e,t,n){e.removeEventListener&&e.removeEventListener(t,n)},E.Event=function(e,t){if(!(this instanceof E.Event))return new E.Event(e,t);e&&e.type?(this.originalEvent=e,this.type=e.type,this.isDefaultPrevented=e.defaultPrevented||void 0===e.defaultPrevented&&!1===e.returnValue?Ce:Te,this.target=e.target&&3===e.target.nodeType?e.target.parentNode:e.target,this.currentTarget=e.currentTarget,this.relatedTarget=e.relatedTarget):this.type=e,t&&E.extend(this,t),this.timeStamp=e&&e.timeStamp||Date.now(),this[E.expando]=!0},E.Event.prototype={constructor:E.Event,isDefaultPrevented:Te,isPropagationStopped:Te,isImmediatePropagationStopped:Te,isSimulated:!1,preventDefault:function(){var e=this.originalEvent;this.isDefaultPrevented=Ce,e&&!this.isSimulated&&e.preventDefault()},stopPropagation:function(){var e=this.originalEvent;this.isPropagationStopped=Ce,e&&!this.isSimulated&&e.stopPropagation()},stopImmediatePropagation:function(){var e=this.originalEvent;this.isImmediatePropagationStopped=Ce,e&&!this.isSimulated&&e.stopImmediatePropagation(),this.stopPropagation()}},E.each({altKey:!0,bubbles:!0,cancelable:!0,changedTouches:!0,ctrlKey:!0,detail:!0,eventPhase:!0,metaKey:!0,pageX:!0,pageY:!0,shiftKey:!0,view:!0,"char":!0,code:!0,charCode:!0,key:!0,keyCode:!0,button:!0,buttons:!0,clientX:!0,clientY:!0,offsetX:!0,offsetY:!0,pointerId:!0,pointerType:!0,screenX:!0,screenY:!0,targetTouches:!0,toElement:!0,touches:!0,which:function(e){var t=e.button;return null==e.which&&be.test(e.type)?null!=e.charCode?e.charCode:e.keyCode:!e.which&&void 0!==t&&xe.test(e.type)?1&t?1:2&t?3:4&t?2:0:e.which}},E.event.addProp),E.each({focus:"focusin",blur:"focusout"},function(e,t){E.event.special[e]={setup:function(){return Ne(this,e,Ee),!1},trigger:function(){return Ne(this,e),!0},delegateType:t}}),E.each({mouseenter:"mouseover",mouseleave:"mouseout",pointerenter:"pointerover",pointerleave:"pointerout"},function(e,i){E.event.special[e]={delegateType:i,bindType:i,handle:function(e){var t,n=e.relatedTarget,r=e.handleObj;return n&&(n===this||E.contains(this,n))||(e.type=r.origType,t=r.handler.apply(this,arguments),e.type=i),t}}}),E.fn.extend({on:function(e,t,n,r){return Ae(this,e,t,n,r)},one:function(e,t,n,r){return Ae(this,e,t,n,r,1)},off:function(e,t,n){var r,i;if(e&&e.preventDefault&&e.handleObj)return r=e.handleObj,E(e.delegateTarget).off(r.namespace?r.origType+"."+r.namespace:r.origType,r.selector,r.handler),this;if("object"==typeof e){for(i in e)this.off(i,t,e[i]);return this}return!1!==t&&"function"!=typeof t||(n=t,t=void 0),!1===n&&(n=Te),this.each(function(){E.event.remove(this,e,n,t)})}});var Se=/<script|<style|<link/i,ke=/checked\s*(?:[^=]|=\s*.checked.)/i,De=/^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;function Le(e,t){return S(e,"table")&&S(11!==t.nodeType?t:t.firstChild,"tr")&&E(e).children("tbody")[0]||e}function je(e){return e.type=(null!==e.getAttribute("type"))+"/"+e.type,e}function qe(e){return"true/"===(e.type||"").slice(0,5)?e.type=e.type.slice(5):e.removeAttribute("type"),e}function Oe(e,t){var n,r,i,o,a,s;if(1===t.nodeType){if(Y.hasData(e)&&(s=Y.get(e).events))for(i in Y.remove(t,"handle events"),s)for(n=0,r=s[i].length;n<r;n++)E.event.add(t,i,s[i][n]);G.hasData(e)&&(o=G.access(e),a=E.extend({},o),G.set(t,a))}}function Pe(n,r,i,o){r=v(r);var e,t,a,s,u,l,c=0,f=n.length,d=f-1,p=r[0],h=b(p);if(h||1<f&&"string"==typeof p&&!m.checkClone&&ke.test(p))return n.each(function(e){var t=n.eq(e);h&&(r[0]=p.call(this,e,t.html())),Pe(t,r,i,o)});if(f&&(t=(e=me(r,n[0].ownerDocument,!1,n,o)).firstChild,1===e.childNodes.length&&(e=t),t||o)){for(s=(a=E.map(ge(e,"script"),je)).length;c<f;c++)u=e,c!==d&&(u=E.clone(u,!0,!0),s&&E.merge(a,ge(u,"script"))),i.call(n[c],u,c);if(s)for(l=a[a.length-1].ownerDocument,E.map(a,qe),c=0;c<s;c++)u=a[c],pe.test(u.type||"")&&!Y.access(u,"globalEval")&&E.contains(l,u)&&(u.src&&"module"!==(u.type||"").toLowerCase()?E._evalUrl&&!u.noModule&&E._evalUrl(u.src,{nonce:u.nonce||u.getAttribute("nonce")},l):C(u.textContent.replace(De,""),u,l))}return n}function He(e,t,n){for(var r,i=t?E.filter(t,e):e,o=0;null!=(r=i[o]);o++)n||1!==r.nodeType||E.cleanData(ge(r)),r.parentNode&&(n&&ie(r)&&ve(ge(r,"script")),r.parentNode.removeChild(r));return e}E.extend({htmlPrefilter:function(e){return e},clone:function(e,t,n){var r,i,o,a,s,u,l,c=e.cloneNode(!0),f=ie(e);if(!(m.noCloneChecked||1!==e.nodeType&&11!==e.nodeType||E.isXMLDoc(e)))for(a=ge(c),r=0,i=(o=ge(e)).length;r<i;r++)s=o[r],u=a[r],void 0,"input"===(l=u.nodeName.toLowerCase())&&fe.test(s.type)?u.checked=s.checked:"input"!==l&&"textarea"!==l||(u.defaultValue=s.defaultValue);if(t)if(n)for(o=o||ge(e),a=a||ge(c),r=0,i=o.length;r<i;r++)Oe(o[r],a[r]);else Oe(e,c);return 0<(a=ge(c,"script")).length&&ve(a,!f&&ge(e,"script")),c},cleanData:function(e){for(var t,n,r,i=E.event.special,o=0;void 0!==(n=e[o]);o++)if(X(n)){if(t=n[Y.expando]){if(t.events)for(r in t.events)i[r]?E.event.remove(n,r):E.removeEvent(n,r,t.handle);n[Y.expando]=void 0}n[G.expando]&&(n[G.expando]=void 0)}}}),E.fn.extend({detach:function(e){return He(this,e,!0)},remove:function(e){return He(this,e)},text:function(e){return $(this,function(e){return void 0===e?E.text(this):this.empty().each(function(){1!==this.nodeType&&11!==this.nodeType&&9!==this.nodeType||(this.textContent=e)})},null,e,arguments.length)},append:function(){return Pe(this,arguments,function(e){1!==this.nodeType&&11!==this.nodeType&&9!==this.nodeType||Le(this,e).appendChild(e)})},prepend:function(){return Pe(this,arguments,function(e){if(1===this.nodeType||11===this.nodeType||9===this.nodeType){var t=Le(this,e);t.insertBefore(e,t.firstChild)}})},before:function(){return Pe(this,arguments,function(e){this.parentNode&&this.parentNode.insertBefore(e,this)})},after:function(){return Pe(this,arguments,function(e){this.parentNode&&this.parentNode.insertBefore(e,this.nextSibling)})},empty:function(){for(var e,t=0;null!=(e=this[t]);t++)1===e.nodeType&&(E.cleanData(ge(e,!1)),e.textContent="");return this},clone:function(e,t){return e=null!=e&&e,t=null==t?e:t,this.map(function(){return E.clone(this,e,t)})},html:function(e){return $(this,function(e){var t=this[0]||{},n=0,r=this.length;if(void 0===e&&1===t.nodeType)return t.innerHTML;if("string"==typeof e&&!Se.test(e)&&!he[(de.exec(e)||["",""])[1].toLowerCase()]){e=E.htmlPrefilter(e);try{for(;n<r;n++)1===(t=this[n]||{}).nodeType&&(E.cleanData(ge(t,!1)),t.innerHTML=e);t=0}catch(e){}}t&&this.empty().append(e)},null,e,arguments.length)},replaceWith:function(){var n=[];return Pe(this,arguments,function(e){var t=this.parentNode;E.inArray(this,n)<0&&(E.cleanData(ge(this)),t&&t.replaceChild(e,this))},n)}}),E.each({appendTo:"append",prependTo:"prepend",insertBefore:"before",insertAfter:"after",replaceAll:"replaceWith"},function(e,a){E.fn[e]=function(e){for(var t,n=[],r=E(e),i=r.length-1,o=0;o<=i;o++)t=o===i?this:this.clone(!0),E(r[o])[a](t),u.apply(n,t.get());return this.pushStack(n)}});var Ie=new RegExp("^("+ee+")(?!px)[a-z%]+$","i"),Re=function(e){var t=e.ownerDocument.defaultView;return t&&t.opener||(t=g),t.getComputedStyle(e)},Be=function(e,t,n){var r,i,o={};for(i in t)o[i]=e.style[i],e.style[i]=t[i];for(i in r=n.call(e),t)e.style[i]=o[i];return r},Me=new RegExp(ne.join("|"),"i");function We(e,t,n){var r,i,o,a,s=e.style;return(n=n||Re(e))&&(""!==(a=n.getPropertyValue(t)||n[t])||ie(e)||(a=E.style(e,t)),!m.pixelBoxStyles()&&Ie.test(a)&&Me.test(t)&&(r=s.width,i=s.minWidth,o=s.maxWidth,s.minWidth=s.maxWidth=s.width=a,a=n.width,s.width=r,s.minWidth=i,s.maxWidth=o)),void 0!==a?a+"":a}function Fe(e,t){return{get:function(){if(!e())return(this.get=t).apply(this,arguments);delete this.get}}}!function(){function e(){if(l){u.style.cssText="position:absolute;left:-11111px;width:60px;margin-top:1px;padding:0;border:0",l.style.cssText="position:relative;display:block;box-sizing:border-box;overflow:scroll;margin:auto;border:1px;padding:1px;width:60%;top:1%",re.appendChild(u).appendChild(l);var e=g.getComputedStyle(l);n="1%"!==e.top,s=12===t(e.marginLeft),l.style.right="60%",o=36===t(e.right),r=36===t(e.width),l.style.position="absolute",i=12===t(l.offsetWidth/3),re.removeChild(u),l=null}}function t(e){return Math.round(parseFloat(e))}var n,r,i,o,a,s,u=w.createElement("div"),l=w.createElement("div");l.style&&(l.style.backgroundClip="content-box",l.cloneNode(!0).style.backgroundClip="",m.clearCloneStyle="content-box"===l.style.backgroundClip,E.extend(m,{boxSizingReliable:function(){return e(),r},pixelBoxStyles:function(){return e(),o},pixelPosition:function(){return e(),n},reliableMarginLeft:function(){return e(),s},scrollboxSize:function(){return e(),i},reliableTrDimensions:function(){var e,t,n,r;return null==a&&(e=w.createElement("table"),t=w.createElement("tr"),n=w.createElement("div"),e.style.cssText="position:absolute;left:-11111px",t.style.height="1px",n.style.height="9px",re.appendChild(e).appendChild(t).appendChild(n),r=g.getComputedStyle(t),a=3<parseInt(r.height),re.removeChild(e)),a}}))}();var $e=["Webkit","Moz","ms"],ze=w.createElement("div").style,_e={};function Ue(e){var t=E.cssProps[e]||_e[e];return t||(e in ze?e:_e[e]=function(e){var t=e[0].toUpperCase()+e.slice(1),n=$e.length;while(n--)if((e=$e[n]+t)in ze)return e}(e)||e)}var Ve,Xe,Qe=/^(none|table(?!-c[ea]).+)/,Ye=/^--/,Ge={position:"absolute",visibility:"hidden",display:"block"},Ke={letterSpacing:"0",fontWeight:"400"};function Je(e,t,n){var r=te.exec(t);return r?Math.max(0,r[2]-(n||0))+(r[3]||"px"):t}function Ze(e,t,n,r,i,o){var a="width"===t?1:0,s=0,u=0;if(n===(r?"border":"content"))return 0;for(;a<4;a+=2)"margin"===n&&(u+=E.css(e,n+ne[a],!0,i)),r?("content"===n&&(u-=E.css(e,"padding"+ne[a],!0,i)),"margin"!==n&&(u-=E.css(e,"border"+ne[a]+"Width",!0,i))):(u+=E.css(e,"padding"+ne[a],!0,i),"padding"!==n?u+=E.css(e,"border"+ne[a]+"Width",!0,i):s+=E.css(e,"border"+ne[a]+"Width",!0,i));return!r&&0<=o&&(u+=Math.max(0,Math.ceil(e["offset"+t[0].toUpperCase()+t.slice(1)]-o-u-s-.5))||0),u}function et(e,t,n){var r=Re(e),i=(!m.boxSizingReliable()||n)&&"border-box"===E.css(e,"boxSizing",!1,r),o=i,a=We(e,t,r),s="offset"+t[0].toUpperCase()+t.slice(1);if(Ie.test(a)){if(!n)return a;a="auto"}return(!m.boxSizingReliable()&&i||!m.reliableTrDimensions()&&S(e,"tr")||"auto"===a||!parseFloat(a)&&"inline"===E.css(e,"display",!1,r))&&e.getClientRects().length&&(i="border-box"===E.css(e,"boxSizing",!1,r),(o=s in e)&&(a=e[s])),(a=parseFloat(a)||0)+Ze(e,t,n||(i?"border":"content"),o,r,a)+"px"}E.extend({cssHooks:{opacity:{get:function(e,t){if(t){var n=We(e,"opacity");return""===n?"1":n}}}},cssNumber:{animationIterationCount:!0,columnCount:!0,fillOpacity:!0,flexGrow:!0,flexShrink:!0,fontWeight:!0,gridArea:!0,gridColumn:!0,gridColumnEnd:!0,gridColumnStart:!0,gridRow:!0,gridRowEnd:!0,gridRowStart:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,widows:!0,zIndex:!0,zoom:!0},cssProps:{},style:function(e,t,n,r){if(e&&3!==e.nodeType&&8!==e.nodeType&&e.style){var i,o,a,s=V(t),u=Ye.test(t),l=e.style;if(u||(t=Ue(s)),a=E.cssHooks[t]||E.cssHooks[s],void 0===n)return a&&"get"in a&&void 0!==(i=a.get(e,!1,r))?i:l[t];"string"===(o=typeof n)&&(i=te.exec(n))&&i[1]&&(n=function(e,t,n,r){var i,o,a=20,s=r?function(){return r.cur()}:function(){return E.css(e,t,"")},u=s(),l=n&&n[3]||(E.cssNumber[t]?"":"px"),c=e.nodeType&&(E.cssNumber[t]||"px"!==l&&+u)&&te.exec(E.css(e,t));if(c&&c[3]!==l){u/=2,l=l||c[3],c=+u||1;while(a--)E.style(e,t,c+l),(1-o)*(1-(o=s()/u||.5))<=0&&(a=0),c/=o;c*=2,E.style(e,t,c+l),n=n||[]}return n&&(c=+c||+u||0,i=n[1]?c+(n[1]+1)*n[2]:+n[2],r&&(r.unit=l,r.start=c,r.end=i)),i}(e,t,i),o="number"),null!=n&&n==n&&("number"!==o||u||(n+=i&&i[3]||(E.cssNumber[s]?"":"px")),m.clearCloneStyle||""!==n||0!==t.indexOf("background")||(l[t]="inherit"),a&&"set"in a&&void 0===(n=a.set(e,n,r))||(u?l.setProperty(t,n):l[t]=n))}},css:function(e,t,n,r){var i,o,a,s=V(t);return Ye.test(t)||(t=Ue(s)),(a=E.cssHooks[t]||E.cssHooks[s])&&"get"in a&&(i=a.get(e,!0,n)),void 0===i&&(i=We(e,t,r)),"normal"===i&&t in Ke&&(i=Ke[t]),""===n||n?(o=parseFloat(i),!0===n||isFinite(o)?o||0:i):i}}),E.each(["height","width"],function(e,u){E.cssHooks[u]={get:function(e,t,n){if(t)return!Qe.test(E.css(e,"display"))||e.getClientRects().length&&e.getBoundingClientRect().width?et(e,u,n):Be(e,Ge,function(){return et(e,u,n)})},set:function(e,t,n){var r,i=Re(e),o=!m.scrollboxSize()&&"absolute"===i.position,a=(o||n)&&"border-box"===E.css(e,"boxSizing",!1,i),s=n?Ze(e,u,n,a,i):0;return a&&o&&(s-=Math.ceil(e["offset"+u[0].toUpperCase()+u.slice(1)]-parseFloat(i[u])-Ze(e,u,"border",!1,i)-.5)),s&&(r=te.exec(t))&&"px"!==(r[3]||"px")&&(e.style[u]=t,t=E.css(e,u)),Je(0,t,s)}}}),E.cssHooks.marginLeft=Fe(m.reliableMarginLeft,function(e,t){if(t)return(parseFloat(We(e,"marginLeft"))||e.getBoundingClientRect().left-Be(e,{marginLeft:0},function(){return e.getBoundingClientRect().left}))+"px"}),E.each({margin:"",padding:"",border:"Width"},function(i,o){E.cssHooks[i+o]={expand:function(e){for(var t=0,n={},r="string"==typeof e?e.split(" "):[e];t<4;t++)n[i+ne[t]+o]=r[t]||r[t-2]||r[0];return n}},"margin"!==i&&(E.cssHooks[i+o].set=Je)}),E.fn.extend({css:function(e,t){return $(this,function(e,t,n){var r,i,o={},a=0;if(Array.isArray(t)){for(r=Re(e),i=t.length;a<i;a++)o[t[a]]=E.css(e,t[a],!1,r);return o}return void 0!==n?E.style(e,t,n):E.css(e,t)},e,t,1<arguments.length)}}),E.fn.delay=function(r,e){return r=E.fx&&E.fx.speeds[r]||r,e=e||"fx",this.queue(e,function(e,t){var n=g.setTimeout(e,r);t.stop=function(){g.clearTimeout(n)}})},Ve=w.createElement("input"),Xe=w.createElement("select").appendChild(w.createElement("option")),Ve.type="checkbox",m.checkOn=""!==Ve.value,m.optSelected=Xe.selected,(Ve=w.createElement("input")).value="t",Ve.type="radio",m.radioValue="t"===Ve.value;var tt,nt=E.expr.attrHandle;E.fn.extend({attr:function(e,t){return $(this,E.attr,e,t,1<arguments.length)},removeAttr:function(e){return this.each(function(){E.removeAttr(this,e)})}}),E.extend({attr:function(e,t,n){var r,i,o=e.nodeType;if(3!==o&&8!==o&&2!==o)return"undefined"==typeof e.getAttribute?E.prop(e,t,n):(1===o&&E.isXMLDoc(e)||(i=E.attrHooks[t.toLowerCase()]||(E.expr.match.bool.test(t)?tt:void 0)),void 0!==n?null===n?void E.removeAttr(e,t):i&&"set"in i&&void 0!==(r=i.set(e,n,t))?r:(e.setAttribute(t,n+""),n):i&&"get"in i&&null!==(r=i.get(e,t))?r:null==(r=E.find.attr(e,t))?void 0:r)},attrHooks:{type:{set:function(e,t){if(!m.radioValue&&"radio"===t&&S(e,"input")){var n=e.value;return e.setAttribute("type",t),n&&(e.value=n),t}}}},removeAttr:function(e,t){var n,r=0,i=t&&t.match(H);if(i&&1===e.nodeType)while(n=i[r++])e.removeAttribute(n)}}),tt={set:function(e,t,n){return!1===t?E.removeAttr(e,n):e.setAttribute(n,n),n}},E.each(E.expr.match.bool.source.match(/\w+/g),function(e,t){var a=nt[t]||E.find.attr;nt[t]=function(e,t,n){var r,i,o=t.toLowerCase();return n||(i=nt[o],nt[o]=r,r=null!=a(e,t,n)?o:null,nt[o]=i),r}});var rt=/^(?:input|select|textarea|button)$/i,it=/^(?:a|area)$/i;function ot(e){return(e.match(H)||[]).join(" ")}function at(e){return e.getAttribute&&e.getAttribute("class")||""}function st(e){return Array.isArray(e)?e:"string"==typeof e&&e.match(H)||[]}E.fn.extend({prop:function(e,t){return $(this,E.prop,e,t,1<arguments.length)},removeProp:function(e){return this.each(function(){delete this[E.propFix[e]||e]})}}),E.extend({prop:function(e,t,n){var r,i,o=e.nodeType;if(3!==o&&8!==o&&2!==o)return 1===o&&E.isXMLDoc(e)||(t=E.propFix[t]||t,i=E.propHooks[t]),void 0!==n?i&&"set"in i&&void 0!==(r=i.set(e,n,t))?r:e[t]=n:i&&"get"in i&&null!==(r=i.get(e,t))?r:e[t]},propHooks:{tabIndex:{get:function(e){var t=E.find.attr(e,"tabindex");return t?parseInt(t,10):rt.test(e.nodeName)||it.test(e.nodeName)&&e.href?0:-1}}},propFix:{"for":"htmlFor","class":"className"}}),m.optSelected||(E.propHooks.selected={get:function(e){var t=e.parentNode;return t&&t.parentNode&&t.parentNode.selectedIndex,null},set:function(e){var t=e.parentNode;t&&(t.selectedIndex,t.parentNode&&t.parentNode.selectedIndex)}}),E.each(["tabIndex","readOnly","maxLength","cellSpacing","cellPadding","rowSpan","colSpan","useMap","frameBorder","contentEditable"],function(){E.propFix[this.toLowerCase()]=this}),E.fn.extend({addClass:function(t){var e,n,r,i,o,a,s,u=0;if(b(t))return this.each(function(e){E(this).addClass(t.call(this,e,at(this)))});if((e=st(t)).length)while(n=this[u++])if(i=at(n),r=1===n.nodeType&&" "+ot(i)+" "){a=0;while(o=e[a++])r.indexOf(" "+o+" ")<0&&(r+=o+" ");i!==(s=ot(r))&&n.setAttribute("class",s)}return this},removeClass:function(t){var e,n,r,i,o,a,s,u=0;if(b(t))return this.each(function(e){E(this).removeClass(t.call(this,e,at(this)))});if(!arguments.length)return this.attr("class","");if((e=st(t)).length)while(n=this[u++])if(i=at(n),r=1===n.nodeType&&" "+ot(i)+" "){a=0;while(o=e[a++])while(-1<r.indexOf(" "+o+" "))r=r.replace(" "+o+" "," ");i!==(s=ot(r))&&n.setAttribute("class",s)}return this},toggleClass:function(i,t){var o=typeof i,a="string"===o||Array.isArray(i);return"boolean"==typeof t&&a?t?this.addClass(i):this.removeClass(i):b(i)?this.each(function(e){E(this).toggleClass(i.call(this,e,at(this),t),t)}):this.each(function(){var e,t,n,r;if(a){t=0,n=E(this),r=st(i);while(e=r[t++])n.hasClass(e)?n.removeClass(e):n.addClass(e)}else void 0!==i&&"boolean"!==o||((e=at(this))&&Y.set(this,"__className__",e),this.setAttribute&&this.setAttribute("class",e||!1===i?"":Y.get(this,"__className__")||""))})},hasClass:function(e){var t,n,r=0;t=" "+e+" ";while(n=this[r++])if(1===n.nodeType&&-1<(" "+ot(at(n))+" ").indexOf(t))return!0;return!1}});var ut=/\r/g;E.fn.extend({val:function(n){var r,e,i,t=this[0];return arguments.length?(i=b(n),this.each(function(e){var t;1===this.nodeType&&(null==(t=i?n.call(this,e,E(this).val()):n)?t="":"number"==typeof t?t+="":Array.isArray(t)&&(t=E.map(t,function(e){return null==e?"":e+""})),(r=E.valHooks[this.type]||E.valHooks[this.nodeName.toLowerCase()])&&"set"in r&&void 0!==r.set(this,t,"value")||(this.value=t))})):t?(r=E.valHooks[t.type]||E.valHooks[t.nodeName.toLowerCase()])&&"get"in r&&void 0!==(e=r.get(t,"value"))?e:"string"==typeof(e=t.value)?e.replace(ut,""):null==e?"":e:void 0}}),E.extend({valHooks:{option:{get:function(e){var t=E.find.attr(e,"value");return null!=t?t:ot(E.text(e))}},select:{get:function(e){var t,n,r,i=e.options,o=e.selectedIndex,a="select-one"===e.type,s=a?null:[],u=a?o+1:i.length;for(r=o<0?u:a?o:0;r<u;r++)if(((n=i[r]).selected||r===o)&&!n.disabled&&(!n.parentNode.disabled||!S(n.parentNode,"optgroup"))){if(t=E(n).val(),a)return t;s.push(t)}return s},set:function(e,t){var n,r,i=e.options,o=E.makeArray(t),a=i.length;while(a--)((r=i[a]).selected=-1<E.inArray(E.valHooks.option.get(r),o))&&(n=!0);return n||(e.selectedIndex=-1),o}}}}),E.each(["radio","checkbox"],function(){E.valHooks[this]={set:function(e,t){if(Array.isArray(t))return e.checked=-1<E.inArray(E(e).val(),t)}},m.checkOn||(E.valHooks[this].get=function(e){return null===e.getAttribute("value")?"on":e.value})}),m.focusin="onfocusin"in g;var lt=/^(?:focusinfocus|focusoutblur)$/,ct=function(e){e.stopPropagation()};E.extend(E.event,{trigger:function(e,t,n,r){var i,o,a,s,u,l,c,f,d=[n||w],p=y.call(e,"type")?e.type:e,h=y.call(e,"namespace")?e.namespace.split("."):[];if(o=f=a=n=n||w,3!==n.nodeType&&8!==n.nodeType&&!lt.test(p+E.event.triggered)&&(-1<p.indexOf(".")&&(p=(h=p.split(".")).shift(),h.sort()),u=p.indexOf(":")<0&&"on"+p,(e=e[E.expando]?e:new E.Event(p,"object"==typeof e&&e)).isTrigger=r?2:3,e.namespace=h.join("."),e.rnamespace=e.namespace?new RegExp("(^|\\.)"+h.join("\\.(?:.*\\.|)")+"(\\.|$)"):null,e.result=void 0,e.target||(e.target=n),t=null==t?[e]:E.makeArray(t,[e]),c=E.event.special[p]||{},r||!c.trigger||!1!==c.trigger.apply(n,t))){if(!r&&!c.noBubble&&!x(n)){for(s=c.delegateType||p,lt.test(s+p)||(o=o.parentNode);o;o=o.parentNode)d.push(o),a=o;a===(n.ownerDocument||w)&&d.push(a.defaultView||a.parentWindow||g)}i=0;while((o=d[i++])&&!e.isPropagationStopped())f=o,e.type=1<i?s:c.bindType||p,(l=(Y.get(o,"events")||Object.create(null))[e.type]&&Y.get(o,"handle"))&&l.apply(o,t),(l=u&&o[u])&&l.apply&&X(o)&&(e.result=l.apply(o,t),!1===e.result&&e.preventDefault());return e.type=p,r||e.isDefaultPrevented()||c._default&&!1!==c._default.apply(d.pop(),t)||!X(n)||u&&b(n[p])&&!x(n)&&((a=n[u])&&(n[u]=null),E.event.triggered=p,e.isPropagationStopped()&&f.addEventListener(p,ct),n[p](),e.isPropagationStopped()&&f.removeEventListener(p,ct),E.event.triggered=void 0,a&&(n[u]=a)),e.result}},simulate:function(e,t,n){var r=E.extend(new E.Event,n,{type:e,isSimulated:!0});E.event.trigger(r,null,t)}}),E.fn.extend({trigger:function(e,t){return this.each(function(){E.event.trigger(e,t,this)})},triggerHandler:function(e,t){var n=this[0];if(n)return E.event.trigger(e,t,n,!0)}}),m.focusin||E.each({focus:"focusin",blur:"focusout"},function(n,r){var i=function(e){E.event.simulate(r,e.target,E.event.fix(e))};E.event.special[r]={setup:function(){var e=this.ownerDocument||this.document||this,t=Y.access(e,r);t||e.addEventListener(n,i,!0),Y.access(e,r,(t||0)+1)},teardown:function(){var e=this.ownerDocument||this.document||this,t=Y.access(e,r)-1;t?Y.access(e,r,t):(e.removeEventListener(n,i,!0),Y.remove(e,r))}}}),E.parseXML=function(e){var t;if(!e||"string"!=typeof e)return null;try{t=(new g.DOMParser).parseFromString(e,"text/xml")}catch(e){t=void 0}return t&&!t.getElementsByTagName("parsererror").length||E.error("Invalid XML: "+e),t};var ft,dt=/\[\]$/,pt=/\r?\n/g,ht=/^(?:submit|button|image|reset|file)$/i,gt=/^(?:input|select|textarea|keygen)/i;function vt(n,e,r,i){var t;if(Array.isArray(e))E.each(e,function(e,t){r||dt.test(n)?i(n,t):vt(n+"["+("object"==typeof t&&null!=t?e:"")+"]",t,r,i)});else if(r||"object"!==T(e))i(n,e);else for(t in e)vt(n+"["+t+"]",e[t],r,i)}E.param=function(e,t){var n,r=[],i=function(e,t){var n=b(t)?t():t;r[r.length]=encodeURIComponent(e)+"="+encodeURIComponent(null==n?"":n)};if(null==e)return"";if(Array.isArray(e)||e.jquery&&!E.isPlainObject(e))E.each(e,function(){i(this.name,this.value)});else for(n in e)vt(n,e[n],t,i);return r.join("&")},E.fn.extend({serialize:function(){return E.param(this.serializeArray())},serializeArray:function(){return this.map(function(){var e=E.prop(this,"elements");return e?E.makeArray(e):this}).filter(function(){var e=this.type;return this.name&&!E(this).is(":disabled")&&gt.test(this.nodeName)&&!ht.test(e)&&(this.checked||!fe.test(e))}).map(function(e,t){var n=E(this).val();return null==n?null:Array.isArray(n)?E.map(n,function(e){return{name:t.name,value:e.replace(pt,"\r\n")}}):{name:t.name,value:n.replace(pt,"\r\n")}}).get()}}),E.fn.extend({wrapAll:function(e){var t;return this[0]&&(b(e)&&(e=e.call(this[0])),t=E(e,this[0].ownerDocument).eq(0).clone(!0),this[0].parentNode&&t.insertBefore(this[0]),t.map(function(){var e=this;while(e.firstElementChild)e=e.firstElementChild;return e}).append(this)),this},wrapInner:function(n){return b(n)?this.each(function(e){E(this).wrapInner(n.call(this,e))}):this.each(function(){var e=E(this),t=e.contents();t.length?t.wrapAll(n):e.append(n)})},wrap:function(t){var n=b(t);return this.each(function(e){E(this).wrapAll(n?t.call(this,e):t)})},unwrap:function(e){return this.parent(e).not("body").each(function(){E(this).replaceWith(this.childNodes)}),this}}),E.expr.pseudos.hidden=function(e){return!E.expr.pseudos.visible(e)},E.expr.pseudos.visible=function(e){return!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)},m.createHTMLDocument=((ft=w.implementation.createHTMLDocument("").body).innerHTML="<form></form><form></form>",2===ft.childNodes.length),E.parseHTML=function(e,t,n){return"string"!=typeof e?[]:("boolean"==typeof t&&(n=t,t=!1),t||(m.createHTMLDocument?((r=(t=w.implementation.createHTMLDocument("")).createElement("base")).href=w.location.href,t.head.appendChild(r)):t=w),o=!n&&[],(i=k.exec(e))?[t.createElement(i[1])]:(i=me([e],t,o),o&&o.length&&E(o).remove(),E.merge([],i.childNodes)));var r,i,o},E.offset={setOffset:function(e,t,n){var r,i,o,a,s,u,l=E.css(e,"position"),c=E(e),f={};"static"===l&&(e.style.position="relative"),s=c.offset(),o=E.css(e,"top"),u=E.css(e,"left"),("absolute"===l||"fixed"===l)&&-1<(o+u).indexOf("auto")?(a=(r=c.position()).top,i=r.left):(a=parseFloat(o)||0,i=parseFloat(u)||0),b(t)&&(t=t.call(e,n,E.extend({},s))),null!=t.top&&(f.top=t.top-s.top+a),null!=t.left&&(f.left=t.left-s.left+i),"using"in t?t.using.call(e,f):("number"==typeof f.top&&(f.top+="px"),"number"==typeof f.left&&(f.left+="px"),c.css(f))}},E.fn.extend({offset:function(t){if(arguments.length)return void 0===t?this:this.each(function(e){E.offset.setOffset(this,t,e)});var e,n,r=this[0];return r?r.getClientRects().length?(e=r.getBoundingClientRect(),n=r.ownerDocument.defaultView,{top:e.top+n.pageYOffset,left:e.left+n.pageXOffset}):{top:0,left:0}:void 0},position:function(){if(this[0]){var e,t,n,r=this[0],i={top:0,left:0};if("fixed"===E.css(r,"position"))t=r.getBoundingClientRect();else{t=this.offset(),n=r.ownerDocument,e=r.offsetParent||n.documentElement;while(e&&(e===n.body||e===n.documentElement)&&"static"===E.css(e,"position"))e=e.parentNode;e&&e!==r&&1===e.nodeType&&((i=E(e).offset()).top+=E.css(e,"borderTopWidth",!0),i.left+=E.css(e,"borderLeftWidth",!0))}return{top:t.top-i.top-E.css(r,"marginTop",!0),left:t.left-i.left-E.css(r,"marginLeft",!0)}}},offsetParent:function(){return this.map(function(){var e=this.offsetParent;while(e&&"static"===E.css(e,"position"))e=e.offsetParent;return e||re})}}),E.each({scrollLeft:"pageXOffset",scrollTop:"pageYOffset"},function(t,i){var o="pageYOffset"===i;E.fn[t]=function(e){return $(this,function(e,t,n){var r;if(x(e)?r=e:9===e.nodeType&&(r=e.defaultView),void 0===n)return r?r[i]:e[t];r?r.scrollTo(o?r.pageXOffset:n,o?n:r.pageYOffset):e[t]=n},t,e,arguments.length)}}),E.each(["top","left"],function(e,n){E.cssHooks[n]=Fe(m.pixelPosition,function(e,t){if(t)return t=We(e,n),Ie.test(t)?E(e).position()[n]+"px":t})}),E.each({Height:"height",Width:"width"},function(a,s){E.each({padding:"inner"+a,content:s,"":"outer"+a},function(r,o){E.fn[o]=function(e,t){var n=arguments.length&&(r||"boolean"!=typeof e),i=r||(!0===e||!0===t?"margin":"border");return $(this,function(e,t,n){var r;return x(e)?0===o.indexOf("outer")?e["inner"+a]:e.document.documentElement["client"+a]:9===e.nodeType?(r=e.documentElement,Math.max(e.body["scroll"+a],r["scroll"+a],e.body["offset"+a],r["offset"+a],r["client"+a])):void 0===n?E.css(e,t,i):E.style(e,t,n,i)},s,n?e:void 0,n)}})}),E.fn.extend({bind:function(e,t,n){return this.on(e,null,t,n)},unbind:function(e,t){return this.off(e,null,t)},delegate:function(e,t,n,r){return this.on(t,e,n,r)},undelegate:function(e,t,n){return 1===arguments.length?this.off(e,"**"):this.off(t,e||"**",n)},hover:function(e,t){return this.mouseenter(e).mouseleave(t||e)}}),E.each("blur focus focusin focusout resize scroll click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup contextmenu".split(" "),function(e,n){E.fn[n]=function(e,t){return 0<arguments.length?this.on(n,null,e,t):this.trigger(n)}});var yt=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;E.proxy=function(e,t){var n,r,i;if("string"==typeof t&&(n=e[t],t=e,e=n),b(e))return r=s.call(arguments,2),(i=function(){return e.apply(t||this,r.concat(s.call(arguments)))}).guid=e.guid=e.guid||E.guid++,i},E.holdReady=function(e){e?E.readyWait++:E.ready(!0)},E.isArray=Array.isArray,E.parseJSON=JSON.parse,E.nodeName=S,E.isFunction=b,E.isWindow=x,E.camelCase=V,E.type=T,E.now=Date.now,E.isNumeric=function(e){var t=E.type(e);return("number"===t||"string"===t)&&!isNaN(e-parseFloat(e))},E.trim=function(e){return null==e?"":(e+"").replace(yt,"")},"function"==typeof define&&define.amd&&define("jquery",[],function(){return E});var mt=g.jQuery,bt=g.$;return E.noConflict=function(e){return g.$===E&&(g.$=bt),e&&g.jQuery===E&&(g.jQuery=mt),E},"undefined"==typeof e&&(g.jQuery=g.$=E),E});
+/*!
+ * Splide.js
+ * Version  : 2.4.20
+ * License  : MIT
+ * Copyright: 2020 Naotoshi Fujita
+ */
+/******/ (function() { // webpackBootstrap
+/******/  "use strict";
+/******/  // The require scope
+/******/  var __webpack_require__ = {};
+/******/
+/************************************************************************/
+/******/  /* webpack/runtime/define property getters */
+/******/  !function() {
+/******/    // define getter functions for harmony exports
+/******/    __webpack_require__.d = function(exports, definition) {
+/******/      for(var key in definition) {
+/******/        if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/          Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/        }
+/******/      }
+/******/    };
+/******/  }();
+/******/
+/******/  /* webpack/runtime/hasOwnProperty shorthand */
+/******/  !function() {
+/******/    __webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/  }();
+/******/
+/******/  /* webpack/runtime/make namespace object */
+/******/  !function() {
+/******/    // define __esModule on exports
+/******/    __webpack_require__.r = function(exports) {
+/******/      if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/        Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/      }
+/******/      Object.defineProperty(exports, '__esModule', { value: true });
+/******/    };
+/******/  }();
+/******/
+/************************************************************************/
 
-(function (factory, jQuery, Zepto) {
+// UNUSED EXPORTS: Splide
 
-    if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
-    } else if (typeof exports === 'object' && typeof Meteor === 'undefined') {
-        module.exports = factory(require('jquery'));
+// NAMESPACE OBJECT: ./src/js/constants/states.js
+var states_namespaceObject = {};
+__webpack_require__.r(states_namespaceObject);
+__webpack_require__.d(states_namespaceObject, {
+  "CREATED": function() { return CREATED; },
+  "DESTROYED": function() { return DESTROYED; },
+  "IDLE": function() { return IDLE; },
+  "MOUNTED": function() { return MOUNTED; },
+  "MOVING": function() { return MOVING; }
+});
+
+;// CONCATENATED MODULE: ./src/js/core/event.js
+/**
+ * The function for providing an Event object simply managing events.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * The function for providing an Event object simply managing events.
+ */
+/* harmony default export */ var core_event = (function () {
+  /**
+   * Store all event data.
+   *
+   * @type {Array}
+   */
+  var data = [];
+  var Event = {
+    /**
+     * Subscribe the given event(s).
+     *
+     * @param {string}   events  - An event name. Use space to separate multiple events.
+     *                             Also, namespace is accepted by dot, such as 'resize.{namespace}'.
+     * @param {function} handler - A callback function.
+     * @param {Element}  elm     - Optional. Native event will be listened to when this arg is provided.
+     * @param {Object}   options - Optional. Options for addEventListener.
+     */
+    on: function on(events, handler, elm, options) {
+      if (elm === void 0) {
+        elm = null;
+      }
+
+      if (options === void 0) {
+        options = {};
+      }
+
+      events.split(' ').forEach(function (event) {
+        if (elm) {
+          elm.addEventListener(event, handler, options);
+        }
+
+        data.push({
+          event: event,
+          handler: handler,
+          elm: elm,
+          options: options
+        });
+      });
+    },
+
+    /**
+     * Unsubscribe the given event(s).
+     *
+     * @param {string}  events - A event name or names split by space.
+     * @param {Element} elm    - Optional. removeEventListener() will be called when this arg is provided.
+     */
+    off: function off(events, elm) {
+      if (elm === void 0) {
+        elm = null;
+      }
+
+      events.split(' ').forEach(function (event) {
+        data = data.filter(function (item) {
+          if (item && item.event === event && item.elm === elm) {
+            unsubscribe(item);
+            return false;
+          }
+
+          return true;
+        });
+      });
+    },
+
+    /**
+     * Emit an event.
+     * This method is only for custom events.
+     *
+     * @param {string}  event - An event name.
+     * @param {*}       args  - Any number of arguments passed to handlers.
+     */
+    emit: function emit(event) {
+      for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      data.forEach(function (item) {
+        if (!item.elm && item.event.split('.')[0] === event) {
+          item.handler.apply(item, args);
+        }
+      });
+    },
+
+    /**
+     * Clear event data.
+     */
+    destroy: function destroy() {
+      data.forEach(unsubscribe);
+      data = [];
+    }
+  };
+  /**
+   * Remove the registered event listener.
+   *
+   * @param {Object} item - An object containing event data.
+   */
+
+  function unsubscribe(item) {
+    if (item.elm) {
+      item.elm.removeEventListener(item.event, item.handler, item.options);
+    }
+  }
+
+  return Event;
+});
+;// CONCATENATED MODULE: ./src/js/core/state.js
+/**
+ * The function providing a super simple state system.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * The function providing a super simple state system.
+ *
+ * @param {string|number} initialState - Provide the initial state value.
+ */
+/* harmony default export */ var state = (function (initialState) {
+  /**
+   * Store the current state.
+   *
+   * @type {string|number}
+   */
+  var curr = initialState;
+  return {
+    /**
+     * Change state.
+     *
+     * @param {string|number} state - A new state.
+     */
+    set: function set(state) {
+      curr = state;
+    },
+
+    /**
+     * Verify if the current state is given one or not.
+     *
+     * @param {string|number} state - A state name to be verified.
+     *
+     * @return {boolean} - True if the current state is the given one.
+     */
+    is: function is(state) {
+      return state === curr;
+    }
+  };
+});
+;// CONCATENATED MODULE: ./src/js/utils/object.js
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+/**
+ * Some utility functions related with Object, supporting IE.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+var keys = Object.keys;
+/**
+ * Iterate an object like Array.forEach.
+ * IE doesn't support forEach of HTMLCollection.
+ *
+ * @param {Object}    obj       - An object.
+ * @param {function}  callback  - A function handling each value. Arguments are value, property and index.
+ */
+
+function each(obj, callback) {
+  keys(obj).some(function (key, index) {
+    return callback(obj[key], key, index);
+  });
+}
+/**
+ * Return values of the given object as an array.
+ * IE doesn't support Object.values.
+ *
+ * @param {Object} obj - An object.
+ *
+ * @return {Array} - An array containing all values of the given object.
+ */
+
+function values(obj) {
+  return keys(obj).map(function (key) {
+    return obj[key];
+  });
+}
+/**
+ * Check if the given subject is object or not.
+ *
+ * @param {*} subject - A subject to be verified.
+ *
+ * @return {boolean} - True if object, false otherwise.
+ */
+
+function isObject(subject) {
+  return typeof subject === 'object';
+}
+/**
+ * Merge two objects deeply.
+ *
+ * @param {Object} to   - An object where "from" is merged.
+ * @param {Object} from - An object merged to "to".
+ *
+ * @return {Object} - A merged object.
+ */
+
+function merge(_ref, from) {
+  var to = _extends({}, _ref);
+
+  each(from, function (value, key) {
+    if (isObject(value)) {
+      if (!isObject(to[key])) {
+        to[key] = {};
+      }
+
+      to[key] = merge(to[key], value);
     } else {
-        factory(jQuery || Zepto);
+      to[key] = value;
     }
+  });
+  return to;
+}
+/**
+ * Assign all properties "from" to "to" object.
+ *
+ * @param {Object} to   - An object where properties are assigned.
+ * @param {Object} from - An object whose properties are assigned to "to".
+ *
+ * @return {Object} - An assigned object.
+ */
 
-}(function ($) {
-    'use strict';
-    var Mask = function (el, mask, options) {
-    var p = {
-      invalid: [],
-      getCaret: function () {
-        try {
-          var sel,
-          pos = 0,
-          ctrl = el.get(0),
-          dSel = document.selection,
-          cSelStart = ctrl.selectionStart;
-          if (dSel && navigator.appVersion.indexOf('MSIE 10') === -1) {
-              sel = dSel.createRange();
-              sel.moveStart('character', -p.val().length);
-              pos = sel.text.length;
-          }
+function object_assign(to, from) {
+  keys(from).forEach(function (key) {
+    if (!to[key]) {
+      Object.defineProperty(to, key, Object.getOwnPropertyDescriptor(from, key));
+    }
+  });
+  return to;
+}
+;// CONCATENATED MODULE: ./src/js/utils/utils.js
+/**
+ * A package of some miscellaneous utility functions.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
 
-          else if (cSelStart || cSelStart === '0') {
-              pos = cSelStart;
-          }
-          return pos;
-        } catch (e) {}
-      },
-      setCaret: function(pos) {
-          try {
-            if (el.is(':focus')) {
-              var range, ctrl = el.get(0);
-              if (ctrl.setSelectionRange) {
-                ctrl.setSelectionRange(pos, pos);
-              } else {
-                range = ctrl.createTextRange();
-                range.collapse(true);
-                range.moveEnd('character', pos);
-                range.moveStart('character', pos);
-                range.select();
-              }
-            }
-          } catch (e) {}
-      },
-      events: function() {
-        el
-          .on('keydown.mask', function(e) {
-            el.data('mask-keycode', e.keyCode || e.which);
-            el.data('mask-previus-value', el.val());
-            el.data('mask-previus-caret-pos', p.getCaret());
-            p.maskDigitPosMapOld = p.maskDigitPosMap;
-            })
-          .on($.jMaskGlobals.useInput ? 'input.mask' : 'keyup.mask', p.behaviour)
-          .on('paste.mask drop.mask', function() {
-            setTimeout(function() {
-              el.keydown().keyup();
-            }, 100);
-          })
-          .on('change.mask', function(){
-            el.data('changed', true);
-          })
-          .on('blur.mask', function(){
-            if (oldValue !== p.val() && !el.data('changed')) {
-              el.trigger('change');
-            }
-            el.data('changed', false);
-          })
-          .on('blur.mask', function() {
-            oldValue = p.val();
-          })
-          .on('focus.mask', function (e) {
-            if (options.selectOnFocus === true) {
-              $(e.target).select();
-            }
-          })
-          .on('focusout.mask', function() {
-            if (options.clearIfNotMatch && !regexMask.test(p.val())) {
-              p.val('');
-            }
-          });
-      },
-      getRegexMask: function() {
-        var maskChunks = [], translation, pattern, optional, recursive, oRecursive, r;
-        for (var i = 0; i < mask.length; i++) {
-          translation = jMask.translation[mask.charAt(i)];
-          if (translation) {
-            pattern = translation.pattern.toString().replace(/.{1}$|^.{1}/g, '');
-            optional = translation.optional;
-            recursive = translation.recursive;
-            if (recursive) {
-              maskChunks.push(mask.charAt(i));
-              oRecursive = {digit: mask.charAt(i), pattern: pattern};
-            } else {
-              maskChunks.push(!optional && !recursive ? pattern : (pattern + '?'));
-            }
-          } else {
-            maskChunks.push(mask.charAt(i).replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'));
-          }
-        }
-        r = maskChunks.join('');
-        if (oRecursive) {
-          r = r.replace(new RegExp('(' + oRecursive.digit + '(.*' + oRecursive.digit + ')?)'), '($1)?').replace(new RegExp(oRecursive.digit, 'g'), oRecursive.pattern);
-        }
-        return new RegExp(r);
-      },
-      destroyEvents: function() {
-        el.off(['input', 'keydown', 'keyup', 'paste', 'drop', 'blur', 'focusout', ''].join('.mask '));
-      },
-      val: function(v) {
-        var isInput = el.is('input'),
-        method = isInput ? 'val' : 'text',
-        r;
-        if (arguments.length > 0) {
-          if (el[method]() !== v) {
-            el[method](v);
-          }
-          r = el;
-        } else {
-          r = el[method]();
-        }
-        return r;
-      },
-      calculateCaretPosition: function(oldVal) {
-        var newVal = p.getMasked(),
-        caretPosNew = p.getCaret();
-        if (oldVal !== newVal) {
-          var caretPosOld = el.data('mask-previus-caret-pos') || 0,
-            newValL = newVal.length,
-            oldValL = oldVal.length,
-            maskDigitsBeforeCaret = 0,
-            maskDigitsAfterCaret = 0,
-            maskDigitsBeforeCaretAll = 0,
-            maskDigitsBeforeCaretAllOld = 0,
-            i = 0;
-            for (i = caretPosNew; i < newValL; i++) {
-              if (!p.maskDigitPosMap[i]) {
-                break;
-              }
-              maskDigitsAfterCaret++;
-            }
-            for (i = caretPosNew - 1; i >= 0; i--) {
-              if (!p.maskDigitPosMap[i]) {
-                break;
-              }
-              maskDigitsBeforeCaret++;
-            }
-            for (i = caretPosNew - 1; i >= 0; i--) {
-              if (p.maskDigitPosMap[i]) {
-                maskDigitsBeforeCaretAll++;
-              }
-            }
-            for (i = caretPosOld - 1; i >= 0; i--) {
-              if (p.maskDigitPosMapOld[i]) {
-                maskDigitsBeforeCaretAllOld++;
-              }
-            }
-            if (caretPosNew > oldValL) {
-              caretPosNew = newValL * 10;
-            } else if (caretPosOld >= caretPosNew && caretPosOld !== oldValL) {
-              if (!p.maskDigitPosMapOld[caretPosNew])  {
-                var caretPos = caretPosNew;
-                caretPosNew -= maskDigitsBeforeCaretAllOld - maskDigitsBeforeCaretAll;
-                caretPosNew -= maskDigitsBeforeCaret;
-                if (p.maskDigitPosMap[caretPosNew])  {
-                  caretPosNew = caretPos;
-                }
-              }
-            }
-            else if (caretPosNew > caretPosOld) {
-              caretPosNew += maskDigitsBeforeCaretAll - maskDigitsBeforeCaretAllOld;
-              caretPosNew += maskDigitsAfterCaret;
-            }
-          }
-          return caretPosNew;
-        },
-        behaviour: function(e) {
-          e = e || window.event;
-          p.invalid = [];
-          var keyCode = el.data('mask-keycode');
-          if ($.inArray(keyCode, jMask.byPassKeys) === -1) {
-            var newVal = p.getMasked(),
-            caretPos = p.getCaret(),
-            oldVal = el.data('mask-previus-value') || '';
-            setTimeout(function() {
-              p.setCaret(p.calculateCaretPosition(oldVal));
-            }, $.jMaskGlobals.keyStrokeCompensation);
-            p.val(newVal);
-            p.setCaret(caretPos);
-            return p.callbacks(e);
-          }
-        },
-        getMasked: function(skipMaskChars, val) {
-          var buf = [],
-          value = val === undefined ? p.val() : val + '',
-          m = 0, maskLen = mask.length,
-          v = 0, valLen = value.length,
-          offset = 1, addMethod = 'push',
-          resetPos = -1,
-          maskDigitCount = 0,
-          maskDigitPosArr = [],
-          lastMaskChar,
-          check;
-          if (options.reverse) {
-            addMethod = 'unshift';
-            offset = -1;
-            lastMaskChar = 0;
-            m = maskLen - 1;
-            v = valLen - 1;
-            check = function () {
-              return m > -1 && v > -1;
-            };
-          } else {
-            lastMaskChar = maskLen - 1;
-            check = function () {
-              return m < maskLen && v < valLen;
-            };
-          }
-          var lastUntranslatedMaskChar;
-          while (check()) {
-            var maskDigit = mask.charAt(m),
-            valDigit = value.charAt(v),
-            translation = jMask.translation[maskDigit];
-            if (translation) {
-              if (valDigit.match(translation.pattern)) {
-                buf[addMethod](valDigit);
-                  if (translation.recursive) {
-                    if (resetPos === -1) {
-                      resetPos = m;
-                    } else if (m === lastMaskChar && m !== resetPos) {
-                      m = resetPos - offset;
-                    }
-                    if (lastMaskChar === resetPos) {
-                      m -= offset;
-                    }
-                  }
-                  m += offset;
-                } else if (valDigit === lastUntranslatedMaskChar) {
-                  maskDigitCount--;
-                  lastUntranslatedMaskChar = undefined;
-                } else if (translation.optional) {
-                  m += offset;
-                  v -= offset;
-                } else if (translation.fallback) {
-                  buf[addMethod](translation.fallback);
-                  m += offset;
-                  v -= offset;
-                } else {
-                  p.invalid.push({p: v, v: valDigit, e: translation.pattern});
-                }
-                v += offset;
-              } else {
-                if (!skipMaskChars) {
-                  buf[addMethod](maskDigit);
-                }
-                if (valDigit === maskDigit) {
-                  maskDigitPosArr.push(v);
-                  v += offset;
-                } else {
-                  lastUntranslatedMaskChar = maskDigit;
-                  maskDigitPosArr.push(v + maskDigitCount);
-                  maskDigitCount++;
-                }
-              m += offset;
-            }
-          }
-          var lastMaskCharDigit = mask.charAt(lastMaskChar);
-          if (maskLen === valLen + 1 && !jMask.translation[lastMaskCharDigit]) {
-            buf.push(lastMaskCharDigit);
-          }
-          var newVal = buf.join('');
-          p.mapMaskdigitPositions(newVal, maskDigitPosArr, valLen);
-          return newVal;
-        },
-        mapMaskdigitPositions: function(newVal, maskDigitPosArr, valLen) {
-          var maskDiff = options.reverse ? newVal.length - valLen : 0;
-          p.maskDigitPosMap = {};
-          for (var i = 0; i < maskDigitPosArr.length; i++) {
-            p.maskDigitPosMap[maskDigitPosArr[i] + maskDiff] = 1;
-          }
-        },
-        callbacks: function (e) {
-          var val = p.val(),
-            changed = val !== oldValue,
-            defaultArgs = [val, e, el, options],
-            callback = function(name, criteria, args) {
-              if (typeof options[name] === 'function' && criteria) {
-                options[name].apply(this, args);
-              }
-            };
-          callback('onChange', changed === true, defaultArgs);
-          callback('onKeyPress', changed === true, defaultArgs);
-          callback('onComplete', val.length === mask.length, defaultArgs);
-          callback('onInvalid', p.invalid.length > 0, [val, e, el, p.invalid, options]);
-        }
-      };
-      el = $(el);
-      var jMask = this, oldValue = p.val(), regexMask;
-      mask = typeof mask === 'function' ? mask(p.val(), undefined, el,  options) : mask;
-      jMask.mask = mask;
-      jMask.options = options;
-      jMask.remove = function() {
-        var caret = p.getCaret();
-        if (jMask.options.placeholder) {
-          el.removeAttr('placeholder');
-        }
-        if (el.data('mask-maxlength')) {
-          el.removeAttr('maxlength');
-        }
-        p.destroyEvents();
-        p.val(jMask.getCleanVal());
-        p.setCaret(caret);
-        return el;
-      };
-      jMask.getCleanVal = function() {
-        return p.getMasked(true);
-      };
-      jMask.getMaskedVal = function(val) {
-        return p.getMasked(false, val);
-      };
-      jMask.init = function(onlyMask) {
-        onlyMask = onlyMask || false;
-        options = options || {};
-        jMask.clearIfNotMatch  = $.jMaskGlobals.clearIfNotMatch;
-        jMask.byPassKeys       = $.jMaskGlobals.byPassKeys;
-        jMask.translation      = $.extend({}, $.jMaskGlobals.translation, options.translation);
-        jMask = $.extend(true, {}, jMask, options);
-        regexMask = p.getRegexMask();
-        if (onlyMask) {
-          p.events();
-          p.val(p.getMasked());
-        } else {
-          if (options.placeholder) {
-            el.attr('placeholder' , options.placeholder);
-          }
-          if (el.data('mask')) {
-            el.attr('autocomplete', 'off');
-          }
-          for (var i = 0, maxlength = true; i < mask.length; i++) {
-            var translation = jMask.translation[mask.charAt(i)];
-            if (translation && translation.recursive) {
-              maxlength = false;
-              break;
-            }
-          }
-          if (maxlength) {
-            el.attr('maxlength', mask.length).data('mask-maxlength', true);
-          }
-          p.destroyEvents();
-          p.events();
-          var caret = p.getCaret();
-          p.val(p.getMasked());
-          p.setCaret(caret);
-        }
-      };
-    jMask.init(!el.is('input'));
-  };
-  $.maskWatchers = {};
-  var HTMLAttributes = function () {
-    var input = $(this),
-      options = {},
-      prefix = 'data-mask-',
-      mask = input.attr('data-mask');
-    if (input.attr(prefix + 'reverse')) {
-      options.reverse = true;
+/**
+ * Convert the given value to array.
+ *
+ * @param {*} value - Any value.
+ *
+ * @return {*[]} - Array containing the given value.
+ */
+
+function toArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+/**
+ * Check if the given value is between min and max.
+ * Min will be returned when the value is less than min or max will do when greater than max.
+ *
+ * @param {number} value - A number to be checked.
+ * @param {number} m1    - Minimum or maximum number.
+ * @param {number} m2    - Maximum or minimum number.
+ *
+ * @return {number} - A value itself, min or max.
+ */
+
+function between(value, m1, m2) {
+  return Math.min(Math.max(value, m1 > m2 ? m2 : m1), m1 > m2 ? m1 : m2);
+}
+/**
+ * The sprintf method with minimum functionality.
+ *
+ * @param {string}       format       - The string format.
+ * @param {string|Array} replacements - Replacements accepting multiple arguments.
+ *
+ * @returns {string} - Converted string.
+ */
+
+function sprintf(format, replacements) {
+  var i = 0;
+  return format.replace(/%s/g, function () {
+    return toArray(replacements)[i++];
+  });
+}
+/**
+ * Append px unit to the given subject if necessary.
+ *
+ * @param {number|string} value - A value that may not include an unit.
+ *
+ * @return {string} - If the value is string, return itself.
+ *                    If number, do value + "px". An empty string, otherwise.
+ */
+
+function unit(value) {
+  var type = typeof value;
+
+  if (type === 'number' && value > 0) {
+    return parseFloat(value) + 'px';
+  }
+
+  return type === 'string' ? value : '';
+}
+/**
+ * Pad start with 0.
+ *
+ * @param {number} number - A number to be filled with 0.
+ *
+ * @return {string|number} - Padded number.
+ */
+
+function pad(number) {
+  return number < 10 ? '0' + number : number;
+}
+/**
+ * Convert the given value to pixel.
+ *
+ * @param {Element}       root  - Root element where a dummy div is appended.
+ * @param {string|number} value - CSS value to be converted, such as 10rem.
+ *
+ * @return {number} - Pixel.
+ */
+
+function toPixel(root, value) {
+  if (typeof value === 'string') {
+    var div = create('div', {});
+    applyStyle(div, {
+      position: 'absolute',
+      width: value
+    });
+    append(root, div);
+    value = div.clientWidth;
+    dom_remove(div);
+  }
+
+  return +value || 0;
+}
+;// CONCATENATED MODULE: ./src/js/utils/dom.js
+/**
+ * Some utility functions related with DOM.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+/**
+ * Find the first element matching the given selector.
+ * Be aware that all selectors after a space are ignored.
+ *
+ * @param {Element|Node}  elm       - An ancestor element.
+ * @param {string}        selector  - DOMString.
+ *
+ * @return {Element|null} - A found element or null.
+ */
+
+function find(elm, selector) {
+  return elm ? elm.querySelector(selector.split(' ')[0]) : null;
+}
+/**
+ * Find a first child having the given tag or class name.
+ *
+ * @param {Element} parent         - A parent element.
+ * @param {string}  tagOrClassName - A tag or class name.
+ *
+ * @return {Element|undefined} - A found element on success or undefined on failure.
+ */
+
+function child(parent, tagOrClassName) {
+  return children(parent, tagOrClassName)[0];
+}
+/**
+ * Return chile elements that matches the provided tag or class name.
+ *
+ * @param {Element} parent         - A parent element.
+ * @param {string}  tagOrClassName - A tag or class name.
+ *
+ * @return {Element[]} - Found elements.
+ */
+
+function children(parent, tagOrClassName) {
+  if (parent) {
+    return values(parent.children).filter(function (child) {
+      return hasClass(child, tagOrClassName.split(' ')[0]) || child.tagName === tagOrClassName;
+    });
+  }
+
+  return [];
+}
+/**
+ * Create an element with some optional attributes.
+ *
+ * @param {string} tag   - A tag name.
+ * @param {Object} attrs - An object any attribute pairs of name and value.
+ *
+ * @return {Element} - A created element.
+ */
+
+function create(tag, attrs) {
+  var elm = document.createElement(tag);
+  each(attrs, function (value, key) {
+    return setAttribute(elm, key, value);
+  });
+  return elm;
+}
+/**
+ * Convert HTML string to DOM node.
+ *
+ * @param {string} html - HTML string.
+ *
+ * @return {Node} - A created node.
+ */
+
+function domify(html) {
+  var div = create('div', {});
+  div.innerHTML = html;
+  return div.firstChild;
+}
+/**
+ * Remove a given element from a DOM tree.
+ *
+ * @param {Element|Element[]} elms - Element(s) to be removed.
+ */
+
+function dom_remove(elms) {
+  toArray(elms).forEach(function (elm) {
+    if (elm) {
+      var parent = elm.parentElement;
+      parent && parent.removeChild(elm);
     }
-    if (input.attr(prefix + 'clearifnotmatch')) {
-      options.clearIfNotMatch = true;
-    }
-    if (input.attr(prefix + 'selectonfocus') === 'true') {
-      options.selectOnFocus = true;
-    }
-    if (notSameMaskObject(input, mask, options)) {
-      return input.data('mask', new Mask(this, mask, options));
-    }
-  },
-  notSameMaskObject = function(field, mask, options) {
-    options = options || {};
-    var maskObject = $(field).data('mask'),
-    stringify = JSON.stringify,
-    value = $(field).val() || $(field).text();
-    try {
-      if (typeof mask === 'function') {
-        mask = mask(value);
-      }
-      return typeof maskObject !== 'object' || stringify(maskObject.options) !== stringify(options) || maskObject.mask !== mask;
-    } catch (e) {}
-  },
-  eventSupported = function(eventName) {
-    var el = document.createElement('div'), isSupported;
-    eventName = 'on' + eventName;
-    isSupported = (eventName in el);
-    if ( !isSupported ) {
-      el.setAttribute(eventName, 'return;');
-      isSupported = typeof el[eventName] === 'function';
-    }
-    el = null;
-    return isSupported;
-  };
-  $.fn.mask = function(mask, options) {
-    options = options || {};
-    var selector = this.selector,
-    globals = $.jMaskGlobals,
-    interval = globals.watchInterval,
-    watchInputs = options.watchInputs || globals.watchInputs,
-    maskFunction = function() {
-      if (notSameMaskObject(this, mask, options)) {
-        return $(this).data('mask', new Mask(this, mask, options));
-      }
-    };
-    $(this).each(maskFunction);
-    if (selector && selector !== '' && watchInputs) {
-      clearInterval($.maskWatchers[selector]);
-      $.maskWatchers[selector] = setInterval(function(){
-        $(document).find(selector).each(maskFunction);
-      }, interval);
-    }
-    return this;
-  };
-  $.fn.masked = function(val) {
-    return this.data('mask').getMaskedVal(val);
-  };
-  $.fn.unmask = function() {
-    clearInterval($.maskWatchers[this.selector]);
-    delete $.maskWatchers[this.selector];
-    return this.each(function() {
-      var dataMask = $(this).data('mask');
-      if (dataMask) {
-        dataMask.remove().removeData('mask');
+  });
+}
+/**
+ * Append a child to a given element.
+ *
+ * @param {Element} parent - A parent element.
+ * @param {Element} child  - An element to be appended.
+ */
+
+function append(parent, child) {
+  if (parent) {
+    parent.appendChild(child);
+  }
+}
+/**
+ * Insert an element before the reference element.
+ *
+ * @param {Element|Node} ref - A reference element.
+ * @param {Element}      elm - An element to be inserted.
+ */
+
+function before(elm, ref) {
+  if (elm && ref) {
+    var parent = ref.parentElement;
+    parent && parent.insertBefore(elm, ref);
+  }
+}
+/**
+ * Apply styles to the given element.
+ *
+ * @param {Element} elm     - An element where styles are applied.
+ * @param {Object}  styles  - Object containing styles.
+ */
+
+function applyStyle(elm, styles) {
+  if (elm) {
+    each(styles, function (value, prop) {
+      if (value !== null) {
+        elm.style[prop] = value;
       }
     });
-  };
-  $.fn.cleanVal = function() {
-    return this.data('mask').getCleanVal();
-  };
-  $.applyDataMask = function(selector) {
-    selector = selector || $.jMaskGlobals.maskElements;
-    var $selector = (selector instanceof $) ? selector : $(selector);
-    $selector.filter($.jMaskGlobals.dataMaskAttr).each(HTMLAttributes);
-  };
-  var globals = {
-    maskElements: 'input,td,span,div',
-    dataMaskAttr: '*[data-mask]',
-    dataMask: true,
-    watchInterval: 300,
-    watchInputs: true,
-    keyStrokeCompensation: 10,
-    useInput: !/Chrome\/[2-4][0-9]|SamsungBrowser/.test(window.navigator.userAgent) && eventSupported('input'),
-    watchDataMask: false,
-    byPassKeys: [9, 16, 17, 18, 36, 37, 38, 39, 40, 91],
-    translation: {
-      '0': {pattern: /\d/},
-      '9': {pattern: /\d/, optional: true},
-      '#': {pattern: /\d/, recursive: true},
-      'A': {pattern: /[a-zA-Z0-9]/},
-      'S': {pattern: /[a-zA-Z]/}
-    }
-  };
-  $.jMaskGlobals = $.jMaskGlobals || {};
-  globals = $.jMaskGlobals = $.extend(true, {}, globals, $.jMaskGlobals);
-  if (globals.dataMask) {
-    $.applyDataMask();
   }
-  setInterval(function() {
-    if ($.jMaskGlobals.watchDataMask) {
-      $.applyDataMask();
+}
+/**
+ * Add or remove classes to/from the element.
+ * This function is for internal usage.
+ *
+ * @param {Element}         elm     - An element where classes are added.
+ * @param {string|string[]} classes - Class names being added.
+ * @param {boolean}         remove  - Whether to remove or add classes.
+ */
+
+function addOrRemoveClasses(elm, classes, remove) {
+  if (elm) {
+    toArray(classes).forEach(function (name) {
+      if (name) {
+        elm.classList[remove ? 'remove' : 'add'](name);
+      }
+    });
+  }
+}
+/**
+ * Add classes to the element.
+ *
+ * @param {Element}          elm     - An element where classes are added.
+ * @param {string|string[]}  classes - Class names being added.
+ */
+
+
+function addClass(elm, classes) {
+  addOrRemoveClasses(elm, classes, false);
+}
+/**
+ * Remove a class from the element.
+ *
+ * @param {Element}         elm     - An element where classes are removed.
+ * @param {string|string[]} classes - A class name being removed.
+ */
+
+function removeClass(elm, classes) {
+  addOrRemoveClasses(elm, classes, true);
+}
+/**
+ * Verify if the provided element has the class or not.
+ *
+ * @param {Element} elm       - An element.
+ * @param {string}  className - A class name.
+ *
+ * @return {boolean} - True if the element has the class or false if not.
+ */
+
+function hasClass(elm, className) {
+  return !!elm && elm.classList.contains(className);
+}
+/**
+ * Set attribute to the given element.
+ *
+ * @param {Element}                 elm   - An element where an attribute is assigned.
+ * @param {string}                  name  - Attribute name.
+ * @param {string|number|boolean}   value - Attribute value.
+ */
+
+function setAttribute(elm, name, value) {
+  if (elm) {
+    elm.setAttribute(name, value);
+  }
+}
+/**
+ * Get attribute from the given element.
+ *
+ * @param {Element} elm  - An element where an attribute is assigned.
+ * @param {string}  name - Attribute name.
+ *
+ * @return {string} - The value of the given attribute if available. An empty string if not.
+ */
+
+function getAttribute(elm, name) {
+  return elm ? elm.getAttribute(name) : '';
+}
+/**
+ * Remove attribute from the given element.
+ *
+ * @param {Element|Element[]} elms  - An element where an attribute is removed.
+ * @param {string|string[]}      names - Attribute name.
+ */
+
+function removeAttribute(elms, names) {
+  toArray(names).forEach(function (name) {
+    toArray(elms).forEach(function (elm) {
+      return elm && elm.removeAttribute(name);
+    });
+  });
+}
+/**
+ * Return the Rect object of the provided object.
+ *
+ * @param {Element} elm - An element.
+ *
+ * @return {ClientRect|DOMRect} - A rect object.
+ */
+
+function getRect(elm) {
+  return elm.getBoundingClientRect();
+}
+/**
+ * Trigger the given callback after all images contained by the element are loaded.
+ *
+ * @param {Element}  elm      - Element that may contain images.
+ * @param {Function} callback - Callback function fired right after all images are loaded.
+ */
+
+function loaded(elm, callback) {
+  var images = elm.querySelectorAll('img');
+  var length = images.length;
+
+  if (length) {
+    var count = 0;
+    each(images, function (img) {
+      img.onload = img.onerror = function () {
+        if (++count === length) {
+          callback();
+        }
+      };
+    });
+  } else {
+    // Trigger the callback immediately if there is no image.
+    callback();
+  }
+}
+;// CONCATENATED MODULE: ./src/js/constants/types.js
+/**
+ * Export slider types.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * Normal slider.
+ *
+ * @type {string}
+ */
+var SLIDE = 'slide';
+/**
+ * Loop after the last slide and before the first one.
+ *
+ * @type {string}
+ */
+
+var LOOP = 'loop';
+/**
+ * The track doesn't move.
+ *
+ * @type {string}
+ */
+
+var FADE = 'fade';
+;// CONCATENATED MODULE: ./src/js/transitions/slide/index.js
+/**
+ * The component for general slide effect transition.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+/**
+ * The component for general slide effect transition.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var slide = (function (Splide, Components) {
+  /**
+   * Hold the list element.
+   *
+   * @type {Element}
+   */
+  var list;
+  /**
+   * Hold the onEnd callback function.
+   *
+   * @type {function}
+   */
+
+  var endCallback;
+  return {
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      list = Components.Elements.list;
+      Splide.on('transitionend', function (e) {
+        if (e.target === list && endCallback) {
+          endCallback();
+        }
+      }, list);
+    },
+
+    /**
+     * Start transition.
+     *
+     * @param {number}   destIndex - Destination slide index that might be clone's.
+     * @param {number}   newIndex  - New index.
+     * @param {number}   prevIndex - Previous index.
+     * @param {Object}   coord     - Destination coordinates.
+     * @param {function} done      - Callback function must be invoked when transition is completed.
+     */
+    start: function start(destIndex, newIndex, prevIndex, coord, done) {
+      var options = Splide.options;
+      var edgeIndex = Components.Controller.edgeIndex;
+      var speed = options.speed;
+      endCallback = done;
+
+      if (Splide.is(SLIDE)) {
+        if (prevIndex === 0 && newIndex >= edgeIndex || prevIndex >= edgeIndex && newIndex === 0) {
+          speed = options.rewindSpeed || speed;
+        }
+      }
+
+      applyStyle(list, {
+        transition: "transform " + speed + "ms " + options.easing,
+        transform: "translate(" + coord.x + "px," + coord.y + "px)"
+      });
     }
-  }, globals.watchInterval);
-}, window.jQuery, window.Zepto));
+  };
+});
+;// CONCATENATED MODULE: ./src/js/transitions/fade/index.js
+/**
+ * The component for fade transition.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+/**
+ * The component for fade transition.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var fade = (function (Splide, Components) {
+  var Fade = {
+    /**
+     * Called when the component is mounted.
+     * Apply transition style to the first slide.
+     */
+    mount: function mount() {
+      apply(Splide.index);
+    },
+
+    /**
+     * Start transition.
+     *
+     * @param {number}    destIndex - Destination slide index that might be clone's.
+     * @param {number}    newIndex  - New index.
+     * @param {number}    prevIndex - Previous index.
+     * @param {Object}    coord     - Destination coordinates.
+     * @param {function}  done      - Callback function must be invoked when transition is completed.
+     */
+    start: function start(destIndex, newIndex, prevIndex, coord, done) {
+      var track = Components.Elements.track;
+      applyStyle(track, {
+        height: unit(track.clientHeight)
+      });
+      apply(newIndex);
+      setTimeout(function () {
+        done();
+        applyStyle(track, {
+          height: ''
+        });
+      });
+    }
+  };
+  /**
+   * Apply transition style to the slide specified by the given index.
+   *
+   * @param {number} index - A slide index.
+   */
+
+  function apply(index) {
+    var options = Splide.options;
+    applyStyle(Components.Elements.slides[index], {
+      transition: "opacity " + options.speed + "ms " + options.easing
+    });
+  }
+
+  return Fade;
+});
+;// CONCATENATED MODULE: ./src/js/transitions/index.js
+/**
+ * Export transition components.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+;// CONCATENATED MODULE: ./src/js/core/composer.js
+/**
+ * Provide a function for composing components.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+/**
+ * Compose components.
+ *
+ * @param {Splide}   Splide     - Splide instance.
+ * @param {Object}   Components - Additional components.
+ * @param {function} Transition - Change component for transition.
+ *
+ * @return {Object} - An object containing all components.
+ */
+
+function compose(Splide, Components, Transition) {
+  var components = {};
+  each(Components, function (Component, name) {
+    components[name] = Component(Splide, components, name.toLowerCase());
+  });
+
+  if (!Transition) {
+    Transition = Splide.is(FADE) ? fade : slide;
+  }
+
+  components.Transition = Transition(Splide, components);
+  return components;
+}
+;// CONCATENATED MODULE: ./src/js/utils/error.js
+/**
+ * Utility functions for outputting logs.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * Prefix of an error massage.
+ *
+ * @type {string}
+ */
+var MESSAGE_PREFIX = '[SPLIDE]';
+/**
+ * Display an error message on the browser console.
+ *
+ * @param {string} message - An error message.
+ */
+
+function error(message) {
+  console.error(MESSAGE_PREFIX + " " + message);
+}
+/**
+ * Check existence of the given object and throw an error if it doesn't.
+ *
+ * @throws {Error}
+ *
+ * @param {*}      subject - A subject to be confirmed.
+ * @param {string} message - An error message.
+ */
+
+function exist(subject, message) {
+  if (!subject) {
+    throw new Error(message);
+  }
+}
+;// CONCATENATED MODULE: ./src/js/constants/classes.js
+/**
+ * Export class names.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * A root class name.
+ *
+ * @type {string}
+ */
+var ROOT = 'splide';
+/**
+ * The definition table of all classes for elements.
+ * They might be modified by options.
+ *
+ * @type {Object}
+ */
+
+var ELEMENT_CLASSES = {
+  root: ROOT,
+  slider: ROOT + "__slider",
+  track: ROOT + "__track",
+  list: ROOT + "__list",
+  slide: ROOT + "__slide",
+  container: ROOT + "__slide__container",
+  arrows: ROOT + "__arrows",
+  arrow: ROOT + "__arrow",
+  prev: ROOT + "__arrow--prev",
+  next: ROOT + "__arrow--next",
+  pagination: ROOT + "__pagination",
+  page: ROOT + "__pagination__page",
+  clone: ROOT + "__slide--clone",
+  progress: ROOT + "__progress",
+  bar: ROOT + "__progress__bar",
+  autoplay: ROOT + "__autoplay",
+  play: ROOT + "__play",
+  pause: ROOT + "__pause",
+  spinner: ROOT + "__spinner",
+  sr: ROOT + "__sr"
+};
+/**
+ * Definitions of status classes.
+ *
+ * @type {Object}
+ */
+
+var STATUS_CLASSES = {
+  active: 'is-active',
+  visible: 'is-visible',
+  loading: 'is-loading'
+};
+;// CONCATENATED MODULE: ./src/js/constants/i18n.js
+/**
+ * Export i18n texts as object.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * Texts for i18n.
+ *
+ * @type {Object}
+ */
+var I18N = {
+  prev: 'Previous slide',
+  next: 'Next slide',
+  first: 'Go to first slide',
+  last: 'Go to last slide',
+  slideX: 'Go to slide %s',
+  pageX: 'Go to page %s',
+  play: 'Start autoplay',
+  pause: 'Pause autoplay'
+};
+;// CONCATENATED MODULE: ./src/js/constants/defaults.js
+/**
+ * Export default options.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+var DEFAULTS = {
+  /**
+   * Determine a slider type.
+   * - 'slide': Regular slider.
+   * - 'loop' : Carousel slider.
+   * - 'fade' : Change slides with fade transition. perPage, drag options are ignored.
+   *
+   * @type {string}
+   */
+  type: 'slide',
+
+  /**
+   * Whether to rewind a slider before the first slide or after the last one.
+   * In "loop" mode, this option is ignored.
+   *
+   * @type {boolean}
+   */
+  rewind: false,
+
+  /**
+   * Transition speed in milliseconds.
+   *
+   * @type {number}
+   */
+  speed: 400,
+
+  /**
+   * Transition speed on rewind in milliseconds.
+   *
+   * @type {number}
+   */
+  rewindSpeed: 0,
+
+  /**
+   * Whether to prevent any actions while a slider is transitioning.
+   * If false, navigation, drag and swipe work while the slider is running.
+   * Even so, it will be forced to wait for transition in some cases in the loop mode to shift a slider.
+   *
+   * @type {boolean}
+   */
+  waitForTransition: true,
+
+  /**
+   * Define slider max width.
+   *
+   * @type {number}
+   */
+  width: 0,
+
+  /**
+   * Define slider height.
+   *
+   * @type {number}
+   */
+  height: 0,
+
+  /**
+   * Fix width of slides. CSS format is allowed such as 10em, 80% or 80vw.
+   * perPage number will be ignored when this option is falsy.
+   *
+   * @type {number|string}
+   */
+  fixedWidth: 0,
+
+  /**
+   * Fix height of slides. CSS format is allowed such as 10em, 80vh but % unit is not accepted.
+   * heightRatio option will be ignored when this option is falsy.
+   *
+   * @type {number|string}
+   */
+  fixedHeight: 0,
+
+  /**
+   * Determine height of slides by ratio to a slider width.
+   * This will be ignored when the fixedHeight is provided.
+   *
+   * @type {number}
+   */
+  heightRatio: 0,
+
+  /**
+   * If true, slide width will be determined by the element width itself.
+   * - perPage/perMove should be 1.
+   *
+   * @type {boolean}
+   */
+  autoWidth: false,
+
+  /**
+   * If true, slide height will be determined by the element width itself.
+   * - perPage/perMove should be 1.
+   *
+   * @type {boolean}
+   */
+  autoHeight: false,
+
+  /**
+   * Determine how many slides should be displayed per page.
+   *
+   * @type {number}
+   */
+  perPage: 1,
+
+  /**
+   * Determine how many slides should be moved when a slider goes to next or perv.
+   *
+   * @type {number}
+   */
+  perMove: 0,
+
+  /**
+   * Determine manually how many clones should be generated on the left and right side.
+   * The total number of clones will be twice of this number.
+   *
+   * @type {number}
+   */
+  clones: 0,
+
+  /**
+   * Start index.
+   *
+   * @type {number}
+   */
+  start: 0,
+
+  /**
+   * Determine which slide should be focused if there are multiple slides in a page.
+   * A string "center" is acceptable for centering slides.
+   *
+   * @type {boolean|number|string}
+   */
+  focus: false,
+
+  /**
+   * Gap between slides. CSS format is allowed such as 1em.
+   *
+   * @type {number|string}
+   */
+  gap: 0,
+
+  /**
+   * Set padding-left/right in horizontal mode or padding-top/bottom in vertical one.
+   * Give a single value to set a same size for both sides or
+   * do an object for different sizes.
+   * Also, CSS format is allowed such as 1em.
+   *
+   * @example
+   * - 10: Number
+   * - '1em': CSS format.
+   * - { left: 0, right: 20 }: Object for different sizes in horizontal mode.
+   * - { top: 0, bottom: 20 }: Object for different sizes in vertical mode.
+   *
+   * @type {number|string|Object}
+   */
+  padding: 0,
+
+  /**
+   * Whether to append arrows.
+   *
+   * @type {boolean}
+   */
+  arrows: true,
+
+  /**
+   * Change the arrow SVG path like 'm7.61 0.807-2.12...'.
+   *
+   * @type {string}
+   */
+  arrowPath: '',
+
+  /**
+   * Whether to append pagination(indicator dots) or not.
+   *
+   * @type {boolean}
+   */
+  pagination: true,
+
+  /**
+   * Activate autoplay.
+   *
+   * @type {boolean}
+   */
+  autoplay: false,
+
+  /**
+   * Autoplay interval in milliseconds.
+   *
+   * @type {number}
+   */
+  interval: 5000,
+
+  /**
+   * Whether to stop autoplay when a slider is hovered.
+   *
+   * @type {boolean}
+   */
+  pauseOnHover: true,
+
+  /**
+   * Whether to stop autoplay when a slider elements are focused.
+   * True is recommended for accessibility.
+   *
+   * @type {boolean}
+   */
+  pauseOnFocus: true,
+
+  /**
+   * Whether to reset progress of the autoplay timer when resumed.
+   *
+   * @type {boolean}
+   */
+  resetProgress: true,
+
+  /**
+   * Loading images lazily.
+   * Image src must be provided by a data-splide-lazy attribute.
+   *
+   * - false: Do nothing.
+   * - 'nearby': Only images around an active slide will be loaded.
+   * - 'sequential': All images will be sequentially loaded.
+   *
+   * @type {boolean|string}
+   */
+  lazyLoad: false,
+
+  /**
+   * This option works only when a lazyLoad option is "nearby".
+   * Determine how many pages(not slides) around an active slide should be loaded beforehand.
+   *
+   * @type {number}
+   */
+  preloadPages: 1,
+
+  /**
+   * Easing for CSS transition. For example, linear, ease or cubic-bezier().
+   *
+   * @type {string}
+   */
+  easing: 'cubic-bezier(.42,.65,.27,.99)',
+
+  /**
+   * Whether to enable keyboard shortcuts
+   * - true or 'global': Listen to keydown event of the document.
+   * - 'focused': Listen to the keydown event of the slider root element. tabindex="0" will be added to the element.
+   * - false: Disable keyboard shortcuts.
+   *
+   * @type {boolean|string}
+   */
+  keyboard: 'global',
+
+  /**
+   * Whether to allow mouse drag and touch swipe.
+   *
+   * @type {boolean}
+   */
+  drag: true,
+
+  /**
+   * The angle threshold for drag.
+   * The slider starts moving only when the drag angle is less than this threshold.
+   *
+   * @type {number}
+   */
+  dragAngleThreshold: 30,
+
+  /**
+   * Distance threshold for determining if the action is "flick" or "swipe".
+   * When a drag distance is over this value, the action will be treated as "swipe", not "flick".
+   *
+   * @type {number}
+   */
+  swipeDistanceThreshold: 150,
+
+  /**
+   * Velocity threshold for determining if the action is "flick" or "swipe".
+   * Around 0.5 is recommended.
+   *
+   * @type {number}
+   */
+  flickVelocityThreshold: .6,
+
+  /**
+   * Determine power of flick. The larger number this is, the farther a slider runs by flick.
+   * Around 500 is recommended.
+   *
+   * @type {number}
+   */
+  flickPower: 600,
+
+  /**
+   * Limit a number of pages to move by flick.
+   *
+   * @type {number}
+   */
+  flickMaxPages: 1,
+
+  /**
+   * Slider direction.
+   * - 'ltr': Left to right.
+   * - 'rtl': Right to left.
+   * - 'ttb': Top to bottom.
+   *
+   * @type {string}
+   */
+  direction: 'ltr',
+
+  /**
+   * Set img src to background-image of its parent element.
+   * Images with various sizes can be displayed as same dimension without cropping work.
+   * fixedHeight or heightRatio is required.
+   *
+   * @type {boolean}
+   */
+  cover: false,
+
+  /**
+   * Whether to enable accessibility(aria and screen reader texts) or not.
+   *
+   * @type {boolean}
+   */
+  accessibility: true,
+
+  /**
+   * Whether to add tabindex="0" to visible slides or not.
+   *
+   * @type {boolean}
+   */
+  slideFocus: true,
+
+  /**
+   * Determine if a slider is navigation for another.
+   * Use "sync" API to synchronize two sliders.
+   *
+   * @type {boolean}
+   */
+  isNavigation: false,
+
+  /**
+   * Whether to trim spaces before the fist slide or after the last one when "focus" is not 0.
+   *
+   * @type {boolean}
+   */
+  trimSpace: true,
+
+  /**
+   * The "is-active" class is added after transition as default.
+   * If true, it will be added before move.
+   *
+   * @type {boolean}
+   */
+  updateOnMove: false,
+
+  /**
+   * Throttle duration in milliseconds for the resize event.
+   *
+   * @type {number}
+   */
+  throttle: 100,
+
+  /**
+   * Whether to destroy a slider or not.
+   *
+   * @type {boolean}
+   */
+  destroy: false,
+
+  /**
+   * Options for specific breakpoints.
+   *
+   * @example
+   * {
+   *   1000: {
+   *     perPage: 3,
+   *     gap: 20
+   *   },
+   *   600: {
+   *     perPage: 1,
+   *     gap: 5,
+   *   }
+   * }
+   *
+   * @type {boolean|Object}
+   */
+  breakpoints: false,
+
+  /**
+   * Collection of class names.
+   *
+   * @see ./classes.js
+   *
+   * @type {Object}
+   */
+  classes: ELEMENT_CLASSES,
+
+  /**
+   * Collection of i18n texts.
+   *
+   * @see ./i18n.js
+   *
+   * @type {Object}
+   */
+  i18n: I18N
+};
+;// CONCATENATED MODULE: ./src/js/constants/states.js
+/**
+ * Export state constants.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * Splide has been just created.
+ *
+ * @type {number}
+ */
+var CREATED = 1;
+/**
+ * All components have been mounted and initialized.
+ *
+ * @type {number}
+ */
+
+var MOUNTED = 2;
+/**
+ * Splide is ready for transition.
+ *
+ * @type {number}
+ */
+
+var IDLE = 3;
+/**
+ * Splide is moving.
+ *
+ * @type {number}
+ */
+
+var MOVING = 4;
+/**
+ * Splide is moving.
+ *
+ * @type {number}
+ */
+
+var DESTROYED = 5;
+;// CONCATENATED MODULE: ./src/js/splide.js
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * The main class for applying Splide to an element.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+
+
+
+
+
+/**
+ * The main class for applying Splide to an element,
+ * providing some APIs to control the behavior.
+ */
+
+var Splide = /*#__PURE__*/function () {
+  /**
+   * Splide constructor.
+   *
+   * @throws {Error} When the given root element or selector is invalid.
+   *
+   * @param {Element|string}  root       - A selector for a root element or an element itself.
+   * @param {Object}          options    - Optional. Options to change default behaviour.
+   * @param {Object}          Components - Optional. Components.
+   */
+  function Splide(root, options, Components) {
+    if (options === void 0) {
+      options = {};
+    }
+
+    if (Components === void 0) {
+      Components = {};
+    }
+
+    this.root = root instanceof Element ? root : document.querySelector(root);
+    exist(this.root, 'An invalid element/selector was given.');
+    this.Components = null;
+    this.Event = core_event();
+    this.State = state(CREATED);
+    this.STATES = states_namespaceObject;
+    this._o = merge(DEFAULTS, options);
+    this._i = 0;
+    this._c = Components;
+    this._e = {}; // Extensions
+
+    this._t = null; // Transition
+  }
+  /**
+   * Compose and mount components.
+   *
+   * @param {Object}   Extensions - Optional. Additional components.
+   * @param {function} Transition - Optional. Set a custom transition component.
+   *
+   * @return {Splide|undefined} - This instance or undefined if an exception occurred.
+   */
+
+
+  var _proto = Splide.prototype;
+
+  _proto.mount = function mount(Extensions, Transition) {
+    var _this = this;
+
+    if (Extensions === void 0) {
+      Extensions = this._e;
+    }
+
+    if (Transition === void 0) {
+      Transition = this._t;
+    }
+
+    // Reset the state.
+    this.State.set(CREATED);
+    this._e = Extensions;
+    this._t = Transition;
+    this.Components = compose(this, merge(this._c, Extensions), Transition);
+
+    try {
+      each(this.Components, function (component, key) {
+        var required = component.required;
+
+        if (required === undefined || required) {
+          component.mount && component.mount();
+        } else {
+          delete _this.Components[key];
+        }
+      });
+    } catch (e) {
+      error(e.message);
+      return;
+    }
+
+    var State = this.State;
+    State.set(MOUNTED);
+    each(this.Components, function (component) {
+      component.mounted && component.mounted();
+    });
+    this.emit('mounted');
+    State.set(IDLE);
+    this.emit('ready');
+    applyStyle(this.root, {
+      visibility: 'visible'
+    });
+    this.on('move drag', function () {
+      return State.set(MOVING);
+    }).on('moved dragged', function () {
+
+      var mobilePagination = function () {
+        var pageButtons = slider.querySelector('.splide__pagination').querySelectorAll('button');
+        var current = slider.querySelector('#current-page');
+        var total = slider.querySelector('#total-pages');
+
+        current.textContent = slider.querySelector('.splide__pagination').querySelector('.is-active').textContent;
+        total.textContent = pageButtons.length;
+      }
+
+      mobilePagination();
+
+      return State.set(IDLE);
+    });
+    return this;
+  }
+  /**
+   * Set sync target.
+   *
+   * @param {Splide} splide - A Splide instance.
+   *
+   * @return {Splide} - This instance.
+   */
+  ;
+
+  _proto.sync = function sync(splide) {
+    this.sibling = splide;
+    return this;
+  }
+  /**
+   * Register callback fired on the given event(s).
+   *
+   * @param {string}   events  - An event name. Use space to separate multiple events.
+   *                             Also, namespace is accepted by dot, such as 'resize.{namespace}'.
+   * @param {function} handler - A callback function.
+   * @param {Element}  elm     - Optional. Native event will be listened to when this arg is provided.
+   * @param {Object}   options - Optional. Options for addEventListener.
+   *
+   * @return {Splide} - This instance.
+   */
+  ;
+
+  _proto.on = function on(events, handler, elm, options) {
+    if (elm === void 0) {
+      elm = null;
+    }
+
+    if (options === void 0) {
+      options = {};
+    }
+
+    this.Event.on(events, handler, elm, options);
+    return this;
+  }
+  /**
+   * Unsubscribe the given event.
+   *
+   * @param {string}  events - A event name.
+   * @param {Element} elm    - Optional. removeEventListener() will be called when this arg is provided.
+   *
+   * @return {Splide} - This instance.
+   */
+  ;
+
+  _proto.off = function off(events, elm) {
+    if (elm === void 0) {
+      elm = null;
+    }
+
+    this.Event.off(events, elm);
+    return this;
+  }
+  /**
+   * Emit an event.
+   *
+   * @param {string} event - An event name.
+   * @param {*}      args  - Any number of arguments passed to handlers.
+   */
+  ;
+
+  _proto.emit = function emit(event) {
+    var _this$Event;
+
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    (_this$Event = this.Event).emit.apply(_this$Event, [event].concat(args));
+
+    return this;
+  }
+  /**
+   * Go to the slide specified by the given control.
+   *
+   * @param {string|number} control - A control pattern.
+   * @param {boolean}       wait    - Optional. Whether to wait for transition.
+   */
+  ;
+
+  _proto.go = function go(control, wait) {
+    if (wait === void 0) {
+      wait = this.options.waitForTransition;
+    }
+
+    if (this.State.is(IDLE) || this.State.is(MOVING) && !wait) {
+      this.Components.Controller.go(control, false);
+    }
+
+    return this;
+  }
+  /**
+   * Verify whether the slider type is the given one or not.
+   *
+   * @param {string} type - A slider type.
+   *
+   * @return {boolean} - True if the slider type is the provided type or false if not.
+   */
+  ;
+
+  _proto.is = function is(type) {
+    return type === this._o.type;
+  }
+  /**
+   * Insert a slide.
+   *
+   * @param {Element|string} slide - A slide element to be added.
+   * @param {number}         index - A slide will be added at the position.
+   */
+  ;
+
+  _proto.add = function add(slide, index) {
+    if (index === void 0) {
+      index = -1;
+    }
+
+    this.Components.Elements.add(slide, index, this.refresh.bind(this));
+    return this;
+  }
+  /**
+   * Remove the slide designated by the index.
+   *
+   * @param {number} index - A slide index.
+   */
+  ;
+
+  _proto.remove = function remove(index) {
+    this.Components.Elements.remove(index);
+    this.refresh();
+    return this;
+  }
+  /**
+   * Destroy all Slide objects and clones and recreate them again.
+   */
+  ;
+
+  _proto.refresh = function refresh() {
+    this.emit('refresh:before').emit('refresh').emit('resize');
+    return this;
+  }
+  /**
+   * Destroy the Splide.
+   * "Completely" boolean is mainly for breakpoints.
+   *
+   * @param {boolean} completely - Destroy completely.
+   */
+  ;
+
+  _proto.destroy = function destroy(completely) {
+    var _this2 = this;
+
+    if (completely === void 0) {
+      completely = true;
+    }
+
+    // Postpone destroy because it should be done after mount.
+    if (this.State.is(CREATED)) {
+      this.on('ready', function () {
+        return _this2.destroy(completely);
+      });
+      return;
+    }
+
+    values(this.Components).reverse().forEach(function (component) {
+      component.destroy && component.destroy(completely);
+    });
+    this.emit('destroy', completely); // Destroy all event handlers, including ones for native events.
+
+    this.Event.destroy();
+    this.State.set(DESTROYED);
+    return this;
+  }
+  /**
+   * Return the current slide index.
+   *
+   * @return {number} - The current slide index.
+   // */
+  ;
+
+  _createClass(Splide, [{
+    key: "index",
+    get: function get() {
+      return this._i;
+    }
+    /**
+     * Set the current slide index.
+     *
+     * @param {number|string} index - A new index.
+     */
+    ,
+    set: function set(index) {
+      this._i = parseInt(index);
+    }
+    /**
+     * Return length of slides.
+     * This is an alias of Elements.length.
+     *
+     * @return {number} - A number of slides.
+     */
+
+  }, {
+    key: "length",
+    get: function get() {
+      return this.Components.Elements.length;
+    }
+    /**
+     * Return options.
+     *
+     * @return {Object} - Options object.
+     */
+
+  }, {
+    key: "options",
+    get: function get() {
+      return this._o;
+    }
+    /**
+     * Set options with merging the given object to the current one.
+     *
+     * @param {Object} options - New options.
+     */
+    ,
+    set: function set(options) {
+      var created = this.State.is(CREATED);
+
+      if (!created) {
+        this.emit('update');
+      }
+
+      this._o = merge(this._o, options);
+
+      if (!created) {
+        this.emit('updated', this._o);
+      }
+    }
+    /**
+     * Return the class list.
+     * This is an alias of Splide.options.classList.
+     *
+     * @return {Object} - An object containing all class list.
+     */
+
+  }, {
+    key: "classes",
+    get: function get() {
+      return this._o.classes;
+    }
+    /**
+     * Return the i18n strings.
+     * This is an alias of Splide.options.i18n.
+     *
+     * @return {Object} - An object containing all i18n strings.
+     */
+
+  }, {
+    key: "i18n",
+    get: function get() {
+      return this._o.i18n;
+    }
+  }]);
+
+  return Splide;
+}();
+
+
+;// CONCATENATED MODULE: ./src/js/components/options/index.js
+/**
+ * The component for initializing options.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+/**
+ * The component for initializing options.
+ *
+ * @param {Splide} Splide - A Splide instance.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var options = (function (Splide) {
+  /**
+   * Retrieve options from the data attribute.
+   * Note that IE10 doesn't support dataset property.
+   *
+   * @type {string}
+   */
+  var options = getAttribute(Splide.root, 'data-splide');
+
+  if (options) {
+    try {
+      Splide.options = JSON.parse(options);
+    } catch (e) {
+      error(e.message);
+    }
+  }
+
+  return {
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      if (Splide.State.is(CREATED)) {
+        Splide.index = Splide.options.start;
+      }
+    }
+  };
+});
+;// CONCATENATED MODULE: ./src/js/constants/directions.js
+/**
+ * Export layout modes.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * Enumerate slides from left to right.
+ *
+ * @type {string}
+ */
+var LTR = 'ltr';
+/**
+ * Enumerate slides from right to left.
+ *
+ * @type {string}
+ */
+
+var RTL = 'rtl';
+/**
+ * Enumerate slides in a col.
+ *
+ * @type {string}
+ */
+
+var TTB = 'ttb';
+;// CONCATENATED MODULE: ./src/js/components/elements/slide.js
+/**
+ * The sub component for handling each slide.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+
+
+
+/**
+ * Events for restoring original styles.
+ *
+ * @type {string}
+ */
+
+var STYLE_RESTORE_EVENTS = 'update.slide';
+/**
+ * The sub component for handling each slide.
+ *
+ * @param {Splide}  Splide    - A Splide instance.
+ * @param {number}  index     - An unique slide index.
+ * @param {number}  realIndex - Clones should pass a real slide index.
+ * @param {Element} slide     - A slide element.
+ *
+ * @return {Object} - The sub component object.
+ */
+
+/* harmony default export */ var elements_slide = (function (Splide, index, realIndex, slide) {
+  /**
+   * Whether to update "is-active" class before or after transition.
+   *
+   * @type {boolean}
+   */
+  var updateOnMove = Splide.options.updateOnMove;
+  /**
+   * Events when the slide status is updated.
+   * Append a namespace to remove listeners later.
+   *
+   * @type {string}
+   */
+
+  var STATUS_UPDATE_EVENTS = 'ready.slide updated.slide resized.slide moved.slide' + (updateOnMove ? ' move.slide' : '');
+  /**
+   * Slide sub component object.
+   *
+   * @type {Object}
+   */
+
+  var Slide = {
+    /**
+     * Slide element.
+     *
+     * @type {Element}
+     */
+    slide: slide,
+
+    /**
+     * Slide index.
+     *
+     * @type {number}
+     */
+    index: index,
+
+    /**
+     * Real index for clones.
+     *
+     * @type {number}
+     */
+    realIndex: realIndex,
+
+    /**
+     * Container element if available.
+     *
+     * @type {Element|undefined}
+     */
+    container: child(slide, Splide.classes.container),
+
+    /**
+     * Whether this is a cloned slide or not.
+     *
+     * @type {boolean}
+     */
+    isClone: realIndex > -1,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      var _this = this;
+
+      if (!this.isClone) {
+        slide.id = Splide.root.id + "-slide" + pad(index + 1);
+      }
+
+      Splide.on(STATUS_UPDATE_EVENTS, function () {
+        return _this.update();
+      }).on(STYLE_RESTORE_EVENTS, restoreStyles).on('click', function () {
+        return Splide.emit('click', _this);
+      }, slide);
+      /*
+       * Add "is-active" class to a clone element temporarily
+       * and it will be removed on "moved" event.
+       */
+
+      if (updateOnMove) {
+        Splide.on('move.slide', function (newIndex) {
+          if (newIndex === realIndex) {
+            _update(true, false);
+          }
+        });
+      } // Make sure the slide is shown.
+
+
+      applyStyle(slide, {
+        display: ''
+      }); // Hold the original styles.
+
+      this.styles = getAttribute(slide, 'style') || '';
+    },
+
+    /**
+     * Destroy.
+     */
+    destroy: function destroy() {
+      Splide.off(STATUS_UPDATE_EVENTS).off(STYLE_RESTORE_EVENTS).off('click', slide);
+      removeClass(slide, values(STATUS_CLASSES));
+      restoreStyles();
+      removeAttribute(this.container, 'style');
+    },
+
+    /**
+     * Update active and visible status.
+     */
+    update: function update() {
+      _update(this.isActive(), false);
+
+      _update(this.isVisible(), true);
+    },
+
+    /**
+     * Check whether this slide is active or not.
+     *
+     * @return {boolean} - True if the slide is active or false if not.
+     */
+    isActive: function isActive() {
+      return Splide.index === index;
+    },
+
+    /**
+     * Check whether this slide is visible in the viewport or not.
+     *
+     * @return {boolean} - True if the slide is visible or false if not.
+     */
+    isVisible: function isVisible() {
+      var active = this.isActive();
+
+      if (Splide.is(FADE) || active) {
+        return active;
+      }
+
+      var ceil = Math.ceil;
+      var trackRect = getRect(Splide.Components.Elements.track);
+      var slideRect = getRect(slide);
+
+      if (Splide.options.direction === TTB) {
+        return trackRect.top <= slideRect.top && slideRect.bottom <= ceil(trackRect.bottom);
+      }
+
+      return trackRect.left <= slideRect.left && slideRect.right <= ceil(trackRect.right);
+    },
+
+    /**
+     * Calculate how far this slide is from another slide and
+     * return true if the distance is within the given number.
+     *
+     * @param {number} from   - Index of a target slide.
+     * @param {number} within - True if the slide is within this number.
+     *
+     * @return {boolean} - True if the slide is within the number or false otherwise.
+     */
+    isWithin: function isWithin(from, within) {
+      var diff = Math.abs(from - index);
+
+      if (!Splide.is(SLIDE) && !this.isClone) {
+        diff = Math.min(diff, Splide.length - diff);
+      }
+
+      return diff < within;
+    }
+  };
+  /**
+   * Update classes for activity or visibility.
+   *
+   * @param {boolean} active        - Is active/visible or not.
+   * @param {boolean} forVisibility - Toggle classes for activity or visibility.
+   */
+
+  function _update(active, forVisibility) {
+    var type = forVisibility ? 'visible' : 'active';
+    var className = STATUS_CLASSES[type];
+
+    if (active) {
+      addClass(slide, className);
+      Splide.emit("" + type, Slide);
+    } else {
+      if (hasClass(slide, className)) {
+        removeClass(slide, className);
+        Splide.emit("" + (forVisibility ? 'hidden' : 'inactive'), Slide);
+      }
+    }
+  }
+  /**
+   * Restore the original styles.
+   */
+
+
+  function restoreStyles() {
+    setAttribute(slide, 'style', Slide.styles);
+  }
+
+  return Slide;
+});
+;// CONCATENATED MODULE: ./src/js/components/elements/index.js
+/**
+ * The component for main elements.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+
+
+/**
+ * The property name for UID stored in a window object.
+ *
+ * @type {string}
+ */
+
+var UID_NAME = 'uid';
+/**
+ * The component for main elements.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var components_elements = (function (Splide, Components) {
+  /**
+   * Hold the root element.
+   *
+   * @type {Element}
+   */
+  var root = Splide.root;
+  /**
+   * Hold the class list.
+   *
+   * @type {Object}
+   */
+
+  var classes = Splide.classes;
+  /**
+   * Store Slide objects.
+   *
+   * @type {Array}
+   */
+
+  var Slides = [];
+  /*
+   * Assign unique ID to the root element if it doesn't have the one.
+   * Note that IE doesn't support padStart() to fill the uid by 0.
+   */
+
+  if (!root.id) {
+    window.splide = window.splide || {};
+    var uid = window.splide[UID_NAME] || 0;
+    window.splide[UID_NAME] = ++uid;
+    root.id = "splide" + pad(uid);
+  }
+  /**
+   * Elements component object.
+   *
+   * @type {Object}
+   */
+
+
+  var Elements = {
+    /**
+     * Called when the component is mounted.
+     * Collect main elements and store them as member properties.
+     */
+    mount: function mount() {
+      var _this = this;
+
+      this.init();
+      Splide.on('refresh', function () {
+        _this.destroy();
+
+        _this.init();
+      }).on('updated', function () {
+        removeClass(root, getClasses());
+        addClass(root, getClasses());
+      });
+    },
+
+    /**
+     * Destroy.
+     */
+    destroy: function destroy() {
+      Slides.forEach(function (Slide) {
+        Slide.destroy();
+      });
+      Slides = [];
+      removeClass(root, getClasses());
+    },
+
+    /**
+     * Initialization.
+     */
+    init: function init() {
+      var _this2 = this;
+
+      collect();
+      addClass(root, getClasses());
+      this.slides.forEach(function (slide, index) {
+        _this2.register(slide, index, -1);
+      });
+    },
+
+    /**
+     * Register a slide to create a Slide object and handle its behavior.
+     *
+     * @param {Element} slide     - A slide element.
+     * @param {number}  index     - A unique index. This can be negative.
+     * @param {number}  realIndex - A real index for clones. Set -1 for real slides.
+     */
+    register: function register(slide, index, realIndex) {
+      var SlideObject = elements_slide(Splide, index, realIndex, slide);
+      SlideObject.mount();
+      Slides.push(SlideObject);
+    },
+
+    /**
+     * Return the Slide object designated by the index.
+     * Note that "find" is not supported by IE.
+     *
+     * @return {Object|undefined} - A Slide object if available. Undefined if not.
+     */
+    getSlide: function getSlide(index) {
+      return Slides.filter(function (Slide) {
+        return Slide.index === index;
+      })[0];
+    },
+
+    /**
+     * Return all Slide objects.
+     *
+     * @param {boolean} includeClones - Whether to include cloned slides or not.
+     *
+     * @return {Object[]} - Slide objects.
+     */
+    getSlides: function getSlides(includeClones) {
+      return includeClones ? Slides : Slides.filter(function (Slide) {
+        return !Slide.isClone;
+      });
+    },
+
+    /**
+     * Return Slide objects belonging to the given page.
+     *
+     * @param {number} page - A page number.
+     *
+     * @return {Object[]} - An array containing Slide objects.
+     */
+    getSlidesByPage: function getSlidesByPage(page) {
+      var idx = Components.Controller.toIndex(page);
+      var options = Splide.options;
+      var max = options.focus !== false ? 1 : options.perPage;
+      return Slides.filter(function (_ref) {
+        var index = _ref.index;
+        return idx <= index && index < idx + max;
+      });
+    },
+
+    /**
+     * Insert a slide to a slider.
+     * Need to refresh Splide after adding a slide.
+     *
+     * @param {Node|string} slide    - A slide element to be added.
+     * @param {number}      index    - A slide will be added at the position.
+     * @param {Function}    callback - Called right after the slide is added to the DOM tree.
+     */
+    add: function add(slide, index, callback) {
+      if (typeof slide === 'string') {
+        slide = domify(slide);
+      }
+
+      if (slide instanceof Element) {
+        var ref = this.slides[index]; // This will be removed in mount() of a Slide component.
+
+        applyStyle(slide, {
+          display: 'none'
+        });
+
+        if (ref) {
+          before(slide, ref);
+          this.slides.splice(index, 0, slide);
+        } else {
+          append(this.list, slide);
+          this.slides.push(slide);
+        }
+
+        loaded(slide, function () {
+          callback && callback(slide);
+        });
+      }
+    },
+
+    /**
+     * Remove a slide from a slider.
+     * Need to refresh Splide after removing a slide.
+     *
+     * @param index - Slide index.
+     */
+    remove: function remove(index) {
+      dom_remove(this.slides.splice(index, 1)[0]);
+    },
+
+    /**
+     * Trigger the provided callback for each Slide object.
+     *
+     * @param {Function} callback - A callback function. The first argument will be the Slide object.
+     */
+    each: function each(callback) {
+      Slides.forEach(callback);
+    },
+
+    /**
+     * Return slides length without clones.
+     *
+     * @return {number} - Slide length.
+     */
+    get length() {
+      return this.slides.length;
+    },
+
+    /**
+     * Return "SlideObjects" length including clones.
+     *
+     * @return {number} - Slide length including clones.
+     */
+    get total() {
+      return Slides.length;
+    }
+
+  };
+  /**
+   * Collect elements.
+   */
+
+  function collect() {
+    Elements.slider = child(root, classes.slider);
+    Elements.track = find(root, "." + classes.track);
+    Elements.list = child(Elements.track, classes.list);
+    exist(Elements.track && Elements.list, 'Track or list was not found.');
+    Elements.slides = children(Elements.list, classes.slide);
+    var arrows = findParts(classes.arrows);
+    Elements.arrows = {
+      prev: find(arrows, "." + classes.prev),
+      next: find(arrows, "." + classes.next)
+    };
+    var autoplay = findParts(classes.autoplay);
+    Elements.bar = find(findParts(classes.progress), "." + classes.bar);
+    Elements.play = find(autoplay, "." + classes.play);
+    Elements.pause = find(autoplay, "." + classes.pause);
+    Elements.track.id = Elements.track.id || root.id + "-track";
+    Elements.list.id = Elements.list.id || root.id + "-list";
+  }
+  /**
+   * Return class names for the root element.
+   */
+
+
+  function getClasses() {
+    var rootClass = classes.root;
+    var options = Splide.options;
+    return [rootClass + "--" + options.type, rootClass + "--" + options.direction, options.drag ? rootClass + "--draggable" : '', options.isNavigation ? rootClass + "--nav" : '', STATUS_CLASSES.active];
+  }
+  /**
+   * Find parts only from children of the root or track.
+   *
+   * @return {Element} - A found element or undefined.
+   */
+
+
+  function findParts(className) {
+    return child(root, className) || child(Elements.slider, className);
+  }
+
+  return Elements;
+});
+;// CONCATENATED MODULE: ./src/js/components/controller/index.js
+/**
+ * The component for controlling the track.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+var floor = Math.floor;
+/**
+ * The component for controlling the track.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var controller = (function (Splide, Components) {
+  /**
+   * Store current options.
+   *
+   * @type {Object}
+   */
+  var options;
+  /**
+   * True if the slide is LOOP mode.
+   *
+   * @type {boolean}
+   */
+
+  var isLoop;
+  /**
+   * Controller component object.
+   *
+   * @type {Object}
+   */
+
+  var Controller = {
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      options = Splide.options;
+      isLoop = Splide.is(LOOP);
+      bind();
+    },
+
+    /**
+     * Make track run by the given control.
+     * - "+{i}" : Increment the slide index by i.
+     * - "-{i}" : Decrement the slide index by i.
+     * - "{i}"  : Go to the slide whose index is i.
+     * - ">"    : Go to next page.
+     * - "<"    : Go to prev page.
+     * - ">{i}" : Go to page i.
+     *
+     * @param {string|number} control  - A control pattern.
+     * @param {boolean}       silently - Go to the destination without event emission.
+     */
+    go: function go(control, silently) {
+      var destIndex = this.trim(this.parse(control));
+      Components.Track.go(destIndex, this.rewind(destIndex), silently);
+    },
+
+    /**
+     * Parse the given control and return the destination index for the track.
+     *
+     * @param {string} control - A control target pattern.
+     *
+     * @return {number} - A parsed target.
+     */
+    parse: function parse(control) {
+      var index = Splide.index;
+      var matches = String(control).match(/([+\-<>]+)(\d+)?/);
+      var indicator = matches ? matches[1] : '';
+      var number = matches ? parseInt(matches[2]) : 0;
+
+      switch (indicator) {
+        case '+':
+          index += number || 1;
+          break;
+
+        case '-':
+          index -= number || 1;
+          break;
+
+        case '>':
+        case '<':
+          index = parsePage(number, index, indicator === '<');
+          break;
+
+        default:
+          index = parseInt(control);
+      }
+
+      return index;
+    },
+
+    /**
+     * Compute index from the given page number.
+     *
+     * @param {number} page - Page number.
+     *
+     * @return {number} - A computed page number.
+     */
+    toIndex: function toIndex(page) {
+      if (hasFocus()) {
+        return page;
+      }
+
+      var length = Splide.length;
+      var perPage = options.perPage;
+      var index = page * perPage;
+      index = index - (this.pageLength * perPage - length) * floor(index / length); // Adjustment for the last page.
+
+      if (length - perPage <= index && index < length) {
+        index = length - perPage;
+      }
+
+      return index;
+    },
+
+    /**
+     * Compute page number from the given slide index.
+     *
+     * @param {number} index - Slide index.
+     *
+     * @return {number} - A computed page number.
+     */
+    toPage: function toPage(index) {
+      if (hasFocus()) {
+        return index;
+      }
+
+      var length = Splide.length;
+      var perPage = options.perPage; // Make the last "perPage" number of slides belong to the last page.
+
+      if (length - perPage <= index && index < length) {
+        return floor((length - 1) / perPage);
+      }
+
+      return floor(index / perPage);
+    },
+
+    /**
+     * Trim the given index according to the current mode.
+     * Index being returned could be less than 0 or greater than the length in Loop mode.
+     *
+     * @param {number} index - An index being trimmed.
+     *
+     * @return {number} - A trimmed index.
+     */
+    trim: function trim(index) {
+      if (!isLoop) {
+        index = options.rewind ? this.rewind(index) : between(index, 0, this.edgeIndex);
+      }
+
+      return index;
+    },
+
+    /**
+     * Rewind the given index if it's out of range.
+     *
+     * @param {number} index - An index.
+     *
+     * @return {number} - A rewound index.
+     */
+    rewind: function rewind(index) {
+      var edge = this.edgeIndex;
+
+      if (isLoop) {
+        while (index > edge) {
+          index -= edge + 1;
+        }
+
+        while (index < 0) {
+          index += edge + 1;
+        }
+      } else {
+        if (index > edge) {
+          index = 0;
+        } else if (index < 0) {
+          index = edge;
+        }
+      }
+
+      return index;
+    },
+
+    /**
+     * Check if the direction is "rtl" or not.
+     *
+     * @return {boolean} - True if "rtl" or false if not.
+     */
+    isRtl: function isRtl() {
+      return options.direction === RTL;
+    },
+
+    /**
+     * Return the page length.
+     *
+     * @return {number} - Max page number.
+     */
+    get pageLength() {
+      var length = Splide.length;
+      return hasFocus() ? length : Math.ceil(length / options.perPage);
+    },
+
+    /**
+     * Return the edge index.
+     *
+     * @return {number} - Edge index.
+     */
+    get edgeIndex() {
+      var length = Splide.length;
+
+      if (!length) {
+        return 0;
+      }
+
+      if (hasFocus() || options.isNavigation || isLoop) {
+        return length - 1;
+      }
+
+      return length - options.perPage;
+    },
+
+    /**
+     * Return the index of the previous slide.
+     *
+     * @return {number} - The index of the previous slide if available. -1 otherwise.
+     */
+    get prevIndex() {
+      var prev = Splide.index - 1;
+
+      if (isLoop || options.rewind) {
+        prev = this.rewind(prev);
+      }
+
+      return prev > -1 ? prev : -1;
+    },
+
+    /**
+     * Return the index of the next slide.
+     *
+     * @return {number} - The index of the next slide if available. -1 otherwise.
+     */
+    get nextIndex() {
+      var next = Splide.index + 1;
+
+      if (isLoop || options.rewind) {
+        next = this.rewind(next);
+      }
+
+      return Splide.index < next && next <= this.edgeIndex || next === 0 ? next : -1;
+    }
+
+  };
+  /**
+   * Listen to some events.
+   */
+
+  function bind() {
+    Splide.on('move', function (newIndex) {
+      Splide.index = newIndex;
+    }).on('updated refresh', function (newOptions) {
+      options = newOptions || options;
+      Splide.index = between(Splide.index, 0, Controller.edgeIndex);
+    });
+  }
+  /**
+   * Verify if the focus option is available or not.
+   *
+   * @return {boolean} - True if a slider has the focus option.
+   */
+
+
+  function hasFocus() {
+    return options.focus !== false;
+  }
+  /**
+   * Return the next or previous page index computed by the page number and current index.
+   *
+   * @param {number}  number - Specify the page number.
+   * @param {number}  index  - Current index.
+   * @param {boolean} prev   - Prev or next.
+   *
+   * @return {number} - Slide index.
+   */
+
+
+  function parsePage(number, index, prev) {
+    if (number > -1) {
+      return Controller.toIndex(number);
+    }
+
+    var perMove = options.perMove;
+    var sign = prev ? -1 : 1;
+
+    if (perMove) {
+      return index + perMove * sign;
+    }
+
+    return Controller.toIndex(Controller.toPage(index) + sign);
+  }
+
+  return Controller;
+});
+;// CONCATENATED MODULE: ./src/js/components/track/index.js
+/**
+ * The component for moving list in the track.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+
+
+var abs = Math.abs;
+/**
+ * The component for moving list in the track.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var track = (function (Splide, Components) {
+  /**
+   * Hold the Layout component.
+   *
+   * @type {Object}
+   */
+  var Layout;
+  /**
+   * Hold the Layout component.
+   *
+   * @type {Object}
+   */
+
+  var Elements;
+  /**
+   * Store the list element.
+   *
+   * @type {Element}
+   */
+
+  var list;
+  /**
+   * Whether the current direction is vertical or not.
+   *
+   * @type {boolean}
+   */
+
+  var isVertical = Splide.options.direction === TTB;
+  /**
+   * Whether the slider type is FADE or not.
+   *
+   * @type {boolean}
+   */
+
+  var isFade = Splide.is(FADE);
+  /**
+   * Whether the slider direction is RTL or not.
+   *
+   * @type {boolean}
+   */
+
+  var isRTL = Splide.options.direction === RTL;
+  /**
+   * This will be true while transitioning from the last index to the first one.
+   *
+   * @type {boolean}
+   */
+
+  var isLoopPending = false;
+  /**
+   * Sign for the direction. Only RTL mode uses the positive sign.
+   *
+   * @type {number}
+   */
+
+  var sign = isRTL ? 1 : -1;
+  /**
+   * Track component object.
+   *
+   * @type {Object}
+   */
+
+  var Track = {
+    /**
+     * Make public the sign defined locally.
+     *
+     * @type {number}
+     */
+    sign: sign,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      Elements = Components.Elements;
+      Layout = Components.Layout;
+      list = Elements.list;
+    },
+
+    /**
+     * Called after the component is mounted.
+     * The resize event must be registered after the Layout's one is done.
+     */
+    mounted: function mounted() {
+      var _this = this;
+
+      if (!isFade) {
+        this.jump(0);
+        Splide.on('mounted resize updated', function () {
+          _this.jump(Splide.index);
+        });
+      }
+    },
+
+    /**
+     * Go to the given destination index.
+     * After arriving there, the track is jump to the new index without animation, mainly for loop mode.
+     *
+     * @param {number}  destIndex - A destination index.
+     *                              This can be negative or greater than slides length for reaching clones.
+     * @param {number}  newIndex  - An actual new index. They are always same in Slide and Rewind mode.
+     * @param {boolean} silently  - If true, suppress emitting events.
+     */
+    go: function go(destIndex, newIndex, silently) {
+      var newPosition = getTrimmedPosition(destIndex);
+      var prevIndex = Splide.index; // Prevent any actions while transitioning from the last index to the first one for jump.
+
+      if (Splide.State.is(MOVING) && isLoopPending) {
+        return;
+      }
+
+      isLoopPending = destIndex !== newIndex;
+
+      if (!silently) {
+        Splide.emit('move', newIndex, prevIndex, destIndex);
+      }
+
+      if (Math.abs(newPosition - this.position) >= 1 || isFade) {
+        Components.Transition.start(destIndex, newIndex, prevIndex, this.toCoord(newPosition), function () {
+          onTransitionEnd(destIndex, newIndex, prevIndex, silently);
+        });
+      } else {
+        if (destIndex !== prevIndex && Splide.options.trimSpace === 'move') {
+          Components.Controller.go(destIndex + destIndex - prevIndex, silently);
+        } else {
+          onTransitionEnd(destIndex, newIndex, prevIndex, silently);
+        }
+      }
+    },
+
+    /**
+     * Move the track to the specified index.
+     *
+     * @param {number} index - A destination index where the track jumps.
+     */
+    jump: function jump(index) {
+      this.translate(getTrimmedPosition(index));
+    },
+
+    /**
+     * Set the list position by CSS translate property.
+     *
+     * @param {number} position - A new position value.
+     */
+    translate: function translate(position) {
+      applyStyle(list, {
+        transform: "translate" + (isVertical ? 'Y' : 'X') + "(" + position + "px)"
+      });
+    },
+
+    /**
+     * Cancel the transition and set the list position.
+     * Also, loop the slider if necessary.
+     */
+    cancel: function cancel() {
+      if (Splide.is(LOOP)) {
+        this.shift();
+      } else {
+        // Ensure the current position.
+        this.translate(this.position);
+      }
+
+      applyStyle(list, {
+        transition: ''
+      });
+    },
+
+    /**
+     * Shift the slider if it exceeds borders on the edge.
+     */
+    shift: function shift() {
+      var position = abs(this.position);
+      var left = abs(this.toPosition(0));
+      var right = abs(this.toPosition(Splide.length));
+      var innerSize = right - left;
+
+      if (position < left) {
+        position += innerSize;
+      } else if (position > right) {
+        position -= innerSize;
+      }
+
+      this.translate(sign * position);
+    },
+
+    /**
+     * Trim redundant spaces on the left or right edge if necessary.
+     *
+     * @param {number} position - Position value to be trimmed.
+     *
+     * @return {number} - Trimmed position.
+     */
+    trim: function trim(position) {
+      if (!Splide.options.trimSpace || Splide.is(LOOP)) {
+        return position;
+      }
+
+      var edge = sign * (Layout.totalSize() - Layout.size - Layout.gap);
+      return between(position, edge, 0);
+    },
+
+    /**
+     * Calculate the closest slide index from the given position.
+     *
+     * @param {number} position - A position converted to an slide index.
+     *
+     * @return {number} - The closest slide index.
+     */
+    toIndex: function toIndex(position) {
+      var _this2 = this;
+
+      var index = 0;
+      var minDistance = Infinity;
+      Elements.getSlides(true).forEach(function (Slide) {
+        var slideIndex = Slide.index;
+        var distance = abs(_this2.toPosition(slideIndex) - position);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          index = slideIndex;
+        }
+      });
+      return index;
+    },
+
+    /**
+     * Return coordinates object by the given position.
+     *
+     * @param {number} position - A position value.
+     *
+     * @return {Object} - A coordinates object.
+     */
+    toCoord: function toCoord(position) {
+      return {
+        x: isVertical ? 0 : position,
+        y: isVertical ? position : 0
+      };
+    },
+
+    /**
+     * Calculate the track position by a slide index.
+     *
+     * @param {number} index - Slide index.
+     *
+     * @return {Object} - Calculated position.
+     */
+    toPosition: function toPosition(index) {
+      var position = Layout.totalSize(index) - Layout.slideSize(index) - Layout.gap;
+      return sign * (position + this.offset(index));
+    },
+
+    /**
+     * Return the current offset value, considering direction.
+     *
+     * @return {number} - Offset amount.
+     */
+    offset: function offset(index) {
+      var focus = Splide.options.focus;
+      var slideSize = Layout.slideSize(index);
+
+      if (focus === 'center') {
+        return -(Layout.size - slideSize) / 2;
+      }
+
+      return -(parseInt(focus) || 0) * (slideSize + Layout.gap);
+    },
+
+    /**
+     * Return the current position.
+     * This returns the correct position even while transitioning by CSS.
+     *
+     * @return {number} - Current position.
+     */
+    get position() {
+      var prop = isVertical ? 'top' : isRTL ? 'right' : 'left';
+      return getRect(list)[prop] - (getRect(Elements.track)[prop] - Layout.padding[prop] * sign);
+    }
+
+  };
+  /**
+   * Called whenever slides arrive at a destination.
+   *
+   * @param {number}  destIndex - A destination index.
+   * @param {number}  newIndex  - A new index.
+   * @param {number}  prevIndex - A previous index.
+   * @param {boolean} silently  - If true, suppress emitting events.
+   */
+
+  function onTransitionEnd(destIndex, newIndex, prevIndex, silently) {
+    applyStyle(list, {
+      transition: ''
+    });
+    isLoopPending = false;
+
+    if (!isFade) {
+      Track.jump(newIndex);
+    }
+
+    if (!silently) {
+      Splide.emit('moved', newIndex, prevIndex, destIndex);
+    }
+  }
+  /**
+   * Convert index to the trimmed position.
+   *
+   * @return {number} - Trimmed position.
+   */
+
+
+  function getTrimmedPosition(index) {
+    return Track.trim(Track.toPosition(index));
+  }
+
+  return Track;
+});
+;// CONCATENATED MODULE: ./src/js/components/clones/index.js
+/**
+ * The component for cloning some slides for "loop" mode of the track.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+
+/**
+ * The component for cloning some slides for "loop" mode of the track.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var clones = (function (Splide, Components) {
+  /**
+   * Store information of all clones.
+   *
+   * @type {Array}
+   */
+  var clones = [];
+  /**
+   * Store the current clone count on one side.
+   *
+   * @type {number}
+   */
+
+  var cloneCount = 0;
+  /**
+   * Keep Elements component.
+   *
+   * @type {Object}
+   */
+
+  var Elements = Components.Elements;
+  /**
+   * Clones component object.
+   *
+   * @type {Object}
+   */
+
+  var Clones = {
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      var _this = this;
+
+      if (Splide.is(LOOP)) {
+        init();
+        Splide.on('refresh:before', function () {
+          _this.destroy();
+        }).on('refresh', init).on('resize', function () {
+          if (cloneCount !== getCloneCount()) {
+            // Destroy before refresh not to collect clones by the Elements component.
+            _this.destroy();
+
+            Splide.refresh();
+          }
+        });
+      }
+    },
+
+    /**
+     * Destroy.
+     */
+    destroy: function destroy() {
+      dom_remove(clones);
+      clones = [];
+    },
+
+    /**
+     * Return all clones.
+     *
+     * @return {Element[]} - Cloned elements.
+     */
+    get clones() {
+      return clones;
+    },
+
+    /**
+     * Return clone length.
+     *
+     * @return {number} - A length of clones.
+     */
+    get length() {
+      return clones.length;
+    }
+
+  };
+  /**
+   * Initialization.
+   */
+
+  function init() {
+    Clones.destroy();
+    cloneCount = getCloneCount();
+    generateClones(cloneCount);
+  }
+  /**
+   * Generate and append/prepend clones.
+   *
+   * @param {number} count - The half number of clones.
+   */
+
+
+  function generateClones(count) {
+    var length = Elements.length,
+        register = Elements.register;
+
+    if (length) {
+      var slides = Elements.slides;
+
+      while (slides.length < count) {
+        slides = slides.concat(slides);
+      } // Clones after the last element.
+
+
+      slides.slice(0, count).forEach(function (elm, index) {
+        var clone = cloneDeeply(elm);
+        append(Elements.list, clone);
+        clones.push(clone);
+        register(clone, index + length, index % length);
+      }); // Clones before the first element.
+
+      slides.slice(-count).forEach(function (elm, index) {
+        var clone = cloneDeeply(elm);
+        before(clone, slides[0]);
+        clones.push(clone);
+        register(clone, index - count, (length + index - count % length) % length);
+      });
+    }
+  }
+  /**
+   * Return half count of clones to be generated.
+   * Clone count is determined by:
+   * - "clones" value in the options.
+   * - Number of slides that can be placed in a view in "fixed" mode.
+   * - Max pages a flick action can move.
+   * - Whether the slide length is enough for perPage.
+   *
+   * @return {number} - Count for clones.
+   */
+
+
+  function getCloneCount() {
+    var options = Splide.options;
+
+    if (options.clones) {
+      return options.clones;
+    } // Use the slide length in autoWidth mode because the number cannot be calculated.
+
+
+    var baseCount = options.autoWidth || options.autoHeight ? Elements.length : options.perPage;
+    var dimension = options.direction === TTB ? 'Height' : 'Width';
+    var fixedSize = toPixel(Splide.root, options["fixed" + dimension]);
+
+    if (fixedSize) {
+      // Roughly calculate the count. This needs not to be strict.
+      baseCount = Math.ceil(Elements.track["client" + dimension] / fixedSize);
+    }
+
+    return baseCount * (options.drag ? options.flickMaxPages + 1 : 1);
+  }
+  /**
+   * Clone deeply the given element.
+   *
+   * @param {Element} elm - An element being duplicated.
+   *
+   * @return {Node} - A cloned node(element).
+   */
+
+
+  function cloneDeeply(elm) {
+    var clone = elm.cloneNode(true);
+    addClass(clone, Splide.classes.clone); // ID should not be duplicated.
+
+    removeAttribute(clone, 'id');
+    return clone;
+  }
+
+  return Clones;
+});
+;// CONCATENATED MODULE: ./src/js/components/layout/directions/horizontal.js
+/**
+ * The resolver component for horizontal layout.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+/**
+ * The resolver component for horizontal layout.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The resolver object.
+ */
+
+/* harmony default export */ var horizontal = (function (Splide, Components) {
+  /**
+   * Keep the Elements component.
+   *
+   * @type {string}
+   */
+  var Elements = Components.Elements;
+  /**
+   * Keep the root element.
+   *
+   * @type {Element}
+   */
+
+  var root = Splide.root;
+  /**
+   * Keep the track element.
+   *
+   * @type {Element}
+   */
+
+  var track;
+  /**
+   * Keep the latest options.
+   *
+   * @type {Element}
+   */
+
+  var options = Splide.options;
+  return {
+    /**
+     * Margin property name.
+     *
+     * @type {string}
+     */
+    margin: 'margin' + (options.direction === RTL ? 'Left' : 'Right'),
+
+    /**
+     * Always 0 because the height will be determined by inner contents.
+     *
+     * @type {number}
+     */
+    height: 0,
+
+    /**
+     * Initialization.
+     */
+    init: function init() {
+      this.resize();
+    },
+
+    /**
+     * Resize gap and padding.
+     * This must be called on init.
+     */
+    resize: function resize() {
+      options = Splide.options;
+      track = Elements.track;
+      this.gap = toPixel(root, options.gap);
+      var padding = options.padding;
+      var left = toPixel(root, padding.left || padding);
+      var right = toPixel(root, padding.right || padding);
+      this.padding = {
+        left: left,
+        right: right
+      };
+      applyStyle(track, {
+        paddingLeft: unit(left),
+        paddingRight: unit(right)
+      });
+    },
+
+    /**
+     * Return total width from the left of the list to the right of the slide specified by the provided index.
+     *
+     * @param {number} index - Optional. A slide index. If undefined, total width of the slider will be returned.
+     *
+     * @return {number} - Total width to the right side of the specified slide, or 0 for an invalid index.
+     */
+    totalWidth: function totalWidth(index) {
+      if (index === void 0) {
+        index = Splide.length - 1;
+      }
+
+      var Slide = Elements.getSlide(index);
+      var width = 0;
+
+      if (Slide) {
+        var slideRect = getRect(Slide.slide);
+        var listRect = getRect(Elements.list);
+
+        if (options.direction === RTL) {
+          width = listRect.right - slideRect.left;
+        } else {
+          width = slideRect.right - listRect.left;
+        }
+
+        width += this.gap;
+      }
+
+      return width;
+    },
+
+    /**
+     * Return the slide width in px.
+     *
+     * @param {number} index - Slide index.
+     *
+     * @return {number} - The slide width.
+     */
+    slideWidth: function slideWidth(index) {
+      if (options.autoWidth) {
+        var Slide = Elements.getSlide(index);
+        return Slide ? Slide.slide.offsetWidth : 0;
+      }
+
+      var width = options.fixedWidth || (this.width + this.gap) / options.perPage - this.gap;
+      return toPixel(root, width);
+    },
+
+    /**
+     * Return the slide height in px.
+     *
+     * @return {number} - The slide height.
+     */
+    slideHeight: function slideHeight() {
+      var height = options.height || options.fixedHeight || this.width * options.heightRatio;
+      return toPixel(root, height);
+    },
+
+    /**
+     * Return slider width without padding.
+     *
+     * @return {number} - Current slider width.
+     */
+    get width() {
+      return track.clientWidth - this.padding.left - this.padding.right;
+    }
+
+  };
+});
+;// CONCATENATED MODULE: ./src/js/components/layout/directions/vertical.js
+/**
+ * The resolver component for vertical layout.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+/**
+ * The resolver component for vertical layout.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The resolver object.
+ */
+
+/* harmony default export */ var vertical = (function (Splide, Components) {
+  /**
+   * Keep the Elements component.
+   *
+   * @type {string}
+   */
+  var Elements = Components.Elements;
+  /**
+   * Keep the root element.
+   *
+   * @type {Element}
+   */
+
+  var root = Splide.root;
+  /**
+   * Keep the track element.
+   *
+   * @type {Element}
+   */
+
+  var track;
+  /**
+   * Keep the latest options.
+   *
+   * @type {Element}
+   */
+
+  var options;
+  return {
+    /**
+     * Margin property name.
+     *
+     * @type {string}
+     */
+    margin: 'marginBottom',
+
+    /**
+     * Initialization.
+     */
+    init: function init() {
+      this.resize();
+    },
+
+    /**
+     * Resize gap and padding.
+     * This must be called on init.
+     */
+    resize: function resize() {
+      options = Splide.options;
+      track = Elements.track;
+      this.gap = toPixel(root, options.gap);
+      var padding = options.padding;
+      var top = toPixel(root, padding.top || padding);
+      var bottom = toPixel(root, padding.bottom || padding);
+      this.padding = {
+        top: top,
+        bottom: bottom
+      };
+      applyStyle(track, {
+        paddingTop: unit(top),
+        paddingBottom: unit(bottom)
+      });
+    },
+
+    /**
+     * Return total height from the top of the list to the bottom of the slide specified by the provided index.
+     *
+     * @param {number} index - Optional. A slide index. If undefined, total height of the slider will be returned.
+     *
+     * @return {number} - Total height to the bottom of the specified slide, or 0 for an invalid index.
+     */
+    totalHeight: function totalHeight(index) {
+      if (index === void 0) {
+        index = Splide.length - 1;
+      }
+
+      var Slide = Elements.getSlide(index);
+
+      if (Slide) {
+        return getRect(Slide.slide).bottom - getRect(Elements.list).top + this.gap;
+      }
+
+      return 0;
+    },
+
+    /**
+     * Return the slide width in px.
+     *
+     * @return {number} - The slide width.
+     */
+    slideWidth: function slideWidth() {
+      return toPixel(root, options.fixedWidth || this.width);
+    },
+
+    /**
+     * Return the slide height in px.
+     *
+     * @param {number} index - Slide index.
+     *
+     * @return {number} - The slide height.
+     */
+    slideHeight: function slideHeight(index) {
+      if (options.autoHeight) {
+        var Slide = Elements.getSlide(index);
+        return Slide ? Slide.slide.offsetHeight : 0;
+      }
+
+      var height = options.fixedHeight || (this.height + this.gap) / options.perPage - this.gap;
+      return toPixel(root, height);
+    },
+
+    /**
+     * Return slider width without padding.
+     *
+     * @return {number} - Current slider width.
+     */
+    get width() {
+      return track.clientWidth;
+    },
+
+    /**
+     * Return slide height without padding.
+     *
+     * @return {number} - Slider height.
+     */
+    get height() {
+      var height = options.height || this.width * options.heightRatio;
+      exist(height, '"height" or "heightRatio" is missing.');
+      return toPixel(root, height) - this.padding.top - this.padding.bottom;
+    }
+
+  };
+});
+;// CONCATENATED MODULE: ./src/js/utils/time.js
+/**
+ * A package of utility functions related with time.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * Simple throttle function that controls how often the given function is executed.
+ *
+ * @param {function} func - A function to be throttled.
+ * @param {number}   wait - Time in millisecond for interval of execution.
+ *
+ * @return {Function} - A debounced function.
+ */
+function throttle(func, wait) {
+  var timeout; // Declare function by the "function" keyword to prevent "this" from being inherited.
+
+  return function () {
+    if (!timeout) {
+      timeout = setTimeout(function () {
+        func();
+        timeout = null;
+      }, wait);
+    }
+  };
+}
+/**
+ * Custom setInterval function that provides progress rate as callback.
+ *
+ * @param {function} callback - A callback function fired every time the interval time passes.
+ * @param {number}   interval - Interval duration in milliseconds.
+ * @param {function} progress - A callback function fired whenever the progress goes.
+ *
+ * @return {Object} - An object containing play() and pause() functions.
+ */
+
+function createInterval(callback, interval, progress) {
+  var _window = window,
+      requestAnimationFrame = _window.requestAnimationFrame;
+  var start,
+      elapse,
+      rate,
+      _pause = true;
+
+  var step = function step(timestamp) {
+    if (!_pause) {
+      if (!start) {
+        start = timestamp;
+
+        if (rate && rate < 1) {
+          start -= rate * interval;
+        }
+      }
+
+      elapse = timestamp - start;
+      rate = elapse / interval;
+
+      if (elapse >= interval) {
+        start = 0;
+        rate = 1;
+        callback();
+      }
+
+      if (progress) {
+        progress(rate);
+      }
+
+      requestAnimationFrame(step);
+    }
+  };
+
+  return {
+    pause: function pause() {
+      _pause = true;
+      start = 0;
+    },
+    play: function play(reset) {
+      start = 0;
+
+      if (reset) {
+        rate = 0;
+      }
+
+      if (_pause) {
+        _pause = false;
+        requestAnimationFrame(step);
+      }
+    }
+  };
+}
+;// CONCATENATED MODULE: ./src/js/components/layout/index.js
+/**
+ * The component for handing slide layouts and their sizes.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+
+
+
+
+/**
+ * The component for handing slide layouts and their sizes.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var layout = (function (Splide, Components) {
+  /**
+   * Keep the Elements component.
+   *
+   * @type {string}
+   */
+  var Elements = Components.Elements;
+  /**
+   * Whether the slider is vertical or not.
+   *
+   * @type {boolean}
+   */
+
+  var isVertical = Splide.options.direction === TTB;
+  /**
+   * Layout component object.
+   *
+   * @type {Object}
+   */
+
+  var Layout = object_assign({
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      bind();
+      init(); // The word "size" means width for a horizontal slider and height for a vertical slider.
+
+      this.totalSize = isVertical ? this.totalHeight : this.totalWidth;
+      this.slideSize = isVertical ? this.slideHeight : this.slideWidth;
+    },
+
+    /**
+     * Destroy the component.
+     */
+    destroy: function destroy() {
+      removeAttribute([Elements.list, Elements.track], 'style');
+    },
+
+    /**
+     * Return the slider height on the vertical mode or width on the horizontal mode.
+     *
+     * @return {number}
+     */
+    get size() {
+      return isVertical ? this.height : this.width;
+    }
+
+  }, isVertical ? vertical(Splide, Components) : horizontal(Splide, Components));
+  /**
+   * Init slider styles according to options.
+   */
+
+  function init() {
+    Layout.init();
+    applyStyle(Splide.root, {
+      maxWidth: unit(Splide.options.width)
+    });
+    Elements.each(function (Slide) {
+      Slide.slide.style[Layout.margin] = unit(Layout.gap);
+    });
+    resize();
+  }
+  /**
+   * Listen the resize native event with throttle.
+   * Initialize when the component is mounted or options are updated.
+   */
+
+
+  function bind() {
+    Splide.on('resize load', throttle(function () {
+      Splide.emit('resize');
+    }, Splide.options.throttle), window).on('resize', resize).on('updated refresh', init);
+  }
+  /**
+   * Resize the track and slide elements.
+   */
+
+
+  function resize() {
+    var options = Splide.options;
+    Layout.resize();
+    applyStyle(Elements.track, {
+      height: unit(Layout.height)
+    });
+    var slideHeight = options.autoHeight ? null : unit(Layout.slideHeight());
+    Elements.each(function (Slide) {
+      applyStyle(Slide.container, {
+        height: slideHeight
+      });
+      applyStyle(Slide.slide, {
+        width: options.autoWidth ? null : unit(Layout.slideWidth(Slide.index)),
+        height: Slide.container ? null : slideHeight
+      });
+    });
+    Splide.emit('resized');
+  }
+
+  return Layout;
+});
+;// CONCATENATED MODULE: ./src/js/components/drag/index.js
+/**
+ * The component for supporting mouse drag and swipe.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+
+
+var drag_abs = Math.abs;
+/**
+ * If the absolute velocity is greater thant this value,
+ * a slider always goes to a different slide after drag, not allowed to stay on a current slide.
+ */
+
+var MIN_VELOCITY = 0.1;
+/**
+ * Adjust how much the track can be pulled on the first or last page.
+ * The larger number this is, the farther the track moves.
+ * This should be around 5 - 9.
+ *
+ * @type {number}
+ */
+
+var FRICTION_REDUCER = 7;
+/**
+ * The component supporting mouse drag and swipe.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var drag = (function (Splide, Components) {
+  /**
+   * Store the Move component.
+   *
+   * @type {Object}
+   */
+  var Track = Components.Track;
+  /**
+   * Store the Controller component.
+   *
+   * @type {Object}
+   */
+
+  var Controller = Components.Controller;
+  /**
+   * Coordinate of the track on starting drag.
+   *
+   * @type {Object}
+   */
+
+  var startCoord;
+  /**
+   * Analyzed info on starting drag.
+   *
+   * @type {Object|null}
+   */
+
+  var startInfo;
+  /**
+   * Analyzed info being updated while dragging/swiping.
+   *
+   * @type {Object}
+   */
+
+  var currentInfo;
+  /**
+   * Determine whether slides are being dragged or not.
+   *
+   * @type {boolean}
+   */
+
+  var isDragging;
+  /**
+   * Whether the slider direction is vertical or not.
+   *
+   * @type {boolean}
+   */
+
+  var isVertical = Splide.options.direction === TTB;
+  /**
+   * Axis for the direction.
+   *
+   * @type {string}
+   */
+
+  var axis = isVertical ? 'y' : 'x';
+  /**
+   * Drag component object.
+   *
+   * @type {Object}
+   */
+
+  var Drag = {
+    /**
+     * Whether dragging is disabled or not.
+     *
+     * @type {boolean}
+     */
+    disabled: false,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      var _this = this;
+
+      var Elements = Components.Elements;
+      var track = Elements.track;
+      Splide.on('touchstart mousedown', start, track).on('touchmove mousemove', move, track, {
+        passive: false
+      }).on('touchend touchcancel mouseleave mouseup dragend', end, track).on('mounted refresh', function () {
+        // Prevent dragging an image or anchor itself.
+        each(Elements.list.querySelectorAll('img, a'), function (elm) {
+          Splide.off('dragstart', elm).on('dragstart', function (e) {
+            e.preventDefault();
+          }, elm, {
+            passive: false
+          });
+        });
+      }).on('mounted updated', function () {
+        _this.disabled = !Splide.options.drag;
+      });
+    }
+  };
+  /**
+   * Called when the track starts to be dragged.
+   *
+   * @param {TouchEvent|MouseEvent} e - TouchEvent or MouseEvent object.
+   */
+
+  function start(e) {
+    if (!Drag.disabled && !isDragging) {
+      // These prams are used to evaluate whether the slider should start moving.
+      init(e);
+    }
+  }
+  /**
+   * Initialize parameters.
+   *
+   * @param {TouchEvent|MouseEvent} e - TouchEvent or MouseEvent object.
+   */
+
+
+  function init(e) {
+    startCoord = Track.toCoord(Track.position);
+    startInfo = analyze(e, {});
+    currentInfo = startInfo;
+  }
+  /**
+   * Called while the track being dragged.
+   *
+   * @param {TouchEvent|MouseEvent} e - TouchEvent or MouseEvent object.
+   */
+
+
+  function move(e) {
+    if (startInfo) {
+      currentInfo = analyze(e, startInfo);
+
+      if (isDragging) {
+        if (e.cancelable) {
+          e.preventDefault();
+        }
+
+        if (!Splide.is(FADE)) {
+          var position = startCoord[axis] + currentInfo.offset[axis];
+          Track.translate(resist(position));
+        }
+      } else {
+        if (shouldMove(currentInfo)) {
+          Splide.emit('drag', startInfo);
+          isDragging = true;
+          Track.cancel(); // These params are actual drag data.
+
+          init(e);
+        }
+      }
+    }
+  }
+  /**
+   * Determine whether to start moving the track or not by drag angle.
+   *
+   * @param {Object} info - An information object.
+   *
+   * @return {boolean} - True if the track should be moved or false if not.
+   */
+
+
+  function shouldMove(_ref) {
+    var offset = _ref.offset;
+
+    if (Splide.State.is(MOVING) && Splide.options.waitForTransition) {
+      return false;
+    }
+
+    var angle = Math.atan(drag_abs(offset.y) / drag_abs(offset.x)) * 180 / Math.PI;
+
+    if (isVertical) {
+      angle = 90 - angle;
+    }
+
+    return angle < Splide.options.dragAngleThreshold;
+  }
+  /**
+   * Resist dragging the track on the first/last page because there is no more.
+   *
+   * @param {number} position - A position being applied to the track.
+   *
+   * @return {Object} - Adjusted position.
+   */
+
+
+  function resist(position) {
+    if (Splide.is(SLIDE)) {
+      var sign = Track.sign;
+
+      var _start = sign * Track.trim(Track.toPosition(0));
+
+      var _end = sign * Track.trim(Track.toPosition(Controller.edgeIndex));
+
+      position *= sign;
+
+      if (position < _start) {
+        position = _start - FRICTION_REDUCER * Math.log(_start - position);
+      } else if (position > _end) {
+        position = _end + FRICTION_REDUCER * Math.log(position - _end);
+      }
+
+      position *= sign;
+    }
+
+    return position;
+  }
+  /**
+   * Called when dragging ends.
+   */
+
+
+  function end() {
+    startInfo = null;
+
+    if (isDragging) {
+      Splide.emit('dragged', currentInfo);
+      go(currentInfo);
+      isDragging = false;
+    }
+  }
+  /**
+   * Go to the slide determined by the analyzed data.
+   *
+   * @param {Object} info - An info object.
+   */
+
+
+  function go(info) {
+    var velocity = info.velocity[axis];
+    var absV = drag_abs(velocity);
+
+    if (absV > 0) {
+      var options = Splide.options;
+      var index = Splide.index;
+      var sign = velocity < 0 ? -1 : 1;
+      var destIndex = index;
+
+      if (!Splide.is(FADE)) {
+        var destination = Track.position;
+
+        if (absV > options.flickVelocityThreshold && drag_abs(info.offset[axis]) < options.swipeDistanceThreshold) {
+          destination += sign * Math.min(absV * options.flickPower, Components.Layout.size * (options.flickMaxPages || 1));
+        }
+
+        destIndex = Track.toIndex(destination);
+      }
+      /*
+       * Do not allow the track to go to a previous position if there is enough velocity.
+       * Always use the adjacent index for the fade mode.
+       */
+
+
+      if (destIndex === index && absV > MIN_VELOCITY) {
+        destIndex = index + sign * Track.sign;
+      }
+
+      if (Splide.is(SLIDE)) {
+        destIndex = between(destIndex, 0, Controller.edgeIndex);
+      }
+
+      Controller.go(destIndex, options.isNavigation);
+    }
+  }
+  /**
+   * Analyze the given event object and return important information for handling swipe behavior.
+   *
+   * @param {Event}   e          - Touch or Mouse event object.
+   * @param {Object}  startInfo  - Information analyzed on start for calculating difference from the current one.
+   *
+   * @return {Object} - An object containing analyzed information, such as offset, velocity, etc.
+   */
+
+
+  function analyze(e, startInfo) {
+    var timeStamp = e.timeStamp,
+        touches = e.touches;
+
+    var _ref2 = touches ? touches[0] : e,
+        clientX = _ref2.clientX,
+        clientY = _ref2.clientY;
+
+    var _ref3 = startInfo.to || {},
+        _ref3$x = _ref3.x,
+        fromX = _ref3$x === void 0 ? clientX : _ref3$x,
+        _ref3$y = _ref3.y,
+        fromY = _ref3$y === void 0 ? clientY : _ref3$y;
+
+    var startTime = startInfo.time || 0;
+    var offset = {
+      x: clientX - fromX,
+      y: clientY - fromY
+    };
+    var duration = timeStamp - startTime;
+    var velocity = {
+      x: offset.x / duration,
+      y: offset.y / duration
+    };
+    return {
+      to: {
+        x: clientX,
+        y: clientY
+      },
+      offset: offset,
+      time: timeStamp,
+      velocity: velocity
+    };
+  }
+
+  return Drag;
+});
+;// CONCATENATED MODULE: ./src/js/components/click/index.js
+/**
+ * The component for handling a click event.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * The component for handling a click event.
+ * Click should be disabled during drag/swipe.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+/* harmony default export */ var click = (function (Splide, Components) {
+  /**
+   * Whether click is disabled or not.
+   *
+   * @type {boolean}
+   */
+  var disabled = false;
+  /**
+   * Click component object.
+   *
+   * @type {Object}
+   */
+
+  var Click = {
+    /**
+     * Mount only when the drag is activated and the slide type is not "fade".
+     *
+     * @type {boolean}
+     */
+    required: Splide.options.drag,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      Splide.on('click', onClick, Components.Elements.track, {
+        capture: true
+      }).on('drag', function () {
+        disabled = true;
+      }).on('dragged', function () {
+        // Make sure the flag is released after the click event is fired.
+        setTimeout(function () {
+          disabled = false;
+        });
+      });
+    }
+  };
+  /**
+   * Called when a track element is clicked.
+   *
+   * @param {Event} e - A click event.
+   */
+
+  function onClick(e) {
+    if (disabled) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+    }
+  }
+
+  return Click;
+});
+;// CONCATENATED MODULE: ./src/js/components/autoplay/index.js
+/**
+ * The component for playing slides automatically.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+/**
+ * Set of pause flags.
+ */
+
+var PAUSE_FLAGS = {
+  HOVER: 1,
+  FOCUS: 2,
+  MANUAL: 3
+};
+/**
+ * The component for playing slides automatically.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ * @param {string} name       - A component name as a lowercase string.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var autoplay = (function (Splide, Components, name) {
+  /**
+   * Store pause flags.
+   *
+   * @type {Array}
+   */
+  var flags = [];
+  /**
+   * Store an interval object.
+   *
+   * @type {Object};
+   */
+
+  var interval;
+  /**
+   * Keep the Elements component.
+   *
+   * @type {string}
+   */
+
+  var Elements = Components.Elements;
+  /**
+   * Autoplay component object.
+   *
+   * @type {Object}
+   */
+
+  var Autoplay = {
+    /**
+     * Required only when the autoplay option is true.
+     *
+     * @type {boolean}
+     */
+    required: Splide.options.autoplay,
+
+    /**
+     * Called when the component is mounted.
+     * Note that autoplay starts only if there are slides over perPage number.
+     */
+    mount: function mount() {
+      var options = Splide.options;
+
+      if (Elements.slides.length > options.perPage) {
+        interval = createInterval(function () {
+          Splide.go('>');
+        }, options.interval, function (rate) {
+          Splide.emit(name + ":playing", rate);
+
+          if (Elements.bar) {
+            applyStyle(Elements.bar, {
+              width: rate * 100 + "%"
+            });
+          }
+        });
+        bind();
+        this.play();
+      }
+    },
+
+    /**
+     * Start autoplay.
+     *
+     * @param {number} flag - A pause flag to be removed.
+     */
+    play: function play(flag) {
+      if (flag === void 0) {
+        flag = 0;
+      }
+
+      flags = flags.filter(function (f) {
+        return f !== flag;
+      });
+
+      if (!flags.length) {
+        Splide.emit(name + ":play");
+        interval.play(Splide.options.resetProgress);
+      }
+    },
+
+    /**
+     * Pause autoplay.
+     * Note that Array.includes is not supported by IE.
+     *
+     * @param {number} flag - A pause flag to be added.
+     */
+    pause: function pause(flag) {
+      if (flag === void 0) {
+        flag = 0;
+      }
+
+      interval.pause();
+
+      if (flags.indexOf(flag) === -1) {
+        flags.push(flag);
+      }
+
+      if (flags.length === 1) {
+        Splide.emit(name + ":pause");
+      }
+    }
+  };
+  /**
+   * Listen some events.
+   */
+
+  function bind() {
+    var options = Splide.options;
+    var sibling = Splide.sibling;
+    var elms = [Splide.root, sibling ? sibling.root : null];
+
+    if (options.pauseOnHover) {
+      switchOn(elms, 'mouseleave', PAUSE_FLAGS.HOVER, true);
+      switchOn(elms, 'mouseenter', PAUSE_FLAGS.HOVER, false);
+    }
+
+    if (options.pauseOnFocus) {
+      switchOn(elms, 'focusout', PAUSE_FLAGS.FOCUS, true);
+      switchOn(elms, 'focusin', PAUSE_FLAGS.FOCUS, false);
+    }
+
+    if (Elements.play) {
+      Splide.on('click', function () {
+        // Need to be removed a focus flag at first.
+        Autoplay.play(PAUSE_FLAGS.FOCUS);
+        Autoplay.play(PAUSE_FLAGS.MANUAL);
+      }, Elements.play);
+    }
+
+    if (Elements.pause) {
+      switchOn([Elements.pause], 'click', PAUSE_FLAGS.MANUAL, false);
+    }
+
+    Splide.on('move refresh', function () {
+      Autoplay.play();
+    }) // Rewind the timer.
+    .on('destroy', function () {
+      Autoplay.pause();
+    });
+  }
+  /**
+   * Play or pause on the given event.
+   *
+   * @param {Element[]} elms  - Elements.
+   * @param {string}    event - An event name or names.
+   * @param {number}    flag  - A pause flag defined on the top.
+   * @param {boolean}   play  - Determine whether to play or pause.
+   */
+
+
+  function switchOn(elms, event, flag, play) {
+    elms.forEach(function (elm) {
+      Splide.on(event, function () {
+        Autoplay[play ? 'play' : 'pause'](flag);
+      }, elm);
+    });
+  }
+
+  return Autoplay;
+});
+;// CONCATENATED MODULE: ./src/js/components/cover/index.js
+/**
+ * The component for change an img element to background image of its wrapper.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * The component for change an img element to background image of its wrapper.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var cover = (function (Splide, Components) {
+  /**
+   * Hold options.
+   *
+   * @type {Object}
+   */
+  var options = Splide.options;
+  /**
+   * Cover component object.
+   *
+   * @type {Object}
+   */
+
+  var Cover = {
+    /**
+     * Required only when "cover" option is true.
+     *
+     * @type {boolean}
+     */
+    required: options.cover,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      Splide.on('lazyload:loaded', function (img) {
+        cover(img, false);
+      });
+      Splide.on('mounted updated refresh', function () {
+        return apply(false);
+      });
+    },
+
+    /**
+     * Destroy.
+     */
+    destroy: function destroy() {
+      apply(true);
+    }
+  };
+  /**
+   * Apply "cover" to all slides.
+   *
+   * @param {boolean} uncover - If true, "cover" will be clear.
+   */
+
+  function apply(uncover) {
+    Components.Elements.each(function (Slide) {
+      var img = child(Slide.slide, 'IMG') || child(Slide.container, 'IMG');
+
+      if (img && img.src) {
+        cover(img, uncover);
+      }
+    });
+  }
+  /**
+   * Set background image of the parent element, using source of the given image element.
+   *
+   * @param {Element} img     - An image element.
+   * @param {boolean} uncover - Reset "cover".
+   */
+
+
+  function cover(img, uncover) {
+    applyStyle(img.parentElement, {
+      background: uncover ? '' : "center/cover no-repeat url(\"" + img.src + "\")"
+    });
+    applyStyle(img, {
+      display: uncover ? '' : 'none'
+    });
+  }
+
+  return Cover;
+});
+;// CONCATENATED MODULE: ./src/js/components/arrows/path.js
+/**
+ * Export vector path for an arrow.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * Namespace definition for SVG element.
+ *
+ * @type {string}
+ */
+var XML_NAME_SPACE = 'http://www.w3.org/2000/svg';
+/**
+ * The arrow vector path.
+ *
+ * @type {number}
+ */
+
+var PATH = 'm15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z';
+/**
+ * SVG width and height.
+ *
+ * @type {number}
+ */
+
+var SIZE = 40;
+;// CONCATENATED MODULE: ./src/js/components/arrows/index.js
+/**
+ * The component for appending prev/next arrows.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+/**
+ * The component for appending prev/next arrows.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ * @param {string} name       - A component name as a lowercase string.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var arrows = (function (Splide, Components, name) {
+  /**
+   * Previous arrow element.
+   *
+   * @type {Element|undefined}
+   */
+  var prev;
+  /**
+   * Next arrow element.
+   *
+   * @type {Element|undefined}
+   */
+
+  var next;
+  /**
+   * Store the class list.
+   *
+   * @type {Object}
+   */
+
+  var classes = Splide.classes;
+  /**
+   * Hold the root element.
+   *
+   * @type {Element}
+   */
+
+  var root = Splide.root;
+  /**
+   * Whether arrows are created programmatically or not.
+   *
+   * @type {boolean}
+   */
+
+  var created;
+  /**
+   * Hold the Elements component.
+   *
+   * @type {Object}
+   */
+
+  var Elements = Components.Elements;
+  /**
+   * Arrows component object.
+   *
+   * @type {Object}
+   */
+
+  var Arrows = {
+    /**
+     * Required when the arrows option is true.
+     *
+     * @type {boolean}
+     */
+    required: Splide.options.arrows,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      // Attempt to get arrows from HTML source.
+      prev = Elements.arrows.prev;
+      next = Elements.arrows.next; // If arrows were not found in HTML, let's generate them.
+
+      if ((!prev || !next) && Splide.options.arrows) {
+        prev = createArrow(true);
+        next = createArrow(false);
+        created = true;
+        appendArrows();
+      }
+
+      if (prev && next) {
+        bind();
+      }
+
+      this.arrows = {
+        prev: prev,
+        next: next
+      };
+    },
+
+    /**
+     * Called after all components are mounted.
+     */
+    mounted: function mounted() {
+      Splide.emit(name + ":mounted", prev, next);
+    },
+
+    /**
+     * Destroy.
+     */
+    destroy: function destroy() {
+      removeAttribute([prev, next], 'disabled');
+
+      if (created) {
+        dom_remove(prev.parentElement);
+      }
+    }
+  };
+  /**
+   * Listen to native and custom events.
+   */
+
+  function bind() {
+    Splide.on('click', function () {
+      Splide.go('<');
+    }, prev).on('click', function () {
+      Splide.go('>');
+    }, next).on('mounted move updated refresh', updateDisabled);
+  }
+  /**
+   * Update a disabled attribute.
+   */
+
+
+  function updateDisabled() {
+    var _Components$Controlle = Components.Controller,
+        prevIndex = _Components$Controlle.prevIndex,
+        nextIndex = _Components$Controlle.nextIndex;
+    var isEnough = Splide.length > Splide.options.perPage || Splide.is(LOOP);
+    prev.disabled = prevIndex < 0 || !isEnough;
+    next.disabled = nextIndex < 0 || !isEnough;
+    Splide.emit(name + ":updated", prev, next, prevIndex, nextIndex);
+  }
+  /**
+   * Create a wrapper element and append arrows.
+   */
+
+
+  function appendArrows() {
+    var wrapper = create('div', {
+      "class": classes.arrows
+    });
+    append(wrapper, prev);
+    append(wrapper, next);
+    var slider = Elements.slider;
+    var parent = Splide.options.arrows === 'slider' && slider ? slider : root;
+    before(wrapper, parent.firstElementChild);
+  }
+  /**
+   * Create an arrow element.
+   *
+   * @param {boolean} prev - Determine to create a prev arrow or next arrow.
+   *
+   * @return {Element} - A created arrow element.
+   */
+
+
+  function createArrow(prev) {
+    var arrow = "<button class=\"" + classes.arrow + " " + (prev ? classes.prev : classes.next) + "\" type=\"button\">" + ("<svg xmlns=\"" + XML_NAME_SPACE + "\"\tviewBox=\"0 0 " + SIZE + " " + SIZE + "\"\twidth=\"" + SIZE + "\"\theight=\"" + SIZE + "\">") + ("<path d=\"" + (Splide.options.arrowPath || PATH) + "\" />");
+    return domify(arrow);
+  }
+
+  return Arrows;
+});
+;// CONCATENATED MODULE: ./src/js/components/pagination/index.js
+/**
+ * The component for handling pagination
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+/**
+ * The event name for updating some attributes of pagination nodes.
+ *
+ * @type {string}
+ */
+
+var ATTRIBUTES_UPDATE_EVENT = 'move.page';
+/**
+ * The event name for recreating pagination.
+ *
+ * @type {string}
+ */
+
+var UPDATE_EVENT = 'updated.page refresh.page';
+/**
+ * The component for handling pagination
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ * @param {string} name       - A component name as a lowercase string.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var pagination = (function (Splide, Components, name) {
+  /**
+   * Store all data for pagination.
+   * - list: A list element.
+   * - items: An array that contains objects(li, button, index, page).
+   *
+   * @type {Object}
+   */
+  var data = {};
+  /**
+   * Hold the Elements component.
+   *
+   * @type {Object}
+   */
+
+  var Elements = Components.Elements;
+  /**
+   * Pagination component object.
+   *
+   * @type {Object}
+   */
+
+  var Pagination = {
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      var pagination = Splide.options.pagination;
+
+      if (pagination) {
+        data = createPagination();
+        var slider = Elements.slider;
+        var parent = pagination === 'slider' && slider ? slider : Splide.root;
+        append(parent, data.list);
+        Splide.on(ATTRIBUTES_UPDATE_EVENT, updateAttributes);
+      }
+
+      Splide.off(UPDATE_EVENT).on(UPDATE_EVENT, function () {
+        Pagination.destroy();
+
+        if (Splide.options.pagination) {
+          Pagination.mount();
+          Pagination.mounted();
+        }
+      });
+    },
+
+    /**
+     * Called after all components are mounted.
+     */
+    mounted: function mounted() {
+      if (Splide.options.pagination) {
+        var index = Splide.index;
+        Splide.emit(name + ":mounted", data, this.getItem(index));
+        updateAttributes(index, -1);
+      }
+    },
+
+    /**
+     * Destroy the pagination.
+     * Be aware that node.remove() is not supported by IE.
+     */
+    destroy: function destroy() {
+      dom_remove(data.list);
+
+      if (data.items) {
+        data.items.forEach(function (item) {
+          Splide.off('click', item.button);
+        });
+      } // Do not remove UPDATE_EVENT to recreate pagination if needed.
+
+
+      Splide.off(ATTRIBUTES_UPDATE_EVENT);
+      data = {};
+    },
+
+    /**
+     * Return an item by index.
+     *
+     * @param {number} index - A slide index.
+     *
+     * @return {Object|undefined} - An item object on success or undefined on failure.
+     */
+    getItem: function getItem(index) {
+      return data.items[Components.Controller.toPage(index)];
+    },
+
+    /**
+     * Return object containing pagination data.
+     *
+     * @return {Object} - Pagination data including list and items.
+     */
+    get data() {
+      return data;
+    }
+
+  };
+  /**
+   * Update attributes.
+   *
+   * @param {number} index     - Active index.
+   * @param {number} prevIndex - Prev index.
+   */
+
+  function updateAttributes(index, prevIndex) {
+    var prev = Pagination.getItem(prevIndex);
+    var curr = Pagination.getItem(index);
+    var active = STATUS_CLASSES.active;
+
+    if (prev) {
+      removeClass(prev.button, active);
+    }
+
+    if (curr) {
+      addClass(curr.button, active);
+    }
+
+    Splide.emit(name + ":updated", data, prev, curr);
+  }
+  /**
+   * Create a wrapper and button elements.
+   *
+   * @return {Object} - An object contains all data.
+   */
+
+
+  function createPagination() {
+    var options = Splide.options;
+    var classes = Splide.classes;
+    var list = create('ul', {
+      "class": classes.pagination
+    });
+    var items = Elements.getSlides(false).filter(function (Slide) {
+      return options.focus !== false || Slide.index % options.perPage === 0;
+    }).map(function (Slide, page) {
+      var li = create('li', {});
+      var button = create('button', {
+        "class": classes.page,
+        type: 'button'
+      });
+      append(li, button);
+      append(list, li);
+      Splide.on('click', function () {
+        Splide.go(">" + page);
+      }, button);
+      return {
+        li: li,
+        button: button,
+        page: page,
+        Slides: Elements.getSlidesByPage(page)
+      };
+    });
+    return {
+      list: list,
+      items: items
+    };
+  }
+
+  return Pagination;
+});
+;// CONCATENATED MODULE: ./src/js/components/lazyload/index.js
+/**
+ * The component for loading slider images lazily.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+/**
+ * The name for a data attribute of src.
+ *
+ * @type {string}
+ */
+
+var SRC_DATA_NAME = 'data-splide-lazy';
+/**
+ * The name for a data attribute of srcset.
+ *
+ * @type {string}
+ */
+
+var SRCSET_DATA_NAME = 'data-splide-lazy-srcset';
+/**
+ * The component for loading slider images lazily.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ * @param {string} name       - A component name as a lowercase string.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var lazyload = (function (Splide, Components, name) {
+  /**
+   * Next index for sequential loading.
+   *
+   * @type {number}
+   */
+  var nextIndex;
+  /**
+   * Store objects containing an img element and a Slide object.
+   *
+   * @type {Object[]}
+   */
+
+  var images;
+  /**
+   * Store the options.
+   *
+   * @type {Object}
+   */
+
+  var options = Splide.options;
+  /**
+   * Whether to load images sequentially or not.
+   *
+   * @type {boolean}
+   */
+
+  var isSequential = options.lazyLoad === 'sequential';
+  /**
+   * Lazyload component object.
+   *
+   * @type {Object}
+   */
+
+  var Lazyload = {
+    /**
+     * Mount only when the lazyload option is provided.
+     *
+     * @type {boolean}
+     */
+    required: options.lazyLoad,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      Splide.on('mounted refresh', function () {
+        init();
+        Components.Elements.each(function (Slide) {
+          each(Slide.slide.querySelectorAll("[" + SRC_DATA_NAME + "], [" + SRCSET_DATA_NAME + "]"), function (img) {
+            if (!img.src && !img.srcset) {
+              images.push({
+                img: img,
+                Slide: Slide
+              });
+              applyStyle(img, {
+                display: 'none'
+              });
+            }
+          });
+        });
+
+        if (isSequential) {
+          loadNext();
+        }
+      });
+
+      if (!isSequential) {
+        Splide.on("mounted refresh moved." + name, check);
+      }
+    },
+
+    /**
+     * Destroy.
+     */
+    destroy: init
+  };
+  /**
+   * Initialize parameters.
+   */
+
+  function init() {
+    images = [];
+    nextIndex = 0;
+  }
+  /**
+   * Check how close each image is from the active slide and
+   * determine whether to start loading or not, according to the distance.
+   *
+   * @param {number} index - Current index.
+   */
+
+
+  function check(index) {
+    index = isNaN(index) ? Splide.index : index;
+    images = images.filter(function (image) {
+      if (image.Slide.isWithin(index, options.perPage * (options.preloadPages + 1))) {
+        load(image.img, image.Slide);
+        return false;
+      }
+
+      return true;
+    }); // Unbind if all images are loaded.
+
+    if (!images[0]) {
+      Splide.off("moved." + name);
+    }
+  }
+  /**
+   * Start loading an image.
+   * Creating a clone of the image element since setting src attribute directly to it
+   * often occurs 'hitch', blocking some other processes of a browser.
+   *
+   * @param {Element} img   - An image element.
+   * @param {Object}  Slide - A Slide object.
+   */
+
+
+  function load(img, Slide) {
+    addClass(Slide.slide, STATUS_CLASSES.loading);
+    var spinner = create('span', {
+      "class": Splide.classes.spinner
+    });
+    append(img.parentElement, spinner);
+
+    img.onload = function () {
+      loaded(img, spinner, Slide, false);
+    };
+
+    img.onerror = function () {
+      loaded(img, spinner, Slide, true);
+    };
+
+    setAttribute(img, 'srcset', getAttribute(img, SRCSET_DATA_NAME) || '');
+    setAttribute(img, 'src', getAttribute(img, SRC_DATA_NAME) || '');
+  }
+  /**
+   * Start loading a next image in images array.
+   */
+
+
+  function loadNext() {
+    if (nextIndex < images.length) {
+      var image = images[nextIndex];
+      load(image.img, image.Slide);
+    }
+
+    nextIndex++;
+  }
+  /**
+   * Called just after the image was loaded or loading was aborted by some error.
+   *
+   * @param {Element} img     - An image element.
+   * @param {Element} spinner - A spinner element.
+   * @param {Object}  Slide   - A Slide object.
+   * @param {boolean} error   - True if the image was loaded successfully or false on error.
+   */
+
+
+  function loaded(img, spinner, Slide, error) {
+    removeClass(Slide.slide, STATUS_CLASSES.loading);
+
+    if (!error) {
+      dom_remove(spinner);
+      applyStyle(img, {
+        display: ''
+      });
+      Splide.emit(name + ":loaded", img).emit('resize');
+    }
+
+    if (isSequential) {
+      loadNext();
+    }
+  }
+
+  return Lazyload;
+});
+;// CONCATENATED MODULE: ./src/js/constants/a11y.js
+/**
+ * Export aria attribute names.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+/**
+ * Attribute name for aria-current.
+ *
+ * @type {string}
+ */
+var ARIA_CURRENRT = 'aria-current';
+/**
+ * Attribute name for aria-control.
+ *
+ * @type {string}
+ */
+
+var ARIA_CONTROLS = 'aria-controls';
+/**
+ * Attribute name for aria-control.
+ *
+ * @type {string}
+ */
+
+var ARIA_LABEL = 'aria-label';
+/**
+ * Attribute name for aria-labelledby.
+ *
+ * @type {string}
+ */
+
+var ARIA_LABELLEDBY = 'aria-labelledby';
+/**
+ * Attribute name for aria-hidden.
+ *
+ * @type {string}
+ */
+
+var ARIA_HIDDEN = 'aria-hidden';
+/**
+ * Attribute name for tab-index.
+ *
+ * @type {string}
+ */
+
+var TAB_INDEX = 'tabindex';
+;// CONCATENATED MODULE: ./src/js/components/keyboard/index.js
+/**
+ * The component for controlling slides via keyboard.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+/**
+ * Map a key to a slide control.
+ *
+ * @type {Object}
+ */
+
+var KEY_MAP = {
+  ltr: {
+    ArrowLeft: '<',
+    ArrowRight: '>',
+    // For IE.
+    Left: '<',
+    Right: '>'
+  },
+  rtl: {
+    ArrowLeft: '>',
+    ArrowRight: '<',
+    // For IE.
+    Left: '>',
+    Right: '<'
+  },
+  ttb: {
+    ArrowUp: '<',
+    ArrowDown: '>',
+    // For IE.
+    Up: '<',
+    Down: '>'
+  }
+};
+/**
+ * The component for controlling slides via keyboard.
+ *
+ * @param {Splide} Splide - A Splide instance.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var keyboard = (function (Splide) {
+  /**
+   * Hold the target element.
+   *
+   * @type {Element|Document|undefined}
+   */
+  var target;
+  return {
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      Splide.on('mounted updated', function () {
+        var options = Splide.options;
+        var root = Splide.root;
+        var map = KEY_MAP[options.direction];
+        var keyboard = options.keyboard;
+
+        if (target) {
+          Splide.off('keydown', target);
+          removeAttribute(root, TAB_INDEX);
+        }
+
+        if (keyboard) {
+          if (keyboard === 'focused') {
+            target = root;
+            setAttribute(root, TAB_INDEX, 0);
+          } else {
+            target = document;
+          }
+
+          Splide.on('keydown', function (e) {
+            if (map[e.key]) {
+              Splide.go(map[e.key]);
+            }
+          }, target);
+        }
+      });
+    }
+  };
+});
+;// CONCATENATED MODULE: ./src/js/components/a11y/index.js
+/**
+ * The component for enhancing accessibility.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+/**
+ * The component for enhancing accessibility.
+ *
+ * @param {Splide} Splide     - A Splide instance.
+ * @param {Object} Components - An object containing components.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var a11y = (function (Splide, Components) {
+  /**
+   * Hold a i18n object.
+   *
+   * @type {Object}
+   */
+  var i18n = Splide.i18n;
+  /**
+   * Hold the Elements component.
+   *
+   * @type {Object}
+   */
+
+  var Elements = Components.Elements;
+  /**
+   * All attributes related with A11y.
+   *
+   * @type {string[]}
+   */
+
+  var allAttributes = [ARIA_HIDDEN, TAB_INDEX, ARIA_CONTROLS, ARIA_LABEL, ARIA_CURRENRT, 'role'];
+  /**
+   * A11y component object.
+   *
+   * @type {Object}
+   */
+
+  var A11y = {
+    /**
+     * Required only when the accessibility option is true.
+     *
+     * @type {boolean}
+     */
+    required: Splide.options.accessibility,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      Splide.on('visible', function (Slide) {
+        updateSlide(Slide.slide, true);
+      }).on('hidden', function (Slide) {
+        updateSlide(Slide.slide, false);
+      }).on('arrows:mounted', initArrows).on('arrows:updated', updateArrows).on('pagination:mounted', initPagination).on('pagination:updated', updatePagination).on('refresh', function () {
+        removeAttribute(Components.Clones.clones, allAttributes);
+      });
+
+      if (Splide.options.isNavigation) {
+        Splide.on('navigation:mounted navigation:updated', initNavigation).on('active', function (Slide) {
+          updateNavigation(Slide, true);
+        }).on('inactive', function (Slide) {
+          updateNavigation(Slide, false);
+        });
+      }
+
+      initAutoplay();
+    },
+
+    /**
+     * Destroy.
+     */
+    destroy: function destroy() {
+      var Arrows = Components.Arrows;
+      var arrows = Arrows ? Arrows.arrows : {};
+      removeAttribute(Elements.slides.concat([arrows.prev, arrows.next, Elements.play, Elements.pause]), allAttributes);
+    }
+  };
+  /**
+   * Update slide attributes when it gets visible or hidden.
+   *
+   * @param {Element} slide   - A slide element.
+   * @param {Boolean} visible - True when the slide gets visible, or false when hidden.
+   */
+
+  function updateSlide(slide, visible) {
+    setAttribute(slide, ARIA_HIDDEN, !visible);
+
+    if (Splide.options.slideFocus) {
+      setAttribute(slide, TAB_INDEX, visible ? 0 : -1);
+    }
+  }
+  /**
+   * Initialize arrows if they are available.
+   * Append screen reader elements and add aria-controls attribute.
+   *
+   * @param {Element} prev - Previous arrow element.
+   * @param {Element} next - Next arrow element.
+   */
+
+
+  function initArrows(prev, next) {
+    var controls = Elements.track.id;
+    setAttribute(prev, ARIA_CONTROLS, controls);
+    setAttribute(next, ARIA_CONTROLS, controls);
+  }
+  /**
+   * Update arrow attributes.
+   *
+   * @param {Element} prev      - Previous arrow element.
+   * @param {Element} next      - Next arrow element.
+   * @param {number}  prevIndex - Previous slide index or -1 when there is no precede slide.
+   * @param {number}  nextIndex - Next slide index or -1 when there is no next slide.
+   */
+
+
+  function updateArrows(prev, next, prevIndex, nextIndex) {
+    var index = Splide.index;
+    var prevLabel = prevIndex > -1 && index < prevIndex ? i18n.last : i18n.prev;
+    var nextLabel = nextIndex > -1 && index > nextIndex ? i18n.first : i18n.next;
+    setAttribute(prev, ARIA_LABEL, prevLabel);
+    setAttribute(next, ARIA_LABEL, nextLabel);
+  }
+  /**
+   * Initialize pagination if it's available.
+   * Append a screen reader element and add aria-controls/label attribute to each item.
+   *
+   * @param {Object} data       - Data object containing all items.
+   * @param {Object} activeItem - An initial active item.
+   */
+
+
+  function initPagination(data, activeItem) {
+    if (activeItem) {
+      setAttribute(activeItem.button, ARIA_CURRENRT, true);
+    }
+
+    data.items.forEach(function (item) {
+      var options = Splide.options;
+      var text = options.focus === false && options.perPage > 1 ? i18n.pageX : i18n.slideX;
+      var label = sprintf(text, item.page + 1);
+      var button = item.button;
+      var controls = item.Slides.map(function (Slide) {
+        return Slide.slide.id;
+      });
+      setAttribute(button, ARIA_CONTROLS, controls.join(' '));
+      setAttribute(button, ARIA_LABEL, label);
+    });
+  }
+  /**
+   * Update pagination attributes.
+   *
+   * @param {Object}  data - Data object containing all items.
+   * @param {Element} prev - A previous active element.
+   * @param {Element} curr - A current active element.
+   */
+
+
+  function updatePagination(data, prev, curr) {
+    if (prev) {
+      removeAttribute(prev.button, ARIA_CURRENRT);
+    }
+
+    if (curr) {
+      setAttribute(curr.button, ARIA_CURRENRT, true);
+    }
+  }
+  /**
+   * Initialize autoplay buttons.
+   */
+
+
+  function initAutoplay() {
+    ['play', 'pause'].forEach(function (name) {
+      var elm = Elements[name];
+
+      if (elm) {
+        if (!isButton(elm)) {
+          setAttribute(elm, 'role', 'button');
+        }
+
+        setAttribute(elm, ARIA_CONTROLS, Elements.track.id);
+        setAttribute(elm, ARIA_LABEL, i18n[name]);
+      }
+    });
+  }
+  /**
+   * Initialize navigation slider.
+   * Add button role, aria-label, aria-controls to slide elements and append screen reader text to them.
+   *
+   * @param {Splide} main - A main Splide instance.
+   */
+
+
+  function initNavigation(main) {
+    Elements.each(function (Slide) {
+      var slide = Slide.slide;
+      var realIndex = Slide.realIndex;
+
+      if (!isButton(slide)) {
+        setAttribute(slide, 'role', 'button');
+      }
+
+      var slideIndex = realIndex > -1 ? realIndex : Slide.index;
+      var label = sprintf(i18n.slideX, slideIndex + 1);
+      var mainSlide = main.Components.Elements.getSlide(slideIndex);
+      setAttribute(slide, ARIA_LABEL, label);
+
+      if (mainSlide) {
+        setAttribute(slide, ARIA_CONTROLS, mainSlide.slide.id);
+      }
+    });
+  }
+  /**
+   * Update navigation attributes.
+   *
+   * @param {Object}  Slide  - A target Slide object.
+   * @param {boolean} active - True if the slide is active or false if inactive.
+   */
+
+
+  function updateNavigation(_ref, active) {
+    var slide = _ref.slide;
+
+    if (active) {
+      setAttribute(slide, ARIA_CURRENRT, true);
+    } else {
+      removeAttribute(slide, ARIA_CURRENRT);
+    }
+  }
+  /**
+   * Check if the given element is button or not.
+   *
+   * @param {Element} elm - An element to be checked.
+   *
+   * @return {boolean} - True if the given element is button.
+   */
+
+
+  function isButton(elm) {
+    return elm.tagName === 'BUTTON';
+  }
+
+  return A11y;
+});
+;// CONCATENATED MODULE: ./src/js/components/sync/index.js
+/**
+ * The component for synchronizing a slider with another.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+/**
+ * The event name for sync.
+ *
+ * @type {string}
+ */
+
+var SYNC_EVENT = 'move.sync';
+/**
+ * The event names for click navigation.
+ * @type {string}
+ */
+
+var CLICK_EVENTS = 'mouseup touchend';
+/**
+ * The keys for triggering the navigation button.
+ *
+ * @type {String[]}
+ */
+
+var TRIGGER_KEYS = [' ', 'Enter', 'Spacebar'];
+/**
+ * The component for synchronizing a slider with another.
+ *
+ * @param {Splide} Splide - A Splide instance.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var sync = (function (Splide) {
+  /**
+   * Keep the sibling Splide instance.
+   *
+   * @type {Splide}
+   */
+  var sibling = Splide.sibling;
+  /**
+   * Whether the sibling slider is navigation or not.
+   *
+   * @type {Splide|boolean}
+   */
+
+  var isNavigation = sibling && sibling.options.isNavigation;
+  /**
+   * Layout component object.
+   *
+   * @type {Object}
+   */
+
+  var Sync = {
+    /**
+     * Required only when the sub slider is available.
+     *
+     * @type {boolean}
+     */
+    required: !!sibling,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      syncMain();
+      syncSibling();
+
+      if (isNavigation) {
+        bind();
+        Splide.on('refresh', function () {
+          setTimeout(function () {
+            bind();
+            sibling.emit('navigation:updated', Splide);
+          });
+        });
+      }
+    },
+
+    /**
+     * Called after all components are mounted.
+     */
+    mounted: function mounted() {
+      if (isNavigation) {
+        sibling.emit('navigation:mounted', Splide);
+      }
+    }
+  };
+  /**
+   * Listen the primary slider event to move secondary one.
+   * Must unbind a handler at first to avoid infinite loop.
+   */
+
+  function syncMain() {
+    Splide.on(SYNC_EVENT, function (newIndex, prevIndex, destIndex) {
+      sibling.off(SYNC_EVENT).go(sibling.is(LOOP) ? destIndex : newIndex, false);
+      syncSibling();
+    });
+  }
+  /**
+   * Listen the secondary slider event to move primary one.
+   * Must unbind a handler at first to avoid infinite loop.
+   */
+
+
+  function syncSibling() {
+    sibling.on(SYNC_EVENT, function (newIndex, prevIndex, destIndex) {
+      Splide.off(SYNC_EVENT).go(Splide.is(LOOP) ? destIndex : newIndex, false);
+      syncMain();
+    });
+  }
+  /**
+   * Listen some events on each slide.
+   */
+
+
+  function bind() {
+    sibling.Components.Elements.each(function (_ref) {
+      var slide = _ref.slide,
+          index = _ref.index;
+
+      /*
+       * Listen mouseup and touchend events to handle click.
+       */
+      Splide.off(CLICK_EVENTS, slide).on(CLICK_EVENTS, function (e) {
+        // Ignore a middle or right click.
+        if (!e.button || e.button === 0) {
+          moveSibling(index);
+        }
+      }, slide);
+      /*
+       * Subscribe keyup to handle Enter and Space key.
+       * Note that Array.includes is not supported by IE.
+       */
+
+      Splide.off('keyup', slide).on('keyup', function (e) {
+        if (TRIGGER_KEYS.indexOf(e.key) > -1) {
+          e.preventDefault();
+          moveSibling(index);
+        }
+      }, slide, {
+        passive: false
+      });
+    });
+  }
+  /**
+   * Move the sibling to the given index.
+   * Need to check "IDLE" status because slides can be moving by Drag component.
+   *
+   * @param {number} index - Target index.
+   */
+
+
+  function moveSibling(index) {
+    if (Splide.State.is(IDLE)) {
+      sibling.go(index);
+    }
+  }
+
+  return Sync;
+});
+;// CONCATENATED MODULE: ./src/js/components/breakpoints/index.js
+/**
+ * The component for updating options according to a current window width.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+/**
+ * Interval time for throttle.
+ *
+ * @type {number}
+ */
+
+var THROTTLE = 50;
+/**
+ * The component for updating options according to a current window width.
+ *
+ * @param {Splide} Splide - A Splide instance.
+ *
+ * @return {Object} - The component object.
+ */
+
+/* harmony default export */ var breakpoints = (function (Splide) {
+  /**
+   * Store breakpoints.
+   *
+   * @type {Object|boolean}
+   */
+  var breakpoints = Splide.options.breakpoints;
+  /**
+   * The check function whose frequency of call is reduced.
+   *
+   * @type {Function}
+   */
+
+  var throttledCheck = throttle(check, THROTTLE);
+  /**
+   * Keep initial options.
+   *
+   * @type {Object}
+   */
+
+  var initialOptions;
+  /**
+   * An array containing objects of point and MediaQueryList.
+   *
+   * @type {Object[]}
+   */
+
+  var map = [];
+  /**
+   * Hold the previous breakpoint.
+   *
+   * @type {number|undefined}
+   */
+
+  var prevPoint;
+  /**
+   * Breakpoints component object.
+   *
+   * @type {Object}
+   */
+
+  var Breakpoints = {
+    /**
+     * Required only when the breakpoints definition is provided and browser supports matchMedia.
+     *
+     * @type {boolean}
+     */
+    required: breakpoints && matchMedia,
+
+    /**
+     * Called when the component is mounted.
+     */
+    mount: function mount() {
+      map = Object.keys(breakpoints).sort(function (n, m) {
+        return +n - +m;
+      }).map(function (point) {
+        return {
+          point: point,
+          mql: matchMedia("(max-width:" + point + "px)")
+        };
+      });
+      /*
+       * To keep monitoring resize event after destruction without "completely",
+       * use native addEventListener instead of Splide.on.
+       */
+
+      this.destroy(true);
+      addEventListener('resize', throttledCheck); // Keep initial options to apply them when no breakpoint matches.
+
+      initialOptions = Splide.options;
+      check();
+    },
+
+    /**
+     * Destroy.
+     *
+     * @param {boolean} completely - Whether to destroy Splide completely.
+     */
+    destroy: function destroy(completely) {
+      if (completely) {
+        removeEventListener('resize', throttledCheck);
+      }
+    }
+  };
+  /**
+   * Check the breakpoint.
+   */
+
+  function check() {
+    var point = getPoint();
+
+    if (point !== prevPoint) {
+      prevPoint = point;
+      var State = Splide.State;
+      var options = breakpoints[point] || initialOptions;
+      var destroy = options.destroy;
+
+      if (destroy) {
+        Splide.options = initialOptions;
+        Splide.destroy(destroy === 'completely');
+      } else {
+        if (State.is(DESTROYED)) {
+          Splide.mount();
+        }
+
+        Splide.options = options;
+      }
+    }
+  }
+  /**
+   * Return the breakpoint matching current window width.
+   * Note that Array.prototype.find is not supported by IE.
+   *
+   * @return {number|string} - A breakpoint as number or string. -1 if no point matches.
+   */
+
+
+  function getPoint() {
+    var item = map.filter(function (item) {
+      return item.mql.matches;
+    })[0];
+    return item ? item.point : -1;
+  }
+
+  return Breakpoints;
+});
+;// CONCATENATED MODULE: ./src/js/components/index.js
+/**
+ * Export components.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var COMPLETE = {
+  Options: options,
+  Breakpoints: breakpoints,
+  Controller: controller,
+  Elements: components_elements,
+  Track: track,
+  Clones: clones,
+  Layout: layout,
+  Drag: drag,
+  Click: click,
+  Autoplay: autoplay,
+  Cover: cover,
+  Arrows: arrows,
+  Pagination: pagination,
+  LazyLoad: lazyload,
+  Keyboard: keyboard,
+  Sync: sync,
+  A11y: a11y
+};
+var LIGHT = {
+  Options: options,
+  Controller: controller,
+  Elements: components_elements,
+  Track: track,
+  Clones: clones,
+  Layout: layout,
+  Drag: drag,
+  Click: click,
+  Arrows: arrows,
+  Pagination: pagination,
+  A11y: a11y
+};
+;// CONCATENATED MODULE: ./build/complete/complete.js
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+/**
+ * Export "Splide" class for frontend with full components.
+ *
+ * @author    Naotoshi Fujita
+ * @copyright Naotoshi Fujita. All rights reserved.
+ */
+
+
+/**
+ * Export Splide with all components.
+ */
+
+var complete_Splide = /*#__PURE__*/function (_Core) {
+  _inheritsLoose(Splide, _Core);
+
+  function Splide(root, options) {
+    return _Core.call(this, root, options, COMPLETE) || this;
+  }
+
+  return Splide;
+}(Splide); // Register the class as a global variable for non-ES6 environment.
+
+window.Splide = complete_Splide;
+/******/ })()
+;
+
+
+/*! nouislider - 14.6.3 - 11/19/2020 */
+(function(factory) {
+    if (typeof define === "function" && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else if (typeof exports === "object") {
+        // Node/CommonJS
+        module.exports = factory();
+    } else {
+        // Browser globals
+        window.noUiSlider = factory();
+    }
+})(function() {
+    "use strict";
+
+    var VERSION = "14.6.3";
+
+    //region Helper Methods
+
+    function isValidFormatter(entry) {
+        return typeof entry === "object" && typeof entry.to === "function" && typeof entry.from === "function";
+    }
+
+    function removeElement(el) {
+        el.parentElement.removeChild(el);
+    }
+
+    function isSet(value) {
+        return value !== null && value !== undefined;
+    }
+
+    // Bindable version
+    function preventDefault(e) {
+        e.preventDefault();
+    }
+
+    // Removes duplicates from an array.
+    function unique(array) {
+        return array.filter(function(a) {
+            return !this[a] ? (this[a] = true) : false;
+        }, {});
+    }
+
+    // Round a value to the closest 'to'.
+    function closest(value, to) {
+        return Math.round(value / to) * to;
+    }
+
+    // Current position of an element relative to the document.
+    function offset(elem, orientation) {
+        var rect = elem.getBoundingClientRect();
+        var doc = elem.ownerDocument;
+        var docElem = doc.documentElement;
+        var pageOffset = getPageOffset(doc);
+
+        // getBoundingClientRect contains left scroll in Chrome on Android.
+        // I haven't found a feature detection that proves this. Worst case
+        // scenario on mis-match: the 'tap' feature on horizontal sliders breaks.
+        if (/webkit.*Chrome.*Mobile/i.test(navigator.userAgent)) {
+            pageOffset.x = 0;
+        }
+
+        return orientation
+            ? rect.top + pageOffset.y - docElem.clientTop
+            : rect.left + pageOffset.x - docElem.clientLeft;
+    }
+
+    // Checks whether a value is numerical.
+    function isNumeric(a) {
+        return typeof a === "number" && !isNaN(a) && isFinite(a);
+    }
+
+    // Sets a class and removes it after [duration] ms.
+    function addClassFor(element, className, duration) {
+        if (duration > 0) {
+            addClass(element, className);
+            setTimeout(function() {
+                removeClass(element, className);
+            }, duration);
+        }
+    }
+
+    // Limits a value to 0 - 100
+    function limit(a) {
+        return Math.max(Math.min(a, 100), 0);
+    }
+
+    // Wraps a variable as an array, if it isn't one yet.
+    // Note that an input array is returned by reference!
+    function asArray(a) {
+        return Array.isArray(a) ? a : [a];
+    }
+
+    // Counts decimals
+    function countDecimals(numStr) {
+        numStr = String(numStr);
+        var pieces = numStr.split(".");
+        return pieces.length > 1 ? pieces[1].length : 0;
+    }
+
+    // http://youmightnotneedjquery.com/#add_class
+    function addClass(el, className) {
+        if (el.classList && !/\s/.test(className)) {
+            el.classList.add(className);
+        } else {
+            el.className += " " + className;
+        }
+    }
+
+    // http://youmightnotneedjquery.com/#remove_class
+    function removeClass(el, className) {
+        if (el.classList && !/\s/.test(className)) {
+            el.classList.remove(className);
+        } else {
+            el.className = el.className.replace(
+                new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"),
+                " "
+            );
+        }
+    }
+
+    // https://plainjs.com/javascript/attributes/adding-removing-and-testing-for-classes-9/
+    function hasClass(el, className) {
+        return el.classList
+            ? el.classList.contains(className)
+            : new RegExp("\\b" + className + "\\b").test(el.className);
+    }
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY#Notes
+    function getPageOffset(doc) {
+        var supportPageOffset = window.pageXOffset !== undefined;
+        var isCSS1Compat = (doc.compatMode || "") === "CSS1Compat";
+        var x = supportPageOffset
+            ? window.pageXOffset
+            : isCSS1Compat
+                ? doc.documentElement.scrollLeft
+                : doc.body.scrollLeft;
+        var y = supportPageOffset
+            ? window.pageYOffset
+            : isCSS1Compat
+                ? doc.documentElement.scrollTop
+                : doc.body.scrollTop;
+
+        return {
+            x: x,
+            y: y
+        };
+    }
+
+    // we provide a function to compute constants instead
+    // of accessing window.* as soon as the module needs it
+    // so that we do not compute anything if not needed
+    function getActions() {
+        // Determine the events to bind. IE11 implements pointerEvents without
+        // a prefix, which breaks compatibility with the IE10 implementation.
+        return window.navigator.pointerEnabled
+            ? {
+                  start: "pointerdown",
+                  move: "pointermove",
+                  end: "pointerup"
+              }
+            : window.navigator.msPointerEnabled
+                ? {
+                      start: "MSPointerDown",
+                      move: "MSPointerMove",
+                      end: "MSPointerUp"
+                  }
+                : {
+                      start: "mousedown touchstart",
+                      move: "mousemove touchmove",
+                      end: "mouseup touchend"
+                  };
+    }
+
+    // https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
+    // Issue #785
+    function getSupportsPassive() {
+        var supportsPassive = false;
+
+        /* eslint-disable */
+        try {
+            var opts = Object.defineProperty({}, "passive", {
+                get: function() {
+                    supportsPassive = true;
+                }
+            });
+
+            window.addEventListener("test", null, opts);
+        } catch (e) {}
+        /* eslint-enable */
+
+        return supportsPassive;
+    }
+
+    function getSupportsTouchActionNone() {
+        return window.CSS && CSS.supports && CSS.supports("touch-action", "none");
+    }
+
+    //endregion
+
+    //region Range Calculation
+
+    // Determine the size of a sub-range in relation to a full range.
+    function subRangeRatio(pa, pb) {
+        return 100 / (pb - pa);
+    }
+
+    // (percentage) How many percent is this value of this range?
+    function fromPercentage(range, value, startRange) {
+        return (value * 100) / (range[startRange + 1] - range[startRange]);
+    }
+
+    // (percentage) Where is this value on this range?
+    function toPercentage(range, value) {
+        return fromPercentage(range, range[0] < 0 ? value + Math.abs(range[0]) : value - range[0], 0);
+    }
+
+    // (value) How much is this percentage on this range?
+    function isPercentage(range, value) {
+        return (value * (range[1] - range[0])) / 100 + range[0];
+    }
+
+    function getJ(value, arr) {
+        var j = 1;
+
+        while (value >= arr[j]) {
+            j += 1;
+        }
+
+        return j;
+    }
+
+    // (percentage) Input a value, find where, on a scale of 0-100, it applies.
+    function toStepping(xVal, xPct, value) {
+        if (value >= xVal.slice(-1)[0]) {
+            return 100;
+        }
+
+        var j = getJ(value, xVal);
+        var va = xVal[j - 1];
+        var vb = xVal[j];
+        var pa = xPct[j - 1];
+        var pb = xPct[j];
+
+        return pa + toPercentage([va, vb], value) / subRangeRatio(pa, pb);
+    }
+
+    // (value) Input a percentage, find where it is on the specified range.
+    function fromStepping(xVal, xPct, value) {
+        // There is no range group that fits 100
+        if (value >= 100) {
+            return xVal.slice(-1)[0];
+        }
+
+        var j = getJ(value, xPct);
+        var va = xVal[j - 1];
+        var vb = xVal[j];
+        var pa = xPct[j - 1];
+        var pb = xPct[j];
+
+        return isPercentage([va, vb], (value - pa) * subRangeRatio(pa, pb));
+    }
+
+    // (percentage) Get the step that applies at a certain value.
+    function getStep(xPct, xSteps, snap, value) {
+        if (value === 100) {
+            return value;
+        }
+
+        var j = getJ(value, xPct);
+        var a = xPct[j - 1];
+        var b = xPct[j];
+
+        // If 'snap' is set, steps are used as fixed points on the slider.
+        if (snap) {
+            // Find the closest position, a or b.
+            if (value - a > (b - a) / 2) {
+                return b;
+            }
+
+            return a;
+        }
+
+        if (!xSteps[j - 1]) {
+            return value;
+        }
+
+        return xPct[j - 1] + closest(value - xPct[j - 1], xSteps[j - 1]);
+    }
+
+    function handleEntryPoint(index, value, that) {
+        var percentage;
+
+        // Wrap numerical input in an array.
+        if (typeof value === "number") {
+            value = [value];
+        }
+
+        // Reject any invalid input, by testing whether value is an array.
+        if (!Array.isArray(value)) {
+            throw new Error("noUiSlider (" + VERSION + "): 'range' contains invalid value.");
+        }
+
+        // Covert min/max syntax to 0 and 100.
+        if (index === "min") {
+            percentage = 0;
+        } else if (index === "max") {
+            percentage = 100;
+        } else {
+            percentage = parseFloat(index);
+        }
+
+        // Check for correct input.
+        if (!isNumeric(percentage) || !isNumeric(value[0])) {
+            throw new Error("noUiSlider (" + VERSION + "): 'range' value isn't numeric.");
+        }
+
+        // Store values.
+        that.xPct.push(percentage);
+        that.xVal.push(value[0]);
+
+        // NaN will evaluate to false too, but to keep
+        // logging clear, set step explicitly. Make sure
+        // not to override the 'step' setting with false.
+        if (!percentage) {
+            if (!isNaN(value[1])) {
+                that.xSteps[0] = value[1];
+            }
+        } else {
+            that.xSteps.push(isNaN(value[1]) ? false : value[1]);
+        }
+
+        that.xHighestCompleteStep.push(0);
+    }
+
+    function handleStepPoint(i, n, that) {
+        // Ignore 'false' stepping.
+        if (!n) {
+            return;
+        }
+
+        // Step over zero-length ranges (#948);
+        if (that.xVal[i] === that.xVal[i + 1]) {
+            that.xSteps[i] = that.xHighestCompleteStep[i] = that.xVal[i];
+
+            return;
+        }
+
+        // Factor to range ratio
+        that.xSteps[i] =
+            fromPercentage([that.xVal[i], that.xVal[i + 1]], n, 0) / subRangeRatio(that.xPct[i], that.xPct[i + 1]);
+
+        var totalSteps = (that.xVal[i + 1] - that.xVal[i]) / that.xNumSteps[i];
+        var highestStep = Math.ceil(Number(totalSteps.toFixed(3)) - 1);
+        var step = that.xVal[i] + that.xNumSteps[i] * highestStep;
+
+        that.xHighestCompleteStep[i] = step;
+    }
+
+    //endregion
+
+    //region Spectrum
+
+    function Spectrum(entry, snap, singleStep) {
+        this.xPct = [];
+        this.xVal = [];
+        this.xSteps = [singleStep || false];
+        this.xNumSteps = [false];
+        this.xHighestCompleteStep = [];
+
+        this.snap = snap;
+
+        var index;
+        var ordered = []; // [0, 'min'], [1, '50%'], [2, 'max']
+
+        // Map the object keys to an array.
+        for (index in entry) {
+            if (entry.hasOwnProperty(index)) {
+                ordered.push([entry[index], index]);
+            }
+        }
+
+        // Sort all entries by value (numeric sort).
+        if (ordered.length && typeof ordered[0][0] === "object") {
+            ordered.sort(function(a, b) {
+                return a[0][0] - b[0][0];
+            });
+        } else {
+            ordered.sort(function(a, b) {
+                return a[0] - b[0];
+            });
+        }
+
+        // Convert all entries to subranges.
+        for (index = 0; index < ordered.length; index++) {
+            handleEntryPoint(ordered[index][1], ordered[index][0], this);
+        }
+
+        // Store the actual step values.
+        // xSteps is sorted in the same order as xPct and xVal.
+        this.xNumSteps = this.xSteps.slice(0);
+
+        // Convert all numeric steps to the percentage of the subrange they represent.
+        for (index = 0; index < this.xNumSteps.length; index++) {
+            handleStepPoint(index, this.xNumSteps[index], this);
+        }
+    }
+
+    Spectrum.prototype.getDistance = function(value) {
+        var index;
+        var distances = [];
+
+        for (index = 0; index < this.xNumSteps.length - 1; index++) {
+            // last "range" can't contain step size as it is purely an endpoint.
+            var step = this.xNumSteps[index];
+
+            if (step && (value / step) % 1 !== 0) {
+                throw new Error(
+                    "noUiSlider (" +
+                        VERSION +
+                        "): 'limit', 'margin' and 'padding' of " +
+                        this.xPct[index] +
+                        "% range must be divisible by step."
+                );
+            }
+
+            // Calculate percentual distance in current range of limit, margin or padding
+            distances[index] = fromPercentage(this.xVal, value, index);
+        }
+
+        return distances;
+    };
+
+    // Calculate the percentual distance over the whole scale of ranges.
+    // direction: 0 = backwards / 1 = forwards
+    Spectrum.prototype.getAbsoluteDistance = function(value, distances, direction) {
+        var xPct_index = 0;
+
+        // Calculate range where to start calculation
+        if (value < this.xPct[this.xPct.length - 1]) {
+            while (value > this.xPct[xPct_index + 1]) {
+                xPct_index++;
+            }
+        } else if (value === this.xPct[this.xPct.length - 1]) {
+            xPct_index = this.xPct.length - 2;
+        }
+
+        // If looking backwards and the value is exactly at a range separator then look one range further
+        if (!direction && value === this.xPct[xPct_index + 1]) {
+            xPct_index++;
+        }
+
+        var start_factor;
+        var rest_factor = 1;
+
+        var rest_rel_distance = distances[xPct_index];
+
+        var range_pct = 0;
+
+        var rel_range_distance = 0;
+        var abs_distance_counter = 0;
+        var range_counter = 0;
+
+        // Calculate what part of the start range the value is
+        if (direction) {
+            start_factor = (value - this.xPct[xPct_index]) / (this.xPct[xPct_index + 1] - this.xPct[xPct_index]);
+        } else {
+            start_factor = (this.xPct[xPct_index + 1] - value) / (this.xPct[xPct_index + 1] - this.xPct[xPct_index]);
+        }
+
+        // Do until the complete distance across ranges is calculated
+        while (rest_rel_distance > 0) {
+            // Calculate the percentage of total range
+            range_pct = this.xPct[xPct_index + 1 + range_counter] - this.xPct[xPct_index + range_counter];
+
+            // Detect if the margin, padding or limit is larger then the current range and calculate
+            if (distances[xPct_index + range_counter] * rest_factor + 100 - start_factor * 100 > 100) {
+                // If larger then take the percentual distance of the whole range
+                rel_range_distance = range_pct * start_factor;
+                // Rest factor of relative percentual distance still to be calculated
+                rest_factor = (rest_rel_distance - 100 * start_factor) / distances[xPct_index + range_counter];
+                // Set start factor to 1 as for next range it does not apply.
+                start_factor = 1;
+            } else {
+                // If smaller or equal then take the percentual distance of the calculate percentual part of that range
+                rel_range_distance = ((distances[xPct_index + range_counter] * range_pct) / 100) * rest_factor;
+                // No rest left as the rest fits in current range
+                rest_factor = 0;
+            }
+
+            if (direction) {
+                abs_distance_counter = abs_distance_counter - rel_range_distance;
+                // Limit range to first range when distance becomes outside of minimum range
+                if (this.xPct.length + range_counter >= 1) {
+                    range_counter--;
+                }
+            } else {
+                abs_distance_counter = abs_distance_counter + rel_range_distance;
+                // Limit range to last range when distance becomes outside of maximum range
+                if (this.xPct.length - range_counter >= 1) {
+                    range_counter++;
+                }
+            }
+
+            // Rest of relative percentual distance still to be calculated
+            rest_rel_distance = distances[xPct_index + range_counter] * rest_factor;
+        }
+
+        return value + abs_distance_counter;
+    };
+
+    Spectrum.prototype.toStepping = function(value) {
+        value = toStepping(this.xVal, this.xPct, value);
+
+        return value;
+    };
+
+    Spectrum.prototype.fromStepping = function(value) {
+        return fromStepping(this.xVal, this.xPct, value);
+    };
+
+    Spectrum.prototype.getStep = function(value) {
+        value = getStep(this.xPct, this.xSteps, this.snap, value);
+
+        return value;
+    };
+
+    Spectrum.prototype.getDefaultStep = function(value, isDown, size) {
+        var j = getJ(value, this.xPct);
+
+        // When at the top or stepping down, look at the previous sub-range
+        if (value === 100 || (isDown && value === this.xPct[j - 1])) {
+            j = Math.max(j - 1, 1);
+        }
+
+        return (this.xVal[j] - this.xVal[j - 1]) / size;
+    };
+
+    Spectrum.prototype.getNearbySteps = function(value) {
+        var j = getJ(value, this.xPct);
+
+        return {
+            stepBefore: {
+                startValue: this.xVal[j - 2],
+                step: this.xNumSteps[j - 2],
+                highestStep: this.xHighestCompleteStep[j - 2]
+            },
+            thisStep: {
+                startValue: this.xVal[j - 1],
+                step: this.xNumSteps[j - 1],
+                highestStep: this.xHighestCompleteStep[j - 1]
+            },
+            stepAfter: {
+                startValue: this.xVal[j],
+                step: this.xNumSteps[j],
+                highestStep: this.xHighestCompleteStep[j]
+            }
+        };
+    };
+
+    Spectrum.prototype.countStepDecimals = function() {
+        var stepDecimals = this.xNumSteps.map(countDecimals);
+        return Math.max.apply(null, stepDecimals);
+    };
+
+    // Outside testing
+    Spectrum.prototype.convert = function(value) {
+        return this.getStep(this.toStepping(value));
+    };
+
+    //endregion
+
+    //region Options
+
+    /*  Every input option is tested and parsed. This'll prevent
+        endless validation in internal methods. These tests are
+        structured with an item for every option available. An
+        option can be marked as required by setting the 'r' flag.
+        The testing function is provided with three arguments:
+            - The provided value for the option;
+            - A reference to the options object;
+            - The name for the option;
+
+        The testing function returns false when an error is detected,
+        or true when everything is OK. It can also modify the option
+        object, to make sure all values can be correctly looped elsewhere. */
+
+    //region Defaults
+
+    var defaultFormatter = {
+        to: function(value) {
+            return value !== undefined && value.toFixed(2);
+        },
+        from: Number
+    };
+
+    var cssClasses = {
+        target: "target",
+        base: "base",
+        origin: "origin",
+        handle: "handle",
+        handleLower: "handle-lower",
+        handleUpper: "handle-upper",
+        touchArea: "touch-area",
+        horizontal: "horizontal",
+        vertical: "vertical",
+        background: "background",
+        connect: "connect",
+        connects: "connects",
+        ltr: "ltr",
+        rtl: "rtl",
+        textDirectionLtr: "txt-dir-ltr",
+        textDirectionRtl: "txt-dir-rtl",
+        draggable: "draggable",
+        drag: "state-drag",
+        tap: "state-tap",
+        active: "active",
+        tooltip: "tooltip",
+        pips: "pips",
+        pipsHorizontal: "pips-horizontal",
+        pipsVertical: "pips-vertical",
+        marker: "marker",
+        markerHorizontal: "marker-horizontal",
+        markerVertical: "marker-vertical",
+        markerNormal: "marker-normal",
+        markerLarge: "marker-large",
+        markerSub: "marker-sub",
+        value: "value",
+        valueHorizontal: "value-horizontal",
+        valueVertical: "value-vertical",
+        valueNormal: "value-normal",
+        valueLarge: "value-large",
+        valueSub: "value-sub"
+    };
+
+    // Namespaces of internal event listeners
+    var INTERNAL_EVENT_NS = {
+        tooltips: ".__tooltips",
+        aria: ".__aria"
+    };
+
+    //endregion
+
+    function validateFormat(entry) {
+        // Any object with a to and from method is supported.
+        if (isValidFormatter(entry)) {
+            return true;
+        }
+
+        throw new Error("noUiSlider (" + VERSION + "): 'format' requires 'to' and 'from' methods.");
+    }
+
+    function testStep(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider (" + VERSION + "): 'step' is not numeric.");
+        }
+
+        // The step option can still be used to set stepping
+        // for linear sliders. Overwritten if set in 'range'.
+        parsed.singleStep = entry;
+    }
+
+    function testKeyboardPageMultiplier(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider (" + VERSION + "): 'keyboardPageMultiplier' is not numeric.");
+        }
+
+        parsed.keyboardPageMultiplier = entry;
+    }
+
+    function testKeyboardDefaultStep(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider (" + VERSION + "): 'keyboardDefaultStep' is not numeric.");
+        }
+
+        parsed.keyboardDefaultStep = entry;
+    }
+
+    function testRange(parsed, entry) {
+        // Filter incorrect input.
+        if (typeof entry !== "object" || Array.isArray(entry)) {
+            throw new Error("noUiSlider (" + VERSION + "): 'range' is not an object.");
+        }
+
+        // Catch missing start or end.
+        if (entry.min === undefined || entry.max === undefined) {
+            throw new Error("noUiSlider (" + VERSION + "): Missing 'min' or 'max' in 'range'.");
+        }
+
+        // Catch equal start or end.
+        if (entry.min === entry.max) {
+            throw new Error("noUiSlider (" + VERSION + "): 'range' 'min' and 'max' cannot be equal.");
+        }
+
+        parsed.spectrum = new Spectrum(entry, parsed.snap, parsed.singleStep);
+    }
+
+    function testStart(parsed, entry) {
+        entry = asArray(entry);
+
+        // Validate input. Values aren't tested, as the public .val method
+        // will always provide a valid location.
+        if (!Array.isArray(entry) || !entry.length) {
+            throw new Error("noUiSlider (" + VERSION + "): 'start' option is incorrect.");
+        }
+
+        // Store the number of handles.
+        parsed.handles = entry.length;
+
+        // When the slider is initialized, the .val method will
+        // be called with the start options.
+        parsed.start = entry;
+    }
+
+    function testSnap(parsed, entry) {
+        // Enforce 100% stepping within subranges.
+        parsed.snap = entry;
+
+        if (typeof entry !== "boolean") {
+            throw new Error("noUiSlider (" + VERSION + "): 'snap' option must be a boolean.");
+        }
+    }
+
+    function testAnimate(parsed, entry) {
+        // Enforce 100% stepping within subranges.
+        parsed.animate = entry;
+
+        if (typeof entry !== "boolean") {
+            throw new Error("noUiSlider (" + VERSION + "): 'animate' option must be a boolean.");
+        }
+    }
+
+    function testAnimationDuration(parsed, entry) {
+        parsed.animationDuration = entry;
+
+        if (typeof entry !== "number") {
+            throw new Error("noUiSlider (" + VERSION + "): 'animationDuration' option must be a number.");
+        }
+    }
+
+    function testConnect(parsed, entry) {
+        var connect = [false];
+        var i;
+
+        // Map legacy options
+        if (entry === "lower") {
+            entry = [true, false];
+        } else if (entry === "upper") {
+            entry = [false, true];
+        }
+
+        // Handle boolean options
+        if (entry === true || entry === false) {
+            for (i = 1; i < parsed.handles; i++) {
+                connect.push(entry);
+            }
+
+            connect.push(false);
+        }
+
+        // Reject invalid input
+        else if (!Array.isArray(entry) || !entry.length || entry.length !== parsed.handles + 1) {
+            throw new Error("noUiSlider (" + VERSION + "): 'connect' option doesn't match handle count.");
+        } else {
+            connect = entry;
+        }
+
+        parsed.connect = connect;
+    }
+
+    function testOrientation(parsed, entry) {
+        // Set orientation to an a numerical value for easy
+        // array selection.
+        switch (entry) {
+            case "horizontal":
+                parsed.ort = 0;
+                break;
+            case "vertical":
+                parsed.ort = 1;
+                break;
+            default:
+                throw new Error("noUiSlider (" + VERSION + "): 'orientation' option is invalid.");
+        }
+    }
+
+    function testMargin(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider (" + VERSION + "): 'margin' option must be numeric.");
+        }
+
+        // Issue #582
+        if (entry === 0) {
+            return;
+        }
+
+        parsed.margin = parsed.spectrum.getDistance(entry);
+    }
+
+    function testLimit(parsed, entry) {
+        if (!isNumeric(entry)) {
+            throw new Error("noUiSlider (" + VERSION + "): 'limit' option must be numeric.");
+        }
+
+        parsed.limit = parsed.spectrum.getDistance(entry);
+
+        if (!parsed.limit || parsed.handles < 2) {
+            throw new Error(
+                "noUiSlider (" +
+                    VERSION +
+                    "): 'limit' option is only supported on linear sliders with 2 or more handles."
+            );
+        }
+    }
+
+    function testPadding(parsed, entry) {
+        var index;
+
+        if (!isNumeric(entry) && !Array.isArray(entry)) {
+            throw new Error(
+                "noUiSlider (" + VERSION + "): 'padding' option must be numeric or array of exactly 2 numbers."
+            );
+        }
+
+        if (Array.isArray(entry) && !(entry.length === 2 || isNumeric(entry[0]) || isNumeric(entry[1]))) {
+            throw new Error(
+                "noUiSlider (" + VERSION + "): 'padding' option must be numeric or array of exactly 2 numbers."
+            );
+        }
+
+        if (entry === 0) {
+            return;
+        }
+
+        if (!Array.isArray(entry)) {
+            entry = [entry, entry];
+        }
+
+        // 'getDistance' returns false for invalid values.
+        parsed.padding = [parsed.spectrum.getDistance(entry[0]), parsed.spectrum.getDistance(entry[1])];
+
+        for (index = 0; index < parsed.spectrum.xNumSteps.length - 1; index++) {
+            // last "range" can't contain step size as it is purely an endpoint.
+            if (parsed.padding[0][index] < 0 || parsed.padding[1][index] < 0) {
+                throw new Error("noUiSlider (" + VERSION + "): 'padding' option must be a positive number(s).");
+            }
+        }
+
+        var totalPadding = entry[0] + entry[1];
+        var firstValue = parsed.spectrum.xVal[0];
+        var lastValue = parsed.spectrum.xVal[parsed.spectrum.xVal.length - 1];
+
+        if (totalPadding / (lastValue - firstValue) > 1) {
+            throw new Error("noUiSlider (" + VERSION + "): 'padding' option must not exceed 100% of the range.");
+        }
+    }
+
+    function testDirection(parsed, entry) {
+        // Set direction as a numerical value for easy parsing.
+        // Invert connection for RTL sliders, so that the proper
+        // handles get the connect/background classes.
+        switch (entry) {
+            case "ltr":
+                parsed.dir = 0;
+                break;
+            case "rtl":
+                parsed.dir = 1;
+                break;
+            default:
+                throw new Error("noUiSlider (" + VERSION + "): 'direction' option was not recognized.");
+        }
+    }
+
+    function testBehaviour(parsed, entry) {
+        // Make sure the input is a string.
+        if (typeof entry !== "string") {
+            throw new Error("noUiSlider (" + VERSION + "): 'behaviour' must be a string containing options.");
+        }
+
+        // Check if the string contains any keywords.
+        // None are required.
+        var tap = entry.indexOf("tap") >= 0;
+        var drag = entry.indexOf("drag") >= 0;
+        var fixed = entry.indexOf("fixed") >= 0;
+        var snap = entry.indexOf("snap") >= 0;
+        var hover = entry.indexOf("hover") >= 0;
+        var unconstrained = entry.indexOf("unconstrained") >= 0;
+
+        if (fixed) {
+            if (parsed.handles !== 2) {
+                throw new Error("noUiSlider (" + VERSION + "): 'fixed' behaviour must be used with 2 handles");
+            }
+
+            // Use margin to enforce fixed state
+            testMargin(parsed, parsed.start[1] - parsed.start[0]);
+        }
+
+        if (unconstrained && (parsed.margin || parsed.limit)) {
+            throw new Error(
+                "noUiSlider (" + VERSION + "): 'unconstrained' behaviour cannot be used with margin or limit"
+            );
+        }
+
+        parsed.events = {
+            tap: tap || snap,
+            drag: drag,
+            fixed: fixed,
+            snap: snap,
+            hover: hover,
+            unconstrained: unconstrained
+        };
+    }
+
+    function testTooltips(parsed, entry) {
+        if (entry === false) {
+            return;
+        }
+
+        if (entry === true) {
+            parsed.tooltips = [];
+
+            for (var i = 0; i < parsed.handles; i++) {
+                parsed.tooltips.push(true);
+            }
+        } else {
+            parsed.tooltips = asArray(entry);
+
+            if (parsed.tooltips.length !== parsed.handles) {
+                throw new Error("noUiSlider (" + VERSION + "): must pass a formatter for all handles.");
+            }
+
+            parsed.tooltips.forEach(function(formatter) {
+                if (
+                    typeof formatter !== "boolean" &&
+                    (typeof formatter !== "object" || typeof formatter.to !== "function")
+                ) {
+                    throw new Error("noUiSlider (" + VERSION + "): 'tooltips' must be passed a formatter or 'false'.");
+                }
+            });
+        }
+    }
+
+    function testAriaFormat(parsed, entry) {
+        parsed.ariaFormat = entry;
+        validateFormat(entry);
+    }
+
+    function testFormat(parsed, entry) {
+        parsed.format = entry;
+        validateFormat(entry);
+    }
+
+    function testKeyboardSupport(parsed, entry) {
+        parsed.keyboardSupport = entry;
+
+        if (typeof entry !== "boolean") {
+            throw new Error("noUiSlider (" + VERSION + "): 'keyboardSupport' option must be a boolean.");
+        }
+    }
+
+    function testDocumentElement(parsed, entry) {
+        // This is an advanced option. Passed values are used without validation.
+        parsed.documentElement = entry;
+    }
+
+    function testCssPrefix(parsed, entry) {
+        if (typeof entry !== "string" && entry !== false) {
+            throw new Error("noUiSlider (" + VERSION + "): 'cssPrefix' must be a string or `false`.");
+        }
+
+        parsed.cssPrefix = entry;
+    }
+
+    function testCssClasses(parsed, entry) {
+        if (typeof entry !== "object") {
+            throw new Error("noUiSlider (" + VERSION + "): 'cssClasses' must be an object.");
+        }
+
+        if (typeof parsed.cssPrefix === "string") {
+            parsed.cssClasses = {};
+
+            for (var key in entry) {
+                if (!entry.hasOwnProperty(key)) {
+                    continue;
+                }
+
+                parsed.cssClasses[key] = parsed.cssPrefix + entry[key];
+            }
+        } else {
+            parsed.cssClasses = entry;
+        }
+    }
+
+    // Test all developer settings and parse to assumption-safe values.
+    function testOptions(options) {
+        // To prove a fix for #537, freeze options here.
+        // If the object is modified, an error will be thrown.
+        // Object.freeze(options);
+
+        var parsed = {
+            margin: 0,
+            limit: 0,
+            padding: 0,
+            animate: true,
+            animationDuration: 300,
+            ariaFormat: defaultFormatter,
+            format: defaultFormatter
+        };
+
+        // Tests are executed in the order they are presented here.
+        var tests = {
+            step: { r: false, t: testStep },
+            keyboardPageMultiplier: { r: false, t: testKeyboardPageMultiplier },
+            keyboardDefaultStep: { r: false, t: testKeyboardDefaultStep },
+            start: { r: true, t: testStart },
+            connect: { r: true, t: testConnect },
+            direction: { r: true, t: testDirection },
+            snap: { r: false, t: testSnap },
+            animate: { r: false, t: testAnimate },
+            animationDuration: { r: false, t: testAnimationDuration },
+            range: { r: true, t: testRange },
+            orientation: { r: false, t: testOrientation },
+            margin: { r: false, t: testMargin },
+            limit: { r: false, t: testLimit },
+            padding: { r: false, t: testPadding },
+            behaviour: { r: true, t: testBehaviour },
+            ariaFormat: { r: false, t: testAriaFormat },
+            format: { r: false, t: testFormat },
+            tooltips: { r: false, t: testTooltips },
+            keyboardSupport: { r: true, t: testKeyboardSupport },
+            documentElement: { r: false, t: testDocumentElement },
+            cssPrefix: { r: true, t: testCssPrefix },
+            cssClasses: { r: true, t: testCssClasses }
+        };
+
+        var defaults = {
+            connect: false,
+            direction: "ltr",
+            behaviour: "tap",
+            orientation: "horizontal",
+            keyboardSupport: true,
+            cssPrefix: "noUi-",
+            cssClasses: cssClasses,
+            keyboardPageMultiplier: 5,
+            keyboardDefaultStep: 10
+        };
+
+        // AriaFormat defaults to regular format, if any.
+        if (options.format && !options.ariaFormat) {
+            options.ariaFormat = options.format;
+        }
+
+        // Run all options through a testing mechanism to ensure correct
+        // input. It should be noted that options might get modified to
+        // be handled properly. E.g. wrapping integers in arrays.
+        Object.keys(tests).forEach(function(name) {
+            // If the option isn't set, but it is required, throw an error.
+            if (!isSet(options[name]) && defaults[name] === undefined) {
+                if (tests[name].r) {
+                    throw new Error("noUiSlider (" + VERSION + "): '" + name + "' is required.");
+                }
+
+                return true;
+            }
+
+            tests[name].t(parsed, !isSet(options[name]) ? defaults[name] : options[name]);
+        });
+
+        // Forward pips options
+        parsed.pips = options.pips;
+
+        // All recent browsers accept unprefixed transform.
+        // We need -ms- for IE9 and -webkit- for older Android;
+        // Assume use of -webkit- if unprefixed and -ms- are not supported.
+        // https://caniuse.com/#feat=transforms2d
+        var d = document.createElement("div");
+        var msPrefix = d.style.msTransform !== undefined;
+        var noPrefix = d.style.transform !== undefined;
+
+        parsed.transformRule = noPrefix ? "transform" : msPrefix ? "msTransform" : "webkitTransform";
+
+        // Pips don't move, so we can place them using left/top.
+        var styles = [["left", "top"], ["right", "bottom"]];
+
+        parsed.style = styles[parsed.dir][parsed.ort];
+
+        return parsed;
+    }
+
+    //endregion
+
+    function scope(target, options, originalOptions) {
+        var actions = getActions();
+        var supportsTouchActionNone = getSupportsTouchActionNone();
+        var supportsPassive = supportsTouchActionNone && getSupportsPassive();
+
+        // All variables local to 'scope' are prefixed with 'scope_'
+
+        // Slider DOM Nodes
+        var scope_Target = target;
+        var scope_Base;
+        var scope_Handles;
+        var scope_Connects;
+        var scope_Pips;
+        var scope_Tooltips;
+
+        // Slider state values
+        var scope_Spectrum = options.spectrum;
+        var scope_Values = [];
+        var scope_Locations = [];
+        var scope_HandleNumbers = [];
+        var scope_ActiveHandlesCount = 0;
+        var scope_Events = {};
+
+        // Exposed API
+        var scope_Self;
+
+        // Document Nodes
+        var scope_Document = target.ownerDocument;
+        var scope_DocumentElement = options.documentElement || scope_Document.documentElement;
+        var scope_Body = scope_Document.body;
+
+        // Pips constants
+        var PIPS_NONE = -1;
+        var PIPS_NO_VALUE = 0;
+        var PIPS_LARGE_VALUE = 1;
+        var PIPS_SMALL_VALUE = 2;
+
+        // For horizontal sliders in standard ltr documents,
+        // make .noUi-origin overflow to the left so the document doesn't scroll.
+        var scope_DirOffset = scope_Document.dir === "rtl" || options.ort === 1 ? 0 : 100;
+
+        // Creates a node, adds it to target, returns the new node.
+        function addNodeTo(addTarget, className) {
+            var div = scope_Document.createElement("div");
+
+            if (className) {
+                addClass(div, className);
+            }
+
+            addTarget.appendChild(div);
+
+            return div;
+        }
+
+        // Append a origin to the base
+        function addOrigin(base, handleNumber) {
+            var origin = addNodeTo(base, options.cssClasses.origin);
+            var handle = addNodeTo(origin, options.cssClasses.handle);
+
+            addNodeTo(handle, options.cssClasses.touchArea);
+
+            handle.setAttribute("data-handle", handleNumber);
+
+            if (options.keyboardSupport) {
+                // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
+                // 0 = focusable and reachable
+                handle.setAttribute("tabindex", "0");
+                handle.addEventListener("keydown", function(event) {
+                    return eventKeydown(event, handleNumber);
+                });
+            }
+
+            handle.setAttribute("role", "slider");
+            handle.setAttribute("aria-orientation", options.ort ? "vertical" : "horizontal");
+
+            if (handleNumber === 0) {
+                addClass(handle, options.cssClasses.handleLower);
+            } else if (handleNumber === options.handles - 1) {
+                addClass(handle, options.cssClasses.handleUpper);
+            }
+
+            return origin;
+        }
+
+        // Insert nodes for connect elements
+        function addConnect(base, add) {
+            if (!add) {
+                return false;
+            }
+
+            return addNodeTo(base, options.cssClasses.connect);
+        }
+
+        // Add handles to the slider base.
+        function addElements(connectOptions, base) {
+            var connectBase = addNodeTo(base, options.cssClasses.connects);
+
+            scope_Handles = [];
+            scope_Connects = [];
+
+            scope_Connects.push(addConnect(connectBase, connectOptions[0]));
+
+            // [::::O====O====O====]
+            // connectOptions = [0, 1, 1, 1]
+
+            for (var i = 0; i < options.handles; i++) {
+                // Keep a list of all added handles.
+                scope_Handles.push(addOrigin(base, i));
+                scope_HandleNumbers[i] = i;
+                scope_Connects.push(addConnect(connectBase, connectOptions[i + 1]));
+            }
+        }
+
+        // Initialize a single slider.
+        function addSlider(addTarget) {
+            // Apply classes and data to the target.
+            addClass(addTarget, options.cssClasses.target);
+
+            if (options.dir === 0) {
+                addClass(addTarget, options.cssClasses.ltr);
+            } else {
+                addClass(addTarget, options.cssClasses.rtl);
+            }
+
+            if (options.ort === 0) {
+                addClass(addTarget, options.cssClasses.horizontal);
+            } else {
+                addClass(addTarget, options.cssClasses.vertical);
+            }
+
+            var textDirection = getComputedStyle(addTarget).direction;
+
+            if (textDirection === "rtl") {
+                addClass(addTarget, options.cssClasses.textDirectionRtl);
+            } else {
+                addClass(addTarget, options.cssClasses.textDirectionLtr);
+            }
+
+            return addNodeTo(addTarget, options.cssClasses.base);
+        }
+
+        function addTooltip(handle, handleNumber) {
+            if (!options.tooltips[handleNumber]) {
+                return false;
+            }
+
+            return addNodeTo(handle.firstChild, options.cssClasses.tooltip);
+        }
+
+        function isSliderDisabled() {
+            return scope_Target.hasAttribute("disabled");
+        }
+
+        // Disable the slider dragging if any handle is disabled
+        function isHandleDisabled(handleNumber) {
+            var handleOrigin = scope_Handles[handleNumber];
+            return handleOrigin.hasAttribute("disabled");
+        }
+
+        function removeTooltips() {
+            if (scope_Tooltips) {
+                removeEvent("update" + INTERNAL_EVENT_NS.tooltips);
+                scope_Tooltips.forEach(function(tooltip) {
+                    if (tooltip) {
+                        removeElement(tooltip);
+                    }
+                });
+                scope_Tooltips = null;
+            }
+        }
+
+        // The tooltips option is a shorthand for using the 'update' event.
+        function tooltips() {
+            removeTooltips();
+
+            // Tooltips are added with options.tooltips in original order.
+            scope_Tooltips = scope_Handles.map(addTooltip);
+
+            bindEvent("update" + INTERNAL_EVENT_NS.tooltips, function(values, handleNumber, unencoded) {
+                if (!scope_Tooltips[handleNumber]) {
+                    return;
+                }
+
+                var formattedValue = values[handleNumber];
+
+                if (options.tooltips[handleNumber] !== true) {
+                    formattedValue = options.tooltips[handleNumber].to(unencoded[handleNumber]);
+                }
+
+                scope_Tooltips[handleNumber].innerHTML = formattedValue;
+            });
+        }
+
+        function aria() {
+            removeEvent("update" + INTERNAL_EVENT_NS.aria);
+            bindEvent("update" + INTERNAL_EVENT_NS.aria, function(values, handleNumber, unencoded, tap, positions) {
+                // Update Aria Values for all handles, as a change in one changes min and max values for the next.
+                scope_HandleNumbers.forEach(function(index) {
+                    var handle = scope_Handles[index];
+
+                    var min = checkHandlePosition(scope_Locations, index, 0, true, true, true);
+                    var max = checkHandlePosition(scope_Locations, index, 100, true, true, true);
+
+                    var now = positions[index];
+
+                    // Formatted value for display
+                    var text = options.ariaFormat.to(unencoded[index]);
+
+                    // Map to slider range values
+                    min = scope_Spectrum.fromStepping(min).toFixed(1);
+                    max = scope_Spectrum.fromStepping(max).toFixed(1);
+                    now = scope_Spectrum.fromStepping(now).toFixed(1);
+
+                    handle.children[0].setAttribute("aria-valuemin", min);
+                    handle.children[0].setAttribute("aria-valuemax", max);
+                    handle.children[0].setAttribute("aria-valuenow", now);
+                    handle.children[0].setAttribute("aria-valuetext", text);
+                });
+            });
+        }
+
+        function getGroup(mode, values, stepped) {
+            // Use the range.
+            if (mode === "range" || mode === "steps") {
+                return scope_Spectrum.xVal;
+            }
+
+            if (mode === "count") {
+                if (values < 2) {
+                    throw new Error("noUiSlider (" + VERSION + "): 'values' (>= 2) required for mode 'count'.");
+                }
+
+                // Divide 0 - 100 in 'count' parts.
+                var interval = values - 1;
+                var spread = 100 / interval;
+
+                values = [];
+
+                // List these parts and have them handled as 'positions'.
+                while (interval--) {
+                    values[interval] = interval * spread;
+                }
+
+                values.push(100);
+
+                mode = "positions";
+            }
+
+            if (mode === "positions") {
+                // Map all percentages to on-range values.
+                return values.map(function(value) {
+                    return scope_Spectrum.fromStepping(stepped ? scope_Spectrum.getStep(value) : value);
+                });
+            }
+
+            if (mode === "values") {
+                // If the value must be stepped, it needs to be converted to a percentage first.
+                if (stepped) {
+                    return values.map(function(value) {
+                        // Convert to percentage, apply step, return to value.
+                        return scope_Spectrum.fromStepping(scope_Spectrum.getStep(scope_Spectrum.toStepping(value)));
+                    });
+                }
+
+                // Otherwise, we can simply use the values.
+                return values;
+            }
+        }
+
+        function generateSpread(density, mode, group) {
+            function safeIncrement(value, increment) {
+                // Avoid floating point variance by dropping the smallest decimal places.
+                return (value + increment).toFixed(7) / 1;
+            }
+
+            var indexes = {};
+            var firstInRange = scope_Spectrum.xVal[0];
+            var lastInRange = scope_Spectrum.xVal[scope_Spectrum.xVal.length - 1];
+            var ignoreFirst = false;
+            var ignoreLast = false;
+            var prevPct = 0;
+
+            // Create a copy of the group, sort it and filter away all duplicates.
+            group = unique(
+                group.slice().sort(function(a, b) {
+                    return a - b;
+                })
+            );
+
+            // Make sure the range starts with the first element.
+            if (group[0] !== firstInRange) {
+                group.unshift(firstInRange);
+                ignoreFirst = true;
+            }
+
+            // Likewise for the last one.
+            if (group[group.length - 1] !== lastInRange) {
+                group.push(lastInRange);
+                ignoreLast = true;
+            }
+
+            group.forEach(function(current, index) {
+                // Get the current step and the lower + upper positions.
+                var step;
+                var i;
+                var q;
+                var low = current;
+                var high = group[index + 1];
+                var newPct;
+                var pctDifference;
+                var pctPos;
+                var type;
+                var steps;
+                var realSteps;
+                var stepSize;
+                var isSteps = mode === "steps";
+
+                // When using 'steps' mode, use the provided steps.
+                // Otherwise, we'll step on to the next subrange.
+                if (isSteps) {
+                    step = scope_Spectrum.xNumSteps[index];
+                }
+
+                // Default to a 'full' step.
+                if (!step) {
+                    step = high - low;
+                }
+
+                // Low can be 0, so test for false. Index 0 is already handled.
+                if (low === false) {
+                    return;
+                }
+
+                // If high is undefined we are at the last subrange. Make sure it iterates once (#1088)
+                if (high === undefined) {
+                    high = low;
+                }
+
+                // Make sure step isn't 0, which would cause an infinite loop (#654)
+                step = Math.max(step, 0.0000001);
+
+                // Find all steps in the subrange.
+                for (i = low; i <= high; i = safeIncrement(i, step)) {
+                    // Get the percentage value for the current step,
+                    // calculate the size for the subrange.
+                    newPct = scope_Spectrum.toStepping(i);
+                    pctDifference = newPct - prevPct;
+
+                    steps = pctDifference / density;
+                    realSteps = Math.round(steps);
+
+                    // This ratio represents the amount of percentage-space a point indicates.
+                    // For a density 1 the points/percentage = 1. For density 2, that percentage needs to be re-divided.
+                    // Round the percentage offset to an even number, then divide by two
+                    // to spread the offset on both sides of the range.
+                    stepSize = pctDifference / realSteps;
+
+                    // Divide all points evenly, adding the correct number to this subrange.
+                    // Run up to <= so that 100% gets a point, event if ignoreLast is set.
+                    for (q = 1; q <= realSteps; q += 1) {
+                        // The ratio between the rounded value and the actual size might be ~1% off.
+                        // Correct the percentage offset by the number of points
+                        // per subrange. density = 1 will result in 100 points on the
+                        // full range, 2 for 50, 4 for 25, etc.
+                        pctPos = prevPct + q * stepSize;
+                        indexes[pctPos.toFixed(5)] = [scope_Spectrum.fromStepping(pctPos), 0];
+                    }
+
+                    // Determine the point type.
+                    type = group.indexOf(i) > -1 ? PIPS_LARGE_VALUE : isSteps ? PIPS_SMALL_VALUE : PIPS_NO_VALUE;
+
+                    // Enforce the 'ignoreFirst' option by overwriting the type for 0.
+                    if (!index && ignoreFirst && i !== high) {
+                        type = 0;
+                    }
+
+                    if (!(i === high && ignoreLast)) {
+                        // Mark the 'type' of this point. 0 = plain, 1 = real value, 2 = step value.
+                        indexes[newPct.toFixed(5)] = [i, type];
+                    }
+
+                    // Update the percentage count.
+                    prevPct = newPct;
+                }
+            });
+
+            return indexes;
+        }
+
+        function addMarking(spread, filterFunc, formatter) {
+            var element = scope_Document.createElement("div");
+
+            var valueSizeClasses = [];
+            valueSizeClasses[PIPS_NO_VALUE] = options.cssClasses.valueNormal;
+            valueSizeClasses[PIPS_LARGE_VALUE] = options.cssClasses.valueLarge;
+            valueSizeClasses[PIPS_SMALL_VALUE] = options.cssClasses.valueSub;
+
+            var markerSizeClasses = [];
+            markerSizeClasses[PIPS_NO_VALUE] = options.cssClasses.markerNormal;
+            markerSizeClasses[PIPS_LARGE_VALUE] = options.cssClasses.markerLarge;
+            markerSizeClasses[PIPS_SMALL_VALUE] = options.cssClasses.markerSub;
+
+            var valueOrientationClasses = [options.cssClasses.valueHorizontal, options.cssClasses.valueVertical];
+            var markerOrientationClasses = [options.cssClasses.markerHorizontal, options.cssClasses.markerVertical];
+
+            addClass(element, options.cssClasses.pips);
+            addClass(element, options.ort === 0 ? options.cssClasses.pipsHorizontal : options.cssClasses.pipsVertical);
+
+            function getClasses(type, source) {
+                var a = source === options.cssClasses.value;
+                var orientationClasses = a ? valueOrientationClasses : markerOrientationClasses;
+                var sizeClasses = a ? valueSizeClasses : markerSizeClasses;
+
+                return source + " " + orientationClasses[options.ort] + " " + sizeClasses[type];
+            }
+
+            function addSpread(offset, value, type) {
+                // Apply the filter function, if it is set.
+                type = filterFunc ? filterFunc(value, type) : type;
+
+                if (type === PIPS_NONE) {
+                    return;
+                }
+
+                // Add a marker for every point
+                var node = addNodeTo(element, false);
+                node.className = getClasses(type, options.cssClasses.marker);
+                node.style[options.style] = offset + "%";
+
+                // Values are only appended for points marked '1' or '2'.
+                if (type > PIPS_NO_VALUE) {
+                    node = addNodeTo(element, false);
+                    node.className = getClasses(type, options.cssClasses.value);
+                    node.setAttribute("data-value", value);
+                    node.style[options.style] = offset + "%";
+                    node.innerHTML = formatter.to(value);
+                }
+            }
+
+            // Append all points.
+            Object.keys(spread).forEach(function(offset) {
+                addSpread(offset, spread[offset][0], spread[offset][1]);
+            });
+
+            return element;
+        }
+
+        function removePips() {
+            if (scope_Pips) {
+                removeElement(scope_Pips);
+                scope_Pips = null;
+            }
+        }
+
+        function pips(grid) {
+            // Fix #669
+            removePips();
+
+            var mode = grid.mode;
+            var density = grid.density || 1;
+            var filter = grid.filter || false;
+            var values = grid.values || false;
+            var stepped = grid.stepped || false;
+            var group = getGroup(mode, values, stepped);
+            var spread = generateSpread(density, mode, group);
+            var format = grid.format || {
+                to: Math.round
+            };
+
+            scope_Pips = scope_Target.appendChild(addMarking(spread, filter, format));
+
+            return scope_Pips;
+        }
+
+        // Shorthand for base dimensions.
+        function baseSize() {
+            var rect = scope_Base.getBoundingClientRect();
+            var alt = "offset" + ["Width", "Height"][options.ort];
+            return options.ort === 0 ? rect.width || scope_Base[alt] : rect.height || scope_Base[alt];
+        }
+
+        // Handler for attaching events trough a proxy.
+        function attachEvent(events, element, callback, data) {
+            // This function can be used to 'filter' events to the slider.
+            // element is a node, not a nodeList
+
+            var method = function(e) {
+                e = fixEvent(e, data.pageOffset, data.target || element);
+
+                // fixEvent returns false if this event has a different target
+                // when handling (multi-) touch events;
+                if (!e) {
+                    return false;
+                }
+
+                // doNotReject is passed by all end events to make sure released touches
+                // are not rejected, leaving the slider "stuck" to the cursor;
+                if (isSliderDisabled() && !data.doNotReject) {
+                    return false;
+                }
+
+                // Stop if an active 'tap' transition is taking place.
+                if (hasClass(scope_Target, options.cssClasses.tap) && !data.doNotReject) {
+                    return false;
+                }
+
+                // Ignore right or middle clicks on start #454
+                if (events === actions.start && e.buttons !== undefined && e.buttons > 1) {
+                    return false;
+                }
+
+                // Ignore right or middle clicks on start #454
+                if (data.hover && e.buttons) {
+                    return false;
+                }
+
+                // 'supportsPassive' is only true if a browser also supports touch-action: none in CSS.
+                // iOS safari does not, so it doesn't get to benefit from passive scrolling. iOS does support
+                // touch-action: manipulation, but that allows panning, which breaks
+                // sliders after zooming/on non-responsive pages.
+                // See: https://bugs.webkit.org/show_bug.cgi?id=133112
+                if (!supportsPassive) {
+                    e.preventDefault();
+                }
+
+                e.calcPoint = e.points[options.ort];
+
+                // Call the event handler with the event [ and additional data ].
+                callback(e, data);
+            };
+
+            var methods = [];
+
+            // Bind a closure on the target for every event type.
+            events.split(" ").forEach(function(eventName) {
+                element.addEventListener(eventName, method, supportsPassive ? { passive: true } : false);
+                methods.push([eventName, method]);
+            });
+
+            return methods;
+        }
+
+        // Provide a clean event with standardized offset values.
+        function fixEvent(e, pageOffset, eventTarget) {
+            // Filter the event to register the type, which can be
+            // touch, mouse or pointer. Offset changes need to be
+            // made on an event specific basis.
+            var touch = e.type.indexOf("touch") === 0;
+            var mouse = e.type.indexOf("mouse") === 0;
+            var pointer = e.type.indexOf("pointer") === 0;
+
+            var x;
+            var y;
+
+            // IE10 implemented pointer events with a prefix;
+            if (e.type.indexOf("MSPointer") === 0) {
+                pointer = true;
+            }
+
+            // Erroneous events seem to be passed in occasionally on iOS/iPadOS after user finishes interacting with
+            // the slider. They appear to be of type MouseEvent, yet they don't have usual properties set. Ignore
+            // events that have no touches or buttons associated with them. (#1057, #1079, #1095)
+            if (e.type === "mousedown" && !e.buttons && !e.touches) {
+                return false;
+            }
+
+            // The only thing one handle should be concerned about is the touches that originated on top of it.
+            if (touch) {
+                // Returns true if a touch originated on the target.
+                var isTouchOnTarget = function(checkTouch) {
+                    return (
+                        checkTouch.target === eventTarget ||
+                        eventTarget.contains(checkTouch.target) ||
+                        (checkTouch.target.shadowRoot && checkTouch.target.shadowRoot.contains(eventTarget))
+                    );
+                };
+
+                // In the case of touchstart events, we need to make sure there is still no more than one
+                // touch on the target so we look amongst all touches.
+                if (e.type === "touchstart") {
+                    var targetTouches = Array.prototype.filter.call(e.touches, isTouchOnTarget);
+
+                    // Do not support more than one touch per handle.
+                    if (targetTouches.length > 1) {
+                        return false;
+                    }
+
+                    x = targetTouches[0].pageX;
+                    y = targetTouches[0].pageY;
+                } else {
+                    // In the other cases, find on changedTouches is enough.
+                    var targetTouch = Array.prototype.find.call(e.changedTouches, isTouchOnTarget);
+
+                    // Cancel if the target touch has not moved.
+                    if (!targetTouch) {
+                        return false;
+                    }
+
+                    x = targetTouch.pageX;
+                    y = targetTouch.pageY;
+                }
+            }
+
+            pageOffset = pageOffset || getPageOffset(scope_Document);
+
+            if (mouse || pointer) {
+                x = e.clientX + pageOffset.x;
+                y = e.clientY + pageOffset.y;
+            }
+
+            e.pageOffset = pageOffset;
+            e.points = [x, y];
+            e.cursor = mouse || pointer; // Fix #435
+
+            return e;
+        }
+
+        // Translate a coordinate in the document to a percentage on the slider
+        function calcPointToPercentage(calcPoint) {
+            var location = calcPoint - offset(scope_Base, options.ort);
+            var proposal = (location * 100) / baseSize();
+
+            // Clamp proposal between 0% and 100%
+            // Out-of-bound coordinates may occur when .noUi-base pseudo-elements
+            // are used (e.g. contained handles feature)
+            proposal = limit(proposal);
+
+            return options.dir ? 100 - proposal : proposal;
+        }
+
+        // Find handle closest to a certain percentage on the slider
+        function getClosestHandle(clickedPosition) {
+            var smallestDifference = 100;
+            var handleNumber = false;
+
+            scope_Handles.forEach(function(handle, index) {
+                // Disabled handles are ignored
+                if (isHandleDisabled(index)) {
+                    return;
+                }
+
+                var handlePosition = scope_Locations[index];
+                var differenceWithThisHandle = Math.abs(handlePosition - clickedPosition);
+
+                // Initial state
+                var clickAtEdge = differenceWithThisHandle === 100 && smallestDifference === 100;
+
+                // Difference with this handle is smaller than the previously checked handle
+                var isCloser = differenceWithThisHandle < smallestDifference;
+                var isCloserAfter = differenceWithThisHandle <= smallestDifference && clickedPosition > handlePosition;
+
+                if (isCloser || isCloserAfter || clickAtEdge) {
+                    handleNumber = index;
+                    smallestDifference = differenceWithThisHandle;
+                }
+            });
+
+            return handleNumber;
+        }
+
+        // Fire 'end' when a mouse or pen leaves the document.
+        function documentLeave(event, data) {
+            if (event.type === "mouseout" && event.target.nodeName === "HTML" && event.relatedTarget === null) {
+                eventEnd(event, data);
+            }
+        }
+
+        // Handle movement on document for handle and range drag.
+        function eventMove(event, data) {
+            // Fix #498
+            // Check value of .buttons in 'start' to work around a bug in IE10 mobile (data.buttonsProperty).
+            // https://connect.microsoft.com/IE/feedback/details/927005/mobile-ie10-windows-phone-buttons-property-of-pointermove-event-always-zero
+            // IE9 has .buttons and .which zero on mousemove.
+            // Firefox breaks the spec MDN defines.
+            if (navigator.appVersion.indexOf("MSIE 9") === -1 && event.buttons === 0 && data.buttonsProperty !== 0) {
+                return eventEnd(event, data);
+            }
+
+            // Check if we are moving up or down
+            var movement = (options.dir ? -1 : 1) * (event.calcPoint - data.startCalcPoint);
+
+            // Convert the movement into a percentage of the slider width/height
+            var proposal = (movement * 100) / data.baseSize;
+
+            moveHandles(movement > 0, proposal, data.locations, data.handleNumbers);
+        }
+
+        // Unbind move events on document, call callbacks.
+        function eventEnd(event, data) {
+            // The handle is no longer active, so remove the class.
+            if (data.handle) {
+                removeClass(data.handle, options.cssClasses.active);
+                scope_ActiveHandlesCount -= 1;
+            }
+
+            // Unbind the move and end events, which are added on 'start'.
+            data.listeners.forEach(function(c) {
+                scope_DocumentElement.removeEventListener(c[0], c[1]);
+            });
+
+            if (scope_ActiveHandlesCount === 0) {
+                // Remove dragging class.
+                removeClass(scope_Target, options.cssClasses.drag);
+                setZindex();
+
+                // Remove cursor styles and text-selection events bound to the body.
+                if (event.cursor) {
+                    scope_Body.style.cursor = "";
+                    scope_Body.removeEventListener("selectstart", preventDefault);
+                }
+            }
+
+            data.handleNumbers.forEach(function(handleNumber) {
+                fireEvent("change", handleNumber);
+                fireEvent("set", handleNumber);
+                fireEvent("end", handleNumber);
+            });
+        }
+
+        // Bind move events on document.
+        function eventStart(event, data) {
+            // Ignore event if any handle is disabled
+            if (data.handleNumbers.some(isHandleDisabled)) {
+                return false;
+            }
+
+            var handle;
+
+            if (data.handleNumbers.length === 1) {
+                var handleOrigin = scope_Handles[data.handleNumbers[0]];
+
+                handle = handleOrigin.children[0];
+                scope_ActiveHandlesCount += 1;
+
+                // Mark the handle as 'active' so it can be styled.
+                addClass(handle, options.cssClasses.active);
+            }
+
+            // A drag should never propagate up to the 'tap' event.
+            event.stopPropagation();
+
+            // Record the event listeners.
+            var listeners = [];
+
+            // Attach the move and end events.
+            var moveEvent = attachEvent(actions.move, scope_DocumentElement, eventMove, {
+                // The event target has changed so we need to propagate the original one so that we keep
+                // relying on it to extract target touches.
+                target: event.target,
+                handle: handle,
+                listeners: listeners,
+                startCalcPoint: event.calcPoint,
+                baseSize: baseSize(),
+                pageOffset: event.pageOffset,
+                handleNumbers: data.handleNumbers,
+                buttonsProperty: event.buttons,
+                locations: scope_Locations.slice()
+            });
+
+            var endEvent = attachEvent(actions.end, scope_DocumentElement, eventEnd, {
+                target: event.target,
+                handle: handle,
+                listeners: listeners,
+                doNotReject: true,
+                handleNumbers: data.handleNumbers
+            });
+
+            var outEvent = attachEvent("mouseout", scope_DocumentElement, documentLeave, {
+                target: event.target,
+                handle: handle,
+                listeners: listeners,
+                doNotReject: true,
+                handleNumbers: data.handleNumbers
+            });
+
+            // We want to make sure we pushed the listeners in the listener list rather than creating
+            // a new one as it has already been passed to the event handlers.
+            listeners.push.apply(listeners, moveEvent.concat(endEvent, outEvent));
+
+            // Text selection isn't an issue on touch devices,
+            // so adding cursor styles can be skipped.
+            if (event.cursor) {
+                // Prevent the 'I' cursor and extend the range-drag cursor.
+                scope_Body.style.cursor = getComputedStyle(event.target).cursor;
+
+                // Mark the target with a dragging state.
+                if (scope_Handles.length > 1) {
+                    addClass(scope_Target, options.cssClasses.drag);
+                }
+
+                // Prevent text selection when dragging the handles.
+                // In noUiSlider <= 9.2.0, this was handled by calling preventDefault on mouse/touch start/move,
+                // which is scroll blocking. The selectstart event is supported by FireFox starting from version 52,
+                // meaning the only holdout is iOS Safari. This doesn't matter: text selection isn't triggered there.
+                // The 'cursor' flag is false.
+                // See: http://caniuse.com/#search=selectstart
+                scope_Body.addEventListener("selectstart", preventDefault, false);
+            }
+
+            data.handleNumbers.forEach(function(handleNumber) {
+                fireEvent("start", handleNumber);
+            });
+        }
+
+        // Move closest handle to tapped location.
+        function eventTap(event) {
+            // The tap event shouldn't propagate up
+            event.stopPropagation();
+
+            var proposal = calcPointToPercentage(event.calcPoint);
+            var handleNumber = getClosestHandle(proposal);
+
+            // Tackle the case that all handles are 'disabled'.
+            if (handleNumber === false) {
+                return false;
+            }
+
+            // Flag the slider as it is now in a transitional state.
+            // Transition takes a configurable amount of ms (default 300). Re-enable the slider after that.
+            if (!options.events.snap) {
+                addClassFor(scope_Target, options.cssClasses.tap, options.animationDuration);
+            }
+
+            setHandle(handleNumber, proposal, true, true);
+
+            setZindex();
+
+            fireEvent("slide", handleNumber, true);
+            fireEvent("update", handleNumber, true);
+            fireEvent("change", handleNumber, true);
+            fireEvent("set", handleNumber, true);
+
+            if (options.events.snap) {
+                eventStart(event, { handleNumbers: [handleNumber] });
+            }
+        }
+
+        // Fires a 'hover' event for a hovered mouse/pen position.
+        function eventHover(event) {
+            var proposal = calcPointToPercentage(event.calcPoint);
+
+            var to = scope_Spectrum.getStep(proposal);
+            var value = scope_Spectrum.fromStepping(to);
+
+            Object.keys(scope_Events).forEach(function(targetEvent) {
+                if ("hover" === targetEvent.split(".")[0]) {
+                    scope_Events[targetEvent].forEach(function(callback) {
+                        callback.call(scope_Self, value);
+                    });
+                }
+            });
+        }
+
+        // Handles keydown on focused handles
+        // Don't move the document when pressing arrow keys on focused handles
+        function eventKeydown(event, handleNumber) {
+            if (isSliderDisabled() || isHandleDisabled(handleNumber)) {
+                return false;
+            }
+
+            var horizontalKeys = ["Left", "Right"];
+            var verticalKeys = ["Down", "Up"];
+            var largeStepKeys = ["PageDown", "PageUp"];
+            var edgeKeys = ["Home", "End"];
+
+            if (options.dir && !options.ort) {
+                // On an right-to-left slider, the left and right keys act inverted
+                horizontalKeys.reverse();
+            } else if (options.ort && !options.dir) {
+                // On a top-to-bottom slider, the up and down keys act inverted
+                verticalKeys.reverse();
+                largeStepKeys.reverse();
+            }
+
+            // Strip "Arrow" for IE compatibility. https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+            var key = event.key.replace("Arrow", "");
+
+            var isLargeDown = key === largeStepKeys[0];
+            var isLargeUp = key === largeStepKeys[1];
+            var isDown = key === verticalKeys[0] || key === horizontalKeys[0] || isLargeDown;
+            var isUp = key === verticalKeys[1] || key === horizontalKeys[1] || isLargeUp;
+            var isMin = key === edgeKeys[0];
+            var isMax = key === edgeKeys[1];
+
+            if (!isDown && !isUp && !isMin && !isMax) {
+                return true;
+            }
+
+            event.preventDefault();
+
+            var to;
+
+            if (isUp || isDown) {
+                var multiplier = options.keyboardPageMultiplier;
+                var direction = isDown ? 0 : 1;
+                var steps = getNextStepsForHandle(handleNumber);
+                var step = steps[direction];
+
+                // At the edge of a slider, do nothing
+                if (step === null) {
+                    return false;
+                }
+
+                // No step set, use the default of 10% of the sub-range
+                if (step === false) {
+                    step = scope_Spectrum.getDefaultStep(
+                        scope_Locations[handleNumber],
+                        isDown,
+                        options.keyboardDefaultStep
+                    );
+                }
+
+                if (isLargeUp || isLargeDown) {
+                    step *= multiplier;
+                }
+
+                // Step over zero-length ranges (#948);
+                step = Math.max(step, 0.0000001);
+
+                // Decrement for down steps
+                step = (isDown ? -1 : 1) * step;
+
+                to = scope_Values[handleNumber] + step;
+            } else if (isMax) {
+                // End key
+                to = options.spectrum.xVal[options.spectrum.xVal.length - 1];
+            } else {
+                // Home key
+                to = options.spectrum.xVal[0];
+            }
+
+            setHandle(handleNumber, scope_Spectrum.toStepping(to), true, true);
+
+            fireEvent("slide", handleNumber);
+            fireEvent("update", handleNumber);
+            fireEvent("change", handleNumber);
+            fireEvent("set", handleNumber);
+
+            return false;
+        }
+
+        // Attach events to several slider parts.
+        function bindSliderEvents(behaviour) {
+            // Attach the standard drag event to the handles.
+            if (!behaviour.fixed) {
+                scope_Handles.forEach(function(handle, index) {
+                    // These events are only bound to the visual handle
+                    // element, not the 'real' origin element.
+                    attachEvent(actions.start, handle.children[0], eventStart, {
+                        handleNumbers: [index]
+                    });
+                });
+            }
+
+            // Attach the tap event to the slider base.
+            if (behaviour.tap) {
+                attachEvent(actions.start, scope_Base, eventTap, {});
+            }
+
+            // Fire hover events
+            if (behaviour.hover) {
+                attachEvent(actions.move, scope_Base, eventHover, {
+                    hover: true
+                });
+            }
+
+            // Make the range draggable.
+            if (behaviour.drag) {
+                scope_Connects.forEach(function(connect, index) {
+                    if (connect === false || index === 0 || index === scope_Connects.length - 1) {
+                        return;
+                    }
+
+                    var handleBefore = scope_Handles[index - 1];
+                    var handleAfter = scope_Handles[index];
+                    var eventHolders = [connect];
+
+                    addClass(connect, options.cssClasses.draggable);
+
+                    // When the range is fixed, the entire range can
+                    // be dragged by the handles. The handle in the first
+                    // origin will propagate the start event upward,
+                    // but it needs to be bound manually on the other.
+                    if (behaviour.fixed) {
+                        eventHolders.push(handleBefore.children[0]);
+                        eventHolders.push(handleAfter.children[0]);
+                    }
+
+                    eventHolders.forEach(function(eventHolder) {
+                        attachEvent(actions.start, eventHolder, eventStart, {
+                            handles: [handleBefore, handleAfter],
+                            handleNumbers: [index - 1, index]
+                        });
+                    });
+                });
+            }
+        }
+
+        // Attach an event to this slider, possibly including a namespace
+        function bindEvent(namespacedEvent, callback) {
+            scope_Events[namespacedEvent] = scope_Events[namespacedEvent] || [];
+            scope_Events[namespacedEvent].push(callback);
+
+            // If the event bound is 'update,' fire it immediately for all handles.
+            if (namespacedEvent.split(".")[0] === "update") {
+                scope_Handles.forEach(function(a, index) {
+                    fireEvent("update", index);
+                });
+            }
+        }
+
+        function isInternalNamespace(namespace) {
+            return namespace === INTERNAL_EVENT_NS.aria || namespace === INTERNAL_EVENT_NS.tooltips;
+        }
+
+        // Undo attachment of event
+        function removeEvent(namespacedEvent) {
+            var event = namespacedEvent && namespacedEvent.split(".")[0];
+            var namespace = event ? namespacedEvent.substring(event.length) : namespacedEvent;
+
+            Object.keys(scope_Events).forEach(function(bind) {
+                var tEvent = bind.split(".")[0];
+                var tNamespace = bind.substring(tEvent.length);
+                if ((!event || event === tEvent) && (!namespace || namespace === tNamespace)) {
+                    // only delete protected internal event if intentional
+                    if (!isInternalNamespace(tNamespace) || namespace === tNamespace) {
+                        delete scope_Events[bind];
+                    }
+                }
+            });
+        }
+
+        // External event handling
+        function fireEvent(eventName, handleNumber, tap) {
+            Object.keys(scope_Events).forEach(function(targetEvent) {
+                var eventType = targetEvent.split(".")[0];
+
+                if (eventName === eventType) {
+                    scope_Events[targetEvent].forEach(function(callback) {
+                        callback.call(
+                            // Use the slider public API as the scope ('this')
+                            scope_Self,
+                            // Return values as array, so arg_1[arg_2] is always valid.
+                            scope_Values.map(options.format.to),
+                            // Handle index, 0 or 1
+                            handleNumber,
+                            // Un-formatted slider values
+                            scope_Values.slice(),
+                            // Event is fired by tap, true or false
+                            tap || false,
+                            // Left offset of the handle, in relation to the slider
+                            scope_Locations.slice(),
+                            // add the slider public API to an accessible parameter when this is unavailable
+                            scope_Self
+                        );
+                    });
+                }
+            });
+        }
+
+        // Split out the handle positioning logic so the Move event can use it, too
+        function checkHandlePosition(reference, handleNumber, to, lookBackward, lookForward, getValue) {
+            var distance;
+
+            // For sliders with multiple handles, limit movement to the other handle.
+            // Apply the margin option by adding it to the handle positions.
+            if (scope_Handles.length > 1 && !options.events.unconstrained) {
+                if (lookBackward && handleNumber > 0) {
+                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber - 1], options.margin, 0);
+                    to = Math.max(to, distance);
+                }
+
+                if (lookForward && handleNumber < scope_Handles.length - 1) {
+                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber + 1], options.margin, 1);
+                    to = Math.min(to, distance);
+                }
+            }
+
+            // The limit option has the opposite effect, limiting handles to a
+            // maximum distance from another. Limit must be > 0, as otherwise
+            // handles would be unmovable.
+            if (scope_Handles.length > 1 && options.limit) {
+                if (lookBackward && handleNumber > 0) {
+                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber - 1], options.limit, 0);
+                    to = Math.min(to, distance);
+                }
+
+                if (lookForward && handleNumber < scope_Handles.length - 1) {
+                    distance = scope_Spectrum.getAbsoluteDistance(reference[handleNumber + 1], options.limit, 1);
+                    to = Math.max(to, distance);
+                }
+            }
+
+            // The padding option keeps the handles a certain distance from the
+            // edges of the slider. Padding must be > 0.
+            if (options.padding) {
+                if (handleNumber === 0) {
+                    distance = scope_Spectrum.getAbsoluteDistance(0, options.padding[0], 0);
+                    to = Math.max(to, distance);
+                }
+
+                if (handleNumber === scope_Handles.length - 1) {
+                    distance = scope_Spectrum.getAbsoluteDistance(100, options.padding[1], 1);
+                    to = Math.min(to, distance);
+                }
+            }
+
+            to = scope_Spectrum.getStep(to);
+
+            // Limit percentage to the 0 - 100 range
+            to = limit(to);
+
+            // Return false if handle can't move
+            if (to === reference[handleNumber] && !getValue) {
+                return false;
+            }
+
+            return to;
+        }
+
+        // Uses slider orientation to create CSS rules. a = base value;
+        function inRuleOrder(v, a) {
+            var o = options.ort;
+            return (o ? a : v) + ", " + (o ? v : a);
+        }
+
+        // Moves handle(s) by a percentage
+        // (bool, % to move, [% where handle started, ...], [index in scope_Handles, ...])
+        function moveHandles(upward, proposal, locations, handleNumbers) {
+            var proposals = locations.slice();
+
+            var b = [!upward, upward];
+            var f = [upward, !upward];
+
+            // Copy handleNumbers so we don't change the dataset
+            handleNumbers = handleNumbers.slice();
+
+            // Check to see which handle is 'leading'.
+            // If that one can't move the second can't either.
+            if (upward) {
+                handleNumbers.reverse();
+            }
+
+            // Step 1: get the maximum percentage that any of the handles can move
+            if (handleNumbers.length > 1) {
+                handleNumbers.forEach(function(handleNumber, o) {
+                    var to = checkHandlePosition(
+                        proposals,
+                        handleNumber,
+                        proposals[handleNumber] + proposal,
+                        b[o],
+                        f[o],
+                        false
+                    );
+
+                    // Stop if one of the handles can't move.
+                    if (to === false) {
+                        proposal = 0;
+                    } else {
+                        proposal = to - proposals[handleNumber];
+                        proposals[handleNumber] = to;
+                    }
+                });
+            }
+
+            // If using one handle, check backward AND forward
+            else {
+                b = f = [true];
+            }
+
+            var state = false;
+
+            // Step 2: Try to set the handles with the found percentage
+            handleNumbers.forEach(function(handleNumber, o) {
+                state = setHandle(handleNumber, locations[handleNumber] + proposal, b[o], f[o]) || state;
+            });
+
+            // Step 3: If a handle moved, fire events
+            if (state) {
+                handleNumbers.forEach(function(handleNumber) {
+                    fireEvent("update", handleNumber);
+                    fireEvent("slide", handleNumber);
+                });
+            }
+        }
+
+        // Takes a base value and an offset. This offset is used for the connect bar size.
+        // In the initial design for this feature, the origin element was 1% wide.
+        // Unfortunately, a rounding bug in Chrome makes it impossible to implement this feature
+        // in this manner: https://bugs.chromium.org/p/chromium/issues/detail?id=798223
+        function transformDirection(a, b) {
+            return options.dir ? 100 - a - b : a;
+        }
+
+        // Updates scope_Locations and scope_Values, updates visual state
+        function updateHandlePosition(handleNumber, to) {
+            // Update locations.
+            scope_Locations[handleNumber] = to;
+
+            // Convert the value to the slider stepping/range.
+            scope_Values[handleNumber] = scope_Spectrum.fromStepping(to);
+
+            var translation = 10 * (transformDirection(to, 0) - scope_DirOffset);
+            var translateRule = "translate(" + inRuleOrder(translation + "%", "0") + ")";
+
+            scope_Handles[handleNumber].style[options.transformRule] = translateRule;
+
+            updateConnect(handleNumber);
+            updateConnect(handleNumber + 1);
+        }
+
+        // Handles before the slider middle are stacked later = higher,
+        // Handles after the middle later is lower
+        // [[7] [8] .......... | .......... [5] [4]
+        function setZindex() {
+            scope_HandleNumbers.forEach(function(handleNumber) {
+                var dir = scope_Locations[handleNumber] > 50 ? -1 : 1;
+                var zIndex = 3 + (scope_Handles.length + dir * handleNumber);
+                scope_Handles[handleNumber].style.zIndex = zIndex;
+            });
+        }
+
+        // Test suggested values and apply margin, step.
+        // if exactInput is true, don't run checkHandlePosition, then the handle can be placed in between steps (#436)
+        function setHandle(handleNumber, to, lookBackward, lookForward, exactInput) {
+            if (!exactInput) {
+                to = checkHandlePosition(scope_Locations, handleNumber, to, lookBackward, lookForward, false);
+            }
+
+            if (to === false) {
+                return false;
+            }
+
+            updateHandlePosition(handleNumber, to);
+
+            return true;
+        }
+
+        // Updates style attribute for connect nodes
+        function updateConnect(index) {
+            // Skip connects set to false
+            if (!scope_Connects[index]) {
+                return;
+            }
+
+            var l = 0;
+            var h = 100;
+
+            if (index !== 0) {
+                l = scope_Locations[index - 1];
+            }
+
+            if (index !== scope_Connects.length - 1) {
+                h = scope_Locations[index];
+            }
+
+            // We use two rules:
+            // 'translate' to change the left/top offset;
+            // 'scale' to change the width of the element;
+            // As the element has a width of 100%, a translation of 100% is equal to 100% of the parent (.noUi-base)
+            var connectWidth = h - l;
+            var translateRule = "translate(" + inRuleOrder(transformDirection(l, connectWidth) + "%", "0") + ")";
+            var scaleRule = "scale(" + inRuleOrder(connectWidth / 100, "1") + ")";
+
+            scope_Connects[index].style[options.transformRule] = translateRule + " " + scaleRule;
+        }
+
+        // Parses value passed to .set method. Returns current value if not parse-able.
+        function resolveToValue(to, handleNumber) {
+            // Setting with null indicates an 'ignore'.
+            // Inputting 'false' is invalid.
+            if (to === null || to === false || to === undefined) {
+                return scope_Locations[handleNumber];
+            }
+
+            // If a formatted number was passed, attempt to decode it.
+            if (typeof to === "number") {
+                to = String(to);
+            }
+
+            to = options.format.from(to);
+            to = scope_Spectrum.toStepping(to);
+
+            // If parsing the number failed, use the current value.
+            if (to === false || isNaN(to)) {
+                return scope_Locations[handleNumber];
+            }
+
+            return to;
+        }
+
+        // Set the slider value.
+        function valueSet(input, fireSetEvent, exactInput) {
+            var values = asArray(input);
+            var isInit = scope_Locations[0] === undefined;
+
+            // Event fires by default
+            fireSetEvent = fireSetEvent === undefined ? true : !!fireSetEvent;
+
+            // Animation is optional.
+            // Make sure the initial values were set before using animated placement.
+            if (options.animate && !isInit) {
+                addClassFor(scope_Target, options.cssClasses.tap, options.animationDuration);
+            }
+
+            // First pass, without lookAhead but with lookBackward. Values are set from left to right.
+            scope_HandleNumbers.forEach(function(handleNumber) {
+                setHandle(handleNumber, resolveToValue(values[handleNumber], handleNumber), true, false, exactInput);
+            });
+
+            var i = scope_HandleNumbers.length === 1 ? 0 : 1;
+
+            // Secondary passes. Now that all base values are set, apply constraints.
+            // Iterate all handles to ensure constraints are applied for the entire slider (Issue #1009)
+            for (; i < scope_HandleNumbers.length; ++i) {
+                scope_HandleNumbers.forEach(function(handleNumber) {
+                    setHandle(handleNumber, scope_Locations[handleNumber], true, true, exactInput);
+                });
+            }
+
+            setZindex();
+
+            scope_HandleNumbers.forEach(function(handleNumber) {
+                fireEvent("update", handleNumber);
+
+                // Fire the event only for handles that received a new value, as per #579
+                if (values[handleNumber] !== null && fireSetEvent) {
+                    fireEvent("set", handleNumber);
+                }
+            });
+        }
+
+        // Reset slider to initial values
+        function valueReset(fireSetEvent) {
+            valueSet(options.start, fireSetEvent);
+        }
+
+        // Set value for a single handle
+        function valueSetHandle(handleNumber, value, fireSetEvent, exactInput) {
+            // Ensure numeric input
+            handleNumber = Number(handleNumber);
+
+            if (!(handleNumber >= 0 && handleNumber < scope_HandleNumbers.length)) {
+                throw new Error("noUiSlider (" + VERSION + "): invalid handle number, got: " + handleNumber);
+            }
+
+            // Look both backward and forward, since we don't want this handle to "push" other handles (#960);
+            // The exactInput argument can be used to ignore slider stepping (#436)
+            setHandle(handleNumber, resolveToValue(value, handleNumber), true, true, exactInput);
+
+            fireEvent("update", handleNumber);
+
+            if (fireSetEvent) {
+                fireEvent("set", handleNumber);
+            }
+        }
+
+        // Get the slider value.
+        function valueGet() {
+            var values = scope_Values.map(options.format.to);
+
+            // If only one handle is used, return a single value.
+            if (values.length === 1) {
+                return values[0];
+            }
+
+            return values;
+        }
+
+        // Removes classes from the root and empties it.
+        function destroy() {
+            // remove protected internal listeners
+            removeEvent(INTERNAL_EVENT_NS.aria);
+            removeEvent(INTERNAL_EVENT_NS.tooltips);
+
+            for (var key in options.cssClasses) {
+                if (!options.cssClasses.hasOwnProperty(key)) {
+                    continue;
+                }
+                removeClass(scope_Target, options.cssClasses[key]);
+            }
+
+            while (scope_Target.firstChild) {
+                scope_Target.removeChild(scope_Target.firstChild);
+            }
+
+            delete scope_Target.noUiSlider;
+        }
+
+        function getNextStepsForHandle(handleNumber) {
+            var location = scope_Locations[handleNumber];
+            var nearbySteps = scope_Spectrum.getNearbySteps(location);
+            var value = scope_Values[handleNumber];
+            var increment = nearbySteps.thisStep.step;
+            var decrement = null;
+
+            // If snapped, directly use defined step value
+            if (options.snap) {
+                return [
+                    value - nearbySteps.stepBefore.startValue || null,
+                    nearbySteps.stepAfter.startValue - value || null
+                ];
+            }
+
+            // If the next value in this step moves into the next step,
+            // the increment is the start of the next step - the current value
+            if (increment !== false) {
+                if (value + increment > nearbySteps.stepAfter.startValue) {
+                    increment = nearbySteps.stepAfter.startValue - value;
+                }
+            }
+
+            // If the value is beyond the starting point
+            if (value > nearbySteps.thisStep.startValue) {
+                decrement = nearbySteps.thisStep.step;
+            } else if (nearbySteps.stepBefore.step === false) {
+                decrement = false;
+            }
+
+            // If a handle is at the start of a step, it always steps back into the previous step first
+            else {
+                decrement = value - nearbySteps.stepBefore.highestStep;
+            }
+
+            // Now, if at the slider edges, there is no in/decrement
+            if (location === 100) {
+                increment = null;
+            } else if (location === 0) {
+                decrement = null;
+            }
+
+            // As per #391, the comparison for the decrement step can have some rounding issues.
+            var stepDecimals = scope_Spectrum.countStepDecimals();
+
+            // Round per #391
+            if (increment !== null && increment !== false) {
+                increment = Number(increment.toFixed(stepDecimals));
+            }
+
+            if (decrement !== null && decrement !== false) {
+                decrement = Number(decrement.toFixed(stepDecimals));
+            }
+
+            return [decrement, increment];
+        }
+
+        // Get the current step size for the slider.
+        function getNextSteps() {
+            return scope_HandleNumbers.map(getNextStepsForHandle);
+        }
+
+        // Updateable: margin, limit, padding, step, range, animate, snap
+        function updateOptions(optionsToUpdate, fireSetEvent) {
+            // Spectrum is created using the range, snap, direction and step options.
+            // 'snap' and 'step' can be updated.
+            // If 'snap' and 'step' are not passed, they should remain unchanged.
+            var v = valueGet();
+
+            var updateAble = [
+                "margin",
+                "limit",
+                "padding",
+                "range",
+                "animate",
+                "snap",
+                "step",
+                "format",
+                "pips",
+                "tooltips"
+            ];
+
+            // Only change options that we're actually passed to update.
+            updateAble.forEach(function(name) {
+                // Check for undefined. null removes the value.
+                if (optionsToUpdate[name] !== undefined) {
+                    originalOptions[name] = optionsToUpdate[name];
+                }
+            });
+
+            var newOptions = testOptions(originalOptions);
+
+            // Load new options into the slider state
+            updateAble.forEach(function(name) {
+                if (optionsToUpdate[name] !== undefined) {
+                    options[name] = newOptions[name];
+                }
+            });
+
+            scope_Spectrum = newOptions.spectrum;
+
+            // Limit, margin and padding depend on the spectrum but are stored outside of it. (#677)
+            options.margin = newOptions.margin;
+            options.limit = newOptions.limit;
+            options.padding = newOptions.padding;
+
+            // Update pips, removes existing.
+            if (options.pips) {
+                pips(options.pips);
+            } else {
+                removePips();
+            }
+
+            // Update tooltips, removes existing.
+            if (options.tooltips) {
+                tooltips();
+            } else {
+                removeTooltips();
+            }
+
+            // Invalidate the current positioning so valueSet forces an update.
+            scope_Locations = [];
+            valueSet(optionsToUpdate.start || v, fireSetEvent);
+        }
+
+        // Initialization steps
+        function setupSlider() {
+            // Create the base element, initialize HTML and set classes.
+            // Add handles and connect elements.
+            scope_Base = addSlider(scope_Target);
+
+            addElements(options.connect, scope_Base);
+
+            // Attach user events.
+            bindSliderEvents(options.events);
+
+            // Use the public value method to set the start values.
+            valueSet(options.start);
+
+            if (options.pips) {
+                pips(options.pips);
+            }
+
+            if (options.tooltips) {
+                tooltips();
+            }
+
+            aria();
+        }
+
+        setupSlider();
+
+        // noinspection JSUnusedGlobalSymbols
+        scope_Self = {
+            destroy: destroy,
+            steps: getNextSteps,
+            on: bindEvent,
+            off: removeEvent,
+            get: valueGet,
+            set: valueSet,
+            setHandle: valueSetHandle,
+            reset: valueReset,
+            // Exposed for unit testing, don't use this in your application.
+            __moveHandles: function(a, b, c) {
+                moveHandles(a, b, scope_Locations, c);
+            },
+            options: originalOptions, // Issue #600, #678
+            updateOptions: updateOptions,
+            target: scope_Target, // Issue #597
+            removePips: removePips,
+            removeTooltips: removeTooltips,
+            getTooltips: function() {
+                return scope_Tooltips;
+            },
+            getOrigins: function() {
+                return scope_Handles;
+            },
+            pips: pips // Issue #594
+        };
+
+        return scope_Self;
+    }
+
+    // Run the standard initializer
+    function initialize(target, originalOptions) {
+        if (!target || !target.nodeName) {
+            throw new Error("noUiSlider (" + VERSION + "): create requires a single element, got: " + target);
+        }
+
+        // Throw an error if the slider was already initialized.
+        if (target.noUiSlider) {
+            throw new Error("noUiSlider (" + VERSION + "): Slider was already initialized.");
+        }
+
+        // Test the options and create the slider environment;
+        var options = testOptions(originalOptions, target);
+        var api = scope(target, options, originalOptions);
+
+        target.noUiSlider = api;
+
+        return api;
+    }
+
+    // Use an object instead of a function for future expandability;
+    return {
+        // Exposed for unit testing, don't use this in your application.
+        __spectrum: Spectrum,
+        version: VERSION,
+        // A reference to the default classes, allows global changes.
+        // Use the cssClasses option for changes to one slider.
+        cssClasses: cssClasses,
+        create: initialize
+    };
+});

@@ -52,8 +52,6 @@
   },
   "dependencies": {
     "del": "^4.1.1",
-    "jquery": "^3.5.1",
-    "nouislider": "^14.6.3",
-    "slick-carousel": "^1.8.1"
+    "nouislider": "^14.6.3"
   }
 }
