@@ -71,6 +71,17 @@
   &::placeholder {
     color: $color-font-secondary;
   }
+
+  &:hover {
+    outline: none;
+    background-color: fade-out($color-bg-primary, 0.7);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    background-color: fade-out($color-bg-primary, 0.9);
+  }
 }
 
 .main-footer__input button {
@@ -85,6 +96,17 @@
 
   border: 0;
   background-color: transparent;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-accent;
+  }
+
+  &:active {
+    outline: none;
+    color: $color-font-secondary;
+  }
 }
 
 .main-footer__input svg {
@@ -128,6 +150,19 @@
   color: $color-bg-primary;
 
   margin-bottom: 21px;
+}
+
+.main-footer__nav a {
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-accent;
+  }
+
+  &:active {
+    outline: none;
+    color: $color-font-secondary;
+  }
 }
 
 .main-footer__nav--socials {

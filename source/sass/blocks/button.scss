@@ -7,4 +7,30 @@
 
   border: 1px solid $color-accent;
   background-color: transparent;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-accent;
+  }
+
+  &:active {
+    outline: none;
+    color: $color-font-secondary;
+  }
+}
+
+.button--inverted {
+  color: $color-bg-primary;
+
+  background-color: $color-accent;
+
+  &:hover,
+  &:focus {
+    color: $color-font-secondary;
+  }
+
+  &:active {
+    color: $color-font-primary;
+  }
 }

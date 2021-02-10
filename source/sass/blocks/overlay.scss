@@ -1,0 +1,20 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 4;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $color-bg-primary;
+}
+
+.overlay--closed {
+  display: none;
+}
+
+.overlay--dark {
+  background-color: fade-out($color-font-primary, 0.75);
+}

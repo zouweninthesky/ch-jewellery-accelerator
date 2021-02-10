@@ -14,28 +14,31 @@
   </head>
   <body>
     <h1 class="visually-hidden">CHJewellery</h1>
-    <article class="">
-      <button type="button"><span class="visually-hidden">Close</span></button>
+    <article class="login login--page" id="login">
+      <button type="button" class="close-button close-button--login"><span class="visually-hidden">Close popup</span></button>
       <picture>
         <source type="image/webp" srcset="img/popup-img@1x.webp 1x, img/popup-img@2x.webp 2x">
 
-        <!-- 1x: 270px, 2x: 540px -->
-        <img src="img/popup-img@1x.jpg" srcset="img/popup-img@2x.jpg 2x" width="270" height="272" alt="">
+        <!-- 1x: 430px, 2x: 860px -->
+        <img src="img/popup-img@1x.jpg" srcset="img/popup-img@2x.jpg 2x" width="430" height="138" alt="Grape-shaped golden earrings with marble beads">
       </picture>
       <h2>Log In</h2>
       <form action="">
-        <div class="">
-          <input type="text">
-          <label for=""></label>
+        <div class="login__input">
+          <input type="text" placeholder="Your E-mail" name="name" id="login-name">
+          <label for="login-name" class="visually-hidden">Enter your e-mail</label>
         </div>
-        <div class="">
-          <input type="text">
-          <label for=""></label>
+        <div class="login__input">
+          <input type="password" placeholder="Password" name="password" id="login-password">
+          <label for="login-password" class="visually-hidden">Enter your password</label>
+          <a href="#">Forgot your password?</a>
         </div>
-        <a href="">Forgot your password?</a>
-        <button>Log in</button>
-        <p>Don't have an account?<a href="">Sign up</a></p>
+        <button type="submit" class="button button--inverted">Log In</button>
       </form>
+      <div class="login__sign-up">
+        <p>Don't have an account?</p>
+        <a href="#">Sign up</a>
+      </div>
     </article>
   </body>
 </html>

@@ -16,33 +16,33 @@
   </head>
   <body>
     <h1 class="visually-hidden">CHJewellery</h1>
-    <article class="">
+    <article class="added added--page">
+      <h2 class="">The item was added to your cart</h2>
+      <section class="added__item-info">
+        <picture>
+          <source type="image/webp" srcset="img/card-main@1x.webp 1x, img/card-main@2x.webp 2x">
 
-      <button type="button"><span class="visually-hidden">Close</span></button>
-      <h2>The item was added to your cart</h2>
-      <div>
-        <div>
-          <picture>
-            <source type="image/webp" srcset="img/card-main@1x.webp 1x, img/card-maing@2x.webp 2x">
-
-            <!-- 1x: 84px, 2x: 168px -->
-            <img src="img/card-main@1x.jpg" srcset="img/card-main@2x.jpg 2x" width="84" height="79" alt="">
-          </picture>
+          <!-- 1x: 84px, 2x: 168px -->
+          <img src="img/card-main@1x.jpg" srcset="img/card-main@2x.jpg 2x" width="84" height="79" alt="Golden necklace with aquamarine and golden beads and golden pendants zoomed in">
+        </picture>
+        <div class="added__item-name-price">
           <h3>Gold Necklace</h3>
           <p>$ 115</p>
         </div>
-        <div>
-          <button type="button"></button>
-          <p>1</p>
-          <button type="button"></button>
+        <div class="added__item-quantity">
+          <button class="added__item-quantity-button added__item-quantity-button--add"><span class="visually-hidden">Increase quantity</span></button>
+          <p class="">1</p>
+          <button class="added__item-quantity-button added__item-quantity-button--remove"><span class="visually-hidden">Reduce quantity</span></button>
         </div>
-      </div>
-      <div>
+      </section>
+      <section class="added__cart-info">
         <p>You have 1 item in the cart</p>
-        <b>Cart subtotal: $ 115</b>
-      </div>
-      <a href="catalog.html">Continue shopping</a>
-      <a href="#">Checkout</a>
+        <b>Cart subtotal: $115</b>
+      </section>
+      <section class="added__buttons">
+        <a href="catalog.html" class="button">Continue shopping</a>
+        <a href="#" class="button button--inverted">Checkout</a>
+      </section>
     </article>
   </body>
 </html>

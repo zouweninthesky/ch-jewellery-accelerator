@@ -1,0 +1,231 @@
+.login {
+  display: none;
+
+  top: 50%;
+  transform: translate(-50%, -50.1%);
+
+  width: 430px;
+  min-height: 586px;
+
+  background-color: $color-bg-tertiary;
+
+  box-shadow: 0 5px 32px $color-box-shadow-login;
+}
+
+.login--page {
+  display: block;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -54%);
+}
+
+.login > button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+.login h2 {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.login__input {
+  position: relative;
+
+  min-height: 65px;
+
+  padding: 0 40px;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 37px;
+    left: 45px;
+
+    height: 1px;
+    width: 340px;
+
+    background-color: $color-font-primary;
+  }
+}
+
+.login__input input {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 21px;
+
+  width: 100%;
+  min-height: 39px;
+
+  padding: 0;
+  padding-left: 5px;
+
+  background-color: transparent;
+  border: 0;
+
+  &:hover {
+    outline: none;
+    background-color: fade-out($color-bg-primary, 0.5);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    background-color: transparent;
+  }
+}
+
+.login__input a {
+  text-align: right;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $color-font-secondary;
+
+  display: block;
+
+  margin-top: 4px;
+  margin-right: 6px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-accent;
+  }
+
+  &:active {
+    outline: none;
+    color: $color-font-primary;
+  }
+}
+
+.login .button {
+  width: 340px;
+
+  margin-top: 41px;
+}
+
+.login__sign-up {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 0 102px 0 99px;
+}
+
+.login__sign-up p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-font-secondary;
+}
+
+.login__sign-up a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-font-primary;
+
+  display: block;
+
+  margin-top: 15px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-accent;
+  }
+
+  &:active {
+    outline: none;
+    color: $color-font-secondary;
+  }
+}
+
+
+@media (max-width: $tablet-only-width) {
+  .login {
+    width: 442px;
+  }
+
+  .login > button {
+    top: 19px;
+    right: 19px;
+  }
+
+  .login img {
+    width: 442px;
+    height: 138px;
+
+    object-fit: cover;
+  }
+
+  .login__input {
+    padding: 0 45px;
+
+    &::after {
+      left: 50px;
+    }
+  }
+
+  .login__sign-up {
+    margin-top: 1px;
+    padding: 0 109px;
+  }
+}
+
+@media (max-width: $mobile-only-width) {
+  .login {
+    width: 270px;
+    min-height: 470px;
+  }
+
+  .login > button {
+    top: 12px;
+    right: 13px;
+  }
+
+  .login img {
+    width: 270px;
+    height: 84px;
+  }
+
+  .login h2 {
+    font-size: 24px;
+    line-height: 31px;
+
+    margin-top: 36px;
+    margin-bottom: 19px;
+  }
+
+  .login__input {
+    min-height: 60px;
+
+    padding: 0 10px;
+
+    &::after {
+      width: 240px;
+
+      left: 15px;
+    }
+  }
+
+  .login .button {
+    width: 240px;
+
+    margin-top: 35px;
+  }
+
+  .login__sign-up {
+    padding: 0 22px;
+  }
+}

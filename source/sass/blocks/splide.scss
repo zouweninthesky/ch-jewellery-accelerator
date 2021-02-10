@@ -49,10 +49,32 @@
 
   background-color: transparent;
   border: 0;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-accent;
+  }
+
+  &:active {
+    outline: none;
+    color: $color-font-secondary;
+  }
 }
 
 .splide__pagination button.is-active {
   color: $color-font-primary;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-accent;
+  }
+
+  &:active {
+    outline: none;
+    color: $color-font-secondary;
+  }
 }
 
 .splide,
@@ -66,7 +88,29 @@
   border: 0;
 
   position: absolute;
-  top: -90px;
+  top: -107px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    stroke: $color-font-primary;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &:active svg {
+    stroke: $color-font-primary;
+  }
+}
+
+.splide--product-card .splide__arrow {
+  top: -107px;
 }
 
 .splide__arrow--prev {
@@ -147,6 +191,10 @@
   }
 
   .splide__arrow {
+    top: -98px;
+  }
+
+  .splide--product-card .splide__arrow {
     top: -98px;
   }
 

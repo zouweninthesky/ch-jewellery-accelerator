@@ -1,7 +1,13 @@
 .intro {
   position: relative;
 
+  background-color: $color-bg-intro;
+
   filter: drop-shadow(0 5px 4px fade-out($color-bg-secondary, 0.75%));
+}
+
+.intro img {
+  width: 100%;
 }
 
 .intro h2 {
@@ -63,6 +69,10 @@
     margin-left: -9px;
   }
 
+  .intro--catalog h2 {
+    margin-left: 0;
+  }
+
   .intro img {
     height: 463px;
     object-fit: cover;
@@ -74,7 +84,9 @@
   }
 
   .intro--catalog p {
-    width: 600px;
+    min-width: 600px;
+
+    margin-left: -1px;
   }
 }
 
@@ -90,6 +102,9 @@
   }
 
   .intro--catalog h2 {
+    font-size: 34px;
+    line-height: 44px;
+
     width: 248px;
 
     top: 50px;
@@ -107,6 +122,7 @@
   }
 
   .intro--catalog p {
+    font-size: 22px;
     line-height: 26px;
 
     min-width: 248px;

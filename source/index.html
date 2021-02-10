@@ -28,7 +28,7 @@
       <button type="button" id="toggle-button"><span class="visually-hidden">Toggle menu</span></button>
       <div class="main-header__container">
         <div class="main-header__search">
-          <form action="">
+          <form action="#" method="get">
             <svg width="14" height="14">
               <use xlink:href="#icon-search"></use>
             </svg>
@@ -47,45 +47,46 @@
           </a>
         </div>
         <div class="main-header__login">
-          <button type="button" class="">Login</button>
+          <a href="login.html" id="login-button">Login</a>
         </div>
         <div class="main-header__cart">
           <a href="#">
+            <span>Cart</span>
             <svg width="20" height="18">
               <use xlink:href="#icon-cart"></use>
             </svg>
-            <span>Cart</span>
+            <span class="visually-hidden">Cart</span>
           </a>
           <span>0</span>
         </div>
         <nav class="main-header__nav main-nav">
-          <ul class="">
-            <li class="">
+          <ul>
+            <li>
               <a href="#">What’s new</a>
             </li>
-            <li class="">
+            <li>
               <a href="#">Chokers</a>
             </li>
-            <li class="">
+            <li>
               <a href="#">Necklaces</a>
             </li>
-            <li class="">
+            <li>
               <a href="#">Rings</a>
             </li>
-            <li class="">
+            <li>
               <a href="#">Earrings</a>
             </li>
           </ul>
         </nav>
         <nav class="main-header__nav main-header__nav--secondary secondary-nav">
-          <ul class="">
-            <li class="">
+          <ul>
+            <li>
               <a href="#">About CH</a>
             </li>
-            <li class="">
+            <li>
               <a href="#">Stores & Hours</a>
             </li>
-            <li class="">
+            <li>
               <a href="#">Contact Us</a>
             </li>
           </ul>
@@ -99,7 +100,7 @@
           <source type="image/webp" srcset="img/index-intro@1x.webp 1x, img/index-intro@2x.webp 2x">
 
           <!-- 1x: 1366px, 2x: 2732px -->
-          <img src="img/index-intro@1x.jpg" srcset="img/index-intro@2x.jpg 2x" width="1366" height="463" alt="">
+          <img src="img/index-intro@1x.jpg" srcset="img/index-intro@2x.jpg 2x" width="1366" height="463" alt="Female neckline with golden jewellery and hands with rings">
         </picture>
         <h2>Perfection</h2>
         <p>made to be yours</p>
@@ -113,195 +114,215 @@
           <div class="splide__arrows">
             <button class="splide__arrow splide__arrow--prev">
               <svg width="30" height="11">
-                <use xlink:href="#icon-arrow-left">
+                <use xlink:href="#icon-arrow-left"></use>
               </svg>
               <svg width="40" height="15">
-                <use xlink:href="#icon-arrow-left-tablet">
+                <use xlink:href="#icon-arrow-left-tablet"></use>
               </svg>
             </button>
             <button class="splide__arrow splide__arrow--next">
               <svg width="30" height="11">
-                <use xlink:href="#icon-arrow-right">
+                <use xlink:href="#icon-arrow-right"></use>
               </svg>
               <svg width="40" height="15">
-                <use xlink:href="#icon-arrow-right-tablet">
+                <use xlink:href="#icon-arrow-right-tablet"></use>
               </svg>
             </button>
           </div>
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Necklace with amethyst</h3>
-                    <p>$ 145</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="284" alt="A silver necklace with amethyst crystal">
+                    </picture>
+                    <figcaption>
+                      <h3>Necklace with amethyst</h3>
+                      <p>$ 145</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-13@1x.webp 1x, img/item-13@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-13@1x.webp 1x, img/item-13@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-13@1x.jpg" srcset="img/item-13@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Layered сhoker</h3>
-                    <p>$ 115</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-13@1x.jpg" srcset="img/item-13@2x.jpg 2x" width="270" height="284" alt="Layered black choker with triangle pendant">
+                    </picture>
+                    <figcaption>
+                      <h3>Layered сhoker</h3>
+                      <p>$ 115</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-14@1x.webp 1x, img/item-14@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-14@1x.webp 1x, img/item-14@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-14@1x.jpg" srcset="img/item-14@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Gold chain</h3>
-                    <p>$ 215</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-14@1x.jpg" srcset="img/item-14@2x.jpg 2x" width="270" height="284" alt="Golden triple chain with two pendants">
+                    </picture>
+                    <figcaption>
+                      <h3>Gold chain</h3>
+                      <p>$ 215</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-15@1x.webp 1x, img/item-15@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-15@1x.webp 1x, img/item-15@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-15@1x.jpg" srcset="img/item-15@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Galaxy earrings</h3>
-                    <p>$ 95</p>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-14@1x.webp 1x, img/item-14@2x.webp 2x">
-
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-14@1x.jpg" srcset="img/item-14@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Gold chain</h3>
-                    <p>$ 215</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-15@1x.jpg" srcset="img/item-15@2x.jpg 2x" width="270" height="284" alt="Silver earrings with galaxy-looking marble">
+                    </picture>
+                    <figcaption>
+                      <h3>Galaxy earrings</h3>
+                      <p>$ 95</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-15@1x.webp 1x, img/item-15@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-14@1x.webp 1x, img/item-14@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-15@1x.jpg" srcset="img/item-15@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Galaxy earrings</h3>
-                    <p>$ 95</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-14@1x.jpg" srcset="img/item-14@2x.jpg 2x" width="270" height="284" alt="Golden triple chain with two pendants">
+                    </picture>
+                    <figcaption>
+                      <h3>Gold chain</h3>
+                      <p>$ 215</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-13@1x.webp 1x, img/item-13@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-15@1x.webp 1x, img/item-15@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-13@1x.jpg" srcset="img/item-13@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Layered сhoker</h3>
-                    <p>$ 115</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-15@1x.jpg" srcset="img/item-15@2x.jpg 2x" width="270" height="284" alt="Silver earrings with galaxy-looking marble">
+                    </picture>
+                    <figcaption>
+                      <h3>Galaxy earrings</h3>
+                      <p>$ 95</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-13@1x.webp 1x, img/item-13@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Necklace with amethyst</h3>
-                    <p>$ 145</p>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-13@1x.webp 1x, img/item-13@2x.webp 2x">
-
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-13@1x.jpg" srcset="img/item-13@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Layered сhoker</h3>
-                    <p>$ 115</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-13@1x.jpg" srcset="img/item-13@2x.jpg 2x" width="270" height="284" alt="Layered black choker with triangle pendant">
+                    </picture>
+                    <figcaption>
+                      <h3>Layered сhoker</h3>
+                      <p>$ 115</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Necklace with amethyst</h3>
-                    <p>$ 145</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="284" alt="A silver necklace with amethyst crystal">
+                    </picture>
+                    <figcaption>
+                      <h3>Necklace with amethyst</h3>
+                      <p>$ 145</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-15@1x.webp 1x, img/item-15@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-13@1x.webp 1x, img/item-13@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-15@1x.jpg" srcset="img/item-15@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Galaxy earrings</h3>
-                    <p>$ 95</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-13@1x.jpg" srcset="img/item-13@2x.jpg 2x" width="270" height="284" alt="Layered black choker with triangle pendant">
+                    </picture>
+                    <figcaption>
+                      <h3>Layered сhoker</h3>
+                      <p>$ 115</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
               <li class="splide__slide">
-                <figure>
-                  <picture>
-                    <source type="image/webp" srcset="img/item-14@1x.webp 1x, img/item-14@2x.webp 2x">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-8@1x.webp 1x, img/item-8@2x.webp 2x">
 
-                    <!-- 1x: 270px, 2x: 540px -->
-                    <img src="img/item-14@1x.jpg" srcset="img/item-14@2x.jpg 2x" width="270" height="284" alt="">
-                  </picture>
-                  <figcaption>
-                    <h3>Gold chain</h3>
-                    <p>$ 215</p>
-                  </figcaption>
-                </figure>
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-8@1x.jpg" srcset="img/item-8@2x.jpg 2x" width="270" height="284" alt="A silver necklace with amethyst crystal">
+                    </picture>
+                    <figcaption>
+                      <h3>Necklace with amethyst</h3>
+                      <p>$ 145</p>
+                    </figcaption>
+                  </figure>
+                </a>
               </li>
+              <li class="splide__slide">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-15@1x.webp 1x, img/item-15@2x.webp 2x">
 
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-15@1x.jpg" srcset="img/item-15@2x.jpg 2x" width="270" height="284" alt="Silver earrings with galaxy-looking marble">
+                    </picture>
+                    <figcaption>
+                      <h3>Galaxy earrings</h3>
+                      <p>$ 95</p>
+                    </figcaption>
+                  </figure>
+                </a>
+              </li>
+              <li class="splide__slide">
+                <a href="product-card.html">
+                  <figure>
+                    <picture>
+                      <source type="image/webp" srcset="img/item-14@1x.webp 1x, img/item-14@2x.webp 2x">
 
+                      <!-- 1x: 270px, 2x: 540px -->
+                      <img src="img/item-14@1x.jpg" srcset="img/item-14@2x.jpg 2x" width="270" height="284" alt="Golden triple chain with two pendants">
+                    </picture>
+                    <figcaption>
+                      <h3>Gold chain</h3>
+                      <p>$ 215</p>
+                    </figcaption>
+                  </figure>
+                </a>
+              </li>
             </ul>
             <div class="splide__alternative-pagination">
               <p><span id="current-page"></span><span>of</span><span id="total-pages"></span></p>
@@ -312,79 +333,77 @@
       </section>
       <section class="blog container">
         <h2>Blog</h2>
-        <a href="">Read All</a>
+        <a href="#">Read All</a>
         <div class="blog__wrapper">
-          <ul class="">
+          <ul>
             <li >
               <div class="blog__item">
               <picture>
                 <source type="image/webp" srcset="img/blog-care@1x.webp 1x, img/blog-care@2x.webp 2x">
 
                 <!-- 1x: 285px, 2x: 570px -->
-                <img src="img/blog-care@1x.jpg" srcset="img/blog-care@2x.jpg 2x" width="285" height="300" alt="">
+                <img src="img/blog-care@1x.jpg" srcset="img/blog-care@2x.jpg 2x" width="285" height="300" alt="Two face-shaped glass earrings, other jewellery and sunglasses on a white table">
               </picture>
-              <div class="">
+              <div>
                 <p>September 30, 2019</p>
                 <h3>How to care for your jewellery</h3>
-                <a href="">Read Article</a>
+                <a href="#">Read Article</a>
               </div>
               </div>
             </li>
             <li>
               <div class="blog__item">
-              <div class="">
+              <div>
                 <p>September 23, 2019</p>
                 <h3>Power of crystals</h3>
-                <a href="">Read Article</a>
+                <a href="#">Read Article</a>
               </div>
               <picture>
                 <source type="image/webp" srcset="img/blog-power@1x.webp 1x, img/blog-power@2x.webp 2x">
 
                 <!-- 1x: 285px, 2x: 570px -->
-                <img src="img/blog-power@1x.jpg" srcset="img/blog-power@2x.jpg 2x" width="285" height="300" alt="">
+                <img src="img/blog-power@1x.jpg" srcset="img/blog-power@2x.jpg 2x" width="285" height="300" alt="Two earrings of gold and amber">
               </picture>
-            </div>
-            </li>
-            <li>
-              <div class="blog__item blog__item--big">
-              <picture>
-                <source type="image/webp" srcset="img/blog-trends@1x.webp 1x, img/blog-trends@2x.webp 2x">
-
-                  <!-- 1x: 570px, 2x: 1140px -->
-                <img src="img/blog-trends@1x.jpg" srcset="img/blog-trends@2x.jpg 2x" width="570" height="630" alt="">
-              </picture>
-              <div class="">
-                <p>September 16, 2019</p>
-                <h3>AW 19 trends</h3>
-                <a href="">Read Article</a>
-              </div>
             </div>
             </li>
           </ul>
+          <div class="blog__item blog__item--big">
+            <picture>
+              <source type="image/webp" srcset="img/blog-trends@1x.webp 1x, img/blog-trends@2x.webp 2x">
+
+                <!-- 1x: 570px, 2x: 1140px -->
+              <img src="img/blog-trends@1x.jpg" srcset="img/blog-trends@2x.jpg 2x" width="570" height="630" alt="Lower part of female face and her hands with rings and bracelettes">
+            </picture>
+            <div>
+              <p>September 16, 2019</p>
+              <h3>AW 19 trends</h3>
+              <a href="#">Read Article</a>
+            </div>
+          </div>
         </div>
       </section>
       <section class="faq container">
         <h2>Frequently asked questions</h2>
         <ul id="faq-accordeon">
-          <li class="faq__item faq__item--hidden">
+          <li class="faq__item">
             <h3>
               <button type="button">What materials are the jewellery made of?</button>
             </h3>
             <p>Our jewellerry is made of solid gold, silver or leather.  Also, some jewellery contains precious and semiprecious stones and crystals.</p>
           </li>
-          <li class="faq__item faq__item--hidden">
+          <li class="faq__item">
             <h3>
               <button type="button">Which countries do you deliver to?</button>
             </h3>
             <p>Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.</p>
           </li>
-          <li class="faq__item faq__item--hidden">
+          <li class="faq__item">
             <h3>
               <button type="button">What are the payment methods?</button>
             </h3>
             <p>Our jewellerry is made of solid gold, silver or leather.  Also, some jewellery contains precious and semiprecious stones and crystals.</p>
           </li>
-          <li class="faq__item faq__item--hidden">
+          <li class="faq__item">
             <h3>
               <button type="button">Can I return the jewellery if it didn’t fit me?</button>
             </h3>
@@ -394,87 +413,86 @@
       </section>
       <section class="our-instagram container">
         <h2><span>@</span>Chjewellery</h2>
-        <a href="">Follow Us</a>
+        <a href="#">Follow Us</a>
 
         <div class="our-instagram__wrapper">
-          <ul class="one">
+          <ul class="our-instagram__left-group">
             <li>
-            <a href="">
+            <a href="#">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview1@1x.webp 1x, img/inst-preview1@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview1@1x.jpg" srcset="img/inst-preview1@2x.jpg 2x" width="230" height="230" alt="">
+                <img src="img/inst-preview1@1x.jpg" srcset="img/inst-preview1@2x.jpg 2x" width="230" height="230" alt="Square golden earrings with marble pins">
               </picture>
             </a>
             </li>
             <li>
-            <a href="">
+            <a href="#">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview2@1x.webp 1x, img/inst-preview2@2x.webp 2x">
 
-                <!-- 1x: 400px, 2x: 800px -->
-                <img src="img/inst-preview2@1x.jpg" srcset="img/inst-preview2@2x.jpg 2x" width="230" height="154" alt="">
+                <!-- 1x: 230px, 2x: 460px -->
+                <img src="img/inst-preview2@1x.jpg" srcset="img/inst-preview2@2x.jpg 2x" width="230" height="154" alt="Several earrings with crystals">
               </picture>
             </a>
             </li>
           </ul>
 
-          <div class="two">
-            <a href="">
+          <div class="our-instagram__center">
+            <a href="#">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview3@1x.webp 1x, img/inst-preview3@2x.webp 2x">
 
-                <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview3@1x.jpg" srcset="img/inst-preview3@2x.jpg 2x" width="400" height="400" alt="">
+                <!-- 1x: 400px, 2x: 800px -->
+                <img src="img/inst-preview3@1x.jpg" srcset="img/inst-preview3@2x.jpg 2x" width="400" height="400" alt="A young woman, wearing two stylish golden earrings">
               </picture>
             </a>
           </div>
 
-          <ul class="three">
+          <ul class="our-instagram__right-group">
             <li>
-            <a href="">
+            <a href="#">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview4@1x.webp 1x, img/inst-preview4@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview4@1x.jpg" srcset="img/inst-preview4@2x.jpg 2x" width="232" height="193" alt="">
+                <img src="img/inst-preview4@1x.jpg" srcset="img/inst-preview4@2x.jpg 2x" width="232" height="193" alt="A woman in a grey sweater weaing two golden bracelettes and a golden ring">
               </picture>
             </a>
             </li>
             <li>
-            <a href="">
+            <a href="#">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview5@1x.webp 1x, img/inst-preview5@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview5@1x.jpg" srcset="img/inst-preview5@2x.jpg 2x" width="218" height="191" alt="">
+                <img src="img/inst-preview5@1x.jpg" srcset="img/inst-preview5@2x.jpg 2x" width="218" height="191" alt="Golden necklace, golden bracelette and amber earrings">
               </picture>
             </a>
             </li>
             <li>
-            <a href="">
+            <a href="#">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview6@1x.webp 1x, img/inst-preview6@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview6@1x.jpg" srcset="img/inst-preview6@2x.jpg 2x" width="218" height="218" alt="">
+                <img src="img/inst-preview6@1x.jpg" srcset="img/inst-preview6@2x.jpg 2x" width="218" height="218" alt="Two circle-shaped golden earrings">
               </picture>
             </a>
             </li>
             <li>
-            <a href="">
+            <a href="#">
               <picture>
                 <source type="image/webp" srcset="img/inst-preview7@1x.webp 1x, img/inst-preview7@2x.webp 2x">
 
                 <!-- 1x: 230px, 2x: 460px -->
-                <img src="img/inst-preview7@1x.jpg" srcset="img/inst-preview7@2x.jpg 2x" width="232" height="166" alt="">
+                <img src="img/inst-preview7@1x.jpg" srcset="img/inst-preview7@2x.jpg 2x" width="232" height="166" alt="Female hands with a triangle-shaped ring, a silver ring and several more jewelles">
               </picture>
             </a>
             </li>
           </ul>
         </div>
-
       </section>
     </main>
     <footer class="main-footer">
@@ -483,16 +501,17 @@
           <h2>The good stuff in your inbox</h2>
           <p>News and updates from CH. No spam, we promise.</p>
           <div class="main-footer__input">
-            <input type="text" placeholder="Your E-mail">
-            <label for=""></label>
+            <input type="text" placeholder="Your E-mail" id="footer-email" name="email">
+            <label for="footer-email">Enter your E-mail</label>
             <button>Sign Up
               <svg width="30" height="11">
-                <use xlink:href="#icon-arrow-right">
+                <use xlink:href="#icon-arrow-right"></use>
               </svg>
             </button>
           </div>
         </section>
         <section class="main-footer__nav main-footer__nav--help">
+          <h2 class="visually-hidden">Navigate the website</h2>
           <ul>
             <li>
               <a href="#">Ordering & Payment</a>
@@ -523,15 +542,16 @@
           </ul>
         </section>
         <section class="main-footer__nav main-footer__nav--socials">
+          <h2 class="visually-hidden">Visit our pages on other websites</h2>
           <ul>
             <li>
               <a href="#">
                 <span>Facebook</span>
                 <svg width="12" height="15">
-                  <use xlink:href="#icon-facebook">
+                  <use xlink:href="#icon-facebook"></use>
                 </svg>
                 <svg width="16" height="21">
-                  <use xlink:href="#icon-facebook">
+                  <use xlink:href="#icon-facebook"></use>
                 </svg>
               </a>
             </li>
@@ -539,10 +559,10 @@
               <a href="#">
                 <span>Instagram</span>
                 <svg width="15" height="15">
-                  <use xlink:href="#icon-instagram">
+                  <use xlink:href="#icon-instagram"></use>
                 </svg>
                 <svg width="20" height="21">
-                  <use xlink:href="#icon-instagram">
+                  <use xlink:href="#icon-instagram"></use>
                 </svg>
               </a>
             </li>
@@ -550,10 +570,10 @@
               <a href="#">
                 <span>Pinterest</span>
                 <svg width="15" height="15">
-                  <use xlink:href="#icon-pinterest">
+                  <use xlink:href="#icon-pinterest"></use>
                 </svg>
                 <svg width="20" height="21">
-                  <use xlink:href="#icon-pinterest">
+                  <use xlink:href="#icon-pinterest"></use>
                 </svg>
               </a>
             </li>
@@ -561,10 +581,10 @@
               <a href="#">
                 <span>Twitter</span>
                 <svg width="15" height="13">
-                  <use xlink:href="#icon-twitter">
+                  <use xlink:href="#icon-twitter"></use>
                 </svg>
                 <svg width="20" height="20">
-                  <use xlink:href="#icon-twitter">
+                  <use xlink:href="#icon-twitter"></use>
                 </svg>
               </a>
             </li>
@@ -572,128 +592,34 @@
         </section>
       </div>
     </footer>
-    <div class="popup">
+    <div class="overlay overlay--closed" id="overlay"></div>
+    <div class="login" id="login">
+      <button type="button" class="close-button close-button--login"><span class="visually-hidden">Close popup</span></button>
+      <picture>
+        <source type="image/webp" srcset="img/popup-img@1x.webp 1x, img/popup-img@2x.webp 2x">
+
+        <!-- 1x: 430px, 2x: 860px -->
+        <img src="img/popup-img@1x.jpg" srcset="img/popup-img@2x.jpg 2x" width="430" height="138" alt="Grape-shaped golden earrings with marble beads">
+      </picture>
+      <h2>Log In</h2>
+      <form action="#" method="post">
+        <div class="login__input">
+          <input type="text" placeholder="Your E-mail" name="name" id="login-name" required>
+          <label for="login-name" class="visually-hidden">Enter your e-mail</label>
+        </div>
+        <div class="login__input">
+          <input type="password" placeholder="Password" name="password" id="login-password">
+          <label for="login-password" class="visually-hidden">Enter your password</label>
+          <a href="#">Forgot your password?</a>
+        </div>
+        <button type="submit" class="button button--inverted">Log In</button>
+      </form>
+      <div class="login__sign-up">
+        <p>Don't have an account?</p>
+        <a href="#">Sign up</a>
+      </div>
     </div>
     <script src="js/vendor.js"></script>
-    <!-- <script src="js/splide.js"></script> -->
-    <!-- <script src="js/nouislider.js"></script> -->
     <script src="js/main.js"></script>
   </body>
 </html>
-<!-- <ul class="">
-          <li class="">
-            <a href="">
-              <picture>
-                <source type="image/webp" srcset="img/inst-preview1@1x.webp 1x, img/inst-preview1@2x.webp 2x"> -->
-
-              <!--1x: 230px, 2x: 460px -->
-                <!-- <img src="img/inst-preview1@1x.jpg" srcset="img/inst-preview1@2x.jpg 2x" width="230" height="230" alt="">
-              </picture>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <picture>
-                <source type="image/webp" srcset="img/inst-preview2@1x.webp 1x, img/inst-preview2@2x.webp 2x"> -->
-
-                <!-- 1x: 400px, 2x: 800px -->
-                <!-- <img src="img/inst-preview2@1x.jpg" srcset="img/inst-preview2@2x.jpg 2x" width="230" height="154" alt="">
-              </picture>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <picture>
-                <source type="image/webp" srcset="img/inst-preview3@1x.webp 1x, img/inst-preview3@2x.webp 2x"> -->
-
-                <!-- 1x: 230px, 2x: 460px -->
-                <!-- <img src="img/inst-preview3@1x.jpg" srcset="img/inst-preview3@2x.jpg 2x" width="400" height="400" alt="">
-              </picture>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <picture>
-                <source type="image/webp" srcset="img/inst-preview4@1x.webp 1x, img/inst-preview4@2x.webp 2x"> -->
-
-                <!-- 1x: 230px, 2x: 460px
-                <img src="img/inst-preview4@1x.jpg" srcset="img/inst-preview4@2x.jpg 2x" width="232" height="193" alt="">
-              </picture>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <picture>
-                <source type="image/webp" srcset="img/inst-preview5@1x.webp 1x, img/inst-preview5@2x.webp 2x"> -->
-
-                <!-- 1x: 230px, 2x: 460px -->
-                <!-- <img src="img/inst-preview5@1x.jpg" srcset="img/inst-preview5@2x.jpg 2x" width="218" height="191" alt="">
-              </picture>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <picture>
-                <source type="image/webp" srcset="img/inst-preview6@1x.webp 1x, img/inst-preview6@2x.webp 2x"> -->
-
-                <!-- 1x: 230px, 2x: 460px -->
-                <!--  <img src="img/inst-preview6@1x.jpg" srcset="img/inst-preview6@2x.jpg 2x" width="218" height="218" alt="">
-              </picture>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <picture>
-                <source type="image/webp" srcset="img/inst-preview7@1x.webp 1x, img/inst-preview7@2x.webp 2x"> -->
-
-                <!-- 1x: 230px, 2x: 460px -->
-                <!-- <img src="img/inst-preview7@1x.jpg" srcset="img/inst-preview7@2x.jpg 2x" width="232" height="166" alt="">
-              </picture>
-            </a>
-          </li>
-        </ul> -->
-
-
-        <!-- <div class="blog__wrapper">
-          <ul class="">
-            <li class="blog__item">
-              <picture>
-                <source type="image/webp" srcset="img/blog-care@1x.webp 1x, img/blog-care@2x.webp 2x">-->
-
-                <!-- 1x: 285px, 2x: 570px -->
-                <!-- <img src="img/blog-care@1x.jpg" srcset="img/blog-care@2x.jpg 2x" width="285" height="300" alt="">
-              </picture>
-              <div class="">
-                <p>September 30, 2019</p>
-                <h3>How to care for your jewellery</h3>
-                <a href="">Read Article</a>
-              </div>
-            </li>
-            <li class="blog__item">
-              <div class="">
-                <p>September 23, 2019</p>
-                <h3>Power of crystals</h3>
-                <a href="">Read Article</a>
-              </div>
-              <picture>
-                <source type="image/webp" srcset="img/blog-power@1x.webp 1x, img/blog-power@2x.webp 2x">
- -->
-                <!-- 1x: 285px, 2x: 570px -->
-                <!-- <img src="img/blog-power@1x.jpg" srcset="img/blog-power@2x.jpg 2x" width="285" height="300" alt="">
-              </picture>
-            </li>
-          </ul>
-          <div class="blog__item blog__item--big">
-            <picture>
-              <source type="image/webp" srcset="img/blog-trends@1x.webp 1x, img/blog-trends@2x.webp 2x">
- -->
-                <!-- 1x: 570px, 2x: 1140px -->
-  <!--              <img src="img/blog-trends@1x.jpg" srcset="img/blog-trends@2x.jpg 2x" width="570" height="630" alt="">
-            </picture>
-            <div class="">
-              <p>September 16, 2019</p>
-              <h3>AW 19 trends</h3>
-              <a href="">Read Article</a>
-            </div>
-          </div>
-        </div> -->

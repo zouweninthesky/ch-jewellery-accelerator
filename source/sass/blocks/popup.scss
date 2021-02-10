@@ -1,0 +1,20 @@
+.popup {
+  display: block;
+
+  position: fixed;
+  left: 50%;
+
+  z-index: 5;
+}
+
+@media (max-width: $tablet-only-width) {
+  .popup {
+    transform: translate(-50%, -46%);
+  }
+}
+
+@media (max-width: $mobile-only-width) {
+  .popup {
+    transform: translate(-50%, -66.1%);
+  }
+}

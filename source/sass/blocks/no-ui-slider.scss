@@ -83,7 +83,13 @@
     top: 20px;
     left: -10px;
 
-    width: 34px;
+    width: 36px;
+  }
+}
+
+.noUi-handle-upper {
+  &::after {
+    content: "$ 155";
   }
 }
 
