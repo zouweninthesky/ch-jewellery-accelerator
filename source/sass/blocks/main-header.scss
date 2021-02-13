@@ -330,10 +330,21 @@
 
     border-radius: 21px;
 
+    padding-left: 40px;
+
     background-color: fade-out($color-bg-primary, 0.85);
 
     &::placeholder {
       opacity: 0;
+    }
+
+    &:hover {
+      background-color: fade-out($color-accent, 0.7);
+    }
+
+    &:focus,
+    &:active {
+      background-color: fade-out($color-bg-primary, 0.2);
     }
   }
 

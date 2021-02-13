@@ -20,7 +20,7 @@ gulp.task("css", function () {
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
-    .pipe(postcss([ autoprefixer ({ grid: 'no-autoplace', browsers: ['> 1%'] }) ]))
+    .pipe(postcss([ autoprefixer ({ grid: 'no-autoplace' }) ]))
     .pipe(rename("style.css"))
     .pipe(gulp.dest("build/css"))
     .pipe(csso())
@@ -55,6 +55,14 @@ gulp.task("images", function() {
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
       imagemin.jpegtran({progressive: true}),
+      imagemin.svgo()
+    ]))
+    .pipe(gulp.dest("build/img"));
+});
+
+gulp.task("social", function() {
+  return gulp.src("source/img/**/social-*.svg")
+    .pipe(imagemin([
       imagemin.svgo()
     ]))
     .pipe(gulp.dest("build/img"));
@@ -107,5 +115,5 @@ gulp.task("clean", function () {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "copy", "js", "images", "webp", "css", "sprite", "html"));
+gulp.task("build", gulp.series("clean", "copy", "js", "images", "social", "webp", "css", "sprite", "html"));
 gulp.task("start", gulp.series("build", "server"));
