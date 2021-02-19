@@ -51,6 +51,7 @@
 
   background-color: transparent;
   border: 0;
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -91,6 +92,7 @@
 
   position: absolute;
   top: -107px;
+  cursor: pointer;
 
   &:hover,
   &:focus {

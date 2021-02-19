@@ -187,7 +187,7 @@
         </header>
         <div class="splide splide--product-card item-slider__slider">
           <div class="splide__arrows">
-            <button class="splide__arrow splide__arrow--prev">
+            <button type="button" class="splide__arrow splide__arrow--prev">
               <svg width="30" height="11">
                 <use xlink:href="#icon-arrow-left"></use>
               </svg>
@@ -195,7 +195,7 @@
                 <use xlink:href="#icon-arrow-left-tablet"></use>
               </svg>
             </button>
-            <button class="splide__arrow splide__arrow--next">
+            <button type="button" class="splide__arrow splide__arrow--next">
               <svg width="30" height="11">
                 <use xlink:href="#icon-arrow-right"></use>
               </svg>
@@ -496,9 +496,9 @@
           <p>$ 115</p>
         </div>
         <div class="added__item-quantity">
-          <button class="added__item-quantity-button added__item-quantity-button--add"><span class="visually-hidden">Increase quantity</span></button>
+          <button type="button" class="added__item-quantity-button added__item-quantity-button--add"><span class="visually-hidden">Increase quantity</span></button>
           <p>1</p>
-          <button class="added__item-quantity-button added__item-quantity-button--remove"><span class="visually-hidden">Reduce quantity</span></button>
+          <button type="button" class="added__item-quantity-button added__item-quantity-button--remove"><span class="visually-hidden">Reduce quantity</span></button>
         </div>
       </div>
       <div class="added__cart-info">
@@ -510,7 +510,7 @@
         <a href="#" class="button button--inverted">Checkout</a>
       </div>
     </div>
-    <div class="login" id="login">
+    <div role="dialog" class="login" id="login">
       <button type="button" class="close-button close-button--login"><span class="visually-hidden">Close popup</span></button>
       <picture>
         <source type="image/webp" srcset="img/popup-img@1x.webp 1x, img/popup-img@2x.webp 2x">

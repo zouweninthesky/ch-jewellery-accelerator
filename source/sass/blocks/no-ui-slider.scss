@@ -85,16 +85,23 @@
 
     width: 36px;
   }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $color-font-primary;
+  }
+
+  &:active {
+    background-color: $color-accent;
+    cursor: grabbing;
+  }
 }
 
 .noUi-handle-upper {
   &::after {
     content: "$ 155";
   }
-}
-
-.noUi-handle:active {
-  cursor: grabbing;
 }
 
 .noUi-touch-area {

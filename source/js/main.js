@@ -18,6 +18,9 @@
   var ESCAPE = 'Escape';
   var REGULAR_EXPRESSION = /\S+@\S+\.\S+/;
   var ERROR_MESSAGE = 'Enter correct E-mail';
+  var sliderMobileWidth = '130px';
+  var sliderTabletWidth = '324px';
+  var sliderDesktopWidth = '23.1%';
 
 
   var toggleJSClass = function (target) {
@@ -189,15 +192,15 @@
     if (slider) {
       new Splide(slider, {
         perPage: 4,
-        fixedWidth: '23.1%',
+        fixedWidth: sliderDesktopWidth,
         breakpoints: {
           1024: {
             perPage: 2,
-            fixedWidth: '324px'
+            fixedWidth: sliderTabletWidth
           },
           767: {
             perPage: 2,
-            fixedWidth: '130px'
+            fixedWidth: sliderMobileWidth
           }
         }
       }).mount();

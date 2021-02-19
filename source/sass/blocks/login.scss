@@ -110,8 +110,10 @@
 
 .login .button {
   width: 340px;
+  display: block;
 
-  margin-top: 41px;
+  margin: 41px auto 0;
+  padding-top: 23px;
 }
 
 .login__sign-up {

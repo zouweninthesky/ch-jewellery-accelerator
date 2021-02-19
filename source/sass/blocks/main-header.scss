@@ -90,6 +90,9 @@
 }
 
 .main-header__logo a {
+  cursor: pointer;
+  height: 66px;
+
   &:hover,
   &:focus {
     outline: none;
@@ -109,8 +112,19 @@
   }
 }
 
+.main-header__logo a:not([href]) {
+  cursor: auto;
+
+  &:hover svg,
+  &:focus svg,
+  &:active svg {
+    opacity: 1;
+  }
+}
+
 .main-header__logo svg {
   fill: $color-accent;
+
 }
 
 .main-header__login {
@@ -488,7 +502,6 @@
 
     min-height: auto;
   }
-
 
   .main-header__logo {
     top: 13px;

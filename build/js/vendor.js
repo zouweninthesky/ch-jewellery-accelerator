@@ -1555,11 +1555,11 @@ var Splide = /*#__PURE__*/function () {
     }).on('moved dragged', function () {
 
       var mobilePagination = function () {
-        var pageButtons = slider.querySelector('.splide__pagination').querySelectorAll('button');
-        var current = slider.querySelector('#current-page');
-        var total = slider.querySelector('#total-pages');
+        var pageButtons = document.querySelector('.splide__pagination').querySelectorAll('button');
+        var current = document.querySelector('#current-page');
+        var total = document.querySelector('#total-pages');
 
-        current.textContent = slider.querySelector('.splide__pagination').querySelector('.is-active').textContent;
+        current.textContent = document.querySelector('.splide__pagination').querySelector('.is-active').textContent;
         total.textContent = pageButtons.length;
       }
 

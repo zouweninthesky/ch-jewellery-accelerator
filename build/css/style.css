@@ -672,7 +672,8 @@ a {
   line-height: 21px;
   min-height: 68px;
   border: 1px solid #a87b62;
-  background-color: transparent; }
+  background-color: transparent;
+  cursor: pointer; }
   .button:hover, .button:focus {
     outline: none;
     color: #a87b62; }
@@ -753,7 +754,8 @@ a {
   padding: 0;
   padding-left: 25px;
   border: 0;
-  background-color: transparent; }
+  background-color: transparent;
+  cursor: pointer; }
   .catalog__sub-menu button::before, .catalog__sub-menu button::after {
     content: "";
     position: absolute;
@@ -801,7 +803,8 @@ a {
   font-size: 14px;
   line-height: 18px;
   position: relative;
-  margin-left: 4px; }
+  margin-left: 4px;
+  cursor: pointer; }
   .catalog__sub-menu label::before {
     content: "";
     position: absolute;
@@ -811,6 +814,10 @@ a {
     height: 15px;
     border: 1px solid #a87b62;
     background-color: transparent; }
+  .catalog__sub-menu label:hover, .catalog__sub-menu label:focus {
+    color: #a87b62; }
+  .catalog__sub-menu label:active {
+    opacity: 0.5; }
 
 .catalog__sub-menu input:checked ~ label::before {
   background-color: #a87b62; }
@@ -872,7 +879,8 @@ a {
   line-height: 21px;
   padding: 0;
   border: 0;
-  background-color: transparent; }
+  background-color: transparent;
+  cursor: pointer; }
   .catalog__footer button:hover, .catalog__footer button:focus {
     outline: none;
     color: #a87b62; }
@@ -1128,7 +1136,8 @@ a {
   padding-top: 36px;
   padding-left: 43px;
   border: 0;
-  background-color: transparent; }
+  background-color: transparent;
+  cursor: pointer; }
   .faq__item button::before, .faq__item button::after {
     content: "";
     position: absolute;
@@ -1678,7 +1687,9 @@ a {
 
 .login .button {
   width: 340px;
-  margin-top: 41px; }
+  display: block;
+  margin: 41px auto 0;
+  padding-top: 23px; }
 
 .login__sign-up {
   display: -webkit-box;
@@ -2154,18 +2165,25 @@ a {
           justify-content: center;
   padding-right: 70px; }
 
-.main-header__logo a:hover, .main-header__logo a:focus {
-  outline: none; }
+.main-header__logo a {
+  cursor: pointer;
+  height: 66px; }
+  .main-header__logo a:hover, .main-header__logo a:focus {
+    outline: none; }
+  .main-header__logo a:hover svg,
+  .main-header__logo a:focus svg {
+    opacity: 0.5; }
+  .main-header__logo a:active {
+    outline: none; }
+  .main-header__logo a:active svg {
+    opacity: 0.3; }
 
-.main-header__logo a:hover svg,
-.main-header__logo a:focus svg {
-  opacity: 0.5; }
-
-.main-header__logo a:active {
-  outline: none; }
-
-.main-header__logo a:active svg {
-  opacity: 0.3; }
+.main-header__logo a:not([href]) {
+  cursor: auto; }
+  .main-header__logo a:not([href]):hover svg,
+  .main-header__logo a:not([href]):focus svg,
+  .main-header__logo a:not([href]):active svg {
+    opacity: 1; }
 
 .main-header__logo svg {
   fill: #a87b62; }
@@ -2573,13 +2591,16 @@ a {
     top: 20px;
     left: -10px;
     width: 36px; }
+  .noUi-handle:hover, .noUi-handle:focus {
+    outline: none;
+    background-color: #1d1613; }
+  .noUi-handle:active {
+    background-color: #a87b62;
+    cursor: -webkit-grabbing;
+    cursor: grabbing; }
 
 .noUi-handle-upper::after {
   content: "$ 155"; }
-
-.noUi-handle:active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing; }
 
 .noUi-touch-area {
   height: 100%;
@@ -2984,7 +3005,8 @@ a {
   line-height: 21px;
   color: #9b9997;
   background-color: transparent;
-  border: 0; }
+  border: 0;
+  cursor: pointer; }
   .splide__pagination button:hover, .splide__pagination button:focus {
     outline: none;
     color: #a87b62; }
@@ -3010,7 +3032,8 @@ a {
   background-color: transparent;
   border: 0;
   position: absolute;
-  top: -107px; }
+  top: -107px;
+  cursor: pointer; }
   .splide__arrow:hover, .splide__arrow:focus {
     outline: none; }
   .splide__arrow:hover svg,

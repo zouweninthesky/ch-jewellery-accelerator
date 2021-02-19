@@ -81,6 +81,7 @@
 
   border: 0;
   background-color: transparent;
+  cursor: pointer;
 
   &::before,
   &::after {
@@ -151,6 +152,7 @@
   position: relative;
 
   margin-left: 4px;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -165,6 +167,15 @@
     border: 1px solid $color-accent;
 
     background-color: transparent;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }
 
@@ -226,6 +237,7 @@
 
   border: 0;
   background-color: transparent;
+  cursor: pointer;
 
   &:hover,
   &:focus {
