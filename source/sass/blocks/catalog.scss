@@ -273,6 +273,12 @@
 }
 
 @media (max-width: $tablet-only-width) {
+  .catalog {
+    width: auto;
+
+    padding: 0 40px;
+  }
+
   .catalog__main {
     flex-direction: column;
 
@@ -282,7 +288,7 @@
   .catalog__menu {
     width: 100%;
 
-    padding-left: 0;
+    padding: 0 5px;
   }
 
   .catalog__menu .button {
@@ -398,6 +404,10 @@
 }
 
 @media (max-width: $mobile-only-width) {
+  .catalog {
+    padding: 0 10px;
+  }
+
   .catalog__main {
     padding-top: 40px;
   }

@@ -130,6 +130,7 @@
 @media (max-width: $tablet-only-width) {
   .item {
     max-width: none;
+    width: auto;
 
     padding: 20px 45px 0;
   }
@@ -160,7 +161,8 @@
   }
 
   .item__info {
-    width: 319px;
+    width: auto;
+    flex-grow: 1;
 
     margin-left: 40px;
   }

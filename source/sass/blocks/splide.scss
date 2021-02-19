@@ -187,6 +187,7 @@
 
 @media (max-width: $tablet-only-width) {
   .splide {
+    margin: 0 auto;
     padding: 0 25px;
   }
 
@@ -219,6 +220,9 @@
   }
 
   .splide__track {
+    width: 678px;
+
+    margin: 0 auto;
     padding: 0;
   }
 
@@ -252,6 +256,10 @@
 
   .splide__arrow {
     display: none;
+  }
+
+  .splide__track {
+    width: 290px;
   }
 
   .splide__slide h3 {

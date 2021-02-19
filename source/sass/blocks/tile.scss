@@ -34,6 +34,8 @@
 @media (max-width: $tablet-only-width) {
   .tile {
     width: auto;
+
+    margin: 0 5px;
   }
 
   .tile figure {
@@ -67,28 +69,6 @@
 @media (max-width: $mobile-only-width) {
   .tile {
     width: 130px;
-  }
-
-  .tile figure {
-    /*margin: 0;*/
-  }
-
-  .tile h3 {
-    /*font-weight: 500;*/
-    /*font-size: 16px;*/
-    /*line-height: 21px;*/
-
-    margin-top: 16px;
-    /*margin-bottom: 0;*/
-  }
-
-  .tile p {
-    /*font-weight: 700;*/
-    /*font-size: 14px;*/
-    /*line-height: 18px;*/
-
-    /*margin-top: 6px;*/
-    /*padding-left: 2px;*/
   }
 
   .tile img {

@@ -124,7 +124,6 @@
 
 .main-header__logo svg {
   fill: $color-accent;
-
 }
 
 .main-header__login {
@@ -299,8 +298,6 @@
   .main-header--closed .main-header__container {
     display: block;
 
-    /*position: static;*/
-
     min-height: auto;
 
     padding-bottom: 60px;
@@ -379,7 +376,7 @@
 
   .main-header--closed .main-header__logo {
     top: -96px;
-    transform: translateX(-50%);
+    transform: translateX(-49.9%);
   }
 
   .main-header__logo svg {
