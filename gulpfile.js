@@ -36,7 +36,8 @@ gulp.task("server", function () {
     notify: false,
     open: true,
     cors: true,
-    ui: false
+    ui: false,
+    httpModule: 'http2'
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
@@ -54,7 +55,7 @@ gulp.task("images", function() {
   return gulp.src("source/img/**/*.{png,jpg}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive: true}),
+      imagemin.mozjpeg({quality: 75, progressive: true}),
       imagemin.svgo()
     ]))
     .pipe(gulp.dest("build/img"));
@@ -70,7 +71,7 @@ gulp.task("social", function() {
 
 gulp.task("webp", function () {
   return gulp.src("build/img/**/*.{png,jpg}")
-    .pipe(webp({quality: 80}))
+    .pipe(webp({quality: 60}))
     .pipe(gulp.dest("build/img"));
 });
 

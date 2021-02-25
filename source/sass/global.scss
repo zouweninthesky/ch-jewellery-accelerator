@@ -66,6 +66,10 @@ a {
     width: $tablet-width;
     padding: 0 45px;
   }
+
+  .scroll-disabled {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: $mobile-only-width) {

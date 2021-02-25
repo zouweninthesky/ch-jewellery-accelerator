@@ -23,8 +23,8 @@
 
 .login > button {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 17px;
+  right: 17px;
 }
 
 .login h2 {
@@ -91,10 +91,11 @@
   line-height: 18px;
   color: $color-font-secondary;
 
-  display: block;
+  display: inline-block;
 
   margin-top: 4px;
   margin-right: 6px;
+  margin-left: 206px;
 
   &:hover,
   &:focus {
@@ -160,8 +161,8 @@
   }
 
   .login > button {
-    top: 19px;
-    right: 19px;
+    top: 18px;
+    right: 18px;
   }
 
   .login img {
@@ -219,6 +220,10 @@
 
       left: 15px;
     }
+  }
+
+  .login__input a {
+    margin-left: 106px;
   }
 
   .login .button {

@@ -2,9 +2,10 @@
 
 (function () {
   var mainHeader = document.querySelector('.main-header');
+  var footerForm = document.querySelector('#footer-form');
   var loginButton = document.querySelector('#login-button');
   var loginPopup = document.querySelector('#login');
-  var loginInputName = loginPopup.querySelector('#login-name');
+  var loginInputEmail = loginPopup.querySelector('#login-email');
   var overlay = document.querySelector('#overlay');
   var faqAccordeon = document.querySelector('#faq-accordeon');
   var filterPopup = document.querySelector('#filter');
@@ -17,11 +18,11 @@
   var body = document.querySelector('body');
   var ESCAPE = 'Escape';
   var REGULAR_EXPRESSION = /\S+@\S+\.\S+/;
-  var ERROR_MESSAGE = 'Enter correct E-mail';
+  var ERROR_MESSAGE_EMAIL = 'Enter correct E-mail';
+  var ERROR_MESSAGE_PASSWORD = 'Enter password';
   var sliderMobileWidth = '130px';
   var sliderTabletWidth = '324px';
   var sliderDesktopWidth = '23.1%';
-
 
   var toggleJSClass = function (target) {
     target.classList.toggle(target.className.split(' ')[0] + '--js-on');
@@ -55,14 +56,50 @@
     }
   };
 
+  var onTransition = function () {
+    var popup = document.querySelector('.popup');
+    if (popup) {
+      var button = popup.querySelector('button');
+      if (button) {
+        button.focus();
+      }
+    }
+  }
 
   var onFormLinkClick = function (form) {
     if (form) {
-      var submitButton = form.querySelector('.button');
-      submitButton.addEventListener('click', function (evt) {
-        evt.preventDefault();
-        form.submit();
-      });
+      var submitButton = form.querySelector('#submit');
+      if (submitButton) {
+        submitButton.addEventListener('click', function (evt) {
+          evt.preventDefault();
+          if(form.requestSubmit) {
+            form.checkValidity();
+            form.requestSubmit();
+          } else {
+            form.submit();
+          }
+        });
+      }
+    }
+  };
+
+  var checkEmail = function (input) {
+    if (input) {
+      if (input.value.match(REGULAR_EXPRESSION)) {
+        input.setCustomValidity('');
+      } else {
+        input.setCustomValidity(ERROR_MESSAGE_EMAIL);
+      }
+    }
+  };
+
+  var checkPassword = function (input) {
+    if (input) {
+      if (input.value !== '') {
+        input.setCustomValidity('');
+      } else {
+        input.setCustomValidity(ERROR_MESSAGE_EMAIL);
+      }
     }
   };
 
@@ -70,12 +107,35 @@
     if (form) {
       form.addEventListener('submit', function (evt) {
         evt.preventDefault();
-        var nameInput = form.querySelector('input[name="name"]');
-        if (nameInput.value.match(REGULAR_EXPRESSION)) {
-          setLocalStorage(nameInput);
-          form.submit();
+        var emailInput = form.querySelector('input[name="email"]');
+        if (emailInput.value.match(REGULAR_EXPRESSION)) {
+          emailInput.setCustomValidity('');
+          var passwordInput = form.querySelector('input[name="password"]');
+          if(passwordInput) {
+            if (passwordInput.value) {
+              passwordInput.setCustomValidity('');
+
+              setLocalStorage(emailInput);
+              form.submit();
+            } else {
+              passwordInput.setCustomValidity(ERROR_MESSAGE_PASSWORD);
+              passwordInput.reportValidity();
+              var checkThisPassword = function() {
+                checkPassword(passwordInput);
+                console.log(1);
+              };
+              passwordInput.addEventListener('input', checkThisPassword);
+            }
+          } else {
+            form.submit();
+          }
         } else {
-          nameInput.setCustomValidity(ERROR_MESSAGE);
+          emailInput.setCustomValidity(ERROR_MESSAGE_EMAIL);
+          emailInput.reportValidity();
+          var checkThisEmail = function() {
+            checkEmail(emailInput);
+          };
+          emailInput.addEventListener('input', checkThisEmail);
         }
       });
     }
@@ -85,6 +145,7 @@
     var popup = document.querySelector('.popup');
     if (popup) {
       var popupButton = popup.querySelector('button');
+      popup.removeEventListener('transitionend', onTransition);
       popup.classList.remove('popup');
       popupButton.removeEventListener('click', closePopup);
     }
@@ -104,9 +165,11 @@
     }
   };
 
+
   var openPopup = function (popup) {
     if (popup) {
       popup.classList.add('popup');
+      popup.addEventListener('transitionend', onTransition);
       var popupButton = popup.querySelector('.close-button');
       popup.classList.remove(popup.className.split(' ')[0] + '--closed');
       popupButton.addEventListener('click', closePopup);
@@ -122,19 +185,21 @@
       }
 
       if (popup.className.split(' ')[0] === 'login') {
-        if (loginInputName) {
-          loginInputName.focus();
+        if (loginInputEmail) {
+          loginInputEmail.focus();
           var form = popup.querySelector('form');
           if (form) {
             onFormLinkClick(form);
             onFormSubmit(form);
           }
         }
+      } else {
+        popupButton.focus();
       }
     }
 
-    body.classList.add('scroll-disabled');
     document.addEventListener('keydown', onPopupEscPress);
+    body.classList.add('scroll-disabled');
   };
 
   var initPopupButton = function (target, popup) {
@@ -168,6 +233,11 @@
       if (loginPopup) {
         initPopupButton(loginButton, loginPopup);
       }
+    }
+
+    if (footerForm) {
+      onFormLinkClick(footerForm);
+      onFormSubmit(footerForm);
     }
 
     if (faqAccordeon) {

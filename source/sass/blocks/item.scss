@@ -77,12 +77,26 @@
   line-height: 21px;
 
   margin-top: 12px;
+  margin-bottom: 19px;
+}
+
+.item__info-tab a {
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-accent;
+  }
+
+  &:active {
+    outline: none;
+    color: $color-font-secondary;
+  }
 }
 
 .item__info table {
   width: 100%;
 
-  margin-top: 3px;
+  margin-top: 0;
   border-collapse: collapse;
 }
 
@@ -103,7 +117,7 @@
   text-align: right;
 }
 
-.item__info a {
+.item__info .button {
   text-align: center;
 
   display: block;

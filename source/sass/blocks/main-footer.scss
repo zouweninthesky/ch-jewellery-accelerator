@@ -43,7 +43,7 @@
   margin-top: 9px;
 }
 
-.main-footer__input {
+.main-footer__input form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -316,7 +316,7 @@
     padding-right: 50px;
   }
 
-  .main-footer__input {
+  .main-footer__input form {
     min-height: 57px;
   }
 

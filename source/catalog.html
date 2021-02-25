@@ -407,13 +407,15 @@
           <h2>The good stuff in your inbox</h2>
           <p>News and updates from CH. No spam, we promise.</p>
           <div class="main-footer__input">
-            <input type="text" placeholder="Your E-mail" id="footer-email" name="email">
-            <label for="footer-email" class="visually-hidden">Enter your E-mail</label>
-            <a href="#">Sign Up
-              <svg width="30" height="11">
-                <use xlink:href="#icon-arrow-right"></use>
-              </svg>
-            </a>
+            <form action="https://echo.htmlacademy.ru/" method="get" id="footer-form">
+              <input type="text" placeholder="Your E-mail" id="footer-email" name="email">
+              <label for="footer-email" class="visually-hidden">Enter your E-mail</label>
+              <a href="#" id="submit">Sign Up
+                <svg width="30" height="11">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg>
+              </a>
+            </form>
           </div>
         </section>
         <section class="main-footer__nav main-footer__nav--help">
@@ -486,15 +488,15 @@
       <h2>Log In</h2>
       <form action="https://echo.htmlacademy.ru/" method="post">
         <div class="login__input">
-          <input type="text" placeholder="Your E-mail" name="name" id="login-name" required>
-          <label for="login-name" class="visually-hidden">Enter your e-mail</label>
+          <input type="text" placeholder="Your E-mail" name="email" id="login-email" required>
+          <label for="login-email" class="visually-hidden">Enter your e-mail</label>
         </div>
         <div class="login__input">
           <input type="password" placeholder="Password" name="password" id="login-password">
           <label for="login-password" class="visually-hidden">Enter your password</label>
           <a href="#">Forgot your password?</a>
         </div>
-        <a href="#" class="button button--inverted">Log In</a>
+        <a href="#" class="button button--inverted" id="submit">Log In</a>
       </form>
       <div class="login__sign-up">
         <p>Don't have an account?</p>

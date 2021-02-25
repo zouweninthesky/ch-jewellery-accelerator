@@ -1,0 +1,30 @@
+.no-js-logo {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.no-js-logo svg {
+  fill: $color-accent;
+}
+
+.no-js-logo a {
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    opacity: 0.5;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &:active svg {
+    opacity: 0.3;
+  }
+}

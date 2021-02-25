@@ -13,9 +13,18 @@
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
+    <div class="sr-only">
+    <!-- inject:svg --><!-- endinject -->
+    </div>
     <h1 class="visually-hidden">CHJewellery</h1>
+    <div class="no-js-logo">
+      <a href="index.html">
+        <svg width="66" height="66">
+        <use xlink:href="#icon-main-logo"></use>
+        </svg>
+      </a>
+    </div>
     <article class="login login--page" id="login">
-      <button type="button" class="close-button close-button--login"><span class="visually-hidden">Close popup</span></button>
       <picture>
         <source type="image/webp" srcset="img/popup-img@1x.webp 1x, img/popup-img@2x.webp 2x">
 
@@ -25,15 +34,15 @@
       <h2>Log In</h2>
       <form action="https://echo.htmlacademy.ru/" method="post">
         <div class="login__input">
-          <input type="text" placeholder="Your E-mail" name="name" id="login-name">
-          <label for="login-name" class="visually-hidden">Enter your e-mail</label>
+          <input type="text" placeholder="Your E-mail" name="email" id="login-email" required>
+          <label for="login-email" class="visually-hidden">Enter your e-mail</label>
         </div>
         <div class="login__input">
           <input type="password" placeholder="Password" name="password" id="login-password">
           <label for="login-password" class="visually-hidden">Enter your password</label>
           <a href="#">Forgot your password?</a>
         </div>
-        <a href="#" class="button button--inverted">Log In</a>
+        <a href="#" class="button button--inverted" id="submit">Log In</a>
       </form>
       <div class="login__sign-up">
         <p>Don't have an account?</p>
