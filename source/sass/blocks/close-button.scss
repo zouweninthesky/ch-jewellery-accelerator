@@ -49,6 +49,10 @@
   }
 }
 
+.close-button--inverted {
+  display: none;
+}
+
 @media (max-width: $tablet-only-width) {
   .close-button--login {
     width: 23px;
@@ -66,6 +70,7 @@
   }
 
   .close-button--inverted {
+    display: block;
     width: 32px;
     height: 32px;
 

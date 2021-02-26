@@ -36,8 +36,7 @@ gulp.task("server", function () {
     notify: false,
     open: true,
     cors: true,
-    ui: false,
-    httpModule: 'http2'
+    ui: false
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));

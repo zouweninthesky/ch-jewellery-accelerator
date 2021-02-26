@@ -64,7 +64,7 @@
         button.focus();
       }
     }
-  }
+  };
 
   var onFormLinkClick = function (form) {
     if (form) {
@@ -72,7 +72,7 @@
       if (submitButton) {
         submitButton.addEventListener('click', function (evt) {
           evt.preventDefault();
-          if(form.requestSubmit) {
+          if (form.requestSubmit) {
             form.checkValidity();
             form.requestSubmit();
           } else {
@@ -111,7 +111,7 @@
         if (emailInput.value.match(REGULAR_EXPRESSION)) {
           emailInput.setCustomValidity('');
           var passwordInput = form.querySelector('input[name="password"]');
-          if(passwordInput) {
+          if (passwordInput) {
             if (passwordInput.value) {
               passwordInput.setCustomValidity('');
 
@@ -120,9 +120,8 @@
             } else {
               passwordInput.setCustomValidity(ERROR_MESSAGE_PASSWORD);
               passwordInput.reportValidity();
-              var checkThisPassword = function() {
+              var checkThisPassword = function () {
                 checkPassword(passwordInput);
-                console.log(1);
               };
               passwordInput.addEventListener('input', checkThisPassword);
             }
@@ -132,7 +131,7 @@
         } else {
           emailInput.setCustomValidity(ERROR_MESSAGE_EMAIL);
           emailInput.reportValidity();
-          var checkThisEmail = function() {
+          var checkThisEmail = function () {
             checkEmail(emailInput);
           };
           emailInput.addEventListener('input', checkThisEmail);

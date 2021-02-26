@@ -300,18 +300,22 @@
   .catalog__wrapper {
     display: block;
     width: 678px;
-
-    background-color: $color-bg-primary;
   }
 
   .catalog__wrapper--js-on {
     display: none;
     width: 442px;
+    top: 10%;
 
+    height: 90%;
     overflow-y: scroll;
-    height: 600px;
+    transform: translate(-50%, 0);
 
     filter: drop-shadow(0 5px 4px fade-out($color-bg-secondary, 0.75%));
+  }
+
+  .catalog__additional-wrapper {
+    background-color: $color-bg-primary
   }
 
   .catalog__menu ul {

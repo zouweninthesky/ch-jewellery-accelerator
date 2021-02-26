@@ -1,25 +1,11 @@
 .popup {
-  display: block;
-
-  position: fixed;
-  left: 50%;
-
-  z-index: 5;
+    display: block;
+    position: fixed;
+    left: 50%;
+    z-index: 5;
 }
 
 .popup:not(:focus-within) {
   outline: transparent;
   transition: outline 0.01s;
-}
-
-@media (max-width: $tablet-only-width) {
-  .popup {
-    transform: translate(-50%, -46%);
-  }
-}
-
-@media (max-width: $mobile-only-width) {
-  .popup {
-    transform: translate(-50%, -66.1%);
-  }
 }
