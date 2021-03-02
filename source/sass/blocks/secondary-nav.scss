@@ -27,6 +27,19 @@
 
     margin-bottom: 20px;
   }
+
+  .secondary-nav a {
+    &:hover,
+    &:focus {
+      outline: none;
+      color: fade-out($color-bg-primary, 0.7);
+    }
+
+    &:active {
+      outline: none;
+      color: fade-out($color-bg-primary, 0.9);
+    }
+  }
 }
 
 @media (max-width: $mobile-only-width) {

@@ -162,7 +162,6 @@
 
   margin-top: 11px;
   padding-top: 12px;
-  margin-left: auto;
 
   height: 20px;
 }
@@ -262,7 +261,14 @@
     }
   }
 
+  .main-header--js-on > button {
+    position: fixed;
+    z-index: 3;
+  }
+
   .main-header--closed > button {
+    position: absolute;
+
     &::after {
       background-color: $color-font-primary;
 
@@ -281,22 +287,29 @@
   }
 
   .main-header--js-on .main-header__container {
-    position: absolute;
-    top: 126px;
+    position: fixed;
+    top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 136px;
 
+    height: 100vh;
     width: 100%;
     z-index: 2;
-
-    min-height: 652px;
     background-color: $color-accent;
   }
 
   .main-header--closed .main-header__container {
+    position: static;
+    height: auto;
+    min-height: 126px;
+
     display: block;
 
     min-height: auto;
 
+    padding-top: 0;
     padding-bottom: 60px;
 
     background-color: transparent;
@@ -367,12 +380,11 @@
   }
 
   .main-header--js-on .main-header__logo {
-    top: -96px;
+    top: 30px;
     transform: translateX(-85%);
   }
 
   .main-header--closed .main-header__logo {
-    top: -96px;
     transform: translateX(-49.9%);
   }
 
@@ -418,11 +430,11 @@
   }
 
   .main-header--js-on .main-header__cart {
-    top: -147px;
+    top: -11px;
   }
 
   .main-header--closed .main-header__cart {
-    top: -137px;
+    top: -11px;
   }
 
   .main-header__cart span {
@@ -487,14 +499,12 @@
   }
 
   .main-header--js-on .main-header__container {
-    position: absolute;
-    top: 92px;
-
-    min-height: 582px;
+    padding-top: 102px;
   }
 
   .main-header--closed .main-header__container {
-    padding-bottom: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
 
     min-height: auto;
   }
@@ -504,12 +514,12 @@
   }
 
   .main-header--js-on .main-header__logo {
-    top: -89px;
+    top: 13px;
     transform: translateX(-65%);
   }
 
   .main-header--closed .main-header__logo {
-    top: -79px;
+    top: 13px;
     transform: translateX(-50%);
   }
 
@@ -518,11 +528,10 @@
   }
 
   .main-header--js-on .main-header__cart {
-    top: -113px;
+    top: -11px;
   }
 
   .main-header--closed .main-header__cart {
-    top: -103px;
   }
 
   .main-header__cart svg {

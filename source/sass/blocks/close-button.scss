@@ -36,11 +36,15 @@
     outline: none;
   }
 
-  &:hover::before,
+
   &:focus::before,
-  &:hover::after,
   &:focus::after {
     background-color: $color-font-secondary;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: fade-out($color-font-secondary, 0.5);
   }
 
   &:active::before,
@@ -70,7 +74,6 @@
   }
 
   .close-button--inverted {
-    display: block;
     width: 32px;
     height: 32px;
 

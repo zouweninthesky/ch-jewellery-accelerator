@@ -37,6 +37,9 @@
       var button = target.querySelector('button');
       button.addEventListener('click', function () {
         toggleHidden(target);
+        if (target === mainHeader) {
+          body.classList.toggle('scroll-disabled');
+        }
       });
     }
   };
@@ -247,15 +250,15 @@
     if (filterPopup) {
       if (filterButton) {
         toggleJSClass(filterPopup);
-        toggleHidden(filterPopup);
         initPopupButton(filterButton, filterPopup);
       }
     }
 
     if (catalogAccordeon) {
       var catalogAccordeonItems = catalogAccordeon.querySelectorAll('.catalog__sub-menu');
-      toggleHidden(catalogAccordeon);
-      initAccordeon(catalogAccordeonItems);
+      if (catalogAccordeonItems) {
+        initAccordeon(catalogAccordeonItems);
+      }
     }
 
     if (slider) {

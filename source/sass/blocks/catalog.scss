@@ -299,7 +299,7 @@
 
   .catalog__wrapper {
     display: block;
-    width: 678px;
+    width: auto;
   }
 
   .catalog__wrapper--js-on {
@@ -416,6 +416,10 @@
   }
 
   .catalog__wrapper {
+    width: auto;
+  }
+
+  .catalog__wrapper--js-on {
     width: 270px;
   }
 
